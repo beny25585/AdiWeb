@@ -1,0 +1,21 @@
+import { projects } from "@/data/projects";
+import ProjectCard from "@/components/ProjectCard";
+import type { Locale } from "@/lib/i18n";
+
+export default async function ProjectsPage({ params }: { params: { locale: Locale } }) {
+  const { locale } = await params;
+
+  return (
+    <section style={{ padding: "60px 20px", maxWidth: "1200px", margin: "0 auto" }}>
+      <h1 style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "30px" }}>
+        {locale === "he" ? "כל הפרויקטים" : locale === "th" ? "โครงการทั้งหมด" : "All Projects"}
+      </h1>
+
+      <div style={{ display: "grid", gap: "20px", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+        {projects.map((p) => (
+          <ProjectCard key={p.slug} locale={locale} project={p} />
+        ))}
+      </div>
+    </section>
+  );
+}

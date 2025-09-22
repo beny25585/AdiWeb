@@ -1,0 +1,40 @@
+.card {
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.imageWrap {
+  position: relative;
+  height: 220px;
+  width: 100%;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.body {
+  padding: 16px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #0b3a82;
+  margin-bottom: 6px;
+}
+
+.location {
+  font-size: 0.9rem;
+  color: #555;
+}

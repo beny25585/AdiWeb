@@ -1,0 +1,59 @@
+.header {
+  background: #0b3a82; /* Royal Navy */
+  color: #fff;
+  padding: 12px 0;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.langs {
+  display: flex;
+  gap: 8px;
+}
+
+.langs a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.langs a:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.active {
+  background: #fff !important;
+  color: #0b3a82 !important;
+}
