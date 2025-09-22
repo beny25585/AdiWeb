@@ -1,7 +1,5 @@
-// src/app/[locale]/layout.tsx
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
-import { dir } from "@/lib/i18n"; 
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -13,22 +11,22 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
   let messages;
   try {
-    messages = (await import(`@/messages/${locale}.json`)).default;
+    messages = (await import(`@/messages/${params.locale}.json`)).default;
   } catch (error) {
     notFound();
   }
 
   return (
-    <html lang={locale} dir={dir(locale)}>
+    <html lang={params.locale} dir={params.locale === "he" ? "rtl" : "ltr"}>
       <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider locale={params.locale} messages={messages}>
           <Header />
           {children}
           <Footer />
