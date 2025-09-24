@@ -1,41 +1,25 @@
 "use client";
 
 import styles from "@/styles/Footer.module.css";
-import { useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
-  const locale = useLocale();
+  const t = useTranslations("footer");
 
   return (
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div>
-          <h4 className={styles.title}>
-            {locale === "he"
-              ? "מטה החברה"
-              : locale === "en"
-              ? "Head Office"
-              : "สำนักงานใหญ่"}
-          </h4>
+          <h4 className={styles.title}>{t("office")}</h4>
           <p className={styles.text}>
-            {locale === "he"
-              ? "בני גאון 12, נתניה"
-              : locale === "en"
-              ? "12 Bnei Gaon, Netanya"
-              : "12 Bnei Gaon, Netanya"}
+            {t("address")}
             <br />
-            {locale === "he" ? "טל׳: 09-8633744" : "+972-9-8633744"}
+            {t("phone")}
           </p>
         </div>
 
         <div>
-          <h4 className={styles.title}>
-            {locale === "he"
-              ? "קישורים"
-              : locale === "en"
-              ? "Links"
-              : "ลิงก์"}
-          </h4>
+          <h4 className={styles.title}>{t("links")}</h4>
           <ul className={styles.links}>
             <li><a href="#">ESG</a></li>
             <li><a href="#">Privacy</a></li>
@@ -44,12 +28,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.copy}>
-          © 2025{" "}
-          {locale === "he"
-            ? "כל הזכויות שמורות"
-            : locale === "en"
-            ? "All rights reserved"
-            : "ลิขสิทธิ์ทั้งหมด"}
+          © 2025 {t("copyright")}
         </div>
       </div>
     </footer>

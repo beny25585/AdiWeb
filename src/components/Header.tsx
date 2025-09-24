@@ -3,27 +3,28 @@
 import Link from "next/link";
 import { locales } from "@/lib/i18n";
 import styles from "@/styles/Header.module.css";
-import { useLocale } from "next-intl";
-
-const nav = (locale: string) => [
-  { href: `/${locale}`, label: locale === "he" ? "בית" : locale === "en" ? "Home" : "หน้าแรก" },
-  { href: `/${locale}/about`, label: locale === "he" ? "אודות" : locale === "en" ? "About" : "เกี่ยวกับ" },
-  { href: `/${locale}/services`, label: locale === "he" ? "שירותים" : locale === "en" ? "Services" : "บริการ" },
-  { href: `/${locale}/projects`, label: locale === "he" ? "פרויקטים" : locale === "en" ? "Projects" : "ผลงาน" },
-  { href: `/${locale}/contact`, label: locale === "he" ? "צור קשר" : locale === "en" ? "Contact" : "ติดต่อ" },
-];
+import { useLocale, useTranslations } from "next-intl";
 
 export default function Header() {
-  const locale = useLocale(); // 👈 לוקח את השפה מתוך NextIntlClientProvider
+  const locale = useLocale();
+  const t = useTranslations("header");
+
+  const nav = [
+    { href: `/${locale}`, label: t("home") },
+    { href: `/${locale}/about`, label: t("about") },
+    { href: `/${locale}/services`, label: t("services") },
+    { href: `/${locale}/projects`, label: t("projects") },
+    { href: `/${locale}/contact`, label: t("contact") },
+  ];
 
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
         <Link href={`/${locale}`} className={styles.logo}>
-          {locale === "he" ? "שם החברה" : locale === "en" ? "Company" : "บริษัท"}
+          Company
         </Link>
         <nav className={styles.nav}>
-          {nav(locale).map((item) => (
+          {nav.map((item) => (
             <Link key={item.href} href={item.href} className={styles.link}>
               {item.label}
             </Link>
@@ -31,7 +32,11 @@ export default function Header() {
         </nav>
         <div className={styles.langs}>
           {locales.map((lng) => (
-            <Link key={lng} href={`/${lng}`} className={lng === locale ? styles.active : ""}>
+            <Link
+              key={lng}
+              href={`/${lng}`}
+              className={lng === locale ? styles.active : ""}
+            >
               {lng.toUpperCase()}
             </Link>
           ))}

@@ -1,17 +1,27 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import Link from "next/link";
+import styles from "@/styles/Hero.module.css";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function Hero() {
   const t = useTranslations("hero");
+  const locale = useLocale();
 
   return (
-    <section style={{ padding: "60px 20px", textAlign: "center" }}>
-      <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>{t("headline")}</h1>
-      <p style={{ fontSize: "1.2rem", marginBottom: "2rem" }}>{t("sub")}</p>
-      <div style={{ display: "flex", gap: "12px", justifyContent: "center" }}>
-        <a href="/projects" className="btn-primary">{t("projectsBtn")}</a>
-        <a href="/contact" className="btn-secondary">{t("contactBtn")}</a>
+    <section className={styles.hero}>
+      <div className={styles.overlay}></div>
+      <div className={styles.content}>
+        <h1>{t("headline")}</h1>
+        <p>{t("sub")}</p>
+        <div className={styles.buttons}>
+          <Link href={`/${locale}/projects`} className={styles.buttonPrimary}>
+            {t("projectsBtn")}
+          </Link>
+          <Link href={`/${locale}/contact`} className={styles.buttonSecondary}>
+            {t("contactBtn")}
+          </Link>
+        </div>
       </div>
     </section>
   );

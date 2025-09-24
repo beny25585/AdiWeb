@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/ProjectCard.module.css";
-import type { Locale } from "@/lib/i18n";
+import type { Locale } from "@/types/routing";
 
 type Project = {
   slug: string;

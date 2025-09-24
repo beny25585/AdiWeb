@@ -11,5 +11,14 @@
     "sub": "Architecture, finishing, interiors/exteriors — no structural shell/casting",
     "projectsBtn": "Projects",
     "contactBtn": "Contact"
+  },
+   "footer": {
+    "office": "Head Office",
+    "address": "12 Bnei Gaon, Netanya",
+    "phone": "+972-9-8633744",
+    "links": "Links",
+    "copyright": "All rights reserved"
+
   }
-}
+} 
+

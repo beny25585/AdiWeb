@@ -1,14 +1,23 @@
-import type { Locale } from "@/lib/i18n";
 import { services } from "@/data/services";
 import styles from "@/styles/Services.module.css";
+import type { Locale } from "@/types/routing";
 
-export default async function ServicesPage({ params }: { params: { locale: Locale } }) {
+export default async function ServicesPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
 
+  const safeLocale: Locale =
+    locale === "he" || locale === "en" || locale === "th"
+      ? (locale as Locale)
+      : "en";
+
   const title =
-    locale === "he"
+    safeLocale === "he"
       ? "השירותים שלנו"
-      : locale === "th"
+      : safeLocale === "th"
       ? "บริการของเรา"
       : "Our Services";
 
@@ -20,10 +29,18 @@ export default async function ServicesPage({ params }: { params: { locale: Local
           <div key={s.key} className={styles.card}>
             <div className={styles.icon}>{s.icon}</div>
             <h2 className={styles.serviceTitle}>
-              {locale === "he" ? s.titleHE : locale === "th" ? s.titleTH : s.titleEN}
+              {safeLocale === "he"
+                ? s.titleHE
+                : safeLocale === "th"
+                ? s.titleTH
+                : s.titleEN}
             </h2>
             <p className={styles.desc}>
-              {locale === "he" ? s.descHE : locale === "th" ? s.descTH : s.descEN}
+              {safeLocale === "he"
+                ? s.descHE
+                : safeLocale === "th"
+                ? s.descTH
+                : s.descEN}
             </p>
           </div>
         ))}
