@@ -1,50 +1,58 @@
 .footer {
-  background: #f8f9fa;
-  border-top: 1px solid #ddd;
-  padding: 40px 0;
-  margin-top: 60px;
+  background: #0b3a82;
+  color: #fff;
+  padding: 60px 20px 30px;
 }
 
 .inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 16px;
-  display: grid;
-  gap: 24px;
 }
 
-.title {
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #0b3a82; /* Royal Navy */
+.col h4 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
 }
 
-.text {
-  font-size: 14px;
-  color: #333;
-}
-
-.links {
-  list-style: none;
-  padding: 0;
+.col p,
+.col ul {
+  font-size: 0.95rem;
+  line-height: 1.6;
   margin: 0;
+  padding: 0;
 }
 
-.links li {
-  margin-bottom: 6px;
+.col ul {
+  list-style: none;
 }
 
-.links a {
+.col ul li {
+  margin-bottom: 8px;
+}
+
+.col ul li a {
+  color: #fff;
   text-decoration: none;
-  color: #0b3a82;
-  font-size: 14px;
+  transition: color 0.3s ease;
 }
 
-.links a:hover {
-  text-decoration: underline;
+.col ul li a:hover {
+  color: #f0c330;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .copy {
-  font-size: 13px;
-  color: #666;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
 }

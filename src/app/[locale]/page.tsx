@@ -1,7 +1,8 @@
 import Hero from "@/components/Hero";
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/data/projects";
-import type { Locale } from "@/types/routing"; // אם יש לך טיפוס מוגדר
+import type { Locale } from "@/types/routing";
+import styles from "@/styles/page.module.css";
 
 export default async function HomePage({
   params,
@@ -19,21 +20,15 @@ export default async function HomePage({
     <main>
       <Hero />
 
-      <section style={{ padding: "60px 20px", maxWidth: "1200px", margin: "0 auto" }}>
-        <h2 style={{ fontSize: "1.8rem", fontWeight: "bold", marginBottom: "20px" }}>
+      <section className={styles.projectsSection} dir={safeLocale === "he" ? "rtl" : "ltr"}>
+        <h2 className={styles.projectsTitle}>
           {safeLocale === "he"
             ? "פרויקטים נבחרים"
             : safeLocale === "th"
             ? "ผลงานเด่น"
             : "Featured Projects"}
         </h2>
-        <div
-          style={{
-            display: "grid",
-            gap: "20px",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          }}
-        >
+        <div className={styles.projectsGrid}>
           {featured.map((p) => (
             <ProjectCard key={p.slug} locale={safeLocale} project={p} />
           ))}

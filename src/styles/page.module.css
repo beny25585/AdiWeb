@@ -162,3 +162,46 @@
     filter: invert();
   }
 }
+.projectsSection {
+  padding: 100px 20px;
+  max-width: 1300px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease;
+}
+
+.projectsTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 50px;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.projectsGrid {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  animation: slideUp 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

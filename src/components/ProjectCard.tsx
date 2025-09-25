@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/ProjectCard.module.css";
-import type { Locale } from "@/types/routing";
+import type { Locale } from "@/lib/i18n";
 
 type Project = {
   slug: string;
@@ -21,6 +21,7 @@ export default function ProjectCard({ locale, project }: { locale: Locale; proje
       <div className={styles.imageWrap}>
         <Image src={project.image} alt={title} fill className={styles.image} />
       </div>
+      <div className={styles.overlay}></div>
       <div className={styles.body}>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.location}>{project.location}</p>

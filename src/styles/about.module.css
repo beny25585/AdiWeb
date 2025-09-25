@@ -1,0 +1,56 @@
+.about {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #0b3a82;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  color: #444;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.person {
+  text-align: center;
+}
+
+.person h3 {
+  margin-top: 16px;
+  font-size: 1.4rem;
+}
+
+.person p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.vision {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.vision h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: #0b3a82;
+}
+
+.vision p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}

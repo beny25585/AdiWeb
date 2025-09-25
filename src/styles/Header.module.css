@@ -1,59 +1,88 @@
 .header {
   background: #0b3a82; /* Royal Navy */
-  color: #fff;
-  padding: 12px 0;
+  color: white;
+  padding: 1rem 2rem;
 }
 
-.inner {
+.container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 16px;
 }
 
 .logo {
+  font-size: 1.4rem;
   font-weight: bold;
-  font-size: 20px;
-  color: #fff;
   text-decoration: none;
+  color: white;
+  letter-spacing: 0.5px;
 }
 
 .nav {
   display: flex;
-  gap: 20px;
+  gap: 2rem; /* רווח גדול יותר במחשב */
+  align-items: center;
 }
 
-.link {
-  color: #fff;
+.nav a {
   text-decoration: none;
-  font-size: 16px;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-.link:hover {
-  text-decoration: underline;
-}
-
-.langs {
-  display: flex;
-  gap: 8px;
-}
-
-.langs a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-  padding: 4px 6px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.langs a:hover {
-  background: rgba(255, 255, 255, 0.25);
+.nav a:hover {
+  color: #f0c330; /* זהב קטן ב-hover */
 }
 
 .active {
   background: #fff !important;
   color: #0b3a82 !important;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* Mobile */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 3000;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #0b3a82;
+    width: 100%;
+    padding: 2rem 1rem; /* יותר padding כדי שלא יהיה צמוד */
+    gap: 1.5rem; /* רווח גדול בין לינקים */
+    z-index: 2000;
+    border-bottom: 2px solid #092a5f;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .langs {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
 }

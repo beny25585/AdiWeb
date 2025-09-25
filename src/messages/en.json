@@ -7,11 +7,11 @@
     "contact": "Contact"
   },
   "hero": {
-    "headline": "Everything you imagine — and beyond",
-    "sub": "Architecture, finishing, interiors/exteriors — no structural shell/casting",
-    "projectsBtn": "Projects",
-    "contactBtn": "Contact"
-  },
+  "headline": "Engineering the Future",
+  "sub": "Professional corporate, engineering and international solutions",
+  "projectsBtn": "Our Projects",
+  "contactBtn": "Contact Us"
+},
    "footer": {
     "office": "Head Office",
     "address": "12 Bnei Gaon, Netanya",
@@ -19,6 +19,28 @@
     "links": "Links",
     "copyright": "All rights reserved"
 
-  }
+  },
+  "about": {
+  "title": "About Us",
+  "subtitle": "Adi and Shira lead the company with international experience in construction and architecture.",
+  "adiName": "Adi",
+  "adiRole": "CEO",
+  "adiAlt": "Adi – CEO",
+  "shiraName": "Shira",
+  "shiraRole": "COO & Chief Architect",
+  "shiraAlt": "Shira – COO & Chief Architect",
+  "visionTitle": "Our Vision",
+  "visionText": "To build at the highest quality while upholding values of trust, sustainability, and innovation."
+},
+"contact": {
+  "title": "Contact Us",
+  "subtitle": "We’d love to hear from you – fill out the form or reach out directly.",
+  "namePlaceholder": "Full Name",
+  "emailPlaceholder": "Email",
+  "messagePlaceholder": "Message",
+  "submitBtn": "Send",
+  "formSuccess": "Your message has been sent successfully!"
+}
+
 } 
 
