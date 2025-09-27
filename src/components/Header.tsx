@@ -3,11 +3,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { locales } from "@/lib/i18n";
 import { usePathname } from "next/navigation";
 import styles from "@/styles/Header.module.css";
 import { useEffect, useRef } from "react";
-import ReactCountryFlag from "react-country-flag";
 
 export default function Header() {
   const navRef = useRef<HTMLDivElement>(null);
