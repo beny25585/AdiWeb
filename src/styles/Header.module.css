@@ -1,7 +1,10 @@
 .header {
-  background: #0b3a82; /* Royal Navy */
+  background: #0b3a82;
   color: white;
   padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .container {
@@ -20,9 +23,10 @@
   letter-spacing: 0.5px;
 }
 
+/* --- תפריט Desktop --- */
 .nav {
   display: flex;
-  gap: 2rem; /* רווח גדול יותר במחשב */
+  gap: 2rem;
   align-items: center;
 }
 
@@ -31,21 +35,14 @@
   color: white;
   font-weight: 500;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 .nav a:hover {
-  color: #f0c330; /* זהב קטן ב-hover */
+  color: #f0c330;
 }
 
-.active {
-  background: #fff !important;
-  color: #0b3a82 !important;
-  font-weight: bold;
-  padding: 4px 10px;
-  border-radius: 6px;
-}
-
-/* Mobile */
+/* --- כפתור המבורגר --- */
 .hamburger {
   display: none;
   font-size: 1.8rem;
@@ -56,13 +53,48 @@
   z-index: 3000;
 }
 
+/* --- שפות (דגלים) --- */
+.langs {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.langs a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.langs a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+/* ריבוע לבן מסביב לדגל הנבחר */
+.langs a.active {
+  background: #fff;
+  border-radius: 6px;
+}
+
+.flag {
+  width: 28px;
+  height: 20px;
+  object-fit: cover;
+  border-radius: 3px;
+  display: block;
+}
+
+/* --- Mobile --- */
 @media (max-width: 768px) {
   .hamburger {
     display: block;
   }
 
   .nav {
-    display: none;
     flex-direction: column;
     align-items: center;
     position: absolute;
@@ -70,19 +102,25 @@
     right: 0;
     background: #0b3a82;
     width: 100%;
-    padding: 2rem 1rem; /* יותר padding כדי שלא יהיה צמוד */
-    gap: 1.5rem; /* רווח גדול בין לינקים */
-    z-index: 2000;
+    padding: 0 1rem;
+    gap: 1.5rem;
     border-bottom: 2px solid #092a5f;
+    overflow: hidden;
+
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
   }
 
   .nav.open {
-    display: flex;
+    padding: 2rem 1rem;
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .langs {
-    display: flex;
-    gap: 1rem;
     margin-top: 1rem;
   }
 }

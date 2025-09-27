@@ -1,7 +1,16 @@
 .footer {
-  background: #0b3a82;
+  background: linear-gradient(135deg, #0b3a82, #061b3d);
   color: #fff;
-  padding: 60px 20px 30px;
+  padding: 40px 20px 20px;
+}
+.footer[dir="rtl"] .inner {
+  direction: rtl;
+  text-align: right;
+}
+
+.footer[dir="ltr"] .inner {
+  direction: ltr;
+  text-align: left;
 }
 
 .inner {
@@ -13,8 +22,11 @@
 }
 
 .col h4 {
-  font-size: 1.2rem;
-  margin-bottom: 16px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #f0c330;
+  text-transform: uppercase;
 }
 
 .col p,
@@ -23,6 +35,7 @@
   line-height: 1.6;
   margin: 0;
   padding: 0;
+  color: #fff;
 }
 
 .col ul {
@@ -51,8 +64,43 @@
 
 .copy {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 20px;
   font-size: 0.9rem;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-top: 20px;
+  padding-top: 10px;
+}
+.socials a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+.socials a:hover {
+  color: #f0c330;
+  transform: translateY(-2px);
+}
+.newsletter {
+  display: flex;
+  gap: 10px;
+}
+.newsletter input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+}
+.newsletter button {
+  background: #f0c330;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.newsletter button:hover {
+  background: #fff;
+  color: #0b3a82;
 }

@@ -1,46 +1,52 @@
 {
-  "header": {
-    "home": "Home",
-    "about": "About",
-    "services": "Services",
-    "projects": "Projects",
-    "contact": "Contact"
+    "header":{
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "projects": "Projects",
+      "contact": "Contact"
   },
-  "hero": {
-  "headline": "Engineering the Future",
-  "sub": "Professional corporate, engineering and international solutions",
-  "projectsBtn": "Our Projects",
-  "contactBtn": "Contact Us"
-},
-   "footer": {
-    "office": "Head Office",
+    "hero": {
+    "headline": "Engineering the Future",
+    "sub": "Professional corporate, engineering and international solutions",
+    "projectsBtn": "Our Projects",
+    "contactBtn": "Contact Us"
+  },
+    "footer": {
+    "companyTitle": "Our Company",
     "address": "12 Bnei Gaon, Netanya",
     "phone": "+972-9-8633744",
-    "links": "Links",
-    "copyright": "All rights reserved"
-
+    "linksTitle": "Links",
+    "socialTitle": "Follow Us",
+    "careers": "Careers",
+    "esg": "ESG",
+    "rights": "All rights reserved",
+     "newsletterTitle": "Stay Updated",
+    "newsletterPlaceholder": "Enter your email",
+    "newsletterButton": "Subscribe"
   },
-  "about": {
-  "title": "About Us",
-  "subtitle": "Adi and Shira lead the company with international experience in construction and architecture.",
-  "adiName": "Adi",
-  "adiRole": "CEO",
-  "adiAlt": "Adi – CEO",
-  "shiraName": "Shira",
-  "shiraRole": "COO & Chief Architect",
-  "shiraAlt": "Shira – COO & Chief Architect",
-  "visionTitle": "Our Vision",
-  "visionText": "To build at the highest quality while upholding values of trust, sustainability, and innovation."
-},
-"contact": {
-  "title": "Contact Us",
-  "subtitle": "We’d love to hear from you – fill out the form or reach out directly.",
-  "namePlaceholder": "Full Name",
-  "emailPlaceholder": "Email",
-  "messagePlaceholder": "Message",
-  "submitBtn": "Send",
-  "formSuccess": "Your message has been sent successfully!"
-}
-
+    "about": {
+    "title": "About Us",
+    "companyTitle": "Our Company",
+    "subtitle": "Adi and Shira lead the company with international experience in construction and architecture.",
+    "adiName": "Adi Ozen",
+    "adiRole": "CEO and Founder",
+    "adiBio": "Born in 1997, graduate with a diploma in Civil Engineering studies and additional courses. Years of experience in managing work and safety on construction sites. From a young age I fell in love with construction and engineering. Over the course of 10 years, I gained experience in various companies and projects, working with unique materials and acquiring understanding in all construction trades. Extensive knowledge in managing construction sites, ensuring supervision and control of all system teams and contractors. Managing projects with reliability, quality, and speed.",
+    "adiAlt": "Adi – CEO",
+    "shiraName": "Shira",
+    "shiraRole": "COO & Chief Architect",
+    "shiraAlt": "Shira – COO & Chief Architect",
+    "visionTitle": "Our Vision",
+    "visionText": "To build at the highest quality while upholding values of trust, sustainability, and innovation."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We’d love to hear from you – fill out the form or reach out directly.",
+    "namePlaceholder": "Full Name",
+    "emailPlaceholder": "Email",
+    "messagePlaceholder": "Message",
+    "submitBtn": "Send",
+    "formSuccess": "Your message has been sent successfully!"
+  }
 } 
 

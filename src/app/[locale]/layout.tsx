@@ -2,6 +2,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import "@/styles/globals.css";
+
 
 export default async function LocaleLayout({
   children,

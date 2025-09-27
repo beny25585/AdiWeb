@@ -6,12 +6,29 @@ import { useTranslations } from "next-intl";
 import { locales } from "@/lib/i18n";
 import { usePathname } from "next/navigation";
 import styles from "@/styles/Header.module.css";
+import { useEffect, useRef } from "react";
+import ReactCountryFlag from "react-country-flag";
 
 export default function Header() {
+  const navRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
-  const locale = pathname.split("/")[1] || "en"; 
+  const locale = pathname.split("/")[1] || "en";
   const t = useTranslations("header");
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (
+        menuOpen &&
+        navRef.current &&
+        !navRef.current.contains(e.target as Node)
+      ) {
+        setMenuOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [menuOpen]);
 
   const nav = [
     { href: `/${locale}`, label: t("home") },
@@ -33,10 +50,13 @@ export default function Header() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation"
         >
-          ☰
+          {menuOpen ? "✖" : "☰"}
         </button>
 
-        <nav className={`${styles.nav} ${menuOpen ? styles.open : ""}`}>
+        <nav
+          ref={navRef}
+          className={`${styles.nav} ${menuOpen ? styles.open : ""}`}
+        >
           {nav.map((item) => (
             <Link
               key={item.href}
@@ -48,16 +68,27 @@ export default function Header() {
           ))}
 
           <div className={styles.langs}>
-            {locales.map((lng) => (
-              <Link
-                key={lng}
-                href={`/${lng}`}
-                className={lng === locale ? styles.active : ""}
-                onClick={() => setMenuOpen(false)}
-              >
-                {lng.toUpperCase()}
-              </Link>
-            ))}
+            <Link href="/he" className={locale === "he" ? styles.active : ""}>
+              <img
+                src="https://flagcdn.com/w40/il.png"
+                alt="עברית"
+                className={styles.flag}
+              />
+            </Link>
+            <Link href="/en" className={locale === "en" ? styles.active : ""}>
+              <img
+                src="https://flagcdn.com/w40/us.png"
+                alt="English"
+                className={styles.flag}
+              />
+            </Link>
+            <Link href="/th" className={locale === "th" ? styles.active : ""}>
+              <img
+                src="https://flagcdn.com/w40/th.png"
+                alt="ไทย"
+                className={styles.flag}
+              />
+            </Link>
           </div>
         </nav>
       </div>

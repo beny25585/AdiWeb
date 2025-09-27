@@ -4,6 +4,7 @@ import { projects } from "@/data/projects";
 import type { Locale } from "@/types/routing";
 import styles from "@/styles/page.module.css";
 
+
 export default async function HomePage({
   params,
 }: {

@@ -1,6 +1,7 @@
 import { projects } from "@/data/projects";
 import Image from "next/image";
 import type { Locale } from "@/types/routing";
+import styles from "@/styles/ProjectPage.module.css";
 
 export default async function ProjectPage({
   params,
@@ -10,7 +11,9 @@ export default async function ProjectPage({
   const { locale, slug } = await params;
 
   const safeLocale: Locale =
-    locale === "he" || locale === "en" || locale === "th" ? (locale as Locale) : "en";
+    locale === "he" || locale === "en" || locale === "th"
+      ? (locale as Locale)
+      : "en";
 
   const project = projects.find((p) => p.slug === slug);
 
@@ -41,20 +44,24 @@ export default async function ProjectPage({
       : project.descriptionEN;
 
   return (
-    <article style={{ padding: "60px 20px", maxWidth: "900px", margin: "0 auto" }}>
-      <h1 style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "20px" }}>{title}</h1>
-      {project.image && (
-        <div style={{ marginBottom: "20px", borderRadius: "12px", overflow: "hidden" }}>
-          <Image
-            src={project.image}
-            alt={title}
-            width={900}
-            height={500}
-            style={{ objectFit: "cover" }}
-          />
-        </div>
-      )}
-      <p style={{ fontSize: "1.1rem", lineHeight: "1.6", color: "#444" }}>{desc}</p>
-    </article>
+    <section className={styles.project}>
+      <div className={styles.imageWrap}>
+        <Image
+          src={project.image}
+          alt={title}
+          width={1200}
+          height={700}
+          className={styles.image}
+        />
+      </div>
+      <div className={styles.content}>
+        <h1 className={styles.title}>{title}</h1>
+        <p className={styles.desc}>{desc}</p>
+        <p className={styles.location}>📍 {project.location}</p>
+        <a href={`/${locale}/contact`} className={styles.cta}>
+          צור קשר לגבי פרויקט זה
+        </a>
+      </div>
+    </section>
   );
 }

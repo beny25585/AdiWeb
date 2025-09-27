@@ -1,0 +1,72 @@
+.project {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.imageWrap {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.image:hover {
+  transform: scale(1.03);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 0;
+}
+
+.desc {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.location {
+  font-size: 1rem;
+  color: #666;
+}
+
+.cta {
+  margin-top: 20px;
+  background: var(--accent);
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.cta:hover {
+  background: #092b61;
+  transform: translateY(-2px);
+}
+
+/* רספונסיבי */
+@media (max-width: 900px) {
+  .project {
+    grid-template-columns: 1fr;
+  }
+}

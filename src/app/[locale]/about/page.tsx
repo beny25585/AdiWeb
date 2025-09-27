@@ -1,9 +1,11 @@
+"use client";
 import styles from "@/styles/about.module.css";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 export default function AboutPage() {
   const t = useTranslations("about");
+
 
   return (
     <section className={styles.about}>
@@ -15,6 +17,7 @@ export default function AboutPage() {
           <Image src="/images/adi.jpg" alt={t("adiAlt")} width={300} height={300} />
           <h3>{t("adiName")}</h3>
           <p>{t("adiRole")}</p>
+          <p className={styles.bio}>{t("adiBio")}</p>
         </div>
         <div className={styles.person}>
           <Image src="/images/shira.jpg" alt={t("shiraAlt")} width={300} height={300} />

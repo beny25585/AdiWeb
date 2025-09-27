@@ -9,8 +9,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f6f4f4;
+    --foreground: #090000;
   }
 }
 * {
@@ -24,12 +24,15 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  margin: 0 !important;
-  padding: 0 !important;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   height: 100%;
+  border: 40x solid red;
 }
 
 body {
+  margin: 0 !important;
+  padding: 0 !important;
   color: var(--foreground);
   background: var(--background);
   font-family: "Segoe UI", Arial, sans-serif;
@@ -42,6 +45,8 @@ h1,
 h2,
 h3,
 h4 {
+  margin: 0 !important;
+  padding: 0 !important;
   font-weight: 700;
   color: var(--accent);
   margin-bottom: 0.6em;
@@ -50,6 +55,8 @@ h4 {
 }
 
 p {
+  margin: 0 !important;
+  padding: 0 !important;
   font-size: var(--text-medium);
   margin-bottom: 1.2em;
   color: #333;

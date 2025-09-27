@@ -1,7 +1,7 @@
 .about {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 80px 20px;
+  padding: 50px 20px;
   text-align: center;
 }
 
@@ -20,12 +20,13 @@
 .grid {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-bottom: 60px;
+  gap: 20px;
+  margin-bottom: 40px;
 }
 
 .person {
   text-align: center;
+  max-width: 400px;
 }
 
 .person h3 {
@@ -53,4 +54,10 @@
   font-size: 1.1rem;
   line-height: 1.8;
   color: #333;
+}
+.bio {
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: justify;
+  margin-top: 10px;
 }
