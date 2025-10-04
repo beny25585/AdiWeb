@@ -2,6 +2,7 @@
 
 import styles from "@/styles/Footer.module.css";
 import { useLocale, useTranslations } from "next-intl";
+import Image from "next/image";
 import Link from "next/link";
 import { FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
 
@@ -15,6 +16,12 @@ export default function Footer() {
     <footer dir={dir} className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.col}>
+          <Image
+            src="/Photos/uzanGroup.jpg"
+            alt="uzanGroup Logo"
+            width={140}
+            height={40}
+          />
           <h4>{t("companyTitle")}</h4>
           <p>
             {t("address")} <br />

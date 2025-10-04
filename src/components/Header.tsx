@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import styles from "@/styles/Header.module.css";
@@ -40,7 +41,20 @@ export default function Header() {
     <header className={styles.header}>
       <div className={styles.container}>
         <Link href={`/${locale}`} className={styles.logo}>
-          Company
+          <div className={styles.logosWrap}>
+            <Image
+              src="/Photos/uzanGroup-removebg.png"
+              alt="uzanGroup Logo"
+              width={60}
+              height={60}
+            />
+            <Image
+              src="/Photos/logoUzan-removebg.png"
+              alt="UZAN Logo"
+              width={140}
+              height={100}
+            />
+          </div>
         </Link>
 
         <button

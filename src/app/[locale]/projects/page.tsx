@@ -1,25 +1,22 @@
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
-import type { Locale } from "@/types/routing";
+import { getTranslations } from "next-intl/server";
+import type { PageProps } from "@/types/routing";
 
 export default async function ProjectsPage({
   params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+}: PageProps<{ locale: "he" | "en" | "th" }>) {
   const { locale } = await params;
-
-  const safeLocale: Locale =
-    locale === "he" || locale === "en" || locale === "th" ? (locale as Locale) : "en";
+  const t = await getTranslations({ locale, namespace: "projects" });
 
   return (
-    <section style={{ padding: "60px 20px", maxWidth: "1200px", margin: "0 auto" }}>
-      <h1 style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "20px" }}>
-        {safeLocale === "he"
-          ? "הפרויקטים שלנו"
-          : safeLocale === "th"
-          ? "โครงการของเรา"
-          : "Our Projects"}
+    <section
+      style={{ padding: "60px 20px", maxWidth: "1200px", margin: "0 auto" }}
+    >
+      <h1
+        style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "20px" }}
+      >
+        {t("pageTitle")}
       </h1>
       <div
         style={{
@@ -29,7 +26,7 @@ export default async function ProjectsPage({
         }}
       >
         {projects.map((p) => (
-          <ProjectCard key={p.slug} locale={safeLocale} project={p} />
+          <ProjectCard key={p.slug} locale={locale} project={p} />
         ))}
       </div>
     </section>

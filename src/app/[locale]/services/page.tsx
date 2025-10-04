@@ -1,6 +1,6 @@
 import { services } from "@/data/services";
 import styles from "@/styles/Services.module.css";
-import type { Locale } from "@/types/routing";
+import { getTranslations } from "next-intl/server";
 
 export default async function ServicesPage({
   params,
@@ -8,40 +8,18 @@ export default async function ServicesPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-
-  const safeLocale: Locale =
-    locale === "he" || locale === "en" || locale === "th"
-      ? (locale as Locale)
-      : "en";
-
-  const title =
-    safeLocale === "he"
-      ? "השירותים שלנו"
-      : safeLocale === "th"
-      ? "บริการของเรา"
-      : "Our Services";
+  const t = await getTranslations({ locale, namespace: "services" });
 
   return (
     <section className={styles.container}>
-      <h1 className={styles.title}>{title}</h1>
+      <h1 className={styles.title}>{t("title")}</h1>
+
       <div className={styles.grid}>
         {services.map((s) => (
           <div key={s.key} className={styles.card}>
             <div className={styles.icon}>{s.icon}</div>
-            <h2 className={styles.serviceTitle}>
-              {safeLocale === "he"
-                ? s.titleHE
-                : safeLocale === "th"
-                ? s.titleTH
-                : s.titleEN}
-            </h2>
-            <p className={styles.desc}>
-              {safeLocale === "he"
-                ? s.descHE
-                : safeLocale === "th"
-                ? s.descTH
-                : s.descEN}
-            </p>
+            <h2 className={styles.serviceTitle}>{t(`${s.key}.title`)}</h2>
+            <p className={styles.desc}>{t(`${s.key}.desc`)}</p>
           </div>
         ))}
       </div>

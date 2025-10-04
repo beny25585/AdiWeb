@@ -1,63 +1,160 @@
 .about {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 50px 20px;
+  padding: 80px 20px;
+}
+
+.pageTitle {
+  font-size: 3rem;
   text-align: center;
+  color: #1e90ff;
+  margin-bottom: 10px;
 }
 
-.title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #0b3a82;
-}
-
-.subtitle {
+.pageSubtitle {
+  text-align: center;
   font-size: 1.2rem;
-  margin-bottom: 50px;
+  color: #555;
+  margin-bottom: 80px;
+}
+
+/* CEO Section */
+.ceoSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.ceoImage img {
+  border-radius: 12px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+.ceoImage img:hover {
+  filter: grayscale(0%);
+}
+
+.ceoInfo {
+  text-align: left;
+}
+
+[dir="rtl"] .ceoInfo {
+  text-align: right;
+}
+
+[dir="rtl"] .bio {
+  direction: rtl;
+  text-align: right;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e90ff;
+  margin-bottom: 10px;
+}
+
+.role {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.bio {
+  font-size: 1rem;
+  line-height: 1.8;
   color: #444;
 }
 
-.grid {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+/* Divider */
+.divider {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  margin: 60px 0;
+}
+
+/* Team Section */
+.sectionTitle {
+  text-align: center;
+  font-size: 2rem;
+  color: #1e90ff;
   margin-bottom: 40px;
 }
 
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
 .person {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 25px;
   text-align: center;
-  max-width: 400px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.person:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.person img {
+  border-radius: 50%;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+  margin-bottom: 15px;
+}
+.person img:hover {
+  filter: grayscale(0%);
 }
 
 .person h3 {
-  margin-top: 16px;
   font-size: 1.4rem;
+  color: #1e90ff;
+  margin-bottom: 8px;
 }
 
 .person p {
   font-size: 1rem;
-  color: #666;
+  color: #555;
 }
 
+/* Vision */
 .vision {
-  max-width: 800px;
-  margin: 0 auto;
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9f9f9;
+  border-radius: 16px;
 }
 
 .vision h2 {
   font-size: 2rem;
-  margin-bottom: 16px;
-  color: #0b3a82;
+  color: #1e90ff;
+  margin-bottom: 20px;
 }
 
 .vision p {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #444;
 }
-.bio {
-  font-size: 1rem;
-  line-height: 1.7;
-  text-align: justify;
-  margin-top: 10px;
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ceoSection {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .ceoInfo {
+    text-align: center;
+  }
 }

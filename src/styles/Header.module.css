@@ -1,5 +1,5 @@
 .header {
-  background: #0b3a82;
+  background: DodgerBlue;
   color: white;
   padding: 1rem 2rem;
   position: sticky;
@@ -16,14 +16,21 @@
 }
 
 .logo {
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  height: 50px;
 }
 
-/* --- תפריט Desktop --- */
+.logosWrap {
+  display: flex;
+  align-items: center;
+}
+
+.logosWrap img {
+  width: auto;
+  object-fit: contain;
+}
+
 .nav {
   display: flex;
   gap: 2rem;
@@ -74,7 +81,6 @@
   transform: scale(1.05);
 }
 
-/* ריבוע לבן מסביב לדגל הנבחר */
 .langs a.active {
   background: #fff;
   border-radius: 6px;
@@ -98,10 +104,10 @@
     flex-direction: column;
     align-items: center;
     position: absolute;
-    top: 60px;
+    top: 70px;
     right: 0;
-    background: #0b3a82;
-    width: 100%;
+    background: DodgerBlue;
+    width: 50%;
     padding: 0 1rem;
     gap: 1.5rem;
     border-bottom: 2px solid #092a5f;

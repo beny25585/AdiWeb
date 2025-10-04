@@ -1,7 +1,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --accent: #0b3a82;
+  --accent: #1e90ff;
   --text-large: 2.5rem;
   --text-medium: 1.5rem;
   --text-small: 1rem;
@@ -59,7 +59,7 @@ p {
   padding: 0 !important;
   font-size: var(--text-medium);
   margin-bottom: 1.2em;
-  color: #333;
+  color: #ffffff;
 }
 
 .fade-in {

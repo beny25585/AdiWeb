@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "@/styles/globals.css";
 
-
 export default async function LocaleLayout({
   children,
   params,
@@ -13,6 +12,7 @@ export default async function LocaleLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  const dir = locale === "he" ? "rtl" : "ltr";
 
   if (!["he", "en", "th"].includes(locale)) {
     notFound();
@@ -27,9 +27,11 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <Header />
-      {children}
-      <Footer />
+        <Header />
+      <div data-locale={locale} dir={dir}>
+        {children}
+      </div>
+        <Footer />
     </NextIntlClientProvider>
   );
 }
