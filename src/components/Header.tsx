@@ -3,15 +3,13 @@
 import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
-import { useTranslations } from "next-intl";
-import { usePathname } from "next/navigation";
+import { useTranslations, useLocale } from "next-intl";
 import styles from "@/styles/Header.module.css";
 import { useEffect, useRef } from "react";
 
 export default function Header() {
   const navRef = useRef<HTMLDivElement>(null);
-  const pathname = usePathname();
-  const locale = pathname.split("/")[1] || "en";
+  const locale = useLocale();
   const t = useTranslations("header");
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -81,24 +79,30 @@ export default function Header() {
 
           <div className={styles.langs}>
             <Link href="/he" className={locale === "he" ? styles.active : ""}>
-              <img
+              <Image
                 src="https://flagcdn.com/w40/il.png"
                 alt="עברית"
                 className={styles.flag}
+                width={140}
+                height={100}
               />
             </Link>
             <Link href="/en" className={locale === "en" ? styles.active : ""}>
-              <img
+              <Image
                 src="https://flagcdn.com/w40/us.png"
                 alt="English"
                 className={styles.flag}
+                width={140}
+                height={100}
               />
             </Link>
             <Link href="/th" className={locale === "th" ? styles.active : ""}>
-              <img
+              <Image
                 src="https://flagcdn.com/w40/th.png"
                 alt="ไทย"
                 className={styles.flag}
+                width={140}
+                height={100}
               />
             </Link>
           </div>

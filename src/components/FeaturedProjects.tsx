@@ -1,48 +1,48 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
-import styles from "@/styles/FeaturedProjects.module.css";
+import Image from "next/image";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
 import { projects } from "@/data/projects";
 import { useTranslations } from "next-intl";
-import type { Locale } from "@/types/routing";
-import { useEffect, useRef } from "react";
+import type { Locale } from "@/lib/i18n";
+import styles from "@/styles/FeaturedProjects.module.css";
 
 export default function FeaturedProjects({ locale }: { locale: Locale }) {
   const t = useTranslations("projects");
   const tH = useTranslations("featuredProjects");
-  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const scroll = (direction: "left" | "right") => {
-    if (!scrollRef.current) return;
-    const { scrollLeft, clientWidth } = scrollRef.current;
-    const scrollAmount =
-      direction === "left" ? -clientWidth / 1.2 : clientWidth / 1.2;
+  const items = projects.map((p, i) => (
+    <div key={i} className={styles.card}>
+      <div className={styles.imageWrap}>
+        <Image
+          src={p.image}
+          alt={t(`${p.slug}.title`)}
+          fill
+          className={styles.image}
+        />
+      </div>
+      <div className={styles.overlay}>
+        <h3>{t(`${p.slug}.title`)}</h3>
+        <p>{t(`${p.slug}.location`)}</p>
+      </div>
+    </div>
+  ));
 
-    scrollRef.current.scrollTo({
-      left: scrollLeft + scrollAmount,
-      behavior: "smooth",
-    });
+  const responsive = {
+    0: { items: 1 },
+    768: { items: 2 },
+    1200: { items: 3 },
   };
 
-  useEffect(() => {
-    const cards = document.querySelectorAll(`.${styles.card}`);
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(styles.visible!);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    cards.forEach((card) => observer.observe(card));
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section className={styles.section}>
+    <section
+      className={`${styles.section} ${
+        locale === "he" ? styles.rtl : styles.ltr
+      }`}
+    >
       <div className={styles.right}>
         <h2>{tH("title")}</h2>
         <p>{tH("desc")}</p>
@@ -50,33 +50,26 @@ export default function FeaturedProjects({ locale }: { locale: Locale }) {
           {tH("cta")}
         </Link>
       </div>
-      <div className={styles.carouselWrapper}>
-        <button
-          className={`${styles.arrow} ${styles.rightArrow}`}
-          onClick={() => scroll("right")}
-          aria-label="Scroll Right"
-        >
-          ‹
-        </button>
 
-        <div ref={scrollRef} className={styles.left}>
-          {projects.map((p, i) => (
-            <div key={i} className={`${styles.card}`}>
-              <img src={p.image} alt={t(`${p.slug}.title`)} />
-              <div className={styles.overlay}>
-                <h3>{t(`${p.slug}.title`)}</h3>
-                <p>{t(`${p.slug}.location`)}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <button
-          className={`${styles.arrow} ${styles.leftArrow}`}
-          onClick={() => scroll("left")}
-          aria-label="Scroll Left"
-        >
-          ›
-        </button>
+      <div className={styles.carouselWrapper}>
+        <AliceCarousel
+          mouseTracking
+          items={items}
+          responsive={responsive}
+          infinite
+          disableDotsControls
+          autoPlayInterval={5000}
+          animationDuration={800}
+          autoPlay
+          renderPrevButton={() => (
+            <button className={`${styles.arrow} ${styles.leftArrow}`}>‹</button>
+          )}
+          renderNextButton={() => (
+            <button className={`${styles.arrow} ${styles.rightArrow}`}>
+              ›
+            </button>
+          )}
+        />
       </div>
     </section>
   );

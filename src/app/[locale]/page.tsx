@@ -1,28 +1,14 @@
 import Hero from "@/components/Hero";
-
-import type { Locale } from "@/types/routing";
-import { getTranslations } from "next-intl/server";
 import FeaturedProjects from "@/components/FeaturedProjects";
+import { useLocale } from "next-intl";
+import type { Locale } from "@/lib/i18n";
 
-export default async function HomePage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
-
-  const safeLocale: Locale =
-    locale === "he" || locale === "en" || locale === "th"
-      ? (locale as Locale)
-      : "en";
-
-  const t = await getTranslations({ locale: safeLocale, namespace: "home" });
-
+export default function HomePage() {
+  const locale = useLocale();
   return (
     <main>
       <Hero />
-      <FeaturedProjects locale={safeLocale} />
-     
+      <FeaturedProjects locale={locale as Locale} />
     </main>
   );
 }

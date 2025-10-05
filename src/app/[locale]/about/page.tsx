@@ -2,13 +2,14 @@ import Image from "next/image";
 import styles from "@/styles/about.module.css";
 import { getTranslations } from "next-intl/server";
 import { team } from "@/data/team";
+import type { Locale } from "@/lib/i18n";
 
 export default async function AboutPage({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: { locale: Locale };
 }) {
-  const { locale } = await params;
+  const { locale } = params;
   const t = await getTranslations({ locale, namespace: "about" });
 
   return (

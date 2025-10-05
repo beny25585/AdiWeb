@@ -1,12 +1,14 @@
 import { projects } from "@/data/projects";
 import ProjectCard from "@/components/ProjectCard";
 import { getTranslations } from "next-intl/server";
-import type { PageProps } from "@/types/routing";
+import { Locale } from "@/lib/i18n";
 
 export default async function ProjectsPage({
   params,
-}: PageProps<{ locale: "he" | "en" | "th" }>) {
-  const { locale } = await params;
+}: {
+  params: { locale: Locale };
+}) {
+  const { locale } = params;
   const t = await getTranslations({ locale, namespace: "projects" });
 
   return (

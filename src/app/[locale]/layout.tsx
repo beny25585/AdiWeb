@@ -4,19 +4,22 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "@/styles/globals.css";
 
+const SUPPORTED_LOCALES = ["he", "en", "th"] as const;
+type Locale = (typeof SUPPORTED_LOCALES)[number];
+const DEFAULT_LOCALE: Locale = "en";
+
 export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale?: string };
 }) {
-  const { locale } = await params;
-  const dir = locale === "he" ? "rtl" : "ltr";
+  const locale = SUPPORTED_LOCALES.includes(params.locale as Locale)
+    ? (params.locale as Locale)
+    : DEFAULT_LOCALE;
 
-  if (!["he", "en", "th"].includes(locale)) {
-    notFound();
-  }
+  const dir = locale === "he" ? "rtl" : "ltr";
 
   let messages;
   try {
@@ -26,12 +29,14 @@ export default async function LocaleLayout({
   }
 
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
-        <Header />
-      <div data-locale={locale} dir={dir}>
-        {children}
-      </div>
-        <Footer />
-    </NextIntlClientProvider>
+    <html lang={locale} dir={dir}>
+      <body>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <Header />
+          <main data-locale={locale}>{children}</main>
+          <Footer />
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }

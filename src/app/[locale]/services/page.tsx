@@ -1,13 +1,14 @@
 import { services } from "@/data/services";
 import styles from "@/styles/Services.module.css";
 import { getTranslations } from "next-intl/server";
+import type { Locale } from "@/lib/i18n";
 
 export default async function ServicesPage({
   params,
 }: {
-  params: Promise<{ locale: string }>;
+  params: { locale: Locale };
 }) {
-  const { locale } = await params;
+  const { locale } = params;
   const t = await getTranslations({ locale, namespace: "services" });
 
   return (
