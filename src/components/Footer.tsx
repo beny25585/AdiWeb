@@ -16,12 +16,6 @@ export default function Footer() {
     <footer dir={dir} className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.col}>
-          <Image
-            src="/Photos/uzanGroup.jpg"
-            alt="uzanGroup Logo"
-            width={140}
-            height={40}
-          />
           <h4>{t("companyTitle")}</h4>
           <p>
             {t("address")} <br />
@@ -67,13 +61,27 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div className={styles.col}>
-          <h4>{t("newsletterTitle")}</h4>
-          <form className={styles.newsletter}>
-            <input type="email" placeholder={t("newsletterPlaceholder")} />
-            <button type="submit">{t("newsletterButton")}</button>
-          </form>
+        {/* === BRAND SECTION === */}
+        <div className={styles.brandSection}>
+          <div className={styles.brandInner}>
+            <Image
+              src="/Photos/uzanGroup-removebg.png" // A&S logo (diamond)
+              alt="A&S Uzan Group Logo"
+              width={160}
+              height={160}
+              className={styles.logoLeft}
+            />
+            <Image
+              src="/Photos/logoUzan-removebg.png" // UZAN logo text
+              alt="UZAN Logo"
+              width={350}
+              height={160}
+              className={styles.logoRight}
+            />
+          </div>
         </div>
+
+       
       </div>
 
       <div className={styles.copy}>© 2025 {t("rights")}</div>

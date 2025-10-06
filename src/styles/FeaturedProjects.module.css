@@ -15,10 +15,10 @@
 
 /* RTL / LTR */
 .section.rtl {
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 .section.ltr {
-  flex-direction: row;
+  flex-direction: row-reverse;
 }
 
 /* === TEXT AREA === */
@@ -211,6 +211,7 @@
 @media (max-width: 600px) {
   .section {
     max-width: 100%;
+    height: 400px;
     padding: 10px 0px;
     gap: 20px;
   }
