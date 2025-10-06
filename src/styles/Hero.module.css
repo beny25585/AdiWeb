@@ -1,7 +1,7 @@
 .hero {
   background: linear-gradient(rgba(2, 12, 34, 0.6), rgba(2, 12, 34, 0.8)),
     url("/images/hero.jpg") center/cover no-repeat;
-  min-height: 70vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,5 +98,10 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@media (max-width: 900px) {
+  .hero {
+    min-height: 50vh;
   }
 }

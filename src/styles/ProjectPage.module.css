@@ -1,7 +1,9 @@
 .project {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 60px 20px;
+  height: 80%;
+  width: 80%;
 }
 
 .title {
@@ -61,11 +63,19 @@
   .gallery {
     column-count: 2;
   }
+  .project {
+    height: 70%;
+    width: 70%;
+  }
 }
 
 @media (max-width: 600px) {
   .gallery {
     column-count: 1;
+  }
+  .project {
+    height: 60%;
+    width: 60%;
   }
 }
 
