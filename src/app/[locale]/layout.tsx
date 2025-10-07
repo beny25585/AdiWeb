@@ -29,14 +29,12 @@ export default async function LocaleLayout({
   }
 
   return (
-    <html lang={locale} dir={dir}>
-      <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <Header />
-          <main data-locale={locale}>{children}</main>
-          <Footer />
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <div lang={locale} dir={dir}>
+        <Header />
+        <main data-locale={locale}>{children}</main>
+        <Footer />
+      </div>
+    </NextIntlClientProvider>
   );
 }

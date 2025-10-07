@@ -9,17 +9,15 @@
   box-sizing: border-box;
 }
 
-/* === רשת מסודרת ל־Desktop === */
 .inner {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 עמודות שוות */
+  grid-template-columns: repeat(4, 1fr);
   gap: 40px;
   width: 100%;
   max-width: 1400px;
   align-items: start;
 }
 
-/* כל עמודה */
 .col {
   display: flex;
   flex-direction: column;
@@ -29,7 +27,6 @@
   gap: 10px;
 }
 
-/* === כותרות === */
 .col h4 {
   font-size: 1.6rem;
   font-weight: 800;
@@ -39,7 +36,6 @@
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* === טקסטים וקישורים === */
 .col p,
 .col a,
 .col li {
@@ -69,7 +65,6 @@
   color: #00d4df;
 }
 
-/* === סושיאל === */
 .socials {
   display: flex;
   flex-direction: column;
@@ -84,53 +79,18 @@
   font-size: 1rem;
 }
 
-/* === טופס הרשמה === */
-.newsletter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  border-radius: 6px;
-  overflow: hidden;
-  width: 100%;
-  max-width: 320px;
-}
-
-.newsletter input {
-  flex: 1;
-  border: none;
-  padding: 12px;
-  font-size: 0.9rem;
-  outline: none;
-}
-
-.newsletter button {
-  background: #00c0c7;
-  color: #000;
-  border: none;
-  padding: 12px 18px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.newsletter button:hover {
-  background: #06d0d8;
-}
-
 .brandSection {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 50px;
-  margin-top: 30px;
 }
 
 .logoLeft {
-  padding-right: 65px;
-  width: 200px;
-  height: 120px;
+  padding-left: 40px;
+  width: 210px;
+  height: 130px;
   justify-content: center;
   filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1));
   transition: transform 0.3s ease;
@@ -153,7 +113,6 @@
   opacity: 1;
 }
 
-/* === שורת זכויות === */
 .copy {
   text-align: center;
   font-size: 0.9rem;
@@ -178,35 +137,27 @@
     text-align: center;
   }
 
-  .newsletter {
-    flex-direction: column;
-    max-width: 250px;
-  }
-
-  .newsletter input,
-  .newsletter button {
-    width: 100%;
-  }
-
   .socials {
     align-items: center;
-  }
-
-  .footer img {
-    margin: 10px auto 0;
-  }
-}
-
-@media (max-width: 400px) {
-  .brandSection {
-    flex-direction: column;
-    gap: 20px;
   }
 
   .logoLeft {
     width: 160px;
     height: 130px;
     padding-bottom: 27px;
+  }
+}
+
+@media (max-width: 500px) {
+  .brandSection {
+    flex-direction: column;
+  }
+
+  .logoLeft {
+    margin-top: 20px;
+    padding-right: 50px;
+    width: 250px;
+    height: 160px;
   }
   .logoRight {
     width: 240px;

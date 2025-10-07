@@ -18,7 +18,8 @@ export default function Header() {
       if (
         menuOpen &&
         navRef.current &&
-        !navRef.current.contains(e.target as Node)
+        !navRef.current.contains(e.target as Node) &&
+        !(e.target as HTMLElement).closest(`.${styles.hamburger}`)
       ) {
         setMenuOpen(false);
       }
@@ -57,7 +58,7 @@ export default function Header() {
 
         <button
           className={styles.hamburger}
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen((prev) => !prev)}
           aria-label="Toggle navigation"
         >
           {menuOpen ? "✖" : "☰"}
