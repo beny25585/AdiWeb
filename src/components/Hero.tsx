@@ -29,6 +29,7 @@ export default function Hero() {
       }, 1000);
       return () => clearTimeout(reset);
     }
+    return;
   }, [index]);
 
   return (
@@ -42,7 +43,10 @@ export default function Hero() {
             <Link href={`/${locale}/projects`} className={styles.buttonPrimary}>
               {t("projectsBtn")}
             </Link>
-            <Link href={`/${locale}/contact`} className={styles.buttonSecondary}>
+            <Link
+              href={`/${locale}/contact`}
+              className={styles.buttonSecondary}
+            >
               {t("contactBtn")}
             </Link>
           </div>
