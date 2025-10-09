@@ -63,7 +63,7 @@ export default function Hero() {
           >
             {loopImages.map((img, i) => (
               <div key={i} className={styles.slide}>
-                <Image src={img.src} alt={img.alt} />
+                <Image src={img.src} alt={img.alt} height={400} width={400} />
               </div>
             ))}
           </div>
