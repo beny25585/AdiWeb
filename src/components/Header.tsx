@@ -46,12 +46,14 @@ export default function Header() {
               alt="uzanGroup Logo"
               width={100}
               height={100}
+              className={styles.left}
             />
             <Image
               src="/Photos/logoUzan-removebg.png"
               alt="UZAN Logo"
               width={240}
               height={150}
+              className={styles.right}
             />
           </div>
         </Link>

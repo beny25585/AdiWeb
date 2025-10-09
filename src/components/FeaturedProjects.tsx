@@ -6,13 +6,13 @@ import Image from "next/image";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { projects } from "@/data/projects";
-import { useTranslations } from "next-intl";
-import type { Locale } from "@/lib/i18n";
+import { useTranslations, useLocale } from "next-intl";
 import styles from "@/styles/FeaturedProjects.module.css";
 
-export default function FeaturedProjects({ locale }: { locale: Locale }) {
+export default function FeaturedProjects() {
   const t = useTranslations("projects");
   const tH = useTranslations("featuredProjects");
+  const locale = useLocale();
 
   const items = projects.map((p, i) => (
     <div key={i} className={styles.card}>
