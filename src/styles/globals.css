@@ -1,7 +1,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --accent: #1e90ff;
+  --accent: #000102;
   --text-large: 2.5rem;
   --text-medium: 1.5rem;
   --text-small: 1rem;
@@ -20,6 +20,7 @@
 }
 html {
   font-size: 80%;
+  height: 100%;
 }
 @media (max-width: 900px) {
   html {
@@ -30,23 +31,32 @@ html {
 html,
 body {
   width: 100%;
+  height: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  height: 100%;
   border: 40x solid red;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 body {
-  margin: 0 !important;
-  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   color: var(--foreground);
   background: var(--background);
   font-family: "Segoe UI", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.7;
+}
+main {
+  flex: 1;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -70,6 +80,10 @@ p {
   color: #ffffff;
 }
 
+footer {
+  margin-top: auto;
+  width: 100%;
+}
 .fade-in {
   animation: fadeIn 1s ease-in-out forwards;
   opacity: 0;

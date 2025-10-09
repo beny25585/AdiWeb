@@ -4,7 +4,13 @@ import styles from "@/styles/Footer.module.css";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaLinkedin,
+  FaYoutube,
+  FaWhatsapp,
+  FaLine,
+} from "react-icons/fa";
 
 export default function Footer() {
   const locale = useLocale();
@@ -50,40 +56,64 @@ export default function Footer() {
         <div className={styles.col}>
           <h4>{t("socialTitle")}</h4>
           <div className={styles.socials}>
-            <a href="https://facebook.com" target="_blank">
+            <a
+              href="https://wa.me/66960142849"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp /> WhatsApp
+            </a>
+            <a
+              href="https://line.me/ti/p/~YOUR_LINE_ID"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLine /> Line
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaFacebook /> Facebook
             </a>
-            <a href="https://linkedin.com" target="_blank">
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaLinkedin /> LinkedIn
             </a>
-            <a href="https://youtube.com" target="_blank">
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaYoutube /> YouTube
             </a>
           </div>
         </div>
+
         {/* === BRAND SECTION === */}
-        <div className={styles.brandSection}>
-          <div className={styles.brandInner}>
+        <div className={styles.col}>
+          <div className={styles.brandSection}>
             <Image
-              src="/Photos/uzanGroup-removebg.png" // A&S logo (diamond)
+              src="/Photos/uzanGroup-removebg.png"
               alt="A&S Uzan Group Logo"
-              width={160}
-              height={160}
+              width={180}
+              height={110}
               className={styles.logoLeft}
             />
             <Image
-              src="/Photos/logoUzan-removebg.png" // UZAN logo text
+              src="/Photos/logoUzan-removebg.png"
               alt="UZAN Logo"
-              width={350}
-              height={160}
+              width={300}
+              height={100}
               className={styles.logoRight}
             />
           </div>
         </div>
-
-       
       </div>
-
       <div className={styles.copy}>© 2025 {t("rights")}</div>
     </footer>
   );

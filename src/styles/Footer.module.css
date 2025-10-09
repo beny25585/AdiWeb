@@ -1,18 +1,18 @@
 .footer {
-  background: linear-gradient(180deg, #0b3a82 0%, #1b3e7c 100%);
+  background: black;
   color: #fff;
-  padding: 60px 10% 20px;
+  padding: 15px 20px 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 12px;
   box-sizing: border-box;
 }
 
 .inner {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
+  gap: 15px;
   width: 100%;
   max-width: 1400px;
   align-items: start;
@@ -24,14 +24,14 @@
   justify-content: flex-start;
   align-items: center;
   text-align: center;
-  gap: 10px;
+  gap: 6px;
 }
 
 .col h4 {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: #00d4df;
-  margin-bottom: 12px;
+  margin-bottom: 6px;
   letter-spacing: 0.4px;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
@@ -40,8 +40,8 @@
 .col a,
 .col li {
   color: #eaeaea;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.4;
   margin: 0;
   padding: 0;
 }
@@ -53,7 +53,7 @@
 }
 
 .col li {
-  margin-bottom: 6px;
+  margin-bottom: 3px;
 }
 
 .col a {
@@ -68,7 +68,7 @@
 .socials {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
   align-items: center;
 }
 
@@ -76,7 +76,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .brandSection {
@@ -84,14 +84,13 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 15px;
+  margin-top: -10px;
 }
 
 .logoLeft {
-  padding-left: 40px;
-  width: 210px;
-  height: 130px;
-  justify-content: center;
+  width: 200px;
+  height: 120px;
   filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1));
   transition: transform 0.3s ease;
 }
@@ -101,7 +100,7 @@
 }
 
 .logoRight {
-  width: 260px;
+  width: 320px;
   height: auto;
   filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1));
   opacity: 0.95;
@@ -115,19 +114,27 @@
 
 .copy {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #ccc;
-  padding-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 8px;
   width: 100%;
-  margin-top: 30px;
 }
 
 /* === RESPONSIVE === */
 @media (max-width: 900px) {
   .inner {
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 15px;
+  }
+
+  .logoLeft {
+    width: 160px;
+    height: 100px;
+  }
+
+  .logoRight {
+    width: 260px;
   }
 }
 
@@ -142,26 +149,32 @@
   }
 
   .logoLeft {
-    width: 160px;
-    height: 130px;
-    padding-bottom: 27px;
+    width: 180px;
+    height: 110px;
+  }
+
+  .logoRight {
+    width: 280px;
   }
 }
 
 @media (max-width: 500px) {
+  .footer {
+    padding: 12px 15px 8px;
+  }
+
   .brandSection {
     flex-direction: column;
+    gap: 10px;
   }
 
   .logoLeft {
-    margin-top: 20px;
-    padding-right: 50px;
-    width: 250px;
-    height: 160px;
+    width: 200px;
+    height: 120px;
   }
+
   .logoRight {
-    width: 240px;
-    height: 130px;
-    padding: 0;
+    width: 300px;
+    height: auto;
   }
 }

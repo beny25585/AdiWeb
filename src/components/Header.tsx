@@ -44,14 +44,14 @@ export default function Header() {
             <Image
               src="/Photos/uzanGroup-removebg.png"
               alt="uzanGroup Logo"
-              width={60}
-              height={60}
+              width={100}
+              height={100}
             />
             <Image
               src="/Photos/logoUzan-removebg.png"
               alt="UZAN Logo"
-              width={140}
-              height={100}
+              width={240}
+              height={150}
             />
           </div>
         </Link>

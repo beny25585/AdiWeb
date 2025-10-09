@@ -1,7 +1,8 @@
 import { projects } from "@/data/projects";
-import ProjectCard from "@/components/ProjectCard";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Locale } from "@/lib/i18n";
+import styles from "@/styles/ProjectPage.module.css";
 
 export default async function ProjectsPage({
   params,
@@ -12,23 +13,22 @@ export default async function ProjectsPage({
   const t = await getTranslations({ locale, namespace: "projects" });
 
   return (
-    <section
-      style={{ padding: "60px 20px", maxWidth: "1200px", margin: "0 auto" }}
-    >
-      <h1
-        style={{ fontSize: "2rem", fontWeight: "bold", marginBottom: "20px" }}
-      >
-        {t("pageTitle")}
+    <section className={styles.section}>
+      <h1 className={styles.slogan}>
+        Global Architecture. Precision Construction.
       </h1>
-      <div
-        style={{
-          display: "grid",
-          gap: "20px",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-        }}
-      >
-        {projects.map((p) => (
-          <ProjectCard key={p.slug} locale={locale} project={p} />
+
+      <div className={styles.gallery}>
+        {projects.map((project) => (
+          <div key={project.slug} className={styles.card}>
+            <Image
+              src={project.image}
+              alt={t(`${project.slug}.title`)}
+              width={600}
+              height={400}
+            />
+            <div className={styles.caption}>{t(`${project.slug}.title`)}</div>
+          </div>
         ))}
       </div>
     </section>

@@ -40,7 +40,6 @@ export default function ProjectCard({
       </div>
       <div className={styles.body}>
         <h3 className={styles.title}>{t(`${project.slug}.title`)}</h3>
-        <p className={styles.location}>{t(`${project.slug}.location`)}</p>
       </div>
     </Link>
   );

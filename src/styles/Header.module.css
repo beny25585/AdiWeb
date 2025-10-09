@@ -1,7 +1,7 @@
 .header {
-  background: DodgerBlue;
+  background: rgb(0, 0, 0);
   color: white;
-  padding: 1rem 2rem;
+  padding: 0 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -11,14 +11,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  height: 50px;
 }
 
 .logosWrap {
@@ -27,7 +25,6 @@
 }
 
 .logosWrap img {
-  width: auto;
   object-fit: contain;
 }
 
@@ -110,7 +107,7 @@
     width: 50%;
     padding: 0 1rem;
     gap: 1.5rem;
-    border-bottom: 2px solid #092a5f;
+    border-bottom: 2px solid #000101;
     overflow: hidden;
 
     max-height: 0;
