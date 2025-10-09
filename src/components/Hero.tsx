@@ -5,6 +5,7 @@ import styles from "@/styles/Hero.module.css";
 import { useTranslations, useLocale } from "next-intl";
 import { useEffect, useState } from "react";
 import { heroImages } from "@/data/heroImages";
+import Image from "next/image";
 
 export default function Hero() {
   const t = useTranslations("hero");
@@ -62,7 +63,7 @@ export default function Hero() {
           >
             {loopImages.map((img, i) => (
               <div key={i} className={styles.slide}>
-                <img src={img.src} alt={img.alt} />
+                <Image src={img.src} alt={img.alt} />
               </div>
             ))}
           </div>
