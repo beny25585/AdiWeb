@@ -13,15 +13,19 @@
     --foreground: #090000;
   }
 }
+
+/* === RESET === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   font-size: 80%;
   height: 100%;
 }
+
 @media (max-width: 900px) {
   html {
     font-size: 70%;
@@ -36,11 +40,11 @@ body {
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  border: 40x solid red;
   margin: 0 !important;
   padding: 0 !important;
 }
 
+/* === BASE === */
 body {
   display: flex;
   flex-direction: column;
@@ -51,7 +55,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.7;
+  animation: fadeIn 0.8s ease-in-out forwards;
+  opacity: 0;
+  transform: translateY(10px);
 }
+
+/* === MAIN CONTENT === */
 main {
   flex: 1;
   width: 100%;
@@ -59,6 +68,7 @@ main {
   padding: 0;
 }
 
+/* === HEADINGS === */
 h1,
 h2,
 h3,
@@ -68,10 +78,9 @@ h4 {
   font-weight: 700;
   color: var(--accent);
   margin-bottom: 0.6em;
-  margin: 0;
-  padding: 0;
 }
 
+/* === PARAGRAPHS === */
 p {
   margin: 0 !important;
   padding: 0 !important;
@@ -80,18 +89,34 @@ p {
   color: #ffffff;
 }
 
+/* === FOOTER === */
 footer {
   margin-top: auto;
   width: 100%;
 }
+
+/* === ANIMATIONS === */
 .fade-in {
   animation: fadeIn 1s ease-in-out forwards;
   opacity: 0;
 }
 
+section,
+div,
+article {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* ✅ מאחדים את ההגדרה של האנימציה */
 @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
   to {
     opacity: 1;
-    transform: none;
+    transform: translateY(0);
   }
 }

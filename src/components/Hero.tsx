@@ -3,70 +3,63 @@
 import Link from "next/link";
 import styles from "@/styles/Hero.module.css";
 import { useTranslations, useLocale } from "next-intl";
-import { useEffect, useState } from "react";
 import { heroImages } from "@/data/heroImages";
+import AliceCarousel from "react-alice-carousel";
 import Image from "next/image";
 
 export default function Hero() {
   const t = useTranslations("hero");
   const locale = useLocale();
-  const [index, setIndex] = useState(0);
-  const loopImages = [...heroImages, ...heroImages];
-  const [isTransitioning, setIsTransitioning] = useState(true);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIsTransitioning(true);
-      setIndex((prev) => prev + 1);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
-
-  useEffect(() => {
-    if (index >= heroImages.length) {
-      const reset = setTimeout(() => {
-        setIsTransitioning(false);
-        setIndex(0);
-      }, 1000);
-      return () => clearTimeout(reset);
-    }
-    return;
-  }, [index]);
+  const items = heroImages.map((img, i) => (
+    <div key={i} className={styles.slideItem}>
+      <Image
+        src={img.src}
+        alt={img.alt}
+        width={800}
+        height={600}
+        className={styles.slideImage}
+      />
+    </div>
+  ));
 
   return (
     <section className={styles.hero}>
       <div className={styles.split}>
-        {/* --- צד טקסט --- */}
         <div className={styles.textSide}>
-          <h1>{t("headline")}</h1>
-          <p>{t("sub")}</p>
-          <div className={styles.buttons}>
-            <Link href={`/${locale}/projects`} className={styles.buttonPrimary}>
-              {t("projectsBtn")}
-            </Link>
-            <Link
-              href={`/${locale}/contact`}
-              className={styles.buttonSecondary}
-            >
-              {t("contactBtn")}
-            </Link>
+          <div className={styles.textBox}>
+            <h1>{t("headline")}</h1>
+            <p>{t("sub")}</p>
+            <div className={styles.buttons}>
+              <Link
+                href={`/${locale}/projects`}
+                className={styles.buttonPrimary}
+              >
+                {t("projectsBtn")}
+              </Link>
+              <Link
+                href={`/${locale}/contact`}
+                className={styles.buttonSecondary}
+              >
+                {t("contactBtn")}
+              </Link>
+            </div>
           </div>
         </div>
 
         {/* --- צד תמונה (קרוסלה) --- */}
         <div className={styles.imageSide}>
-          <div
-            className={`${styles.slides} ${
-              !isTransitioning ? styles.noTransition : ""
-            }`}
-            style={{ transform: `translateX(-${index * 100}%)` }}
-          >
-            {loopImages.map((img, i) => (
-              <div key={i} className={styles.slide}>
-                <Image src={img.src} alt={img.alt} height={400} width={400} />
-              </div>
-            ))}
-          </div>
+          <AliceCarousel
+            items={items}
+            autoPlay
+            infinite
+            autoPlayInterval={5000}
+            animationDuration={1000}
+            disableDotsControls
+            disableButtonsControls
+            mouseTracking={false}
+            touchTracking={false}
+          />
         </div>
       </div>
     </section>

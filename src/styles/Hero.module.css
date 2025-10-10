@@ -1,7 +1,6 @@
 .hero {
-  background: linear-gradient(90deg, #092b61 0%, #0b3a82 100%);
   color: #fff;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,25 +11,26 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
+  height: 100%;
   align-items: center;
 }
 
 .textSide {
-  padding: 0 60px;
+  margin-left: 30px;
   z-index: 2;
 }
 
 .textSide h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 900;
-  color: #1e90ff;
+  color: #020202;
   margin-bottom: 12px;
 }
 
 .textSide p {
   font-size: 1.4rem;
-  margin-bottom: 30px;
-  color: #d8e2f3;
+  color: #000000;
+  font-weight: 800;
 }
 
 /* --- כפתורים --- */
@@ -38,6 +38,7 @@
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .buttonPrimary,
@@ -50,36 +51,37 @@
 }
 
 .buttonPrimary {
-  background: #1e90ff;
+  background: #080808;
   color: white;
-  box-shadow: 0 8px 24px rgba(11, 58, 130, 0.4);
+  box-shadow: 0 10px 30px rgba(77, 77, 78, 0.4);
 }
 .buttonPrimary:hover {
-  background: #0b3a82;
-  transform: translateY(-3px);
+  background: #383838;
+  transform: translateY(-5px);
 }
 
 .buttonSecondary {
-  border: 2px solid white;
+  border: 2px solid rgb(10, 10, 10);
   background: transparent;
-  color: white;
+  color: rgb(7, 7, 7);
 }
 .buttonSecondary:hover {
   background: white;
-  color: #0b3a82;
-  transform: translateY(-3px);
+  color: #313132;
+  transform: translateY(-5px);
 }
 
-/* --- צד תמונה --- */
 .imageSide {
   position: relative;
-  height: 100hv;
+  height: 100vh;
+  width: 100%;
   overflow: hidden;
 }
 
 .slides {
   display: flex;
   height: 100%;
+  width: 100%;
   transition: transform 1s ease-in-out;
 }
 
@@ -90,31 +92,61 @@
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
-.noTransition {
-  transition: none;
-}
-
-/* --- הפיכת צדדים אוטומטית לפי שפה --- */
 [dir="rtl"] .slides {
   flex-direction: row-reverse;
 }
-/* --- רספונסיבי --- */
-@media (max-width: 900px) {
-  .hero {
-    height: 500px;
-    position: relative;
+.slideItem {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
 
+.slideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.alice-carousel__stage {
+  display: flex !important;
+}
+
+.alice-carousel__wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* --- רספונסיבי --- */
+@media (max-width: 1200px) {
+  .hero {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
   }
+  .textSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    height: 100%;
+  }
+  .textBox {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    padding: 40px 60px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  }
 
   .split {
-    display: block; /* ✅ ביטול גריד, הכול אחד על השני */
+    display: block;
   }
 
   .imageSide {
@@ -125,9 +157,8 @@
 
   .imageSide img {
     width: 100%;
-    height: 100%;
+    height: 90%;
     object-fit: cover;
-    filter: brightness(60%);
   }
 
   .textSide {
@@ -135,15 +166,6 @@
     z-index: 1;
     text-align: center;
     padding: 40px 20px;
-    color: #fff;
-  }
-
-  .textSide h1 {
-    color: #fff;
-  }
-
-  .textSide p {
-    color: #e0e0e0;
   }
 
   .buttons {

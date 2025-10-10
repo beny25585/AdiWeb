@@ -1,8 +1,9 @@
+import styles from "@/styles/ProjectPage.module.css";
 import { projects } from "@/data/projects";
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Locale } from "@/lib/i18n";
-import styles from "@/styles/ProjectPage.module.css";
+import Image from "next/image";
+import Link from "next/link";
 
 export default async function ProjectsPage({
   params,
@@ -20,7 +21,11 @@ export default async function ProjectsPage({
 
       <div className={styles.gallery}>
         {projects.map((project) => (
-          <div key={project.slug} className={styles.card}>
+          <Link
+            key={project.slug}
+            href={`/${locale}/projects/${project.slug}`}
+            className={styles.card}
+          >
             <Image
               src={project.image}
               alt={t(`${project.slug}.title`)}
@@ -28,7 +33,7 @@ export default async function ProjectsPage({
               height={400}
             />
             <div className={styles.caption}>{t(`${project.slug}.title`)}</div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

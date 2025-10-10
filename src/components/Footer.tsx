@@ -100,7 +100,7 @@ export default function Footer() {
             <Image
               src="/Photos/uzanGroup-removebg.png"
               alt="A&S Uzan Group Logo"
-              width={180}
+              width={170}
               height={110}
               className={styles.logoLeft}
             />
