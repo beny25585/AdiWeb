@@ -64,7 +64,7 @@ export default function Footer() {
               <FaWhatsapp /> WhatsApp
             </a>
             <a
-              href="https://line.me/ti/p/~YOUR_LINE_ID"
+              href="https://line.me/ti/p/66960142849"
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -16,7 +16,7 @@ export default async function ProjectsPage({
   return (
     <section className={styles.section}>
       <h1 className={styles.slogan}>
-        Global Architecture. Precision Construction.
+       {t("slogan")}
       </h1>
 
       <div className={styles.gallery}>

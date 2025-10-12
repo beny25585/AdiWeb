@@ -16,7 +16,6 @@
 }
 
 .textSide {
-  margin-left: 30px;
   z-index: 2;
 }
 
@@ -170,5 +169,25 @@
 
   .buttons {
     justify-content: center;
+  }
+}
+@media (max-width: 600px) {
+  .textBox {
+    padding: 30px 20px;
+    margin: 0 5px;
+  }
+
+  .textSide h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .textSide p {
+    font-size: 1.2rem;
+  }
+
+  .buttonPrimary,
+  .buttonSecondary {
+    padding: 12px 24px;
+    font-size: 0.9rem;
   }
 }

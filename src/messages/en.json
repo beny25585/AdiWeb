@@ -7,54 +7,49 @@
     "contact": "Contact"
   },
   "hero": {
-    "headline": "Engineering the Future",
-    "sub": "Professional corporate, engineering and international solutions",
-    "projectsBtn": "Our Projects",
-    "contactBtn": "Contact Us"
+    "headline": "Engineering Excellence. Redefining Possibilities.",
+    "sub": "Where vision meets precision — delivering corporate, architectural, and engineering solutions that stand above the rest.",
+    "projectsBtn": "Explore Our Projects",
+    "contactBtn": "Let's Talk"
   },
   "footer": {
     "companyTitle": "Our Company",
     "address": "1219/2 Sukhumvit Rd, Khlong Tan Nuea, Watthana, Bangkok 10110, Thailand",
     "phone": "+66 96-014-2849",
     "WhatsApp": "+66 96-014-2849",
-    "linksTitle": "Links",
+    "linksTitle": "Explore",
     "socialTitle": "Follow Us",
     "careers": "Careers",
-    "esg": "ESG",
-    "rights": "All rights reserved",
-    "newsletterTitle": "Stay Updated",
-    "newsletterPlaceholder": "Enter your email",
-    "newsletterButton": "Subscribe"
+    "esg": "Sustainability",
+    "rights": "© All rights reserved to A&S UZAN GROUP",
+    "newsletterTitle": "Stay Connected",
+    "newsletterPlaceholder": "Enter your email address",
+    "newsletterButton": "Subscribe Now"
   },
   "about": {
     "title": "About the Company",
-    "subtitle": "Adi and Shira lead the company with international experience in construction and architecture.",
+    "subtitle": "Led by Adi and Shira, A&S UZAN GROUP combines engineering precision, architectural excellence, and international experience to deliver world-class results.",
     "adiName": "Adi",
     "adiRole": "CEO",
     "adiBio": "Born in 1997, Adi is a Civil Engineering graduate with over 10 years of hands-on experience in the construction industry. He has worked with leading companies, managing diverse projects from residential buildings to large-scale infrastructure. Adi specializes in site management, safety supervision, and integrating innovative construction methods. Passionate about architecture and engineering from a young age, he is committed to delivering projects with reliability, precision, and international standards.",
     "adiAlt": "Adi – CEO",
-
     "companyTitle": "Our Team",
-
     "shiraName": "Shira",
     "shiraRole": "Deputy CEO & Partner",
     "shiraAlt": "Shira – Deputy CEO",
-
     "aviName": "Avi",
     "aviRole": "Chief Engineer",
     "aviAlt": "Avi – Chief Engineer",
-
     "noaName": "Noa",
     "noaRole": "Project Manager",
     "noaAlt": "Noa – Project Manager",
-
     "visionTitle": "Our Vision",
-    "visionText": "To build at the highest quality while upholding trust, sustainability, and innovation."
+    "visionText": "To set new standards in construction and architecture — through trust, innovation, and a relentless pursuit of perfection."
   },
   "contact": {
-    "title": "We’d Love to Hear from You!",
-    "formSuccess": "Form sent successfully!",
-"subtitle": "Have a project in mind? We're here to listen, advise, and turn your vision into reality.",
+    "title": "We’d Love to Hear from You",
+    "formSuccess": "Your message has been sent successfully!",
+    "subtitle": "Have a project in mind? Let’s turn your ideas into reality with professionalism, creativity, and unmatched dedication.",
     "phoneLabel": "Phone",
     "emailLabel": "Email",
     "siteLabel": "Website",
@@ -69,94 +64,96 @@
       "message": "Message",
       "submit": "Send Message"
     },
-    "privacyNote": "I confirm the {privacyPolicyLink} and agree that the information provided will be used for contact purposes.",
+    "privacyNote": "By submitting, I agree to the {privacyPolicyLink} and consent to the use of my information for contact purposes.",
     "privacyPolicy": "Privacy Policy"
   },
   "services": {
-    "title": "Our Services",
+    "title": "Our Expertise",
     "landscape": {
       "title": "Landscape Architecture",
-      "desc": "The Landscape Architecture Division at UZAN specializes in planning open spaces and gardens, including the design of public areas, parks, and green spaces, to create efficient and sustainable environments."
+      "desc": "Designing inspiring outdoor environments — parks, gardens, and public spaces that harmonize beauty with sustainability."
     },
     "architecture": {
       "title": "Architecture & Planning",
-      "desc": "Full architectural design, sketches, and leading architects’ work."
+      "desc": "Comprehensive architectural design and planning that balance creativity, function, and precision."
     },
     "finishing": {
       "title": "Interior & Exterior Finishing",
-      "desc": "High-quality finishing, custom adjustments, and premium work."
+      "desc": "Premium finishing work with meticulous craftsmanship and attention to every detail."
     },
     "interior": {
       "title": "Interior Design",
-      "desc": "Functional and innovative spaces with international inspiration."
+      "desc": "Transforming spaces with style and purpose — blending elegance, innovation, and comfort."
     }
   },
   "projects": {
+    "slogan":"Global Architecture. Precision Construction.", 
     "pageTitle": "Our Projects",
+    "scrollDown": "Scroll Down to Discover More",
     "electricCabin": {
       "title": "Electric Cabin",
-      "description": "Renovation and setup of a modern electric cabin",
+      "description": "Renovation and setup of a modern, high-standard electric cabin with advanced safety systems.",
       "location": "Netanya"
     },
     "kitchen": {
       "title": "Luxury Kitchen",
-      "description": "Complete renovation with premium finishes",
+      "description": "Full renovation and design with bespoke finishes and timeless elegance.",
       "location": "Tel Aviv"
     },
     "comunications": {
       "title": "Communications Room",
-      "description": "New IT and networking infrastructure",
+      "description": "Installation of a state-of-the-art IT and networking infrastructure tailored for corporate efficiency.",
       "location": "Ramat Gan"
     },
     "office": {
       "title": "Company Headquarters",
-      "description": "Construction of a prestigious corporate HQ",
+      "description": "Construction and design of a prestigious corporate HQ — a true symbol of excellence.",
       "location": "Herzliya"
     }
   },
   "featuredProjects": {
     "title": "Featured Projects",
-    "desc": "Over 20 years of experience delivering high-end projects – architecture, design, and uncompromising execution.",
-    "cta": "All Projects"
+    "desc": "Over two decades of delivering excellence — from concept to creation, blending innovation with flawless execution.",
+    "cta": "View All Projects"
   },
   "privacy": {
     "title": "Privacy Policy",
     "lastUpdated": "Last Updated: August 24, 2025",
-    "intro": "This website (https://uzan-group.com) is operated by A&S UZAN GROUP CO., LTD ('the Company', 'we', 'our'). We are committed to protecting your privacy under Thailand’s Personal Data Protection Act (PDPA) and international standards.",
+    "intro": "This website (https://uzan-group.com) is operated by A&S UZAN GROUP CO., LTD ('the Company', 'we', 'our'). We are dedicated to safeguarding your personal data in compliance with Thailand’s Personal Data Protection Act (PDPA) and global privacy standards.",
     "sections": {
       "1": {
         "title": "1. Data Collection",
         "content": [
-          "We may collect personal information such as full name, phone number, email, and messages submitted via forms.",
-          "Technical data such as IP address, device type, browser information, and cookies may also be collected for analytics."
+          "We may collect personal details such as full name, phone number, email, and messages submitted through contact forms.",
+          "Technical data such as IP address, device type, browser, and cookies may also be collected for analytics and optimization."
         ]
       },
       "2": {
         "title": "2. Purpose of Data Use",
         "content": [
-          "To operate and improve our website, provide services, respond to inquiries, send updates (with consent), ensure security, and comply with legal obligations.",
-          "All processing is conducted lawfully and transparently under the PDPA."
+          "To operate, improve, and secure our website; respond to inquiries; provide services; share updates (with consent); and comply with legal obligations.",
+          "All data processing is handled lawfully, transparently, and securely under the PDPA."
         ]
       },
       "3": {
         "title": "3. Data Retention",
         "content": [
-          "Data is securely stored in Thailand or in countries offering adequate protection under the PDPA.",
-          "We implement strong security measures including encryption, access control, and periodic backups."
+          "Your data is securely stored in Thailand or in jurisdictions offering equivalent data protection standards.",
+          "We maintain strong security measures including encryption, controlled access, and regular backups."
         ]
       },
       "4": {
         "title": "4. Sharing Data with Third Parties",
         "content": [
-          "We may share information with service providers (hosting, maintenance, security, analytics) bound by confidentiality agreements.",
-          "Data may also be disclosed when required by law or court order."
+          "We may share information with service providers (hosting, maintenance, security, analytics) under strict confidentiality obligations.",
+          "Data may also be disclosed when legally required or upon court order."
         ]
       },
       "5": {
         "title": "5. Your Rights",
         "content": [
           "Under Thailand’s PDPA, you have the right to access, correct, delete, object to processing, and request data portability.",
-          "For inquiries, please contact: info@uzan-group.com"
+          "For inquiries or requests, please contact: info@uzan-group.com"
         ]
       },
       "6": {
