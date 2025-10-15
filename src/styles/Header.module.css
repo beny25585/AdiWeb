@@ -47,7 +47,6 @@
   color: #f0c330;
 }
 
-/* --- כפתור המבורגר --- */
 .hamburger {
   display: none;
   font-size: 1.8rem;
@@ -58,7 +57,6 @@
   z-index: 3000;
 }
 
-/* --- שפות (דגלים) --- */
 .langs {
   display: flex;
   gap: 0.8rem;
@@ -93,7 +91,7 @@
 }
 
 /* --- Mobile --- */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .hamburger {
     display: block;
   }
@@ -129,7 +127,6 @@
   }
 }
 @media (max-width: 500px) {
-  
   .left {
     width: 80px;
     height: 80px;

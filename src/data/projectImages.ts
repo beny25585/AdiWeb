@@ -1,11 +1,11 @@
 // data/projectImages.ts
 export const projectImages: Record<string, string[]> = {
   office: [
+    "/Photos/office/office-after1.jpg",
+    "/Photos/office/office-after3.jpg",
+    "/Photos/office/office-after2.jpg",
     "/Photos/office/office-before1.jpg",
     "/Photos/office/office-before2.jpg",
-    "/Photos/office/office-after1.jpg",
-    "/Photos/office/office-after2.jpg",
-    "/Photos/office/office-after3.jpg",
   ],
   kitchen: [
     "/Photos/kichen/kichen-before1.jpg",

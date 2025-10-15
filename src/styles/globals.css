@@ -1,10 +1,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --accent: #000102;
-  --text-large: 2.5rem;
-  --text-medium: 1.5rem;
-  --text-small: 1rem;
+  --accent: #083f76;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,22 +11,11 @@
   }
 }
 
-/* === RESET === */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  font-size: 80%;
-  height: 100%;
-}
-
-@media (max-width: 900px) {
-  html {
-    font-size: 70%;
-  }
 }
 
 html,
@@ -40,11 +26,8 @@ body {
   scroll-behavior: smooth;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  margin: 0 !important;
-  padding: 0 !important;
 }
 
-/* === BASE === */
 body {
   display: flex;
   flex-direction: column;
@@ -55,62 +38,41 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.7;
-  animation: fadeIn 0.8s ease-in-out forwards;
+
   opacity: 0;
-  transform: translateY(10px);
+  animation: fadeInPage 1.5s ease-in-out forwards;
 }
 
-/* === MAIN CONTENT === */
-main {
-  flex: 1;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 3s ease, transform 3s ease;
 }
 
-/* === HEADINGS === */
+.fade-in-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 h1,
 h2,
 h3,
 h4 {
-  margin: 0 !important;
-  padding: 0 !important;
-  font-weight: 700;
   color: var(--accent);
   margin-bottom: 0.6em;
 }
 
-/* === PARAGRAPHS === */
 p {
-  margin: 0 !important;
-  padding: 0 !important;
-  font-size: var(--text-medium);
   margin-bottom: 1.2em;
-  color: #ffffff;
+  color: #333;
 }
 
-/* === FOOTER === */
 footer {
   margin-top: auto;
   width: 100%;
 }
 
-/* === ANIMATIONS === */
-.fade-in {
-  animation: fadeIn 1s ease-in-out forwards;
-  opacity: 0;
-}
-
-section,
-div,
-article {
-  opacity: 0;
-  animation: fadeIn 0.8s ease-in-out forwards;
-  animation-delay: 0.2s;
-}
-
-/* ✅ מאחדים את ההגדרה של האנימציה */
-@keyframes fadeIn {
+@keyframes fadeInPage {
   from {
     opacity: 0;
     transform: translateY(20px);

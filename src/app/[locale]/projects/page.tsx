@@ -5,6 +5,10 @@ import { Locale } from "@/lib/i18n";
 import Image from "next/image";
 import Link from "next/link";
 
+
+ 
+
+
 export default async function ProjectsPage({
   params,
 }: {

@@ -4,20 +4,14 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
-/* === HEADER === */
 .header {
   text-align: center;
-  padding: 10px 10px 5px;
+  padding: 0 10px 40px;
   max-width: 900px;
-}
-
-.label {
-  font-size: 0.95rem;
-  color: #888;
-  letter-spacing: 0.6px;
-  margin-bottom: 8px;
 }
 
 .projectTitle {
@@ -30,67 +24,50 @@
 .projectSubtitle {
   font-size: 1.2rem;
   color: #444;
-  margin-bottom: 10px;
   line-height: 1.7;
+  margin-bottom: 40px;
 }
-
-.location {
-  font-size: 1rem;
-  color: #777;
-}
-
-/* === GALLERY === */
-.galleryVertical {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 60px;
+.gallery {
   width: 100%;
-  padding-bottom: 100px;
+  margin: 0 auto;
+  padding-inline: clamp(10px, 3vw, 40px);
+  column-width: 500px;
+  column-gap: 20px;
+  column-fill: balance;
+  display: block;
+  text-align: center;
 }
 
-.imageBlock {
-  width: 700px;
-  max-width: 1600px;
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+.imageWrapper {
+  break-inside: avoid;
+  display: block;
+  margin-bottom: 20px;
 }
 
-.imageBlock:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.imageFull {
+.image {
   width: 100%;
   height: auto;
-  object-fit: cover;
-  display: block;
+  border-radius: 12px;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* === RESPONSIVE === */
-@media (max-width: 992px) {
-  .projectTitle {
-    font-size: 2.2rem;
-  }
-  .projectSubtitle {
-    font-size: 1.1rem;
-  }
-  .galleryVertical {
-    gap: 40px;
+.image:hover {
+  transform: scale(1.03);
+  filter: brightness(0.9);
+}
+
+/* 💻 טאבלטים */
+@media (max-width: 1024px) {
+  .gallery {
+    column-width: 300px;
+    column-gap: 16px;
   }
 }
 
-@media (max-width: 600px) {
-  .header {
-    padding: 80px 15px 40px;
-  }
-  .projectTitle {
-    font-size: 1.9rem;
-  }
-  .projectSubtitle {
-    font-size: 1rem;
+/* 📱 מובייל */
+@media (max-width: 700px) {
+  .gallery {
+    column-width: 100%; /* עמודה אחת בלבד */
+    column-gap: 10px;
   }
 }

@@ -152,13 +152,13 @@
 }
 
 .leftArrow {
-  top: -235px;
-  left: -30px;
+  top: 50%;
+  left: -40px;
 }
 
 .rightArrow {
-  top: -235px;
-  right: -30px;
+  top: 50%;
+  right: -40px;
 }
 
 /* === RESPONSIVE === */
@@ -189,7 +189,7 @@
     flex: none;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .section {
     display: flex !important;
     flex-direction: column !important;
