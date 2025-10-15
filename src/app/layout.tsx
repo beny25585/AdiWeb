@@ -15,7 +15,7 @@ export default async function LocaleLayout({
 
   const dir = locale === "he" ? "rtl" : "ltr";
   return (
-    <html lang={locale} dir={dir}>
+    <html lang={locale} dir={dir} data-scroll-behavior="smooth">
       <head>
         <link rel="icon" href="/Photos/uzanGroup.jpg" type="image/jpeg" />
         <title>UZAN GROUP</title>
