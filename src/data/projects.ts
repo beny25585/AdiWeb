@@ -25,4 +25,14 @@ export const projects: Project[] = [
     image: "/Photos/communicationsRoom/communicationsRoom-after1.jpg",
     folder: "/Photos/cominicetions",
   },
+  {
+    slug: "FREDEROSCAR",
+    image: "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 1.jpg",
+    folder: "/Photos/F-RENDER-OSCAR",
+  },
+  {
+    slug: "suite",
+    image: "/Photos/Suite/suite1.jpg",
+    folder: "/Photos/Suite",
+  },
 ];

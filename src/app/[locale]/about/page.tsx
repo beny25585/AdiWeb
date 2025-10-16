@@ -20,6 +20,11 @@ export default async function AboutPage({
 
       {/* CEO Section */}
       <div className={styles.ceoSection}>
+        <div className={styles.ceoInfo}>
+          <h2 className={styles.name}>{t("adiName")}</h2>
+          <p className={styles.role}>{t("adiRole")}</p>
+          <p className={styles.bio}>{t("adiBio")}</p>
+        </div>
         <div className={styles.ceoImage}>
           <Image
             src="/Photos/adi-ceo-black&white.jpg"
@@ -28,14 +33,7 @@ export default async function AboutPage({
             height={450}
           />
         </div>
-        <div className={styles.ceoInfo}>
-          <h2 className={styles.name}>{t("adiName")}</h2>
-          <p className={styles.role}>{t("adiRole")}</p>
-          <p className={styles.bio}>{t("adiBio")}</p>
-        </div>
       </div>
-
-      <hr className={styles.divider} />
 
       {/* Team Section */}
       <h2 className={styles.sectionTitle}>{t("companyTitle")}</h2>
@@ -53,8 +51,6 @@ export default async function AboutPage({
           </div>
         ))}
       </div>
-
-      <hr className={styles.divider} />
 
       {/* Vision Section */}
       <div className={styles.vision}>
