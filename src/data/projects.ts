@@ -32,7 +32,7 @@ export const projects: Project[] = [
   },
   {
     slug: "suite",
-    image: "/Photos/Suite/suite1.jpg",
+    image: "/Photos/Suite/lobby.jpg",
     folder: "/Photos/Suite",
   },
 ];

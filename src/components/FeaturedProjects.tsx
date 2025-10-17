@@ -26,7 +26,6 @@ export default function FeaturedProjects() {
       </div>
       <div className={styles.overlay}>
         <h3>{t(`${p.slug}.title`)}</h3>
-        <p>{t(`${p.slug}.location`)}</p>
       </div>
     </div>
   ));

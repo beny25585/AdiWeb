@@ -36,7 +36,7 @@ export default function Footer() {
               <Link href={`/${locale}/about`}>{th("about")}</Link>
             </li>
             <li>
-              <Link href={`/${locale}/services`}>{th("services")}</Link>
+              <Link href={`/${locale}/architecture`}>{th("architecture")}</Link>{" "}
             </li>
             <li>
               <Link href={`/${locale}/projects`}>{th("projects")}</Link>
@@ -46,9 +46,6 @@ export default function Footer() {
             </li>
             <li>
               <Link href={`/${locale}/careers`}>{t("careers")}</Link>
-            </li>
-            <li>
-              <Link href={`/${locale}/esg`}>{t("esg")}</Link>
             </li>
           </ul>
         </div>

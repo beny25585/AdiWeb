@@ -39,15 +39,29 @@ export default async function AboutPage({
       <h2 className={styles.sectionTitle}>{t("companyTitle")}</h2>
       <div className={styles.teamGrid}>
         {team.map((member) => (
-          <div key={member.key} className={styles.person}>
-            <Image
-              src={member.image}
-              alt={t(`${member.key}Alt`)}
-              width={220}
-              height={220}
-            />
-            <h3>{t(`${member.key}Name`)}</h3>
-            <p className={styles.role}>{t(`${member.key}Role`)}</p>
+          <div
+            key={member.key}
+            className={`${styles.person} ${
+              member.key === "shira" ? styles.center : styles.side
+            }`}
+          >
+            {member.key === "shira" ? (
+              <>
+                <Image
+                  src={member.image}
+                  alt={t(`${member.key}Alt`)}
+                  width={member.key === "shira" ? 220 : 160}
+                  height={member.key === "shira" ? 220 : 160}
+                />
+                <h3>{t(`${member.key}Name`)}</h3>
+                <p className={styles.role}>{t(`${member.key}Role`)}</p>
+              </>
+            ) : (
+              <>
+                <div className={styles.placeholderImage}></div>
+                <p className={styles.role}>{t(`roles.${member.key}`)}</p>
+              </>
+            )}
           </div>
         ))}
       </div>

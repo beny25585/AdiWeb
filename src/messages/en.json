@@ -2,12 +2,12 @@
   "header": {
     "home": "Home",
     "about": "About",
-    "services": "Services",
+    "architecture": "Architecture",
     "projects": "Projects",
     "contact": "Contact"
   },
   "hero": {
-    "headline": "Engineering Excellence. Redefining Possibilities.",
+    "headline": "Design. Quality. Construction. Perfection.",
     "sub": "Where vision meets precision — delivering corporate, architectural, and engineering solutions that stand above the rest.",
     "projectsBtn": "Explore Our Projects",
     "contactBtn": "Let's Talk"
@@ -15,8 +15,8 @@
   "footer": {
     "companyTitle": "Our Company",
     "address": "1219/2 Sukhumvit Rd, Khlong Tan Nuea, Watthana, Bangkok 10110, Thailand",
-    "phone": "+66 96-014-2849",
-    "WhatsApp": "+66 96-014-2849",
+    "phone": "+66 64-274-8346",
+    "WhatsApp": "+66 64-274-8346",
     "linksTitle": "Explore",
     "socialTitle": "Follow Us",
     "careers": "Careers",
@@ -30,13 +30,18 @@
     "title": "About the Company",
     "subtitle": "Led by Adi and Shira, A&S UZAN GROUP combines engineering precision, architectural excellence, and international experience to deliver world-class results.",
     "adiName": "Adi",
-    "adiRole": "CEO",
+    "adiRole": "CEO & Director",
+    "shiraRole": "CEO & Chief Architect",
     "adiBio": "Born in 1997, Adi is a Civil Engineering graduate with over 10 years of hands-on experience in the construction industry. He has worked with leading companies, managing diverse projects from residential buildings to large-scale infrastructure. Adi specializes in site management, safety supervision, and integrating innovative construction methods. Passionate about architecture and engineering from a young age, he is committed to delivering projects with reliability, precision, and international standards.",
     "adiAlt": "Adi – CEO",
     "companyTitle": "Our Team",
     "shiraName": "Shira",
-    "shiraRole": "Deputy CEO & Partner",
     "shiraAlt": "Shira – Deputy CEO",
+    "roles": {
+      "projectManager": "Project Manager",
+      "cfo": "CFO",
+      "admin": "Administrative Manager"
+    },
     "aviName": "Avi",
     "aviRole": "Chief Engineer",
     "aviAlt": "Avi – Chief Engineer",
@@ -53,9 +58,9 @@
     "phoneLabel": "Phone",
     "emailLabel": "Email",
     "siteLabel": "Website",
-    "phone": "+66 960 142 849",
-    "email": "info@uzan-group.com",
-    "site": "www.uzan-group.com",
+    "phone": "+66 64-274-8346",
+    "email": "info@uzangroups.com",
+    "site": "www.uzangroups.com",
     "logoAlt": "Company Logo",
     "form": {
       "name": "Full Name",
@@ -87,39 +92,49 @@
     }
   },
   "projects": {
-    "slogan":"Global Architecture. Precision Construction.", 
+    "slogan": "Design. Quality. Construction. Perfection.",
     "pageTitle": "Our Projects",
     "scrollDown": "Scroll Down to Discover More",
+
     "electricCabin": {
-      "title": "Electric Cabin",
-      "description": "Renovation and setup of a modern, high-standard electric cabin with advanced safety systems.",
-      "location": "Netanya"
+      "title": "Modern Electric Infrastructure",
+      "description": "Renovation and setup of a modern, high-standard electric cabin with advanced safety systems."
     },
+
     "kitchen": {
-      "title": "Luxury Kitchen",
-      "description": "Full renovation and design with bespoke finishes and timeless elegance.",
-      "location": "Tel Aviv"
+      "title": "Designer Kitchen Renovation",
+      "description": "Full renovation and design with bespoke finishes and timeless elegance."
     },
+
     "comunications": {
-      "title": "Communications Room",
-      "description": "Installation of a state-of-the-art IT and networking infrastructure tailored for corporate efficiency.",
-      "location": "Ramat Gan"
+      "title": "Corporate Communications Hub",
+      "description": "Installation of a state-of-the-art IT and networking infrastructure tailored for corporate efficiency."
     },
+
     "office": {
-      "title": "Company Headquarters",
-      "description": "Construction and design of a prestigious corporate HQ — a true symbol of excellence.",
-      "location": "Herzliya"
+      "title": "Executive Office Design",
+      "description": "Construction and design of a prestigious corporate HQ — a true symbol of excellence."
+    },
+
+    "FREDEROSCAR": {
+      "title": "Rothschild 221 Hotel",
+      "description": "Luxury boutique hotel design in the heart of Tel Aviv, combining modern elegance with historic charm."
+    },
+
+    "suite": {
+      "title": "German Colony Villa",
+      "description": "Renovation and design of a luxury villa in a historic neighborhood, blending traditional and modern elements."
     }
   },
   "featuredProjects": {
     "title": "Featured Projects",
-    "desc": "Over two decades of delivering excellence — from concept to creation, blending innovation with flawless execution.",
+    "desc": "10 years of delivering excellence, satisfied clients — from concept to creation, blending innovation with flawless execution.",
     "cta": "View All Projects"
   },
   "privacy": {
     "title": "Privacy Policy",
     "lastUpdated": "Last Updated: August 24, 2025",
-    "intro": "This website (https://uzan-group.com) is operated by A&S UZAN GROUP CO., LTD ('the Company', 'we', 'our'). We are dedicated to safeguarding your personal data in compliance with Thailand’s Personal Data Protection Act (PDPA) and global privacy standards.",
+    "intro": "This website (https://uzangroups.com) is operated by A&S UZAN GROUP CO., LTD ('the Company', 'we', 'our'). We are dedicated to safeguarding your personal data in compliance with Thailand’s Personal Data Protection Act (PDPA) and global privacy standards.",
     "sections": {
       "1": {
         "title": "1. Data Collection",
@@ -153,7 +168,7 @@
         "title": "5. Your Rights",
         "content": [
           "Under Thailand’s PDPA, you have the right to access, correct, delete, object to processing, and request data portability.",
-          "For inquiries or requests, please contact: info@uzan-group.com"
+          "For inquiries or requests, please contact: info@uzangroups.com"
         ]
       },
       "6": {
@@ -162,10 +177,23 @@
           "A&S UZAN GROUP CO., LTD.",
           "Address: 2 Soi Phueng Mi 7/2, Bang Chak Subdistrict, Phra Khanong District, Bangkok 10260, Thailand",
           "Tax ID: 0105568197554",
-          "Phone: +66 960 142 849",
-          "Email: info@uzan-group.com"
+          "For inquiries or requests, please contact: info@uzangroups.com"
         ]
       }
     }
+  },
+  "architecture": {
+    "title": "Architecture That Tells a Story",
+    "intro": "Shira, our chief architect, creates spaces that live and breathe. Every project is a journey — from initial vision to a creation that transforms spatial experience.",
+    "design": {
+      "title": "Architecture & Design That Inspires",
+      "desc": "We don't just design buildings — we create experiences. Every line, every corner, every light — designed with surgical precision to create something that feels just right."
+    },
+    "construction": {
+      "title": "From Vision to Reality – Flawless Execution",
+      "desc": "Renovations? It's not just work. It's an art of precision, attention, and love for details. We take old spaces and turn them into something breathtaking."
+    },
+    "portfolio": "Our Projects Speak for Themselves",
+    "cta": "Have a Vision? Let's Bring It to Life Together"
   }
 }
