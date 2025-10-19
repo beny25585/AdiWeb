@@ -15,19 +15,34 @@ export default function FeaturedProjects() {
   const locale = useLocale();
 
   const items = projects.map((p, i) => (
-    <div key={i} className={styles.card}>
+    <Link
+      key={i}
+      href={`/${locale}/projects/${p.slug}`}
+      className={styles.projectLink}
+    >
       <div className={styles.imageWrap}>
-        <Image
-          src={p.image}
-          alt={t(`${p.slug}.title`)}
-          fill
-          className={styles.image}
-        />
+        <div className={styles.card}>
+          <Image
+            src={p.image}
+            alt={t(`${p.slug}.title`)}
+            fill
+            className={styles.image}
+          />
+          <div className={styles.logoWrapper}>
+            <Image
+              src="/Photos/uzanGroup-removebg.png"
+              alt="Logo"
+              width={60}
+              height={60}
+              className={styles.logo}
+            />
+          </div>
+        </div>
+        <div className={styles.overlay}>
+          <h3>{t(`${p.slug}.title`)}</h3>
+        </div>
       </div>
-      <div className={styles.overlay}>
-        <h3>{t(`${p.slug}.title`)}</h3>
-      </div>
-    </div>
+    </Link>
   ));
 
   const responsive = {
@@ -42,14 +57,6 @@ export default function FeaturedProjects() {
         locale === "he" ? styles.rtl : styles.ltr
       }`}
     >
-      <div className={styles.right}>
-        <h2>{tH("title")}</h2>
-        <p>{tH("desc")}</p>
-        <Link href={`/${locale}/projects`} className={styles.btn}>
-          {tH("cta")}
-        </Link>
-      </div>
-
       <div className={styles.carouselWrapper}>
         <AliceCarousel
           mouseTracking
@@ -69,6 +76,13 @@ export default function FeaturedProjects() {
             </button>
           )}
         />
+      </div>
+      <div className={styles.right}>
+        <h2>{tH("title")}</h2>
+        <p>{tH("desc")}</p>
+        <Link href={`/${locale}/projects`} className={styles.btn}>
+          {tH("cta")}
+        </Link>
       </div>
     </section>
   );

@@ -7,7 +7,7 @@
     "contact": "Contact"
   },
   "hero": {
-    "headline": "Design. Quality. Construction. Perfection.",
+    "headline": "Design, Quality, Construction, Perfection.",
     "sub": "Where vision meets precision — delivering corporate, architectural, and engineering solutions that stand above the rest.",
     "projectsBtn": "Explore Our Projects",
     "contactBtn": "Let's Talk"
@@ -19,12 +19,7 @@
     "WhatsApp": "+66 64-274-8346",
     "linksTitle": "Explore",
     "socialTitle": "Follow Us",
-    "careers": "Careers",
-    "esg": "Sustainability",
-    "rights": "© All rights reserved to A&S UZAN GROUP",
-    "newsletterTitle": "Stay Connected",
-    "newsletterPlaceholder": "Enter your email address",
-    "newsletterButton": "Subscribe Now"
+    "rights": "© All rights reserved to A&S UZAN GROUP"
   },
   "about": {
     "title": "About the Company",

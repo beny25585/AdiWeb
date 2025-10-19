@@ -10,6 +10,9 @@ import {
   FaYoutube,
   FaWhatsapp,
   FaLine,
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 
 export default function Footer() {
@@ -21,22 +24,62 @@ export default function Footer() {
   return (
     <footer dir={dir} className={styles.footer}>
       <div className={styles.inner}>
+        {/* === COMPANY INFO === */}
         <div className={styles.col}>
           <h4>{t("companyTitle")}</h4>
-          <p>
-            {t("address")} <br />
-            {t("phone")}
-          </p>
+          <div className={styles.contactInfo}>
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                t("address")
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.contactItem}
+            >
+              <FaMapMarkerAlt className={styles.icon} />
+              <span>{t("address")}</span>
+            </a>
+
+            <a
+              href={`tel:${t("phone").replace(/[\s-]/g, "")}`}
+              className={styles.contactItem}
+            >
+              <FaPhone className={styles.icon} />
+              <span>{t("phone")}</span>
+            </a>
+
+            <a
+              href={`https://wa.me/${t("WhatsApp").replace(/[\s+-]/g, "")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.contactItem}
+            >
+              <FaWhatsapp className={styles.icon} />
+              <span>{t("WhatsApp")}</span>
+            </a>
+
+            <a
+              href="mailto:info@asuzangroup.com"
+              className={styles.contactItem}
+            >
+              <FaEnvelope className={styles.icon} />
+              <span>info@asuzangroup.com</span>
+            </a>
+          </div>
         </div>
 
+        {/* === QUICK LINKS === */}
         <div className={styles.col}>
           <h4>{t("linksTitle")}</h4>
           <ul>
             <li>
+              <Link href={`/${locale}`}>{th("home")}</Link>
+            </li>
+            <li>
               <Link href={`/${locale}/about`}>{th("about")}</Link>
             </li>
             <li>
-              <Link href={`/${locale}/architecture`}>{th("architecture")}</Link>{" "}
+              <Link href={`/${locale}/architecture`}>{th("architecture")}</Link>
             </li>
             <li>
               <Link href={`/${locale}/projects`}>{th("projects")}</Link>
@@ -44,45 +87,43 @@ export default function Footer() {
             <li>
               <Link href={`/${locale}/contact`}>{th("contact")}</Link>
             </li>
-            <li>
-              <Link href={`/${locale}/careers`}>{t("careers")}</Link>
-            </li>
           </ul>
         </div>
 
+        {/* === SOCIAL MEDIA === */}
         <div className={styles.col}>
           <h4>{t("socialTitle")}</h4>
           <div className={styles.socials}>
             <a
-              href="https://wa.me/66960142849"
+              href={`https://wa.me/${t("WhatsApp").replace(/[\s+-]/g, "")}`}
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaWhatsapp /> WhatsApp
             </a>
             <a
-              href="https://line.me/ti/p/66960142849"
+              href="https://line.me/ti/p/YOUR_LINE_ID"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaLine /> Line
             </a>
             <a
-              href="https://facebook.com"
+              href="https://facebook.com/asuzangroup"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaFacebook /> Facebook
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/company/asuzangroup"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaLinkedin /> LinkedIn
             </a>
             <a
-              href="https://youtube.com"
+              href="https://youtube.com/@asuzangroup"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -91,27 +132,31 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* === BRAND SECTION === */}
+        {/* === BRAND / LOGOS === */}
         <div className={styles.col}>
           <div className={styles.brandSection}>
             <Image
               src="/Photos/uzanGroup-removebg.png"
               alt="A&S Uzan Group Logo"
-              width={170}
-              height={110}
+              width={250}
+              height={160}
               className={styles.logoLeft}
+              priority
             />
             <Image
               src="/Photos/logoUzan-removebg.png"
               alt="UZAN Logo"
-              width={300}
-              height={100}
+              width={400}
+              height={130}
               className={styles.logoRight}
+              priority
             />
           </div>
         </div>
       </div>
-      <div className={styles.copy}>© 2025 {t("rights")}</div>
+
+      {/* === COPYRIGHT === */}
+      <div className={styles.copy}>{t("rights")}</div>
     </footer>
   );
 }

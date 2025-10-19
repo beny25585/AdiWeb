@@ -1,4 +1,6 @@
 .header {
+  max-height: 120px;
+  height: auto;
   background: rgb(0, 0, 0);
   color: white;
   padding: 0 2rem;
@@ -12,6 +14,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
+  height: 100px;
 }
 
 .logo {
@@ -28,8 +31,8 @@
   object-fit: contain;
 }
 .left {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: auto;
 }
 
 .right {
@@ -141,7 +144,7 @@
     height: 80px;
   }
   .right {
-    width: 150px;
-    height: 80px;
+    width: 190px;
+    height: auto;
   }
 }
