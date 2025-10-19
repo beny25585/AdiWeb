@@ -6,9 +6,14 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "office",
-    image: "/Photos/office/office-after1.jpg",
-    folder: "/Photos/ofice",
+    slug: "FREDEROSCAR",
+    image: "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 1.jpg",
+    folder: "/Photos/F-RENDER-OSCAR",
+  },
+  {
+    slug: "suite",
+    image: "/Photos/Suite/lobby.jpg",
+    folder: "/Photos/Suite",
   },
   {
     slug: "kitchen",
@@ -21,18 +26,13 @@ export const projects: Project[] = [
     folder: "/Photos/electricCabin",
   },
   {
+    slug: "office",
+    image: "/Photos/office/office-after2.jpg",
+    folder: "/Photos/ofice",
+  },
+  {
     slug: "comunications",
     image: "/Photos/communicationsRoom/communicationsRoom-after1.jpg",
     folder: "/Photos/cominicetions",
-  },
-  {
-    slug: "FREDEROSCAR",
-    image: "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 1.jpg",
-    folder: "/Photos/F-RENDER-OSCAR",
-  },
-  {
-    slug: "suite",
-    image: "/Photos/Suite/lobby.jpg",
-    folder: "/Photos/Suite",
   },
 ];

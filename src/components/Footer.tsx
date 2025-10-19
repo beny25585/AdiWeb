@@ -63,7 +63,7 @@ export default function Footer() {
               className={styles.contactItem}
             >
               <FaEnvelope className={styles.icon} />
-              <span>info@asuzangroup.com</span>
+              <span>info@uzangroups.com</span>
             </a>
           </div>
         </div>
