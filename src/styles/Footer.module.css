@@ -55,7 +55,6 @@
   left: 0;
   width: 45px;
   height: 3px;
-  background: #00d4df;
 }
 
 [dir="rtl"] .col h4::after {

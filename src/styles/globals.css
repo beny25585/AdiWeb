@@ -43,6 +43,15 @@ body {
   animation: fadeInPage 1.5s ease-in-out forwards;
 }
 
+main {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+main[data-locale] {
+  padding-top: 0;
+}
+
 .fade-in-scroll {
   opacity: 0;
   transform: translateY(30px);

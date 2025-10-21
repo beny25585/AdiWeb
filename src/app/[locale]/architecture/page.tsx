@@ -23,19 +23,28 @@ export default async function ArchitecturePage({
 
   return (
     <section className={styles.container}>
-      <div className={styles.topContainer}>
-        <h1 className={styles.title}>{t("title")}</h1>
-        <p className={styles.intro}>{t("intro")}</p>
-
-        <div className={styles.services}>
-          <div className={styles.serviceCard}>
-            <h2>{t("design.title")}</h2>
-            <p>{t("design.desc")}</p>
-          </div>
-          <div className={styles.serviceCard}>
-            <h2>{t("construction.title")}</h2>
-            <p>{t("construction.desc")}</p>
-          </div>
+      <h1 className={styles.title}>{t("title")}</h1>
+      <p className={styles.intro}>{t("intro")}</p>
+       <div className={styles.topContainer}>
+        <div className={styles.serviceCard}>
+          <h2>{t("design.title")}</h2>
+          <p>{t("design.desc")}</p>
+        </div>
+        
+        <div className={styles.serviceCard}>
+          <h2>{t("construction.title")}</h2>
+          <p>{t("construction.desc")}</p>
+        </div>
+        
+        <div className={styles.imageWrapper}>
+          <Image
+            src="/Photos/Architecture/house_wallpaper.jpg"
+            alt="house wallpaper"
+            fill
+            className={styles.photo}
+            style={{ objectFit: "cover" }}
+            priority
+          />
         </div>
       </div>
 
