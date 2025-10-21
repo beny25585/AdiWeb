@@ -29,11 +29,6 @@ export default function ProjectClient({
   const currentSlug = params.slug as string;
   const galleryRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    initScrollAnimation();
-  }, []);
-  window.scrollTo(0, 0);
-
   const currentIndex = projects.findIndex((p) => p.slug === currentSlug);
   const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
   const nextProject =
@@ -44,8 +39,6 @@ export default function ProjectClient({
   };
   useEffect(() => {
     if (!galleryRef.current) return;
-
-    console.log("🎬 Initializing lightGallery");
 
     let savedScrollY = 0;
 
@@ -63,7 +56,6 @@ export default function ProjectClient({
     });
 
     const handleBeforeOpen = () => {
-      // שמור את המיקום
       savedScrollY =
         window.scrollY ||
         window.pageYOffset ||
@@ -71,37 +63,22 @@ export default function ProjectClient({
         document.body.scrollTop ||
         0;
 
-      console.log("📖 BEFORE OPEN - Saved scroll position:", savedScrollY);
-
-      // גלול מיד למעלה (בלי אנימציה)
       window.scrollTo({ top: 0, behavior: "auto" });
       document.documentElement.scrollTop = 0;
       document.body.scrollTop = 0;
 
-      // עכשיו נעול את הגלילה
       document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
-
-      console.log(
-        "🔒 Body locked and scrolled to top, will restore to:",
-        savedScrollY
-      );
     };
 
     const handleAfterClose = () => {
-      console.log("❌ AFTER CLOSE - Restoring to position:", savedScrollY);
-
-      // משחרר את הנעילה
       document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
-      console.log("🔓 Body unlocked");
 
-      // מחזיר למיקום המקורי
       setTimeout(() => {
         window.scrollTo({ top: savedScrollY, behavior: "auto" });
         document.documentElement.scrollTop = savedScrollY;
         document.body.scrollTop = savedScrollY;
-        console.log("↩️ Scrolled back to:", savedScrollY);
       }, 10);
     };
 
@@ -109,10 +86,8 @@ export default function ProjectClient({
     gallery.addEventListener("lgBeforeOpen", handleBeforeOpen);
     gallery.addEventListener("lgAfterClose", handleAfterClose);
 
-    console.log("✅ Event listeners attached");
 
     return () => {
-      console.log("🧹 Cleaning up lightGallery");
       gallery.removeEventListener("lgBeforeOpen", handleBeforeOpen);
       gallery.removeEventListener("lgAfterClose", handleAfterClose);
       lg.destroy();
@@ -121,7 +96,6 @@ export default function ProjectClient({
 
   return (
     <section className={styles.project} dir={dir}>
-      {/* כפתורי ניווט עליונים */}
       <div className={styles.navigationButtons}>
         {prevProject && (
           <button
