@@ -30,7 +30,7 @@ export default function FeaturedProjects() {
           />
           <div className={styles.logoWrapper}>
             <Image
-              src="/Photos/uzanGroup-removebg.png"
+              src="/Photos/A&S-removebg.png"
               alt="Logo"
               width={60}
               height={60}

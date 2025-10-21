@@ -68,6 +68,17 @@
   background: #fff;
   border-top: 1px solid #eee;
 }
+.overlay {
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  
+  padding: 28px 24px;
+  z-index: 100;
+
+  color: #fff;
+  transition: padding 0.3s ease;
+}
 
 /* === רספונסיביות === */
 @media (max-width: 768px) {

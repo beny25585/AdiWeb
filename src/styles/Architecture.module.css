@@ -1,8 +1,8 @@
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 60px 20px;
   background: #fff;
+  padding: 10px 10px 10px 10px;
 }
 
 .title {
@@ -16,21 +16,33 @@
 .intro {
   font-size: 1.3rem;
   text-align: center;
-  color: #444;
+  color: #010000;
+  font-weight: 700;
+
   max-width: 800px;
-  margin: 0 auto 60px;
+  margin: 0 auto 40px;
   line-height: 1.8;
+}
+.topContainer {
+  background: url("/Photos/Architecture/city_wallpaper.jpg") center/contain
+    no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  padding: 80px 20px;
+  margin: -60px -20px 60px -20px;
+  border-radius: 0 0 30px 30px;
 }
 
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
+  padding: 10px 10px 10px 10px;
 }
 
 .serviceCard {
-  background: linear-gradient(135deg, #f9f9f9 0%, #fff 100%);
+  background: rgba(255, 255, 255, 0.1);
   padding: 40px 30px;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -47,12 +59,15 @@
   color: #000;
   margin-bottom: 15px;
   font-weight: 700;
+  text-align: center;
 }
 
 .serviceCard p {
   font-size: 1.1rem;
-  color: #555;
-  line-height: 1.7;
+  font-weight: 700;
+  color: #000000;
+  line-height: 2;
+  text-align: center;
 }
 
 .portfolioTitle {

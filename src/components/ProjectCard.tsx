@@ -30,14 +30,6 @@ export default function ProjectCard({
           className={styles.image}
         />
       </div>
-      <div className={styles.overlay}>
-        <Image
-          src="/Photos/uzanGroup-removebg.png"
-          alt="Uzan Group Logo"
-          width={50}
-          height={50}
-        />
-      </div>
       <div className={styles.body}>
         <h3 className={styles.title}>{t(`${project.slug}.title`)}</h3>
       </div>

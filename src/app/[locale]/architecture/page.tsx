@@ -23,17 +23,19 @@ export default async function ArchitecturePage({
 
   return (
     <section className={styles.container}>
-      <h1 className={styles.title}>{t("title")}</h1>
-      <p className={styles.intro}>{t("intro")}</p>
+      <div className={styles.topContainer}>
+        <h1 className={styles.title}>{t("title")}</h1>
+        <p className={styles.intro}>{t("intro")}</p>
 
-      <div className={styles.services}>
-        <div className={styles.serviceCard}>
-          <h2>{t("design.title")}</h2>
-          <p>{t("design.desc")}</p>
-        </div>
-        <div className={styles.serviceCard}>
-          <h2>{t("construction.title")}</h2>
-          <p>{t("construction.desc")}</p>
+        <div className={styles.services}>
+          <div className={styles.serviceCard}>
+            <h2>{t("design.title")}</h2>
+            <p>{t("design.desc")}</p>
+          </div>
+          <div className={styles.serviceCard}>
+            <h2>{t("construction.title")}</h2>
+            <p>{t("construction.desc")}</p>
+          </div>
         </div>
       </div>
 

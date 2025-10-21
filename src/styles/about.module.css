@@ -97,28 +97,45 @@
   margin-bottom: 40px;
   letter-spacing: -0.3px;
 }
+
 .teamGrid {
   width: 100%;
-  height: 500px;
+  height: fit-content;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  gap: 60px;
-  margin-bottom: 80px;
+  gap: 40px;
+  margin-bottom: 60px;
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 20px 0;
+  padding: 40px 20px;
   flex-wrap: nowrap;
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #f0f0f0;
 }
 
 .teamGrid::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  height: 8px;
+}
+
+.teamGrid::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 10px;
+}
+
+.teamGrid::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+.teamGrid::-webkit-scrollbar-thumb:hover {
+  background: #999;
 }
 
 .person {
+  flex-shrink: 0;
+  min-width: 200px;
   background: #f9f9f9;
   border-radius: 16px;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
@@ -157,24 +174,7 @@
   font-size: 1rem;
   color: #555;
 }
-.person.center {
-  transform: scale(1.3);
-  z-index: 10;
-}
 
-.person.center:hover {
-  transform: scale(1.3) translateY(-6px);
-}
-
-.person.center img {
-  width: 220px;
-  height: 220px;
-}
-
-.person.side img {
-  width: 160px;
-  height: 160px;
-}
 .placeholderImage {
   width: 160px;
   height: 160px;

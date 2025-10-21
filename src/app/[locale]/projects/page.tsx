@@ -5,10 +5,6 @@ import { Locale } from "@/lib/i18n";
 import Image from "next/image";
 import Link from "next/link";
 
-
- 
-
-
 export default async function ProjectsPage({
   params,
 }: {
@@ -19,9 +15,7 @@ export default async function ProjectsPage({
 
   return (
     <section className={styles.section}>
-      <h1 className={styles.slogan}>
-       {t("slogan")}
-      </h1>
+      <h1 className={styles.slogan}>{t("slogan")}</h1>
 
       <div className={styles.gallery}>
         {projects.map((project) => (
@@ -30,6 +24,14 @@ export default async function ProjectsPage({
             href={`/${locale}/projects/${project.slug}`}
             className={styles.card}
           >
+            <div className={styles.overlay}>
+              <Image
+                src="/Photos/A&S-removebg.png"
+                alt="Uzan Group Logo"
+                width={50}
+                height={50}
+              />
+            </div>
             <Image
               src={project.image}
               alt={t(`${project.slug}.title`)}

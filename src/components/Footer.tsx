@@ -136,21 +136,23 @@ export default function Footer() {
         <div className={styles.col}>
           <div className={styles.brandSection}>
             <Image
-              src="/Photos/uzanGroup-removebg.png"
+              src="/Photos/A&S-removebg.png"
               alt="A&S Uzan Group Logo"
               width={250}
               height={160}
               className={styles.logoLeft}
               priority
             />
-            <Image
-              src="/Photos/logoUzan-removebg.png"
-              alt="UZAN Logo"
-              width={400}
-              height={130}
-              className={styles.logoRight}
-              priority
-            />
+            <div className={styles.rightWrapper}>
+              <Image
+                src="/Photos/UZAN-removebg.png"
+                alt="UZAN Logo"
+                width={400}
+                height={130}
+                className={styles.logoRight}
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>

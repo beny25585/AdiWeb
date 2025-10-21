@@ -42,19 +42,21 @@ export default function Header() {
         <Link href={`/${locale}`} className={styles.logo}>
           <div className={styles.logosWrap}>
             <Image
-              src="/Photos/uzanGroup-removebg.png"
+              src="/Photos/A&S-removebg.png"
               alt="uzanGroup Logo"
               width={100}
-              height={100}
+              height={130}
               className={styles.left}
             />
-            <Image
-              src="/Photos/logoUzan-removebg.png"
-              alt="UZAN Logo"
-              width={240}
-              height={150}
-              className={styles.right}
-            />
+            <div className={styles.rightWrapper}>
+              <Image
+                src="/Photos/UZAN-removebg.png"
+                alt="UZAN Logo"
+                width={500}
+                height={500}
+                className={styles.right}
+              />
+            </div>
           </div>
         </Link>
 

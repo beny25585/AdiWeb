@@ -16,11 +16,12 @@
 .inner {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 60px;
+  gap: 120px;
   width: 100%;
   max-width: 1500px;
   margin: 0 auto;
   padding: 0 20px 30px;
+  justify-items: center;
 }
 
 /* === COLUMNS === */
@@ -205,32 +206,30 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 10px;
   padding: 20px 0;
 }
 
-.logoLeft,
-.logoRight {
-  filter: brightness(1) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-}
-
 .logoLeft {
-  width: 140px;
+  width: 200px;
+
   height: auto;
+}
+
+.rightWrapper {
+  width: 260px;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logoRight {
-  width: auto;
-  height: auto;
-  opacity: 0.95;
-}
-
-.logoLeft:hover,
-.logoRight:hover {
-  filter: brightness(1.15) drop-shadow(0 8px 20px rgba(0, 212, 223, 0.5));
-  transform: translateY(-6px) scale(1.05);
+  width: auto !important;
+  height: 500px !important;
+  max-width: none !important;
+  object-fit: cover;
 }
 
 /* === COPYRIGHT === */
@@ -249,8 +248,8 @@
 /* Large Tablets */
 @media (max-width: 1200px) {
   .inner {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 50px;
+    grid-template-columns: repeat(auto, 1fr);
+    gap: 90px;
     padding: 0 30px 50px;
   }
 
@@ -259,11 +258,8 @@
   }
 
   .logoLeft {
-    height: 120px;
-  }
-
-  .logoRight {
-    height: 100px;
+    width: 160px;
+    height: auto;
   }
 }
 
@@ -271,8 +267,9 @@
 @media (max-width: 900px) {
   .inner {
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 60px;
     padding: 0 20px 40px;
+    justify-items: center;
   }
 
   .col {
@@ -294,7 +291,7 @@
   }
 
   .logoLeft {
-    height: 110px;
+    height: 150px;
   }
 
   .logoRight {
@@ -339,10 +336,6 @@
     gap: 25px;
   }
 
-  .logoLeft {
-    height: 100px;
-  }
-
   .logoRight {
     height: 85px;
   }
@@ -357,10 +350,6 @@
   .inner {
     gap: 25px;
     padding: 0 10px 25px;
-  }
-
-  .logoLeft {
-    height: 90px;
   }
 
   .logoRight {
