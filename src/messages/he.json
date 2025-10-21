@@ -15,16 +15,13 @@
   "footer": {
     "companyTitle": "החברה שלנו",
     "address": "1219/2 רחוב סוקומוויט, מחוז קלאונג טאן נואה, ווטאנה, בנגקוק 10110, תאילנד",
-    "phone": "טל׳:064-274-8346",
-    "WhatsApp": "+66 64-274-8346",
+    "phone": "טל׳: +66 65-887-8829",
+    "WhatsApp": "+66 65-887-8829",
     "linksTitle": "ניווט מהיר",
     "socialTitle": "עקבו אחרינו",
     "careers": "קריירה",
     "esg": "אחריות תאגידית",
-    "rights": "© כל הזכויות שמורות ל-A&S UZAN GROUP",
-    "newsletterTitle": "השאירו אתכם מעודכנים",
-    "newsletterPlaceholder": "הקלידו את כתובת האימייל שלכם",
-    "newsletterButton": "הרשמה לעדכונים"
+    "rights": "© כל הזכויות שמורות ל-A&S UZAN GROUP"
   },
   "about": {
     "title": "אודות החברה",
@@ -58,9 +55,10 @@
     "phoneLabel": "טלפון",
     "emailLabel": "אימייל",
     "siteLabel": "אתר",
-    "phone": "+66 960 142 849",
-    "email": "info@uzan-group.com",
-    "site": "www.uzan-group.com",
+    "phone": "+66 65-887-8829",
+    "WhatsApp": "+66 65-887-8829",
+    "email": "info@uzangroups.com",
+    "site": "www.uzangroups.com",
     "logoAlt": "לוגו החברה",
     "form": {
       "name": "שם מלא",
@@ -173,7 +171,7 @@
           "A&S UZAN GROUP CO., LTD.",
           "כתובת: 2 Soi Phueng Mi 7/2, Bang Chak Subdistrict, Phra Khanong District, Bangkok 10260, Thailand",
           "Tax ID: 0105568197554",
-          "טלפון: +66 64-274-8346",
+          "טלפון: +66 65-887-8829",
           "אימייל: info@uzangroups.com"
         ]
       }

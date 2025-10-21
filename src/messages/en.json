@@ -15,8 +15,8 @@
   "footer": {
     "companyTitle": "Our Company",
     "address": "1219/2 Sukhumvit Rd, Khlong Tan Nuea, Watthana, Bangkok 10110, Thailand",
-    "phone": "+66 64-274-8346",
-    "WhatsApp": "+66 64-274-8346",
+    "phone": "+66 65-887-8829",
+    "WhatsApp": "+66 65-887-8829",
     "linksTitle": "Explore",
     "socialTitle": "Follow Us",
     "rights": "© All rights reserved to A&S UZAN GROUP"
@@ -53,7 +53,7 @@
     "phoneLabel": "Phone",
     "emailLabel": "Email",
     "siteLabel": "Website",
-    "phone": "+66 64-274-8346",
+    "phone": "+66 65-887-8829",
     "email": "info@uzangroups.com",
     "site": "www.uzangroups.com",
     "logoAlt": "Company Logo",
@@ -171,6 +171,7 @@
         "content": [
           "A&S UZAN GROUP CO., LTD.",
           "Address: 2 Soi Phueng Mi 7/2, Bang Chak Subdistrict, Phra Khanong District, Bangkok 10260, Thailand",
+          "phone: +66 65-887-8829",
           "Tax ID: 0105568197554",
           "For inquiries or requests, please contact: info@uzangroups.com"
         ]
