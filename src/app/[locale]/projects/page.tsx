@@ -24,14 +24,13 @@ export default async function ProjectsPage({
             href={`/${locale}/projects/${project.slug}`}
             className={styles.card}
           >
-            <div className={styles.overlay}>
-              <Image
-                src="/Photos/A&S-removebg.png"
-                alt="Uzan Group Logo"
-                width={50}
-                height={50}
-              />
-            </div>
+            <Image
+              src="/Photos/A&S-removebg.png"
+              alt="Uzan Group Logo"
+              width={50}
+              height={50}
+              className={styles.logo}
+            />
             <Image
               src={project.image}
               alt={t(`${project.slug}.title`)}
