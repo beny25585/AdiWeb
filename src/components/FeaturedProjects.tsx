@@ -53,7 +53,6 @@ export default function FeaturedProjects() {
 
   return (
     <section
-      data-aos="fade-up"
       className={`${styles.section} ${
         locale === "he" ? styles.rtl : styles.ltr
       }`}
