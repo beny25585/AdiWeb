@@ -2,11 +2,16 @@
 
 import styles from "@/styles/contact.module.css";
 import { useTranslations, useLocale } from "next-intl";
-import { FiPhone, FiMail, FiGlobe } from "react-icons/fi";
+import { FiPhone, FiMail, FiGlobe, FiCheckCircle } from "react-icons/fi";
+import React from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 export default function ContactPage() {
   const t = useTranslations("contact");
   const locale = useLocale();
+
+  // 🔥 Formspree Hook
+  const [state, handleSubmit] = useForm("xeorbbnr");
 
   const phone = t("phone");
   const email = t("email");
@@ -18,7 +23,6 @@ export default function ContactPage() {
       <p className={styles.subtitle}>{t("subtitle")}</p>
 
       <div className={styles.formSection}>
-        {/* ==== צד שמאל - פרטי קשר ==== */}
         <div className={styles.infoSide}>
           <div className={styles.contactCard}>
             <FiPhone className={styles.icon} />
@@ -51,21 +55,43 @@ export default function ContactPage() {
           </div>
         </div>
 
-        {/* ==== צד ימין - טופס ==== */}
-        <form
-          className={styles.form}
-          onSubmit={(e) => {
-            e.preventDefault();
-            alert(t("formSuccess"));
-          }}
-        >
-          <input type="text" placeholder={t("form.name")} required />
-          <input type="email" placeholder={t("form.email")} required />
-          <input type="tel" placeholder={t("form.phone")} />
-          <textarea placeholder={t("form.message")} rows={5}></textarea>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          {state.succeeded && (
+            <div className={styles.successMessage}>
+              <FiCheckCircle className={styles.successIcon} />
+              <h3>{t("formSuccess")}</h3>
+              <p>{t("formSuccessDesc")}</p>
+            </div>
+          )}
+
+          <input
+            type="text"
+            name="name"
+            placeholder={t("form.name")}
+            required
+          />
+          <ValidationError prefix="Name" field="name" errors={state.errors} />
+
+          <input
+            type="email"
+            name="email"
+            placeholder={t("form.email")}
+            required
+          />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
+
+          <input type="tel" name="phone" placeholder={t("form.phone")} />
+          <ValidationError prefix="Phone" field="phone" errors={state.errors} />
+
+          <textarea name="message" placeholder={t("form.message")} rows={5} />
+          <ValidationError
+            prefix="Message"
+            field="message"
+            errors={state.errors}
+          />
 
           <div className={styles.privacyNote}>
-            <input type="checkbox" id="privacy" required />
+            <input type="checkbox" id="privacy" name="privacy" required />
             <label
               htmlFor="privacy"
               dangerouslySetInnerHTML={{
@@ -80,7 +106,9 @@ export default function ContactPage() {
             />
           </div>
 
-          <button type="submit">{t("form.submit")}</button>
+          <button type="submit" disabled={state.submitting}>
+            {state.submitting ? t("sending") : t("form.submit")}
+          </button>
         </form>
       </div>
     </section>

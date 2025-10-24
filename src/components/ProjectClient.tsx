@@ -2,7 +2,6 @@
 import { useEffect, useRef } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Image from "next/image";
-import { initScrollAnimation } from "@/lib/scrollAnimation";
 import { projects } from "@/data/projects";
 import styles from "@/styles/ProjectCard.module.css";
 import lightGallery from "lightgallery";
@@ -86,7 +85,6 @@ export default function ProjectClient({
     gallery.addEventListener("lgBeforeOpen", handleBeforeOpen);
     gallery.addEventListener("lgAfterClose", handleAfterClose);
 
-
     return () => {
       gallery.removeEventListener("lgBeforeOpen", handleBeforeOpen);
       gallery.removeEventListener("lgAfterClose", handleAfterClose);
@@ -96,6 +94,10 @@ export default function ProjectClient({
 
   return (
     <section className={styles.project} dir={dir}>
+      <header className={styles.header}>
+        <h1 className={styles.projectTitle}>{title}</h1>
+        <p className={styles.projectSubtitle}>{description}</p>
+      </header>
       <div className={styles.navigationButtons}>
         {prevProject && (
           <button
@@ -116,11 +118,6 @@ export default function ProjectClient({
           </button>
         )}
       </div>
-
-      <header className={styles.header}>
-        <h1 className={styles.projectTitle}>{title}</h1>
-        <p className={styles.projectSubtitle}>{description}</p>
-      </header>
 
       <div className={styles.gallery} ref={galleryRef}>
         {images.map((src, i) => (

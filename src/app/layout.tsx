@@ -1,3 +1,6 @@
+import AccessibilityWidget from "../components/AccessibilityWidget";
+import AOSInitializer from "../components/AOSInitializer";
+
 const SUPPORTED_LOCALES = ["he", "en", "th"] as const;
 type Locale = (typeof SUPPORTED_LOCALES)[number];
 const DEFAULT_LOCALE: Locale = "en";
@@ -14,6 +17,7 @@ export default async function LocaleLayout({
     : DEFAULT_LOCALE;
 
   const dir = locale === "he" ? "rtl" : "ltr";
+
   return (
     <html lang={locale} dir={dir} data-scroll-behavior="smooth">
       <head>
@@ -24,7 +28,11 @@ export default async function LocaleLayout({
           content="A&S Uzan Group - Engineering, Architecture and Construction"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <AOSInitializer />
+        {children}
+        <AccessibilityWidget />
+      </body>
     </html>
   );
 }

@@ -18,6 +18,12 @@
 .textSide {
   padding: 10px 60px;
   z-index: 2;
+  background-image: url("/Photos/Architecture/drawings_wallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  align-content: center;
 }
 
 .textSide h1 {
@@ -33,7 +39,8 @@
   font-weight: 800;
 }
 
-/* --- כפתורים --- */
+/*buttons*/
+
 .buttons {
   display: flex;
   gap: 20px;
@@ -120,6 +127,7 @@
   overflow: hidden;
 }
 
+
 /* --- רספונסיבי --- */
 @media (max-width: 1200px) {
   .hero {
@@ -129,7 +137,9 @@
     justify-content: center;
     overflow: hidden;
   }
+
   .textSide {
+    background-image: none;
     display: flex;
     flex-direction: column;
     justify-content: center;

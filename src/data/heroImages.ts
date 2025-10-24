@@ -20,7 +20,7 @@ export const heroImages = [
     alt: "electricCabin-after",
   },
   {
-    src: "/Photos/uzanGroup-removebg.png",
+    src: "/Photos/A&S-removebg.png",
     alt: "uzanGroup",
   },
 ];

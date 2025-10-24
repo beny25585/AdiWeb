@@ -24,7 +24,7 @@ export default function Hero() {
   ));
 
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} data-aos="fade-up">
       <div className={styles.split}>
         <div className={styles.textSide}>
           <div className={styles.textBox}>

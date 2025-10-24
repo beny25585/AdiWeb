@@ -121,7 +121,11 @@
   .hamburger {
     display: block;
     position: relative;
-    right: 30px;
+    right: 5vw;
+  }
+  [dir="rtl"] .hamburger {
+    left: 5vw;
+    right: auto;
   }
 
   .nav {
@@ -179,11 +183,21 @@
 }
 
 @media (max-width: 350px) {
+  .rightWrapper {
+    width: 70vw;
+  }
   .hamburger {
-    margin-right: 50px;
+    right: 18vw;
   }
   .right {
-    height: 230px;
     margin-right: 60px;
+    height: 230px;
+  }
+  [dir="rtl"] .right {
+    margin-left: 60px;
+    height: 230px;
+  }
+  [dir="rtl"] .hamburger {
+    left: 18vw;
   }
 }

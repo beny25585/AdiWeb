@@ -149,6 +149,46 @@
   text-decoration: underline;
   font-weight: 600;
 }
+.successMessage {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+  border: 2px solid #28a745;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2);
+  animation: slideDown 0.5s ease;
+}
+
+.successIcon {
+  font-size: 3rem;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.successMessage h3 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+.successMessage p {
+  font-size: 1.1rem;
+  margin: 5px 0 0 0;
+  opacity: 0.9;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 /* === מובייל === */
 @media (max-width: 600px) {
