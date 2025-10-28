@@ -14,11 +14,11 @@ export default async function ProjectPage({
   const images = projectImages[slug] || [];
 
   return (
-    <ProjectClient
-      dir={dir}
-      title={t(`${slug}.title`)}
-      description={t(`${slug}.description`)}
-      images={images}
-    />
+      <ProjectClient
+        dir={dir}
+        title={t(`${slug}.title`)}
+        description={t(`${slug}.description`)}
+        images={images}
+      />
   );
 }

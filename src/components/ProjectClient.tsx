@@ -10,6 +10,8 @@ import lgThumbnail from "lightgallery/plugins/thumbnail";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
+import Animated from "@/components/Animated";
+import { useTranslations } from "next-intl";
 
 export default function ProjectClient({
   dir,
@@ -27,6 +29,7 @@ export default function ProjectClient({
   const locale = params.locale as string;
   const currentSlug = params.slug as string;
   const galleryRef = useRef<HTMLDivElement>(null);
+  const t = useTranslations("projectNavigation");
 
   const currentIndex = projects.findIndex((p) => p.slug === currentSlug);
   const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
@@ -94,52 +97,61 @@ export default function ProjectClient({
 
   return (
     <section className={styles.project} dir={dir}>
-      <header className={styles.header}>
-        <h1 className={styles.projectTitle}>{title}</h1>
-        <p className={styles.projectSubtitle}>{description}</p>
-      </header>
-      <div className={styles.navigationButtons}>
-        {prevProject && (
-          <button
-            onClick={() => navigateToProject(prevProject.slug)}
-            className={`${styles.navButton} ${styles.prevButton}`}
-          >
-            <span className={styles.navArrow}>{dir === "rtl" ? "→" : "←"}</span>
-            <span>{dir === "rtl" ? "פרויקט קודם" : "Previous Project"}</span>
-          </button>
-        )}
-        {nextProject && (
-          <button
-            onClick={() => navigateToProject(nextProject.slug)}
-            className={`${styles.navButton} ${styles.nextButton}`}
-          >
-            <span>{dir === "rtl" ? "פרויקט הבא" : "Next Project"}</span>
-            <span className={styles.navArrow}>{dir === "rtl" ? "←" : "→"}</span>
-          </button>
-        )}
-      </div>
+      <Animated animation="fade-up">
+        <header className={styles.header}>
+          <h1 className={styles.projectTitle}>{title}</h1>
+          <p className={styles.projectSubtitle}>{description}</p>
+        </header>
+      </Animated>
+      <Animated animation="fade-up">
+        <div className={styles.navigationButtons}>
+          {prevProject && (
+            <button
+              onClick={() => navigateToProject(prevProject.slug)}
+              className={`${styles.navButton} ${styles.prevButton}`}
+            >
+              <span className={styles.navArrow}>
+                {dir === "rtl" ? "→" : "←"}
+              </span>
+              <span>{t("previous")}</span>
+            </button>
+          )}
+          {nextProject && (
+            <button
+              onClick={() => navigateToProject(nextProject.slug)}
+              className={`${styles.navButton} ${styles.nextButton}`}
+            >
+              <span>{t("next")}</span>
+              <span className={styles.navArrow}>
+                {dir === "rtl" ? "←" : "→"}
+              </span>
+            </button>
+          )}
+        </div>
+      </Animated>
 
       <div className={styles.gallery} ref={galleryRef}>
         {images.map((src, i) => (
-          <a
+          <Animated
             key={i}
-            href={src}
-            data-lg-size="1600-1200"
+            animation={dir === "rtl" ? "fade-right" : "fade-left"}
+            delay={i * 200}
             className={styles.imageWrapper}
           >
-            <Image
-              src={src}
-              alt={`${title} - Photo ${i + 1}`}
-              fill
-              className={styles.image}
-              loading={i < 3 ? "eager" : "lazy"}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          </a>
+            <a href={src} data-lg-size="1600-1200">
+              <Image
+                src={src}
+                alt={`${title} - Photo ${i + 1}`}
+                fill
+                className={styles.image}
+                loading={i < 3 ? "eager" : "lazy"}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </a>
+          </Animated>
         ))}
       </div>
 
-      {/* כפתורי ניווט תחתונים */}
       <div className={`${styles.navigationButtons} ${styles.bottomNav}`}>
         {prevProject && (
           <button
@@ -147,7 +159,7 @@ export default function ProjectClient({
             className={`${styles.navButton} ${styles.prevButton}`}
           >
             <span className={styles.navArrow}>{dir === "rtl" ? "→" : "←"}</span>
-            <span>{dir === "rtl" ? "פרויקט קודם" : "Previous Project"}</span>
+            <span>{t("previous")}</span>
           </button>
         )}
         {nextProject && (
@@ -155,7 +167,7 @@ export default function ProjectClient({
             onClick={() => navigateToProject(nextProject.slug)}
             className={`${styles.navButton} ${styles.nextButton}`}
           >
-            <span>{dir === "rtl" ? "פרויקט הבא" : "Next Project"}</span>
+            <span>{t("next")}</span>
             <span className={styles.navArrow}>{dir === "rtl" ? "←" : "→"}</span>
           </button>
         )}

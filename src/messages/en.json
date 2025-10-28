@@ -88,47 +88,52 @@
       "desc": "Transforming spaces with style and purpose — blending elegance, innovation, and comfort."
     }
   },
-  
-"finishing": {
-  "title": "Construction & Finishing Excellence",
-  "subtitle": "Uzan Group specializes in delivering premium finishing work for projects of all types – from luxury private residences to public institutions, offices, and large-scale commercial developments.",
-  "specialties": {
-    "gypsum": {
-      "title": "Advanced Gypsum & Acoustic Ceilings",
-      "desc": "State-of-the-art gypsum systems, acoustic ceilings, and unique interior design solutions"
-    },
-    "flooring": {
-      "title": "Flooring, Tiling & Painting",
-      "desc": "Premium flooring and tiling, professional plastering and painting to international standards"
-    },
-    "doors": {
-      "title": "Doors, Windows & Aluminum",
-      "desc": "Custom installation of doors, windows, and aluminum systems tailored to your needs"
-    },
-    "carpentry": {
-      "title": "Luxury Carpentry & Kitchens",
-      "desc": "High-end interior carpentry, designer kitchens, and premium custom furniture"
-    },
-    "electrical": {
-      "title": "Electrical & HVAC Systems",
-      "desc": "Advanced electrical systems, smart lighting, and professional air conditioning solutions"
-    },
-    "renovation": {
-      "title": "Renovations & Building Preservation",
-      "desc": "Comprehensive renovations, preservation work, and building upgrades of all scales"
-    }
+
+  "projectNavigation": {
+    "previous": "Previous Project",
+    "next": "Next Project"
   },
-  "clientsTitle": "Who We Work With",
-  "clients": {
-    "private": "Private Homes & Luxury Villas",
-    "apartments": "Residential & Office Tower Apartments",
-    "commercial": "Shops, Restaurants & Mall Businesses",
-    "institutions": "Educational, Healthcare & Community Facilities",
-    "projects": "Shopping Centers & Public Projects"
+
+  "finishing": {
+    "title": "Construction & Finishing Excellence",
+    "subtitle": "Uzan Group specializes in delivering premium finishing work for projects of all types – from luxury private residences to public institutions, offices, and large-scale commercial developments.",
+    "specialties": {
+      "gypsum": {
+        "title": "Advanced Gypsum & Acoustic Ceilings",
+        "desc": "State-of-the-art gypsum systems, acoustic ceilings, and unique interior design solutions"
+      },
+      "flooring": {
+        "title": "Flooring, Tiling & Painting",
+        "desc": "Premium flooring and tiling, professional plastering and painting to international standards"
+      },
+      "doors": {
+        "title": "Doors, Windows & Aluminum",
+        "desc": "Custom installation of doors, windows, and aluminum systems tailored to your needs"
+      },
+      "carpentry": {
+        "title": "Luxury Carpentry & Kitchens",
+        "desc": "High-end interior carpentry, designer kitchens, and premium custom furniture"
+      },
+      "electrical": {
+        "title": "Electrical & HVAC Systems",
+        "desc": "Advanced electrical systems, smart lighting, and professional air conditioning solutions"
+      },
+      "renovation": {
+        "title": "Renovations & Building Preservation",
+        "desc": "Comprehensive renovations, preservation work, and building upgrades of all scales"
+      }
+    },
+    "clientsTitle": "Who We Work With",
+    "clients": {
+      "private": "Private Homes & Luxury Villas",
+      "apartments": "Residential & Office Tower Apartments",
+      "commercial": "Shops, Restaurants & Mall Businesses",
+      "institutions": "Educational, Healthcare & Community Facilities",
+      "projects": "Shopping Centers & Public Projects"
+    },
+    "ctaText": "Have a project in mind? Let's talk",
+    "ctaButton": "Contact Us"
   },
-  "ctaText": "Have a project in mind? Let's talk",
-  "ctaButton": "Contact Us"
-},
   "projects": {
     "slogan": "Design. Quality. Construction. Perfection.",
     "pageTitle": "Our Projects",
