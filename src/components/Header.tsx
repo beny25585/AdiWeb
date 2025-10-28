@@ -41,13 +41,6 @@ export default function Header() {
       <div className={styles.container}>
         <Link href={`/${locale}`} className={styles.logo}>
           <div className={styles.logosWrap}>
-            <Image
-              src="/Photos/A&S-removebg.png"
-              alt="uzanGroup Logo"
-              width={100}
-              height={130}
-              className={styles.left}
-            />
             <div className={styles.rightWrapper}>
               <Image
                 src="/Photos/UZAN-removebg.png"
@@ -57,6 +50,13 @@ export default function Header() {
                 className={styles.right}
               />
             </div>
+            <Image
+              src="/Photos/A&S-removebg.png"
+              alt="uzanGroup Logo"
+              width={100}
+              height={130}
+              className={styles.left}
+            />
           </div>
         </Link>
 

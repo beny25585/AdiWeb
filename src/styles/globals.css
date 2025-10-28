@@ -38,29 +38,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.7;
-  overflow-x: hidden !important;
-  opacity: 0;
-  animation: fadeInPage 1.5s ease-in-out forwards;
+  overflow-x: hidden;
 }
 
 main {
-  padding-top: 0 !important;
-  margin-top: 0 !important;
+  padding-top: 0;
+  margin-top: 0;
 }
 
 main[data-locale] {
   padding-top: 0;
-}
-
-.fade-in-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 3s ease, transform 3s ease;
-}
-
-.fade-in-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 h1,
@@ -89,13 +76,4 @@ p {
   bottom: 90px !important;
   right: 20px !important;
   height: auto !important;
-}
-
-@keyframes fadeInPage {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
