@@ -31,7 +31,6 @@ export const projectImages: Record<string, string[]> = {
     "/Photos/office/office-after1.jpg",
     "/Photos/office/office-after3.jpg",
     "/Photos/office/office-after2.jpg",
-    "/Photos/office/office-before1.jpg",
     "/Photos/office/office-before2.jpg",
   ],
   electricCabin: [

@@ -130,15 +130,18 @@ export default function ProjectClient({
         </div>
       </Animated>
 
-      <div className={styles.gallery} ref={galleryRef}>
-        {images.map((src, i) => (
-          <Animated
-            key={i}
-            animation={dir === "rtl" ? "fade-right" : "fade-left"}
-            delay={i * 200}
-            className={styles.imageWrapper}
-          >
-            <a href={src} data-lg-size="1600-1200">
+      <Animated
+        animation={dir === "rtl" ? "fade-right" : "fade-left"}
+        delay={200}
+      >
+        <div className={styles.gallery} ref={galleryRef}>
+          {images.map((src, i) => (
+            <a
+              key={i}
+              href={src}
+              data-lg-size="1600-1200"
+              className={styles.imageWrapper}
+            >
               <Image
                 src={src}
                 alt={`${title} - Photo ${i + 1}`}
@@ -148,9 +151,9 @@ export default function ProjectClient({
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </a>
-          </Animated>
-        ))}
-      </div>
+          ))}
+        </div>
+      </Animated>
 
       <div className={`${styles.navigationButtons} ${styles.bottomNav}`}>
         {prevProject && (
