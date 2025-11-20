@@ -33,13 +33,13 @@
 
 /* GALLERY */
 .gallery {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, auto));
-  grid-auto-rows: 200px;
+  grid-template-columns: repeat(auto-fit, minmax(20vw, auto-fit));
+  grid-auto-rows: 20vw;
   grid-auto-flow: dense;
   gap: 12px;
-  width: 100%;
-  max-width: 100vw;
+  width: 70vw;
 }
 
 /* IMAGE WRAPPER */
@@ -105,6 +105,8 @@
 }
 
 .bottomNav {
+  position: relative;
+  bottom: 0;
   margin-top: 60px;
   margin-bottom: 40px;
   padding-top: 40px;
@@ -197,9 +199,6 @@
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .gallery{
-    width: 700px;
-  }
   .projectTitle {
     font-size: 2.4rem;
   }
@@ -214,6 +213,10 @@
     flex-direction: column;
     gap: 15px;
     margin: 20px auto;
+  }
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(50vw, auto-fit));
+    grid-template-rows: 40vw;
   }
 
   .navButton {
@@ -232,20 +235,13 @@
     margin-top: 40px;
     padding-top: 30px;
   }
-
-  .imageWrapper:nth-child(4n + 3) {
-    grid-column: 1;
-    grid-row: 1;
-  }
-}
-
-@media (max-width: 600px) {
-  .gallery {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr ;
+  }
+
   .navButton {
     padding: 12px 20px;
     font-size: 0.95rem;

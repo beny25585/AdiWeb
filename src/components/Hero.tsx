@@ -47,7 +47,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* --- צד תמונה (קרוסלה) --- */}
         <div className={styles.imageSide}>
           <AliceCarousel
             items={items}

@@ -16,6 +16,7 @@
 }
 
 .textSide {
+  position: relative;
   padding: 10px 60px;
   z-index: 2;
   background-image: url("/Photos/Architecture/drawings_wallpaper.jpg");
@@ -24,18 +25,35 @@
   background-repeat: no-repeat;
   height: 100%;
   align-content: center;
+  overflow: hidden;
+}
+.textSide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.45);
+}
+.textSide h1,
+.textSide p,
+.buttons {
+  position: relative;
+  z-index: 2;
 }
 
 .textSide h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 900;
-  color: #020202;
+  color: #ffffff;
   margin-bottom: 12px;
 }
 
 .textSide p {
   font-size: 1.4rem;
-  color: #000000;
+  color: #ffffff;
   font-weight: 800;
 }
 
@@ -58,20 +76,21 @@
 }
 
 .buttonPrimary {
-  background: #080808;
+  border: 2px solid rgb(249, 249, 249);
+  background: transparent;
   color: white;
-  box-shadow: 0 10px 30px rgba(77, 77, 78, 0.4);
+}
+.buttonSecondary {
+  border: 2px solid rgb(249, 249, 249);
+  background: transparent;
+  color: rgb(255, 255, 255);
 }
 .buttonPrimary:hover {
-  background: #383838;
+  background: #ffffff;
   transform: translateY(-5px);
+  color: black;
 }
 
-.buttonSecondary {
-  border: 2px solid rgb(10, 10, 10);
-  background: transparent;
-  color: rgb(7, 7, 7);
-}
 .buttonSecondary:hover {
   background: white;
   color: #313132;
@@ -127,7 +146,6 @@
   overflow: hidden;
 }
 
-
 /* --- רספונסיבי --- */
 @media (max-width: 1200px) {
   .hero {
@@ -136,6 +154,10 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+  }
+  .textSide::before {
+    background: none;
+    z-index: 0;
   }
 
   .textSide {
@@ -153,6 +175,22 @@
     padding: 40px 60px;
     border-radius: 12px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  }
+  .textSide h1 {
+    color: black;
+  }
+  .textSide p {
+    color: black;
+  }
+  .buttonPrimary {
+    border: 2px solid rgb(5, 5, 5);
+    background: transparent;
+    color: rgb(0, 0, 0);
+  }
+  .buttonSecondary {
+    border: 2px solid rgb(0, 0, 0);
+    background: transparent;
+    color: rgb(0, 0, 0);
   }
 
   .split {
