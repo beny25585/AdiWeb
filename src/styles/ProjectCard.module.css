@@ -46,8 +46,8 @@
 .imageWrapper {
   overflow: hidden;
   position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 10;
+
+  height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,6 +61,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
@@ -220,10 +221,6 @@
     gap: 10px;
   }
 
-  .imageWrapper {
-    aspect-ratio: 16 / 12;
-  }
-
   .navigationButtons {
     flex-direction: column;
     gap: 15px;
@@ -248,15 +245,11 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 550px) {
   .gallery {
     padding: 0 10px;
     gap: 8px;
     grid-template-columns: 1fr;
-  }
-
-  .imageWrapper {
-    aspect-ratio: 16 / 14;
   }
 
   .projectTitle {

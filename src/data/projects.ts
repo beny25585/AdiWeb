@@ -6,6 +6,11 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "Winery",
+    image: "/Photos/Winery/1_1 - Exterior_Dawn.jpg",
+    folder: "/Photos/Winery",
+  },
+  {
     slug: "FREDEROSCAR",
     image: "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 1.jpg",
     folder: "/Photos/F-RENDER-OSCAR",

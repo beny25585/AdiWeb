@@ -93,7 +93,7 @@ export default function ContactPage() {
           <div className={styles.privacyNote}>
             <input type="checkbox" id="privacy" name="privacy" required />
             <label
-              htmlFor="privacy"
+              htmlFor="privacy" 
               dangerouslySetInnerHTML={{
                 __html: t("privacyNote", {
                   privacyPolicyLink: `<a href="/${locale}/privacy" target="_blank" class="${

@@ -109,25 +109,11 @@ export default function Footer() {
               <FaLine /> Line
             </a>
             <a
-              href="https://facebook.com/asuzangroup"
+              href="https://www.facebook.com/profile.php?id=61584594541314"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaFacebook /> Facebook
-            </a>
-            <a
-              href="https://linkedin.com/company/asuzangroup"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaLinkedin /> LinkedIn
-            </a>
-            <a
-              href="https://youtube.com/@asuzangroup"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaYoutube /> YouTube
             </a>
           </div>
         </div>

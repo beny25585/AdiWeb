@@ -225,6 +225,7 @@
 .imageShira {
   border-radius: 50%;
   object-fit: cover;
+  object-position: top;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   border: 8px solid #fff;
   width: 400px;

@@ -11,6 +11,13 @@ export const projectImages: Record<string, string[]> = {
     "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 9.jpg",
     "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 10.jpg",
   ],
+  Winery: [
+    "/Photos/Winery/1_1 - Exterior_Dawn.jpg",
+    "/Photos/Winery/1_2 - Interior_tasting_room.jpg",
+    "/Photos/Winery/1_3 - Exterior_dawn_drone_shot.jpg",
+    "/Photos/Winery/1_4-Winery_entrance.jpg",
+    "/Photos/Winery/1_5-Winery_entrance.jpg",
+  ],
   suite: [
     "/Photos/Suite/courtyard1.jpg",
     "/Photos/Suite/courtyard2.jpg",
