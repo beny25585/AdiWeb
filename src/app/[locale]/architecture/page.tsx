@@ -4,6 +4,7 @@ import type { Locale } from "@/lib/i18n";
 import Link from "next/link";
 import Image from "next/image";
 import Animated from "@/components/Animated";
+import Bubbles from "@/components/Bubbles";
 
 export default async function ArchitecturePage({
   params,
@@ -20,18 +21,12 @@ export default async function ArchitecturePage({
       image: "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 1.jpg",
     },
     { slug: "suite", image: "/Photos/Suite/suite1.jpg" },
+    { slug: "Winery", image: "/Photos/Winery/1_1 - Exterior_Dawn.jpg" },
   ];
 
   return (
     <section className={styles.container}>
-      <div className={styles.bubble1}></div>
-      <div className={styles.bubble2}></div>
-      <div className={styles.bubble3}></div>
-      <div className={styles.bubble4}></div>
-      <div className={styles.bubble5}></div>
-      <div className={styles.bubble6}></div>
-      <div className={styles.bubble7}></div>
-      <div className={styles.bubble8}></div>
+      <Bubbles />
 
       <Animated animation="fade-down">
         <h1 className={styles.title}>{t("title")}</h1>
@@ -71,7 +66,7 @@ export default async function ArchitecturePage({
           </Animated>
         </div>
       </div>
-
+      <Bubbles />
       <div className={styles.topContainer}>
         <Animated animation="fade-up" delay={100}>
           <div className={styles.serviceCard}>
@@ -130,7 +125,7 @@ export default async function ArchitecturePage({
           </Animated>
         ))}
       </div>
-
+      <Bubbles />
       <div className={styles.cta}>
         <Link href={`/${locale}/contact`} className={styles.ctaButton}>
           {t("cta")}

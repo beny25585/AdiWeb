@@ -78,6 +78,10 @@
   transform: scale(1.05);
   filter: brightness(0.85);
 }
+.reveal-img {
+  opacity: 0;
+  will-change: opacity, transform, filter;
+}
 
 /* PAGE FADE-IN */
 @keyframes fadeInUp {

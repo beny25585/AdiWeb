@@ -12,6 +12,10 @@ import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
 import Animated from "@/components/Animated";
 import { useTranslations } from "next-intl";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ProjectClient({
   dir,
@@ -39,6 +43,8 @@ export default function ProjectClient({
   const navigateToProject = (slug: string) => {
     router.push(`/${locale}/projects/${slug}`);
   };
+
+  // LightGallery setup
   useEffect(() => {
     if (!galleryRef.current) return;
 
@@ -66,9 +72,6 @@ export default function ProjectClient({
         0;
 
       window.scrollTo({ top: 0, behavior: "auto" });
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-
       document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
     };
@@ -79,8 +82,6 @@ export default function ProjectClient({
 
       setTimeout(() => {
         window.scrollTo({ top: savedScrollY, behavior: "auto" });
-        document.documentElement.scrollTop = savedScrollY;
-        document.body.scrollTop = savedScrollY;
       }, 10);
     };
 
@@ -95,6 +96,38 @@ export default function ProjectClient({
     };
   }, []);
 
+  // GSAP ScrollTrigger for images
+  useEffect(() => {
+    if (!galleryRef.current) return;
+
+    const images = gsap.utils.toArray<HTMLAnchorElement>(".reveal-img");
+
+    images.forEach((img) => {
+      gsap.fromTo(
+        img,
+        { opacity: 0, x: 40 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: img,
+            start: "top 90%",
+            end: "bottom 10%",
+            toggleActions: "play reverse play reverse",
+          },
+          stagger: {
+            grid: "auto",
+            from: "center",
+            axis: "y",
+            amount: 1.5,
+          },
+        }
+      );
+    });
+  }, []);
+
   return (
     <section className={styles.project} dir={dir}>
       <Animated animation="fade-up">
@@ -103,6 +136,7 @@ export default function ProjectClient({
           <p className={styles.projectSubtitle}>{description}</p>
         </header>
       </Animated>
+
       <Animated animation="fade-up">
         <div className={styles.navigationButtons}>
           {prevProject && (
@@ -140,7 +174,7 @@ export default function ProjectClient({
               key={i}
               href={src}
               data-lg-size="1600-1200"
-              className={styles.imageWrapper}
+              className={`${styles.imageWrapper} reveal-img`}
             >
               <Image
                 src={src}
