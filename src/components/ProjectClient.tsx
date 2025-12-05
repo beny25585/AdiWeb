@@ -10,7 +10,6 @@ import lgThumbnail from "lightgallery/plugins/thumbnail";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
-import Animated from "@/components/Animated";
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -33,6 +32,10 @@ export default function ProjectClient({
   const locale = params.locale as string;
   const currentSlug = params.slug as string;
   const galleryRef = useRef<HTMLDivElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const navigationTopRef = useRef<HTMLDivElement>(null);
+  const navigationBottomRef = useRef<HTMLDivElement>(null);
+  const imageRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const t = useTranslations("projectNavigation");
 
   const currentIndex = projects.findIndex((p) => p.slug === currentSlug);
@@ -96,100 +99,139 @@ export default function ProjectClient({
     };
   }, []);
 
-  // GSAP ScrollTrigger for images
+  // GSAP Animations
   useEffect(() => {
-    if (!galleryRef.current) return;
+    const ctx = gsap.context(() => {
+      // Header animation
+      if (headerRef.current) {
+        gsap.fromTo(
+          headerRef.current,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out",
+          }
+        );
+      }
 
-    const images = gsap.utils.toArray<HTMLAnchorElement>(".reveal-img");
+      // Top navigation animation
+      if (navigationTopRef.current) {
+        gsap.fromTo(
+          navigationTopRef.current,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            delay: 0.2,
+          }
+        );
+      }
 
-    images.forEach((img) => {
-      gsap.fromTo(
-        img,
-        { opacity: 0, x: 40 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.8,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: img,
-            start: "top 90%",
-            end: "bottom 10%",
-            toggleActions: "play reverse play reverse",
-          },
-          stagger: {
-            grid: "auto",
-            from: "center",
-            axis: "y",
-            amount: 1.5,
-          },
+      // Images animation - using refs directly
+      imageRefs.current.forEach((img, index) => {
+        if (img) {
+          gsap.fromTo(
+            img,
+            {
+              opacity: 0,
+              y: dir === "rtl" ? -40 : 40,
+            },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: img,
+                start: "top 85%",
+                end: "bottom 20%",
+                toggleActions: "play none none reverse",
+              },
+              delay: index * 0.1,
+            }
+          );
         }
-      );
+      });
+
+      // Bottom navigation animation
+      if (navigationBottomRef.current) {
+        gsap.fromTo(
+          navigationBottomRef.current,
+          { opacity: 0, y: -30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: navigationBottomRef.current,
+              start: "top 90%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      }
     });
-  }, []);
+
+    return () => ctx.revert();
+  }, [dir, images.length]);
 
   return (
     <section className={styles.project} dir={dir}>
-      <Animated animation="fade-up">
-        <header className={styles.header}>
-          <h1 className={styles.projectTitle}>{title}</h1>
-          <p className={styles.projectSubtitle}>{description}</p>
-        </header>
-      </Animated>
+      <header className={styles.header} ref={headerRef}>
+        <h1 className={styles.projectTitle}>{title}</h1>
+        <p className={styles.projectSubtitle}>{description}</p>
+      </header>
 
-      <Animated animation="fade-up">
-        <div className={styles.navigationButtons}>
-          {prevProject && (
-            <button
-              onClick={() => navigateToProject(prevProject.slug)}
-              className={`${styles.navButton} ${styles.prevButton}`}
-            >
-              <span className={styles.navArrow}>
-                {dir === "rtl" ? "→" : "←"}
-              </span>
-              <span>{t("previous")}</span>
-            </button>
-          )}
-          {nextProject && (
-            <button
-              onClick={() => navigateToProject(nextProject.slug)}
-              className={`${styles.navButton} ${styles.nextButton}`}
-            >
-              <span>{t("next")}</span>
-              <span className={styles.navArrow}>
-                {dir === "rtl" ? "←" : "→"}
-              </span>
-            </button>
-          )}
-        </div>
-      </Animated>
+      <div className={styles.navigationButtons} ref={navigationTopRef}>
+        {prevProject && (
+          <button
+            onClick={() => navigateToProject(prevProject.slug)}
+            className={`${styles.navButton} ${styles.prevButton}`}
+          >
+            <span className={styles.navArrow}>{dir === "rtl" ? "→" : "←"}</span>
+            <span>{t("previous")}</span>
+          </button>
+        )}
+        {nextProject && (
+          <button
+            onClick={() => navigateToProject(nextProject.slug)}
+            className={`${styles.navButton} ${styles.nextButton}`}
+          >
+            <span>{t("next")}</span>
+            <span className={styles.navArrow}>{dir === "rtl" ? "←" : "→"}</span>
+          </button>
+        )}
+      </div>
 
-      <Animated
-        animation={dir === "rtl" ? "fade-right" : "fade-left"}
-        delay={200}
+      <div className={styles.gallery} ref={galleryRef}>
+        {images.map((src, i) => (
+          <a
+            key={i}
+            href={src}
+            data-lg-size="1600-1200"
+            className={`${styles.imageWrapper} reveal-img`}
+          >
+            <Image
+              src={src}
+              alt={`${title} - Photo ${i + 1}`}
+              fill
+              className={styles.image}
+              loading={i < 3 ? "eager" : "lazy"}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </a>
+        ))}
+      </div>
+
+      <div
+        className={`${styles.navigationButtons} ${styles.bottomNav}`}
+        ref={navigationBottomRef}
       >
-        <div className={styles.gallery} ref={galleryRef}>
-          {images.map((src, i) => (
-            <a
-              key={i}
-              href={src}
-              data-lg-size="1600-1200"
-              className={`${styles.imageWrapper} reveal-img`}
-            >
-              <Image
-                src={src}
-                alt={`${title} - Photo ${i + 1}`}
-                fill
-                className={styles.image}
-                loading={i < 3 ? "eager" : "lazy"}
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              />
-            </a>
-          ))}
-        </div>
-      </Animated>
-
-      <div className={`${styles.navigationButtons} ${styles.bottomNav}`}>
         {prevProject && (
           <button
             onClick={() => navigateToProject(prevProject.slug)}

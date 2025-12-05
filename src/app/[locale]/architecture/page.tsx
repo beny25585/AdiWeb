@@ -1,19 +1,154 @@
-import { getTranslations } from "next-intl/server";
+"use client";
+
 import styles from "@/styles/Architecture.module.css";
-import type { Locale } from "@/lib/i18n";
 import Link from "next/link";
 import Image from "next/image";
-import Animated from "@/components/Animated";
-import Bubbles from "@/components/Bubbles";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslations, useLocale } from "next-intl";
 
-export default async function ArchitecturePage({
-  params,
-}: {
-  params: { locale: Locale };
-}) {
-  const { locale } = params;
-  const t = await getTranslations({ locale, namespace: "architecture" });
-  const tp = await getTranslations({ locale, namespace: "projects" });
+gsap.registerPlugin(ScrollTrigger);
+
+export default function ArchitecturePage() {
+  const locale = useLocale();
+  const t = useTranslations("architecture");
+  const tp = useTranslations("projects");
+
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const introRef = useRef<HTMLParagraphElement>(null);
+  const imageContainerRef = useRef<HTMLDivElement>(null);
+  const visionContentRef = useRef<HTMLDivElement>(null);
+  const serviceCard1Ref = useRef<HTMLDivElement>(null);
+  const serviceCard2Ref = useRef<HTMLDivElement>(null);
+  const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const portfolioTitleRef = useRef<HTMLHeadingElement>(null);
+  const projectCardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
+
+  useEffect(() => {
+    // Title animation - fade-down
+    if (titleRef.current) {
+      gsap.set(titleRef.current, { opacity: 0, y: -50 });
+      gsap.to(titleRef.current, {
+        scrollTrigger: {
+          trigger: titleRef.current,
+          start: "top 90%",
+          once: true,
+        },
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+    }
+
+    // Intro animation - zoom-in
+    if (introRef.current) {
+      gsap.set(introRef.current, { opacity: 0, scale: 0.8 });
+      gsap.to(introRef.current, {
+        scrollTrigger: {
+          trigger: introRef.current,
+          start: "top 90%",
+          once: true,
+        },
+        opacity: 1,
+        scale: 1,
+        duration: 0.01,
+        delay: 0.2,
+        ease: "power2.out",
+      });
+    }
+
+    // Image container - fade-right
+    if (imageContainerRef.current) {
+      gsap.set(imageContainerRef.current, { opacity: 0, x: -50 });
+      gsap.to(imageContainerRef.current, {
+        scrollTrigger: {
+          trigger: imageContainerRef.current,
+          start: "top 90%",
+          once: true,
+        },
+        opacity: 1,
+        x: 0,
+        duration: 1.2,
+        ease: "power2.out",
+      });
+    }
+
+    // Vision content - fade-left
+    if (visionContentRef.current) {
+      gsap.set(visionContentRef.current, { opacity: 0, x: 50 });
+      gsap.to(visionContentRef.current, {
+        scrollTrigger: {
+          trigger: visionContentRef.current,
+          start: "top 90%",
+          once: true,
+        },
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        delay: 0.3,
+        ease: "power2.out",
+      });
+    }
+
+    // Service cards
+    [serviceCard1Ref, serviceCard2Ref, imageWrapperRef].forEach(
+      (ref, index) => {
+        if (ref.current) {
+          gsap.set(ref.current, { opacity: 0, y: 50 });
+          gsap.to(ref.current, {
+            scrollTrigger: {
+              trigger: ref.current,
+              start: "top 90%",
+              once: true,
+            },
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            delay: index * 0.2 + 0.1,
+            ease: "power2.out",
+          });
+        }
+      }
+    );
+
+    // Portfolio title
+    if (portfolioTitleRef.current) {
+      gsap.set(portfolioTitleRef.current, { opacity: 0, y: 50 });
+      gsap.to(portfolioTitleRef.current, {
+        scrollTrigger: {
+          trigger: portfolioTitleRef.current,
+          start: "top 90%",
+          once: true,
+        },
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+    }
+
+    // Project cards - flip-left
+    projectCardsRef.current.forEach((card, index) => {
+      if (card) {
+        gsap.set(card, { opacity: 0, rotationY: -90, x: 50 });
+        gsap.to(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 90%",
+            once: true,
+          },
+          opacity: 1,
+          rotationY: 0,
+          x: 0,
+          duration: 0.8,
+          delay: index * 0.2,
+          ease: "power2.out",
+        });
+      }
+    });
+  }, []);
 
   const shiraProjects = [
     {
@@ -26,67 +161,52 @@ export default async function ArchitecturePage({
 
   return (
     <section className={styles.container}>
-      <Bubbles />
+      <h1 ref={titleRef} className={styles.title}>
+        {t("title")}
+      </h1>
 
-      <Animated animation="fade-down">
-        <h1 className={styles.title}>{t("title")}</h1>
-      </Animated>
-
-      <Animated animation="zoom-in" delay={200} duration={10}>
-        <p className={styles.intro}>{t("intro")}</p>
-      </Animated>
+      <p ref={introRef} className={styles.intro}>
+        {t("intro")}
+      </p>
 
       <div className={styles.visionSection}>
         <div className={styles.shiraVision}>
-          <Animated animation="fade-right" duration={1200}>
-            <div className={styles.imageContainer}>
-              <Image
-                src="/Photos/shiraPhoto.jpg"
-                alt="Architect Shira Uzan"
-                height={500}
-                width={500}
-                className={styles.imageShira}
-              />
-            </div>
-          </Animated>
+          <div ref={imageContainerRef} className={styles.imageContainer}>
+            <Image
+              src="/Photos/shiraPhoto.jpg"
+              alt="Architect Shira Uzan"
+              height={500}
+              width={500}
+              className={styles.imageShira}
+            />
+          </div>
 
-          <Animated animation="fade-left" delay={300}>
-            <div className={styles.visionContent}>
-              <div className={styles.divider}></div>
-              <p className={styles.visionText}>
-                Shira Uzan is a licensed architect with over a decade of
-                experience in residential and commercial design. She specializes
-                in creating innovative spaces that blend functionality with
-                aesthetic excellence. Her approach emphasizes sustainable design
-                principles and client collaboration, ensuring each project
-                reflects the unique vision and needs of those who will inhabit
-                the space.
-              </p>
-            </div>
-          </Animated>
+          <div ref={visionContentRef} className={styles.visionContent}>
+            <div className={styles.divider}></div>
+            <p className={styles.visionText}>
+              Shira Uzan is a licensed architect with over a decade of
+              experience in residential and commercial design. She specializes
+              in creating innovative spaces that blend functionality with
+              aesthetic excellence. Her approach emphasizes sustainable design
+              principles and client collaboration, ensuring each project
+              reflects the unique vision and needs of those who will inhabit the
+              space.
+            </p>
+          </div>
         </div>
       </div>
-      <Bubbles />
       <div className={styles.topContainer}>
-        <Animated animation="fade-up" delay={100}>
-          <div className={styles.serviceCard}>
-            <h2>{t("design.title")}</h2>
-            <p>{t("design.desc")}</p>
-          </div>
-        </Animated>
+        <div ref={serviceCard1Ref} className={styles.serviceCard}>
+          <h2>{t("design.title")}</h2>
+          <p>{t("design.desc")}</p>
+        </div>
 
-        <Animated animation="fade-up" delay={300}>
-          <div className={styles.serviceCard}>
-            <h2>{t("construction.title")}</h2>
-            <p>{t("construction.desc")}</p>
-          </div>
-        </Animated>
+        <div ref={serviceCard2Ref} className={styles.serviceCard}>
+          <h2>{t("construction.title")}</h2>
+          <p>{t("construction.desc")}</p>
+        </div>
 
-        <Animated
-          animation="fade-up"
-          delay={500}
-          className={styles.imageWrapper}
-        >
+        <div ref={imageWrapperRef} className={styles.imageWrapper}>
           <Image
             src="/Photos/Architecture/house_wallpaper.jpg"
             alt="house wallpaper"
@@ -94,38 +214,35 @@ export default async function ArchitecturePage({
             className={styles.photo}
             priority
           />
-        </Animated>
+        </div>
       </div>
 
-      <Animated animation="fade-up">
-        <h2 className={styles.portfolioTitle}>{t("portfolio")}</h2>
-      </Animated>
+      <h2 ref={portfolioTitleRef} className={styles.portfolioTitle}>
+        {t("portfolio")}
+      </h2>
 
       <div className={styles.projectsGrid}>
         {shiraProjects.map((project, index) => (
-          <Animated
+          <Link
             key={project.slug}
-            animation="flip-left"
-            delay={index * 200}
+            href={`/${locale}/projects/${project.slug}`}
+            className={styles.projectCard}
+            ref={(el) => {
+              projectCardsRef.current[index] = el;
+            }}
           >
-            <Link
-              href={`/${locale}/projects/${project.slug}`}
-              className={styles.projectCard}
-            >
-              <Image
-                src={project.image}
-                alt={tp(`${project.slug}.title`)}
-                width={600}
-                height={400}
-              />
-              <div className={styles.projectInfo}>
-                <h3>{tp(`${project.slug}.title`)}</h3>
-              </div>
-            </Link>
-          </Animated>
+            <Image
+              src={project.image}
+              alt={tp(`${project.slug}.title`)}
+              width={600}
+              height={400}
+            />
+            <div className={styles.projectInfo}>
+              <h3>{tp(`${project.slug}.title`)}</h3>
+            </div>
+          </Link>
         ))}
       </div>
-      <Bubbles />
       <div className={styles.cta}>
         <Link href={`/${locale}/contact`} className={styles.ctaButton}>
           {t("cta")}

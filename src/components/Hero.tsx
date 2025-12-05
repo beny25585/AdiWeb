@@ -6,10 +6,16 @@ import { useTranslations, useLocale } from "next-intl";
 import { heroImages } from "@/data/heroImages";
 import AliceCarousel from "react-alice-carousel";
 import Image from "next/image";
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   const t = useTranslations("hero");
   const locale = useLocale();
+  const heroRef = useRef<HTMLElement>(null);
 
   const items = heroImages.map((img, i) => (
     <div key={i} className={styles.slideItem}>
@@ -24,7 +30,7 @@ export default function Hero() {
   ));
 
   return (
-    <section className={styles.hero} data-aos="fade-up">
+    <section ref={heroRef} className={styles.hero}>
       <div className={styles.split}>
         <div className={styles.textSide}>
           <div className={styles.textBox}>

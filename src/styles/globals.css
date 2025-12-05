@@ -31,7 +31,6 @@ body {
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   color: var(--foreground);
   background: var(--background);
   font-family: "Segoe UI", Arial, sans-serif;
@@ -42,12 +41,8 @@ body {
 }
 
 main {
-  padding-top: 0;
-  margin-top: 0;
-}
-
-main[data-locale] {
-  padding-top: 0;
+  padding: 0;
+  margin: 0;
 }
 
 h1,

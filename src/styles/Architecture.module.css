@@ -34,73 +34,169 @@
 .bubble1 {
   width: 280px;
   height: 280px;
-  top: 8%;
-  left: 5%;
-  animation-duration: 20s;
-  animation-delay: 0s;
+  top: 5%;
+  left: 3%;
 }
 
 .bubble2 {
   width: 320px;
   height: 320px;
-  top: 15%;
-  right: 8%;
-  animation-duration: 24s;
-  animation-delay: 2s;
+  top: 8%;
+  right: 5%;
 }
 
 .bubble3 {
   width: 240px;
   height: 240px;
-  top: 35%;
-  left: 18%;
-  animation-duration: 22s;
-  animation-delay: 1s;
+  top: 12%;
+  left: 25%;
 }
 
 .bubble4 {
   width: 200px;
   height: 200px;
-  top: 50%;
-  right: 15%;
-  animation-duration: 19s;
-  animation-delay: 3s;
+  top: 15%;
+  right: 30%;
 }
 
 .bubble5 {
   width: 260px;
   height: 260px;
-  top: 65%;
-  left: 10%;
-  animation-duration: 21s;
-  animation-delay: 1.5s;
+  top: 18%;
+  left: 50%;
 }
 
 .bubble6 {
   width: 220px;
   height: 220px;
-  top: 78%;
-  right: 25%;
-  animation-duration: 18s;
-  animation-delay: 2.5s;
+  top: 22%;
+  right: 20%;
 }
 
 .bubble7 {
   width: 190px;
   height: 190px;
-  top: 25%;
-  left: 45%;
-  animation-duration: 23s;
-  animation-delay: 0.5s;
+  top: 28%;
+  left: 10%;
 }
 
 .bubble8 {
   width: 210px;
   height: 210px;
-  top: 55%;
+  top: 32%;
+  right: 45%;
+}
+
+.bubble9 {
+  width: 230px;
+  height: 230px;
+  top: 35%;
+  left: 35%;
+}
+
+.bubble10 {
+  width: 195px;
+  height: 195px;
+  top: 40%;
+  right: 8%;
+}
+
+.bubble11 {
+  width: 245px;
+  height: 245px;
+  top: 45%;
+  left: 15%;
+}
+
+.bubble12 {
+  width: 215px;
+  height: 215px;
+  top: 48%;
+  right: 25%;
+}
+
+.bubble13 {
+  width: 235px;
+  height: 235px;
+  top: 52%;
+  left: 45%;
+}
+
+.bubble14 {
+  width: 205px;
+  height: 205px;
+  top: 58%;
+  right: 15%;
+}
+
+.bubble15 {
+  width: 250px;
+  height: 250px;
+  top: 62%;
+  left: 5%;
+}
+
+.bubble16 {
+  width: 225px;
+  height: 225px;
+  top: 65%;
+  right: 35%;
+}
+
+.bubble17 {
+  width: 240px;
+  height: 240px;
+  top: 70%;
+  left: 28%;
+}
+
+.bubble18 {
+  width: 200px;
+  height: 200px;
+  top: 75%;
+  right: 10%;
+}
+
+.bubble19 {
+  width: 220px;
+  height: 220px;
+  top: 78%;
+  left: 40%;
+}
+
+.bubble20 {
+  width: 235px;
+  height: 235px;
+  top: 82%;
+  right: 28%;
+}
+
+.bubble21 {
+  width: 210px;
+  height: 210px;
+  top: 85%;
+  left: 12%;
+}
+
+.bubble22 {
+  width: 230px;
+  height: 230px;
+  top: 88%;
+  right: 18%;
+}
+
+.bubble23 {
+  width: 245px;
+  height: 245px;
+  top: 92%;
+  left: 30%;
+}
+
+.bubble24 {
+  width: 215px;
+  height: 215px;
+  top: 95%;
   right: 40%;
-  animation-duration: 20s;
-  animation-delay: 3.5s;
 }
 
 .container > *:not([class*="bubble"]) {
@@ -177,15 +273,9 @@
   border-radius: 16px;
   padding: 40px 30px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.serviceCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
 .serviceCard h2 {
@@ -283,24 +373,13 @@
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
-}
-
-.projectCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .projectCard img {
   width: 100%;
   height: 300px;
   object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.projectCard:hover img {
-  transform: scale(1.08);
 }
 
 .projectInfo {
@@ -333,14 +412,8 @@
   font-size: 1.2rem;
   font-weight: 700;
   text-decoration: none;
-  transition: all 0.3s ease;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
-}
-
-.ctaButton:hover {
-  background: #333;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* Responsive */
@@ -430,7 +503,9 @@
   .bubble6,
   .bubble7,
   .bubble8 {
-    display: none;
+    width: 200px;
+    height: 200px;
+    opacity: 1;
   }
 
   .bubble1,
@@ -439,8 +514,7 @@
   .bubble4 {
     width: 180px;
     height: 180px;
-    filter: blur(3px);
-    opacity: 0.4;
+    opacity: 1;
   }
 }
 
