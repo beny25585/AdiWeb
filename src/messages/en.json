@@ -243,5 +243,16 @@
     },
     "portfolio": "Our Projects Speak for Themselves",
     "cta": "Have a Vision? Let's Bring It to Life Together"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "Sorry, the page you're looking for doesn't exist or has been moved to another location.",
+    "backHome": "Back to Home",
+    "contact": "Contact Us",
+    "quickLinks": "Quick Links",
+    "projects": "Projects",
+    "services": "Services",
+    "about": "About",
+    "finishing": "Finishing Work"
   }
 }
