@@ -234,6 +234,7 @@
   "architecture": {
     "title": "Architecture That Tells a Story",
     "intro": "Shira, our chief architect, creates spaces that live and breathe. Every project is a journey — from initial vision to a creation that transforms spatial experience.",
+    "shiraBio": "Shira Uzan is a licensed architect with over a decade of experience in residential and commercial design. She specializes in creating innovative spaces that blend functionality with aesthetic excellence. Her approach emphasizes sustainable design principles and client collaboration, ensuring each project reflects the unique vision and needs of those who will inhabit the space.",
     "design": {
       "title": "Architecture & Design That Inspires",
       "desc": "We don't just design buildings — we create experiences. Every line, every corner, every light — designed with surgical precision to create something that feels just right."
@@ -255,5 +256,10 @@
     "services": "Services",
     "about": "About",
     "finishing": "Finishing Work"
+  },
+  "isolation": {
+    "title": "Professional Thermal Insulation Installation",
+    "subtitle": "Energy-Efficient Solutions for Your Home & Business",
+    "description": "Expert installation of premium reflective insulation materials designed to reduce heat transfer, lower energy costs, and maintain comfortable indoor temperatures year-round. Our certified technicians ensure precise installation for maximum thermal performance in residential and commercial properties."
   }
 }

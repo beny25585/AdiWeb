@@ -1,0 +1,150 @@
+/* isolatin.module.css */
+
+.container {
+  height: 90vh;
+  margin: 0 auto;
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.textSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  margin-top: 10vh;
+}
+
+.title {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 15px;
+  line-height: 1.2;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  color: #666;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.description {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: #444;
+  line-height: 1.7;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+}
+
+/* Scroll Container */
+.scrollContainer {
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #f8f9fa;
+  padding: 20px;
+  position: relative;
+  height: 80vh;
+}
+/* Scroll Content with Animation */
+.scrollContent {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  animation: infiniteScroll 60s linear infinite;
+}
+
+.scrollContent.paused {
+  animation-play-state: paused;
+}
+
+@keyframes infiniteScroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+/* Grid Item */
+.gridItem {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  transition: all 0.3s ease;
+  height: 300px;
+  width: 100%;
+}
+
+.gridItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Styling */
+.gridImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gridItem:hover .gridImage {
+  transform: scale(1.08);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .scrollContainer {
+    padding: 15px;
+  }
+
+  .scrollContent {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 60px 15px;
+  }
+
+  .scrollContainer {
+    padding: 10px;
+    height: 600px;
+  }
+
+  .description {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 40px 10px;
+  }
+
+  .scrollContainer {
+    height: 500px;
+  }
+
+  .scrollContent {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}

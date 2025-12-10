@@ -184,13 +184,7 @@ export default function ArchitecturePage() {
           <div ref={visionContentRef} className={styles.visionContent}>
             <div className={styles.divider}></div>
             <p className={styles.visionText}>
-              Shira Uzan is a licensed architect with over a decade of
-              experience in residential and commercial design. She specializes
-              in creating innovative spaces that blend functionality with
-              aesthetic excellence. Her approach emphasizes sustainable design
-              principles and client collaboration, ensuring each project
-              reflects the unique vision and needs of those who will inhabit the
-              space.
+              {t("shiraBio")}
             </p>
           </div>
         </div>

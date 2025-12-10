@@ -1,5 +1,6 @@
 /* === SECTION BASE === */
 .section {
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -269,7 +270,6 @@
 @media (max-width: 1250px) {
   .section {
     gap: 60px;
-    padding: 100px 5%;
   }
 
   .carouselWrapper {
@@ -287,7 +287,6 @@
     text-align: center;
     gap: 50px;
     padding: 80px 4%;
-    min-height: auto;
   }
 
   .section.rtl,
