@@ -5,7 +5,7 @@ import { Locale } from "@/lib/i18n";
 import Image from "next/image";
 import Link from "next/link";
 console.log("test review")
-function capitalizeFirstLetter(string: string) {
+function capitalizeFirstLette(string: string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 export default async function ProjectsPage({
