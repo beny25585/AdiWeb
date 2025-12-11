@@ -45,14 +45,11 @@
 }
 
 .textSide h1 {
-  font-size: clamp(1.3rem, 0.111rem + 4.444vw, 4rem);
-  font-weight: 900;
   color: #ffffff;
   margin-bottom: 12px;
 }
 
 .textSide p {
-  font-size: clamp(0.9rem, 0.593rem + 1.037vw, 1.5rem);
   color: #ffffff;
   font-weight: 800;
 }
@@ -70,6 +67,7 @@
 .buttonSecondary {
   padding: 14px 32px;
   border-radius: 10px;
+  font-size: 1.05rem;
   font-weight: 700;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -223,12 +221,6 @@
 @media (max-width: 600px) {
   .textBox {
     padding: 30px 20px;
-    margin: 0 5px;
-  }
-
-  .buttonPrimary,
-  .buttonSecondary {
-    padding: 12px 24px;
-    font-size: 0.9rem;
+    margin: 0 10px;
   }
 }

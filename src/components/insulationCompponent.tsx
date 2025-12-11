@@ -1,7 +1,7 @@
 "use client";
-import { isolationImages } from "../data/isolationData";
+import { insulationImages } from "../data/insulationData";
 import Image from "next/image";
-import styles from "@/styles/isolatin.module.css";
+import styles from "@/styles/insulation.module.css";
 import { useTranslations } from "next-intl";
 
 export default function IsolationComponent() {
@@ -9,9 +9,9 @@ export default function IsolationComponent() {
 
   // Duplicate images for seamless infinite scroll
   const infiniteImages = [
-    ...isolationImages,
-    ...isolationImages,
-    ...isolationImages,
+    ...insulationImages,
+    ...insulationImages,
+    ...insulationImages,
   ];
 
   return (

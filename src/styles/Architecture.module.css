@@ -205,21 +205,16 @@
 }
 
 .title {
-  font-size: 3.9rem;
-  font-weight: 900;
   text-align: center;
   color: #111;
   margin-bottom: 10px;
 }
 
 .intro {
-  font-size: 1.3rem;
   text-align: center;
   color: #010000;
-  font-weight: 700;
   max-width: 800px;
   margin: 0 auto 40px;
-  line-height: 1.8;
 }
 
 .topContainer {
@@ -279,17 +274,13 @@
 }
 
 .serviceCard h2 {
-  font-size: clamp(1.5rem, 2vw + 0.5rem, 2rem);
   color: #000;
   margin-bottom: 15px;
-  font-weight: 700;
   text-align: center;
 }
 
 .serviceCard p {
-  font-size: clamp(0.7rem, 2vw + 0.5rem, 1.3rem);
   color: #555;
-  line-height: 1.7;
   text-align: center;
 }
 
@@ -337,8 +328,6 @@
 }
 
 .visionText {
-  font-size: 1.15rem;
-  line-height: 1.8;
   color: #333;
   text-align: left;
   margin: 0;
@@ -354,8 +343,6 @@
 }
 
 .portfolioTitle {
-  font-size: 2.2rem;
-  font-weight: 800;
   text-align: center;
   color: #111;
   margin-bottom: 50px;
@@ -393,8 +380,6 @@
 }
 
 .projectInfo h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
   margin: 0;
 }
 
@@ -458,14 +443,6 @@
 }
 
 @media (max-width: 768px) {
-  .title {
-    font-size: 2.2rem;
-  }
-
-  .intro {
-    font-size: 1.1rem;
-  }
-
   .topContainer {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
@@ -531,10 +508,5 @@
     width: 280px;
     height: 280px;
     border: 6px solid #fff;
-  }
-
-  .visionText {
-    font-size: 1rem;
-    line-height: 1.7;
   }
 }

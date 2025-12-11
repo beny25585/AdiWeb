@@ -1,4 +1,4 @@
-/* isolatin.module.css */
+/* insulation.module.css */
 
 .container {
   height: 90vh;
@@ -18,27 +18,20 @@
 }
 
 .title {
-  font-size: clamp(1.8rem, 5vw, 2.5rem);
-  font-weight: 700;
   color: #1a1a1a;
   text-align: center;
   margin-bottom: 15px;
-  line-height: 1.2;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .subtitle {
-  font-size: clamp(1rem, 3vw, 1.3rem);
   color: #666;
   text-align: center;
   margin-bottom: 30px;
-  font-weight: 500;
 }
 
 .description {
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
   color: #444;
-  line-height: 1.7;
   text-align: center;
   max-width: 900px;
   margin: 0 auto 60px;
@@ -61,12 +54,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  animation: infiniteScroll 60s linear infinite;
+  animation: infiniteScroll 200s linear infinite;
 }
 
-.scrollContent.paused {
-  animation-play-state: paused;
-}
+
 
 @keyframes infiniteScroll {
   0% {
@@ -133,18 +124,26 @@
     margin-bottom: 40px;
   }
 }
+@media (max-width: 650px) {
+  .container {
+    flex-direction: column;
+  }
+  .textSection {
+    width: 80vw;
+    margin-top: 5vh;
+    margin-bottom: 30px;
+  }
+}
 
 @media (max-width: 480px) {
   .container {
-    padding: 40px 10px;
+    height: fit-content;
   }
-
-  .scrollContainer {
-    height: 500px;
-  }
-
   .scrollContent {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+  .scrollContainer {
+    height: 40vh;
   }
 }
