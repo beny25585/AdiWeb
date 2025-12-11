@@ -34,16 +34,14 @@
 }
 
 .right h2 {
-  font-size: clamp(2rem, 1.2rem + 2vw, 3rem);
+  font-size: clamp(2rem, 1.5rem + 1.5vw, 2.8rem);
   font-weight: 800;
-  font-family: "Heebo", sans-serif;
   color: #fff;
   margin-bottom: 20px;
   letter-spacing: -1px;
 }
 
 .right p {
-  font-family: "Assistant", sans-serif;
   color: #c8c8c8;
   margin-bottom: 32px;
 }

@@ -2,6 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 import "@/styles/globals.css";
 
 const SUPPORTED_LOCALES = ["he", "en", "th"] as const;
@@ -31,6 +32,7 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
+      <ScrollToTop />
       <div lang={locale} dir={dir}>
         <Header />
         <main data-locale={locale}>{children}</main>

@@ -14,7 +14,8 @@
 
 /* === TITLES === */
 .pageTitle {
-  font-size: 3rem;
+  font-size: clamp(2rem, 1.5rem + 1.5vw, 2.8rem);
+  font-weight: 800;
   text-align: center;
   color: #111;
   letter-spacing: -0.5px;
