@@ -81,6 +81,18 @@
   cursor: pointer;
   z-index: 3000;
   order: 2;
+  font-size: 1.8rem;
+  padding: 8px;
+  transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+  color: #f0c330;
+}
+
+.hamburger:active {
+  transform: scale(0.95);
 }
 
 .langs {

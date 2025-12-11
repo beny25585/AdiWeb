@@ -22,7 +22,7 @@
 }
 
 .title {
-  font-size: 2.6rem;
+  font-size: clamp(2rem, 1.2rem + 2vw, 3rem);
   font-weight: 900;
   text-align: center;
   color: #0b0b0b;
@@ -83,7 +83,7 @@
     padding: 40px 16px;
   }
   .title {
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 1rem + 2vw, 2.4rem);
   }
   .intro {
     font-size: 1rem;

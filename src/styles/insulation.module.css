@@ -8,34 +8,65 @@
   flex-direction: row-reverse;
   align-items: center;
 }
+
+[dir="rtl"] .container {
+  flex-direction: row;
+}
+
 .textSection {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: right;
   justify-content: center;
   width: 40vw;
   margin-top: 10vh;
 }
 
+[dir="rtl"] .textSection {
+  align-items: left;
+}
+
 .title {
+  font-size: clamp(2rem, 1.2rem + 2vw, 3rem);
   color: #1a1a1a;
-  text-align: center;
+  text-align: left;
   margin-bottom: 15px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", sans-serif;
+  font-weight: 800;
+}
+
+[dir="rtl"] .title {
+  text-align: right;
+  font-family: "Heebo", "Assistant", "Rubik", "Arial", sans-serif;
 }
 
 .subtitle {
   color: #666;
-  text-align: center;
+  text-align: left;
   margin-bottom: 30px;
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", sans-serif;
+  font-weight: 500;
+}
+
+[dir="rtl"] .subtitle {
+  text-align: right;
+  font-family: "Heebo", "Assistant", "Rubik", "Arial", sans-serif;
 }
 
 .description {
   color: #444;
-  text-align: center;
+  text-align: left;
   max-width: 900px;
-  margin: 0 auto 60px;
-  padding: 0 20px;
+  margin: 0 0 60px;
+  padding: 0 20px 0 0;
+  font-family: "Inter", "Helvetica Neue", "Segoe UI", sans-serif;
+  line-height: 1.8;
+}
+
+[dir="rtl"] .description {
+  text-align: right;
+  padding: 0 0 0 20px;
+  font-family: "Heebo", "Assistant", "Rubik", "Arial", sans-serif;
 }
 
 /* Scroll Container */
@@ -56,8 +87,6 @@
   gap: 20px;
   animation: infiniteScroll 200s linear infinite;
 }
-
-
 
 @keyframes infiniteScroll {
   0% {
@@ -128,10 +157,36 @@
   .container {
     flex-direction: column;
   }
+
+  [dir="rtl"] .container {
+    flex-direction: column;
+  }
+
   .textSection {
     width: 80vw;
     margin-top: 5vh;
     margin-bottom: 30px;
+    align-items: flex-start;
+  }
+
+  [dir="rtl"] .textSection {
+    align-items: flex-start;
+  }
+
+  .title,
+  .subtitle,
+  .description {
+    text-align: left;
+  }
+
+  [dir="rtl"] .title,
+  [dir="rtl"] .subtitle,
+  [dir="rtl"] .description {
+    text-align: right;
+  }
+
+  .description {
+    padding: 0;
   }
 }
 

@@ -45,10 +45,11 @@ const metadataByLocale: Record<
 export async function generateMetadata({
   params,
 }: {
-  params: { locale?: string };
+  params: Promise<{ locale?: string }>;
 }): Promise<Metadata> {
-  const locale = SUPPORTED_LOCALES.includes(params.locale as Locale)
-    ? (params.locale as Locale)
+  const { locale: localeParam } = await params;
+  const locale = SUPPORTED_LOCALES.includes(localeParam as Locale)
+    ? (localeParam as Locale)
     : DEFAULT_LOCALE;
 
   const meta = metadataByLocale[locale];
@@ -120,10 +121,11 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locale?: string };
+  params: Promise<{ locale?: string }>;
 }) {
-  const locale = SUPPORTED_LOCALES.includes(params.locale as Locale)
-    ? (params.locale as Locale)
+  const { locale: localeParam } = await params;
+  const locale = SUPPORTED_LOCALES.includes(localeParam as Locale)
+    ? (localeParam as Locale)
     : DEFAULT_LOCALE;
 
   const dir = locale === "he" ? "rtl" : "ltr";
