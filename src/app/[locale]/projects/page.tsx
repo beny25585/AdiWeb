@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { Locale } from "@/lib/i18n";
 import Image from "next/image";
 import Link from "next/link";
+console.log("test review")
 
 export default async function ProjectsPage({
   params,
