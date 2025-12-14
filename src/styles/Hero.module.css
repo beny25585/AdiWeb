@@ -1,10 +1,13 @@
 .hero {
+  background-color: #fff;
   color: #fff;
-  height: 90vh;
+  height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
+  background: #000;
 }
 
 .split {
@@ -100,6 +103,7 @@
   height: 100vh;
   width: 100%;
   overflow: hidden;
+  background-color: #fff;
 }
 
 .slides {

@@ -20,10 +20,6 @@ export const insulationImages = [
     alt: "Reflective insulation material layers",
   },
   {
-    src: "/Photos/insulation/384.jpg",
-    alt: "Installation tools and equipment",
-  },
-  {
     src: "/Photos/insulation/388.jpg",
     alt: "Installing insulation on floor",
   },

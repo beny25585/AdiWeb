@@ -1,6 +1,7 @@
 /* === SECTION BASE === */
 .section {
-  height: auto;
+  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,7 +10,7 @@
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
   width: 100%;
   margin: 0 auto;
-  overflow: hidden;
+  overflow: visible;
   box-sizing: border-box;
 }
 

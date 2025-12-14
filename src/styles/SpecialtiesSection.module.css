@@ -1,0 +1,125 @@
+/* Specialties Column */
+.specialtiesColumn {
+  background-color: #413d3d;
+  flex-direction: column;
+  place-items: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.specialtiesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.card {
+  width: 30vw;
+  height: 40vh;
+  background-color: #f2ecec;
+  border: solid 10px #60400a;
+  border-radius: 16px;
+  padding: 40px 30px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 4px;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.iconWrapper {
+  width: 70px;
+  height: 70px;
+  font-size: 30px;
+  background: linear-gradient(135deg, #60400a 0%, #2d2d2d 100%);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: #f8fafa;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card:hover .iconWrapper {
+  transform: rotate(5deg) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.cardTitle {
+  color: #0a0a0a;
+  margin-bottom: 12px;
+}
+
+.cardDesc {
+  color: #140f0f;
+}
+
+/* RTL Support */
+[dir="rtl"] .card::before {
+  transform-origin: right;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    color: #0a0a0a;
+    text-align: center;
+  }
+  .subtitle {
+    color: #d4caca;
+  }
+  .specialtiesGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+  }
+  .iconWrapper {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+  }
+  .cardHeader {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+    margin-bottom: 15px;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 90%;
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .iconWrapper {
+    display: none;
+  }
+}
