@@ -77,26 +77,48 @@ export default function SpecialtiesSection() {
         cardsRef.current.forEach((card, index) => {
           if (!card) return;
 
-          gsap.fromTo(
-            card,
-            {
-              opacity: 0,
-              scale: 0.5,
-            },
-            {
-              opacity: 1,
-              scale: 1,
-              duration: 0.5,
-              delay: index * 0.1,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: card,
-                start: "top bottom",
-                end: "top center",
-                toggleActions: "play none none reverse",
+          // Check if card is already in viewport
+          const rect = card.getBoundingClientRect();
+          const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+
+          if (isInViewport) {
+            // Animate immediately if already visible
+            gsap.fromTo(
+              card,
+              {
+                opacity: 0,
+                scale: 0.5,
               },
-            }
-          );
+              {
+                opacity: 1,
+                scale: 1,
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "power2.out",
+              }
+            );
+          } else {
+            // Use ScrollTrigger for cards below viewport
+            gsap.fromTo(
+              card,
+              {
+                opacity: 0,
+                scale: 0.5,
+              },
+              {
+                opacity: 1,
+                scale: 1,
+                duration: 0.5,
+                ease: "power2.out",
+                scrollTrigger: {
+                  trigger: card,
+                  start: "top bottom",
+                  end: "top center",
+                  toggleActions: "play none none reverse",
+                },
+              }
+            );
+          }
         });
       }
     };
@@ -105,7 +127,7 @@ export default function SpecialtiesSection() {
     const timer = setTimeout(() => {
       setupAnimation();
       ScrollTrigger.refresh();
-    }, 100);
+    }, 10);
 
     // Re-setup on resize
     const handleResize = () => {
