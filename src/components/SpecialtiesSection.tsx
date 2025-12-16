@@ -81,7 +81,7 @@ export default function SpecialtiesSection() {
             card,
             {
               y: 20,
-              scale: 0.95,
+              scale: 0.5,
             },
             {
               y: 0,
