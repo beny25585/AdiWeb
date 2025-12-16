@@ -82,18 +82,16 @@ export default function SpecialtiesSection() {
             {
               opacity: 0.4,
               y: 20,
-              scale: 0.5,
             },
             {
               opacity: 1,
               y: 0,
-              scale: 1,
               duration: 0.3,
               ease: "power2.out",
               scrollTrigger: {
                 trigger: card,
                 start: "top 90%",
-                toggleActions: "play none none none",
+                toggleActions: "play reverse play reverse",
               },
             }
           );
