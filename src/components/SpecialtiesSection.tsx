@@ -80,13 +80,15 @@ export default function SpecialtiesSection() {
           gsap.fromTo(
             card,
             {
+              opacity: 0.4,
               y: 20,
               scale: 0.5,
             },
             {
+              opacity: 1,
               y: 0,
               scale: 1,
-              duration: 0.4,
+              duration: 0.3,
               ease: "power2.out",
               scrollTrigger: {
                 trigger: card,
