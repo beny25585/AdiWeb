@@ -13,9 +13,9 @@ export default function FeaturedProjects() {
   const tH = useTranslations("featuredProjects");
   const locale = useLocale();
 
-  const items = projects.map((p, i) => (
+  const items = projects.map((p) => (
     <Link
-      key={i}
+      key={p.slug}
       href={`/${locale}/projects/${p.slug}`}
       className={styles.projectLink}
     >

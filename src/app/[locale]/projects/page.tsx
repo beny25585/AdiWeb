@@ -8,9 +8,9 @@ import Link from "next/link";
 export default async function ProjectsPage({
   params,
 }: {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "projects" });
 
   return (

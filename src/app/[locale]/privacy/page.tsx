@@ -5,9 +5,9 @@ import type { Locale } from "@/lib/i18n";
 export default async function PrivacyPage({
   params,
 }: {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "privacy" });
   const sections = t.raw("sections");
 
