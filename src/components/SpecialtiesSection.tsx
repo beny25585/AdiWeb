@@ -74,24 +74,27 @@ export default function SpecialtiesSection() {
 
       if (isMobile && sectionRef.current && cardsRef.current.length > 0) {
         // Simple scroll-triggered animations for mobile
-        cardsRef.current.forEach((card) => {
+        cardsRef.current.forEach((card, index) => {
           if (!card) return;
 
           gsap.fromTo(
             card,
             {
-              opacity: 0.4,
-              y: 20,
+              opacity: 0,
+              scale: 0.5,
             },
             {
               opacity: 1,
-              y: 0,
-              duration: 0.3,
+              scale: 1,
+              duration: 0.5,
+              delay: index * 0.1,
               ease: "power2.out",
               scrollTrigger: {
                 trigger: card,
-                start: "top 90%",
-                toggleActions: "play reverse play reverse",
+                start: "top bottom",
+                end: "top center",
+                toggleActions: "play none none reverse",
+                markers: false,
               },
             }
           );
