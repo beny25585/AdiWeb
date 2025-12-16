@@ -94,7 +94,6 @@ export default function SpecialtiesSection() {
                 start: "top bottom",
                 end: "top center",
                 toggleActions: "play none none reverse",
-                markers: false,
               },
             }
           );
@@ -102,7 +101,11 @@ export default function SpecialtiesSection() {
       }
     };
 
-    setupAnimation();
+    // Small delay to ensure proper layout calculation
+    const timer = setTimeout(() => {
+      setupAnimation();
+      ScrollTrigger.refresh();
+    }, 100);
 
     // Re-setup on resize
     const handleResize = () => {
@@ -110,12 +113,14 @@ export default function SpecialtiesSection() {
       isMobile = checkMobile();
       if (wasMobile !== isMobile) {
         setupAnimation();
+        ScrollTrigger.refresh();
       }
     };
 
     window.addEventListener("resize", handleResize);
 
     return () => {
+      clearTimeout(timer);
       window.removeEventListener("resize", handleResize);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
