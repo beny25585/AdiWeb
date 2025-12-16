@@ -72,38 +72,38 @@ export default function SpecialtiesSection() {
 
       isMobile = checkMobile();
 
-      // Always reset cards to visible first
-      cardsRef.current.forEach((card) => {
-        if (!card) return;
-        gsap.set(card, { clearProps: "all" });
-      });
-
       if (isMobile && sectionRef.current && cardsRef.current.length > 0) {
         // Simple scroll-triggered animations for mobile
         cardsRef.current.forEach((card) => {
           if (!card) return;
 
+          // Reset to visible state first
+          gsap.set(card, { opacity: 1, y: 0, scale: 1 });
+
           gsap.fromTo(
             card,
             {
               opacity: 0,
-              y: 50,
-              scale: 0.9,
+              y: 30,
             },
             {
               opacity: 1,
               y: 0,
-              scale: 1,
               duration: 0.3,
               ease: "power2.out",
               scrollTrigger: {
                 trigger: card,
-                start: "top 90%",
-                end: "top 20%",
-                toggleActions: "play none none reverse",
+                start: "top 100%",
+                toggleActions: "play none none none",
               },
             }
           );
+        });
+      } else {
+        // Desktop - make sure cards are visible
+        cardsRef.current.forEach((card) => {
+          if (!card) return;
+          gsap.set(card, { opacity: 1, y: 0, scale: 1 });
         });
       }
     };
