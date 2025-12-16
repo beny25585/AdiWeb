@@ -77,33 +77,24 @@ export default function SpecialtiesSection() {
         cardsRef.current.forEach((card) => {
           if (!card) return;
 
-          // Reset to visible state first
-          gsap.set(card, { opacity: 1, y: 0, scale: 1 });
-
           gsap.fromTo(
             card,
             {
-              opacity: 0,
-              y: 30,
+              y: 20,
+              scale: 0.95,
             },
             {
-              opacity: 1,
               y: 0,
-              duration: 0.3,
+              scale: 1,
+              duration: 0.4,
               ease: "power2.out",
               scrollTrigger: {
                 trigger: card,
-                start: "top 100%",
+                start: "top 90%",
                 toggleActions: "play none none none",
               },
             }
           );
-        });
-      } else {
-        // Desktop - make sure cards are visible
-        cardsRef.current.forEach((card) => {
-          if (!card) return;
-          gsap.set(card, { opacity: 1, y: 0, scale: 1 });
         });
       }
     };
