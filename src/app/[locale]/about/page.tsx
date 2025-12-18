@@ -3,13 +3,14 @@ import styles from "@/styles/about.module.css";
 import { getTranslations } from "next-intl/server";
 import { team } from "@/data/team";
 import type { Locale } from "@/lib/i18n";
+import { promises } from "node:dns";
 
 export default async function AboutPage({
   params,
 }: {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }) {
-  const { locale } = params;
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "about" });
 
   return (
