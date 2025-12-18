@@ -72,43 +72,62 @@ export default function SpecialtiesSection() {
 
       isMobile = checkMobile();
 
-      // Always reset cards to visible first
-      cardsRef.current.forEach((card) => {
-        if (!card) return;
-        gsap.set(card, { clearProps: "all" });
-      });
-
       if (isMobile && sectionRef.current && cardsRef.current.length > 0) {
         // Simple scroll-triggered animations for mobile
-        cardsRef.current.forEach((card) => {
+        cardsRef.current.forEach((card, index) => {
           if (!card) return;
 
-          gsap.fromTo(
-            card,
-            {
-              opacity: 0,
-              y: 50,
-              scale: 0.9,
-            },
-            {
-              opacity: 1,
-              y: 0,
-              scale: 1,
-              duration: 0.3,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: card,
-                start: "top 90%",
-                end: "top 20%",
-                toggleActions: "play none none reverse",
+          // Check if card is already in viewport
+          const rect = card.getBoundingClientRect();
+          const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+
+          if (isInViewport) {
+            // Animate immediately if already visible
+            gsap.fromTo(
+              card,
+              {
+                opacity: 0,
+                scale: 0.5,
               },
-            }
-          );
+              {
+                opacity: 1,
+                scale: 1,
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "power2.out",
+              }
+            );
+          } else {
+            // Use ScrollTrigger for cards below viewport
+            gsap.fromTo(
+              card,
+              {
+                opacity: 0,
+                scale: 0.5,
+              },
+              {
+                opacity: 1,
+                scale: 1,
+                duration: 0.5,
+                ease: "power2.out",
+                scrollTrigger: {
+                  trigger: card,
+                  start: "top bottom",
+                  end: "top center",
+                  toggleActions: "play none none reverse",
+                },
+              }
+            );
+          }
         });
       }
     };
 
-    setupAnimation();
+    // Small delay to ensure proper layout calculation
+    const timer = setTimeout(() => {
+      setupAnimation();
+      ScrollTrigger.refresh();
+    }, 10);
 
     // Re-setup on resize
     const handleResize = () => {
@@ -116,12 +135,14 @@ export default function SpecialtiesSection() {
       isMobile = checkMobile();
       if (wasMobile !== isMobile) {
         setupAnimation();
+        ScrollTrigger.refresh();
       }
     };
 
     window.addEventListener("resize", handleResize);
 
     return () => {
+      clearTimeout(timer);
       window.removeEventListener("resize", handleResize);
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
