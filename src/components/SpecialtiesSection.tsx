@@ -1,3 +1,4 @@
+/* src/components/SpecialtiesSection.tsx */
 "use client";
 
 import styles from "@/styles/SpecialtiesSection.module.css";
@@ -17,10 +18,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function SpecialtiesSection() {
+  /* --------------------------------------------------------------
+     Internationalised strings – they are deterministic on server &
+     client, so they never cause a hydration mismatch.
+     -------------------------------------------------------------- */
   const t = useTranslations("finishing");
+
+  /* --------------------------------------------------------------
+     Refs for the root element and each card.
+     -------------------------------------------------------------- */
   const sectionRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
 
+  /* --------------------------------------------------------------
+     Data that drives the UI.
+     -------------------------------------------------------------- */
   const specialties = [
     {
       icon: <FaTools />,
@@ -60,102 +72,74 @@ export default function SpecialtiesSection() {
     },
   ];
 
+  /* --------------------------------------------------------------
+     G S A P  –  set up the scroll‑triggered animations.
+     -------------------------------------------------------------- */
   useEffect(() => {
+    // Bail out on the server.
     if (typeof window === "undefined") return;
 
-    const checkMobile = () => window.innerWidth <= 768;
-    let isMobile = checkMobile();
+    /**
+     * Helper that creates a from‑to animation for a single card.
+     */
+    const animateCard = (card: HTMLElement | undefined, idx: number) => {
+      if (!card) return;
 
-    const setupAnimation = () => {
-      // Clear any existing animations
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-
-      isMobile = checkMobile();
-
-      if (isMobile && sectionRef.current && cardsRef.current.length > 0) {
-        // Simple scroll-triggered animations for mobile
-        cardsRef.current.forEach((card, index) => {
-          if (!card) return;
-
-          // Check if card is already in viewport
-          const rect = card.getBoundingClientRect();
-          const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
-
-          if (isInViewport) {
-            // Animate immediately if already visible
-            gsap.fromTo(
-              card,
-              {
-                opacity: 0,
-                scale: 0.5,
-              },
-              {
-                opacity: 1,
-                scale: 1,
-                duration: 0.5,
-                delay: index * 0.1,
-                ease: "power2.out",
-              }
-            );
-          } else {
-            // Use ScrollTrigger for cards below viewport
-            gsap.fromTo(
-              card,
-              {
-                opacity: 0,
-                scale: 0.5,
-              },
-              {
-                opacity: 1,
-                scale: 1,
-                duration: 0.5,
-                ease: "power2.out",
-                scrollTrigger: {
-                  trigger: card,
-                  start: "top bottom",
-                  end: "top center",
-                  toggleActions: "play none none reverse",
-                },
-              }
-            );
-          }
-        });
-      }
+      gsap.fromTo(
+        card,
+        { opacity: 0, scale: 0.5 },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.5,
+          delay: idx * 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom",
+            end: "top center",
+            toggleActions: "play none none reverse",
+            refreshPriority: -999,
+          },
+        }
+      );
     };
 
-    // Small delay to ensure proper layout calculation
-    const timer = setTimeout(() => {
-      setupAnimation();
-      ScrollTrigger.refresh();
-    }, 10);
+    // Attach the animation to every card that rendered.
+    cardsRef.current.forEach((card, i) => {
+      if (card) animateCard(card, i);
+    });
 
-    // Re-setup on resize
-    const handleResize = () => {
-      const wasMobile = isMobile;
-      isMobile = checkMobile();
-      if (wasMobile !== isMobile) {
-        setupAnimation();
-        ScrollTrigger.refresh();
-      }
-    };
+    // Keep ScrollTrigger in sync when the viewport size changes.
+    const refresh = () => ScrollTrigger.refresh();
+    window.addEventListener("resize", refresh);
+    window.addEventListener("orientationchange", refresh);
 
-    window.addEventListener("resize", handleResize);
+    // Improve mobile touch scrolling support
+    window.addEventListener("touchmove", refresh, { passive: true });
 
+    // Cleanup on unmount.
     return () => {
-      clearTimeout(timer);
-      window.removeEventListener("resize", handleResize);
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+      window.removeEventListener("resize", refresh);
+      window.removeEventListener("orientationchange", refresh);
+      window.removeEventListener("touchmove", refresh);
     };
   }, []);
 
+  /* --------------------------------------------------------------
+     JSX – the visual markup.
+     -------------------------------------------------------------- */
   return (
     <div className={styles.specialtiesWrapper} ref={sectionRef}>
       <div className={styles.specialtiesColumn}>
+        {/* Header */}
         <div className={styles.headerSection}>
           <h2 className={styles.title}>{t("title")}</h2>
           <p className={styles.subtitle}>{t("subtitle")}</p>
         </div>
 
+        {/* Card grid */}
         <div className={styles.specialtiesGrid}>
           {specialties.map((item, index) => (
             <div
@@ -172,11 +156,13 @@ export default function SpecialtiesSection() {
               }
             >
               <div className={styles.cardBackground}></div>
+
               <div className={styles.cardContent}>
                 <div className={styles.cardHeader}>
                   <div className={styles.iconWrapper}>{item.icon}</div>
                   <h3 className={styles.cardTitle}>{item.title}</h3>
                 </div>
+
                 <p className={styles.cardDesc}>{item.desc}</p>
               </div>
             </div>

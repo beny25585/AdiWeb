@@ -3,6 +3,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
+  height: auto;
 }
 
 /* Specialties Column */
@@ -14,9 +15,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 30px;
+  padding: 40px 30px;
   position: relative;
-  overflow: visible;
 }
 
 .specialtiesColumn::before {
@@ -26,8 +26,16 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 50%, rgba(96, 64, 10, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 50%, rgba(96, 64, 10, 0.1) 0%, transparent 50%);
+  background: radial-gradient(
+      circle at 20% 50%,
+      rgba(96, 64, 10, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 50%,
+      rgba(96, 64, 10, 0.1) 0%,
+      transparent 50%
+    );
   pointer-events: none;
 }
 
@@ -64,6 +72,7 @@
 }
 
 .card {
+  display: flex;
   width: 100%;
   min-height: 260px;
   background: linear-gradient(145deg, #f2ecec 0%, #e8e4e4 100%);
@@ -72,8 +81,7 @@
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15),
-              0 0 0 2px rgba(96, 64, 10, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 0 0 2px rgba(96, 64, 10, 0.15);
   cursor: pointer;
 }
 
@@ -96,6 +104,9 @@
 }
 
 .cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
   z-index: 1;
 }
@@ -107,7 +118,11 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, var(--card-color, #60400a) 0%, transparent 100%);
+  background: linear-gradient(
+    90deg,
+    var(--card-color, #60400a) 0%,
+    transparent 100%
+  );
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -116,7 +131,7 @@
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2),
-              0 0 0 1px var(--card-color, #60400a);
+    0 0 0 1px var(--card-color, #60400a);
 }
 
 .card:hover::before {
@@ -127,14 +142,17 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: 16px;
 }
 
 .iconWrapper {
   width: 60px;
   height: 60px;
   font-size: 28px;
-  background: linear-gradient(135deg, var(--card-color, #60400a) 0%, #2d2d2d 100%);
+  background: linear-gradient(
+    135deg,
+    var(--card-color, #60400a) 0%,
+    #2d2d2d 100%
+  );
   border-radius: 16px;
   display: flex;
   align-items: center;

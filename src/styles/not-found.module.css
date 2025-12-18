@@ -22,16 +22,8 @@
       rgba(0, 0, 0, 0.03) 0%,
       transparent 50%
     ),
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(0, 0, 0, 0.03) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 40% 20%,
-      rgba(0, 0, 0, 0.02) 0%,
-      transparent 50%
-    );
+    radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(0, 0, 0, 0.02) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -91,6 +83,7 @@
   justify-content: center;
   margin-bottom: 0;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .primaryButton,

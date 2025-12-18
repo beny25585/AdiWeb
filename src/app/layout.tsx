@@ -27,14 +27,16 @@ const metadataByLocale: Record<
       "אדריכלות, הנדסת בניין, בנייה, עיצוב פנים, קבלן בניה, פרויקטים, תאילנד, בנגקוק, ישראל, עדי אוזן, שירה אוזן, אוזן גרופ, אוזר גרופ, Uzan Group, UZAN GROUP, A&S UZAN, וילה, בית פרטי, משרדים, עיצוב מודרני, שיפוצים, גמרים, קבלן בנייה, חברת בנייה, אוזן, אוזר, עדי ושירה אוזן",
   },
   en: {
-    title: "A&S UZAN GROUP | Engineering, Architecture & Construction in Thailand & Israel",
+    title:
+      "A&S UZAN GROUP | Engineering, Architecture & Construction in Thailand & Israel",
     description:
       "A&S UZAN GROUP - Leading engineering, architecture, and construction company. Specializing in interior design, luxury villa construction, commercial and residential projects. Over 10 years of experience in Thailand and Israel. Professional team, international standards.",
     keywords:
       "architecture, civil engineering, construction, interior design, general contractor, projects, Thailand, Bangkok, Israel, Adi Uzan, Shira Uzan, villa, house, office, modern design, renovation, finishing",
   },
   th: {
-    title: "A&S UZAN GROUP | วิศวกรรม สถาปัตยกรรม และก่อสร้างในประเทศไทยและอิสราเอล",
+    title:
+      "A&S UZAN GROUP | วิศวกรรม สถาปัตยกรรม และก่อสร้างในประเทศไทยและอิสราเอล",
     description:
       "A&S UZAN GROUP - บริษัทวิศวกรรม สถาปัตยกรรม และก่อสร้างชั้นนำ เชี่ยวชาญการออกแบบตกแต่งภายใน ก่อสร้างวิลล่าหรู โครงการพาณิชย์และที่อยู่อาศัย ประสบการณ์กว่า 10 ปีในประเทศไทยและอิสราเอล ทีมมืออาชีพ มาตรฐานสากล",
     keywords:
@@ -53,7 +55,8 @@ export async function generateMetadata({
     : DEFAULT_LOCALE;
 
   const meta = metadataByLocale[locale];
-  const localeUrl = locale === DEFAULT_LOCALE ? baseUrl : `${baseUrl}/${locale}`;
+  const localeUrl =
+    locale === DEFAULT_LOCALE ? baseUrl : `${baseUrl}/${locale}`;
 
   return {
     title: meta.title,
@@ -206,7 +209,11 @@ export default async function LocaleLayout({
 
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
 
         {/* Language alternates */}
         <link rel="alternate" hrefLang="he" href={`${baseUrl}/he`} />
