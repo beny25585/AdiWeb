@@ -35,7 +35,7 @@ export default async function LocaleLayout({
       <ScrollToTop />
       <div lang={locale} dir={dir}>
         <Header />
-        <main data-locale={locale}>{children}</main>
+        <div data-locale={locale}>{children}</div>
         <Footer />
       </div>
     </NextIntlClientProvider>
