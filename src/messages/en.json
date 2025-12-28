@@ -14,7 +14,10 @@
   },
   "footer": {
     "companyTitle": "Our Company",
-    "address": "1219/2 Sukhumvit Rd, Khlong Tan Nuea, Watthana, Bangkok 10110, Thailand",
+    "address": {
+      "mapLink": "https://maps.app.goo.gl/pZvo82h4aRebeuF47",
+      "mapLabel": "Open in Google Maps"
+    },
     "phone": "+66 65-887-8829",
     "WhatsApp": "+66 65-887-8829",
     "linksTitle": "Explore",
@@ -165,13 +168,17 @@
     },
 
     "FREDEROSCAR": {
-      "title": "Rothschild 221 Hotel",
-      "description": "Luxury boutique hotel design in the heart of Tel Aviv, combining modern elegance with historic charm."
+      "title": "German Colony Villa",
+      "description": "Renovation and design of a luxury villa in a historic neighborhood, blending traditional and modern elements."
+    },
+    "TheHeritageResidence": {
+      "title": "The Heritage Residence  ",
+      "description": "A private residential project defined by timeless architecture and uncompromising execution."
     },
 
     "suite": {
-      "title": "German Colony Villa",
-      "description": "Renovation and design of a luxury villa in a historic neighborhood, blending traditional and modern elements."
+      "title": "Rothscild 221 Hotel",
+      "description": "Luxury boutique hotel design in the heart of Tel Aviv, combining modern elegance with historic charm."
     }
   },
   "featuredProjects": {

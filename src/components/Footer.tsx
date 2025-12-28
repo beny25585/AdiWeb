@@ -27,15 +27,13 @@ export default function Footer() {
           <h4>{t("companyTitle")}</h4>
           <div className={styles.contactInfo}>
             <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                t("address")
-              )}`}
+              href={t("address.mapLink")}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.contactItem}
             >
+              {t("address.mapLabel")}
               <FaMapMarkerAlt className={styles.icon} />
-              <span>{t("address")}</span>
             </a>
 
             <a

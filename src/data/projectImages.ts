@@ -19,12 +19,12 @@ export const projectImages: Record<string, string[]> = {
     "/Photos/Winery/1_5-Winery_entrance.jpg",
   ],
   suite: [
-    "/Photos/Suite/courtyard1.jpg",
-    "/Photos/Suite/courtyard2.jpg",
-    "/Photos/Suite/lobby.jpg",
+    "/Photos/Suite/courtyard1.png",
+    "/Photos/Suite/courtyard2.png",
+    "/Photos/Suite/lobby.png",
     "/Photos/Suite/suite1.jpg",
-    "/Photos/Suite/suite2.jpg",
-    "/Photos/Suite/suite3.jpg",
+    "/Photos/Suite/suite2.png",
+    "/Photos/Suite/suite3.png",
   ],
   kitchen: [
     "/Photos/kichen/kichen-before1.jpg",
@@ -49,5 +49,15 @@ export const projectImages: Record<string, string[]> = {
     "/Photos/communicationsRoom/communicationsRoom-before1.jpg",
     "/Photos/communicationsRoom/communicationsRoom-before3.jpg",
     "/Photos/communicationsRoom/communicationsRoom-before2.jpg",
+  ],
+  TheHeritageResidence: [
+    "/Photos/TheHeritageResidence/vila1.png",
+    "/Photos/TheHeritageResidence/vila2.png",
+    "/Photos/TheHeritageResidence/vila3.png",
+    "/Photos/TheHeritageResidence/vila4.png",
+    "/Photos/TheHeritageResidence/vila5.png",
+    "/Photos/TheHeritageResidence/vila6.png",
+    "/Photos/TheHeritageResidence/vila7.png",
+    "/Photos/TheHeritageResidence/vila8.png",
   ],
 };

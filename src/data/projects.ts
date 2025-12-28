@@ -11,6 +11,11 @@ export const projects: Project[] = [
     folder: "/Photos/Winery",
   },
   {
+    slug: "TheHeritageResidence",
+    image: "/Photos/TheHeritageResidence/vila1.png",
+    folder: "/Photos/TheHeritageResidence",
+  },
+  {
     slug: "FREDEROSCAR",
     image: "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 1.jpg",
     folder: "/Photos/F-RENDER-OSCAR",
