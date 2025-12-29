@@ -11,6 +11,7 @@ import {
   FaPhone,
   FaEnvelope,
   FaMapMarkerAlt,
+  FaInstagram,
 } from "react-icons/fa";
 
 export default function Footer() {
@@ -32,8 +33,8 @@ export default function Footer() {
               rel="noopener noreferrer"
               className={styles.contactItem}
             >
-              {t("address.mapLabel")}
               <FaMapMarkerAlt className={styles.icon} />
+              {t("address.mapLabel")}
             </a>
 
             <a
@@ -97,6 +98,14 @@ export default function Footer() {
             >
               <FaWhatsapp /> WhatsApp
             </a>
+            <a
+              href={` https://www.instagram.com/uzan_groups?fbclid=IwY2xjawO5yhtleHRuA2FlbQIxMABicmlkETF1QVF2M20zM3doOGxnY2p0c3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHowMaSqeX-Gw5nPtAdCZfXkzb8BnBpyPIDWnIma0GwVza6sCSfaQ4P_7qVx1_aem_iyqaC_yM4me8fx63Yo6svw`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram /> Instegram
+            </a>
+
             <a
               href="https://line.me/ti/p/F6ExtLjmb_"
               target="_blank"

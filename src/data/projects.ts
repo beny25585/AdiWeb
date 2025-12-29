@@ -22,7 +22,7 @@ export const projects: Project[] = [
   },
   {
     slug: "suite",
-    image: "/Photos/Suite/lobby.jpg",
+    image: "/Photos/Suite/lobby.png",
     folder: "/Photos/Suite",
   },
   {
