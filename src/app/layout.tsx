@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import AccessibilityWidget from "../components/AccessibilityWidget";
-import AOSInitializer from "../components/AOSInitializer";
+import AOSInitializer from "../components/ScrollSection";
 
 const SUPPORTED_LOCALES = ["he", "en", "th"] as const;
 type Locale = (typeof SUPPORTED_LOCALES)[number];
@@ -222,7 +222,6 @@ export default async function LocaleLayout({
         <link rel="alternate" hrefLang="x-default" href={baseUrl} />
       </head>
       <body>
-        <AOSInitializer />
         {children}
         <AccessibilityWidget />
       </body>
