@@ -12,6 +12,8 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaInstagram,
+  FaTiktok,
+  FaLinkedin,
 } from "react-icons/fa";
 
 export default function Footer() {
@@ -119,6 +121,20 @@ export default function Footer() {
               rel="noopener noreferrer"
             >
               <FaFacebook /> Facebook
+            </a>
+            <a
+              href="https://www.linkedin.com/in/uzan-group-b262ab3a2/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin /> LinkedIn
+            </a>
+            <a
+              href="https://www.tiktok.com/@uzangroups?_r=1&_t=ZS-92yxgGRu3nx"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaTiktok /> TikTok
             </a>
           </div>
         </div>

@@ -36,9 +36,9 @@ export default function FeaturedProjectsList() {
               className={styles.logo}
             />
           </div>
-        </div>
-        <div className={styles.overlay}>
-          <h3>{t(`${p.slug}.title`)}</h3>
+          <div className={styles.overlay}>
+            <h3>{t(`${p.slug}.title`)}</h3>
+          </div>
         </div>
       </div>
     </Link>

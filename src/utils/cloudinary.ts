@@ -17,7 +17,7 @@ export const cloudinaryUrl = (
   const cloudName = "ddncjeozb";
   const base = `https://res.cloudinary.com/${cloudName}/image/upload`;
 
-  const w = width && width > 0 ? width : 800;
+  const w = width && width > 0 ? width : 1900;
 
   const transforms = `w_${w},q_auto,f_auto`;
 

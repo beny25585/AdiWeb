@@ -86,16 +86,13 @@
 .card {
   position: relative;
   overflow: hidden;
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
   height: 480px;
   margin: 10px;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  background: #1a1a1a;
 }
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 .imageWrap {
@@ -106,6 +103,8 @@
 }
 
 .image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -115,30 +114,21 @@
 }
 
 .overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   position: absolute;
   bottom: 0;
-  left: 0;
   right: 0;
-  padding: 28px 24px;
-
-  color: #fff;
-  transition: padding 0.3s ease;
-}
-
-.card:hover .overlay {
-  padding-bottom: 35px;
+  width: 100%;
+  height: 15%;
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .overlay h3 {
-  width: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  border-radius: 5%;
+  font-size: clamp(1.2rem, 1rem + 1vw, 1.5rem);
   color: #ffffff;
-  margin-bottom: 6px;
-}
-
-.overlay p {
-  color: #b8b8b8;
 }
 
 /* === ARROWS === */
@@ -310,7 +300,6 @@
   .carouselWrapper {
     order: 2;
 
- 
     flex: none;
   }
 

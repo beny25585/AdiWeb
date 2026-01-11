@@ -41,14 +41,13 @@ export default function ClientsAndCTA() {
               <Image
                 src={client.image}
                 alt={client.title}
-                width={0}
-                height={0}
+                width={1500}
+                height={1600}
                 sizes="(max-width: 768px) 100vw,
                        (max-width: 1200px) 50vw,
                        33vw"
                 className={styles.clientImage}
                 priority={i === 0}
-                style={{ objectFit: "cover", width: "100%", height: "100%" }}
               />
             </div>
           ))}
