@@ -6,7 +6,8 @@ export type ProjectKey =
   | "kitchen"
   | "office"
   | "electricCabin"
-  | "communicationsRoom";
+  | "lawFirmOffice"
+  | "developmentFirm";
 
 export type Project = {
   slug: ProjectKey;
@@ -16,6 +17,36 @@ export type Project = {
 };
 
 export const projectsMap: Record<ProjectKey, Project> = {
+  lawFirmOffice: {
+    slug: "lawFirmOffice",
+    title: "Law Firm Office",
+    cover:
+      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767935347/18_okcx6e.jpg",
+    images: [
+      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767935347/18_okcx6e.jpg",
+      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767935347/15_fow0ci.jpg",
+      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767935347/17_ffcq2m.jpg",
+      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767935347/13_bheg0w.jpg",
+      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767935347/12_zdo6nl.jpg",
+      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767935347/16_ybet8v.jpg",
+      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767935347/14_poorvu.jpg",
+    ],
+  },
+  developmentFirm: {
+    slug: "developmentFirm",
+    title: "Investment & Development Firm Project",
+    cover:
+      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767936516/C25_AM_ifzwt0.png",
+    images: [
+      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767936515/G35_eadrzq.png",
+      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767936515/CD34_uwvm9j.png",
+      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767936515/G25_tmrpkj.png",
+      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767936515/22g_zwatvs.jpg",
+      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767936514/23G_obilj7.webp",
+      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767936514/24G_roqh6o.jpg",
+    ],
+  },
+
   winery: {
     slug: "winery",
     title: "Winery",
@@ -110,18 +141,6 @@ export const projectsMap: Record<ProjectKey, Project> = {
     images: [
       "/Photos/electricCabin/electricCabin-after.jpg",
       "/Photos/electricCabin/electricCabin-before.jpg",
-    ],
-  },
-
-  communicationsRoom: {
-    slug: "communicationsRoom",
-    title: "Corporate Communications Room",
-    cover: "/Photos/communicationsRoom/communicationsRoom-after1.jpg",
-    images: [
-      "/Photos/communicationsRoom/communicationsRoom-after1.jpg",
-      "/Photos/communicationsRoom/communicationsRoom-before1.jpg",
-      "/Photos/communicationsRoom/communicationsRoom-before2.jpg",
-      "/Photos/communicationsRoom/communicationsRoom-before3.jpg",
     ],
   },
 };

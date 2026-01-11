@@ -6,17 +6,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { cloudinaryUrl } from "@/utils/cloudinary";
 
+//    { id: "CD34_uwvm9j.png", titleKey: "clients.commercial" },
+
 export default function ClientsAndCTA() {
   const t = useTranslations("finishing");
   const locale = useLocale();
 
   const rawClients = [
-    { id: "C25_AM_ifzwt0.png", titleKey: "clients.private" },
-    { id: "G35_eadrzq.png", titleKey: "clients.apartments" },
-    { id: "CD34_uwvm9j.png", titleKey: "clients.commercial" },
-    { id: "G25_tmrpkj.png", titleKey: "clients.institutions" },
+    { id: "V1_zxsgfj.png", titleKey: "clients.private" },
+    { id: "8g_c309vg.png", titleKey: "clients.apartments" },
+    { id: "u1eddk.webp", titleKey: "clients.institutions" },
     {
-      id: "18_okcx6e.jpg",
+      id: "CD34_uwvm9j.png",
       titleKey: "clients.projects",
     },
   ];

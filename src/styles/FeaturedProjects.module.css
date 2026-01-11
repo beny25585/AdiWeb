@@ -130,7 +130,10 @@
 }
 
 .overlay h3 {
-  color: #000000;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 5%;
+  color: #ffffff;
   margin-bottom: 6px;
 }
 

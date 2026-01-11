@@ -79,7 +79,7 @@ export default function FeaturedProjectsList() {
       <div className={styles.right}>
         <h2>{tH("title")}</h2>
         <p>{tH("desc")}</p>
-        <Link href={`/${locale}/projectsList`} className={styles.btn}>
+        <Link href={`/${locale}/projects`} className={styles.btn}>
           {tH("cta")}
         </Link>
       </div>

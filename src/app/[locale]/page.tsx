@@ -28,7 +28,7 @@ export default function HomePage() {
 
       <div className="background-image">
         <Image
-          src="https://res.cloudinary.com/ddncjeozb/image/upload/v1767868133/23-LIVING_uxenze.png"
+          src="https://res.cloudinary.com/ddncjeozb/image/upload/v1767867786/he6bh5.jpg"
           alt="Background"
           fill
           priority

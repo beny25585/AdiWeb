@@ -132,7 +132,7 @@
       "private": "Private Homes & Luxury Villas",
       "apartments": "Residential & Office Tower Apartments",
       "commercial": "Shops, Restaurants & Mall Businesses",
-      "institutions": "Educational, Healthcare & Community Facilities",
+      "institutions": " Healthcare & Community Facilities",
       "projects": "Shopping Centers & Public Projects"
     },
     "ctaText": "Have a project in mind? Let's talk",
@@ -174,6 +174,14 @@
     "heritageResidence": {
       "title": "The Heritage Residence  ",
       "description": "A private residential project defined by timeless architecture and uncompromising execution."
+    },
+    "lawFirmOffice": {
+      "title": "Law Firm Office",
+      "description": "Executive design, clean lines, and high-standard execution. A refined, professional workspace built on"
+    },
+    "developmentFirm": {
+      "title": " investment & development firm ",
+      "description": "A premium office designed and delivered with a focus on functionality, refined aesthetics, and high-quality finishes — a workspace built for strategic decision-making."
     },
 
     "suite": {
