@@ -4,16 +4,16 @@ import Link from "next/link";
 import Image from "next/image";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import { projects } from "@/data/projects";
+import { projectsList } from "@/data/projects";
 import { useTranslations, useLocale } from "next-intl";
 import styles from "@/styles/FeaturedProjects.module.css";
 
-export default function FeaturedProjects() {
+export default function FeaturedProjectsList() {
   const t = useTranslations("projects");
   const tH = useTranslations("featuredProjects");
   const locale = useLocale();
 
-  const items = projects.map((p) => (
+  const items = projectsList.map((p) => (
     <Link
       key={p.slug}
       href={`/${locale}/projects/${p.slug}`}
@@ -22,7 +22,7 @@ export default function FeaturedProjects() {
       <div className={styles.imageWrap}>
         <div className={styles.card}>
           <Image
-            src={p.image}
+            src={p.cover}
             alt={t(`${p.slug}.title`)}
             fill
             className={styles.image}
@@ -79,7 +79,7 @@ export default function FeaturedProjects() {
       <div className={styles.right}>
         <h2>{tH("title")}</h2>
         <p>{tH("desc")}</p>
-        <Link href={`/${locale}/projects`} className={styles.btn}>
+        <Link href={`/${locale}/projectsList`} className={styles.btn}>
           {tH("cta")}
         </Link>
       </div>

@@ -1,4 +1,4 @@
-import { projectImages } from "@/data/projectImages";
+import { projectImages } from "@/data/projects";
 import { getTranslations } from "next-intl/server";
 import ProjectClient from "@/components/ProjectClient";
 import type { Locale } from "@/lib/i18n";
@@ -13,14 +13,14 @@ export default async function ProjectPage({
   const slug = resolvedParams.slug;
   const t = await getTranslations({ locale, namespace: "projects" });
   const dir = locale === "he" ? "rtl" : "ltr";
-  const images = projectImages[slug] || [];
+  const images = projectImages[slug as keyof typeof projectImages] || [];
 
   return (
-      <ProjectClient
-        dir={dir}
-        title={t(`${slug}.title`)}
-        description={t(`${slug}.description`)}
-        images={images}
-      />
+    <ProjectClient
+      dir={dir}
+      title={t(`${slug}.title`)}
+      description={t(`${slug}.description`)}
+      images={images}
+    />
   );
 }

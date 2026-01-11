@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Image from "next/image";
-import { projects } from "@/data/projects";
+import { projectsList } from "@/data/projects";
 import styles from "@/styles/ProjectCard.module.css";
 import lightGallery from "lightgallery";
 import lgZoom from "lightgallery/plugins/zoom";
@@ -38,10 +38,12 @@ export default function ProjectClient({
   const imageRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const t = useTranslations("projectNavigation");
 
-  const currentIndex = projects.findIndex((p) => p.slug === currentSlug);
-  const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
+  const currentIndex = projectsList.findIndex((p) => p.slug === currentSlug);
+  const prevProject = currentIndex > 0 ? projectsList[currentIndex - 1] : null;
   const nextProject =
-    currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
+    currentIndex < projectsList.length - 1
+      ? projectsList[currentIndex + 1]
+      : null;
 
   const navigateToProject = (slug: string) => {
     router.push(`/${locale}/projects/${slug}`);
@@ -184,7 +186,7 @@ export default function ProjectClient({
     <section className={styles.project} dir={dir}>
       <header className={styles.header} ref={headerRef}>
         <h1 className={styles.projectTitle}>{title}</h1>
-        <p className={styles.projectSubtitle}>{description}</p>
+        <p className={styles.projectSListubtitle}>{description}</p>
       </header>
 
       <div className={styles.navigationButtons} ref={navigationTopRef}>
