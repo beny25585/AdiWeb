@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import AccessibilityWidget from "../components/AccessibilityWidget";
-import AOSInitializer from "../components/ScrollSection";
 
 const SUPPORTED_LOCALES = ["he", "en", "th"] as const;
 type Locale = (typeof SUPPORTED_LOCALES)[number];

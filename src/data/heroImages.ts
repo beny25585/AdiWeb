@@ -1,11 +1,11 @@
 export const heroImages = [
   {
-    src: "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 1.jpg",
-    alt: "Rothschild 221 Hotel",
+    src: "https://res.cloudinary.com/ddncjeozb/image/upload/v1767868131/8g_c309vg.png",
+    alt: "modern home",
   },
   {
-    src: "/Photos/Suite/suite1.jpg",
-    alt: "German Colony Villa",
+    src: "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 1.jpg",
+    alt: "Rothschild 221 Hotel",
   },
   {
     src: "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 5.jpg",
@@ -16,11 +16,7 @@ export const heroImages = [
     alt: "kichen-after1",
   },
   {
-    src: "/Photos/electricCabin/electricCabin-after.jpg",
-    alt: "electricCabin-after",
-  },
-  {
-    src: "/Photos/A&S-removebg.png",
-    alt: "uzanGroup",
+    src: "https://res.cloudinary.com/ddncjeozb/image/upload/v1767867785/u1eddk.webp",
+    alt: "urban living",
   },
 ];

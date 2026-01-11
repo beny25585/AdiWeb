@@ -132,7 +132,7 @@
       "private": "Private Homes & Luxury Villas",
       "apartments": "Residential & Office Tower Apartments",
       "commercial": "Shops, Restaurants & Mall Businesses",
-      "institutions": "Educational, Healthcare & Community Facilities",
+      "institutions": " Healthcare & Community Facilities",
       "projects": "Shopping Centers & Public Projects"
     },
     "ctaText": "Have a project in mind? Let's talk",
@@ -147,7 +147,7 @@
       "title": "Clean-Design Electrical Cabinet",
       "description": "Renovation and replacement of an advanced industrial electrical cabinet, focusing on safety, efficiency, and modern aesthetics."
     },
-    "Winery": {
+    "winery": {
       "title": "The Valley Winery",
       "description": "A refined architectural upgrade in the heart of the valley, featuring a warm winery atmosphere, natural materials, and an open view overlooking the vineyards."
     },
@@ -157,7 +157,7 @@
       "description": "Full renovation and design with bespoke finishes and timeless elegance."
     },
 
-    "comunications": {
+    "communicationsRoom": {
       "title": "Corporate Communications Hub",
       "description": "Installation of a state-of-the-art IT and networking infrastructure tailored for corporate efficiency."
     },
@@ -167,13 +167,21 @@
       "description": "Construction and design of a prestigious corporate HQ — a true symbol of excellence."
     },
 
-    "FREDEROSCAR": {
+    "frederOscar": {
       "title": "German Colony Villa",
       "description": "Renovation and design of a luxury villa in a historic neighborhood, blending traditional and modern elements."
     },
-    "TheHeritageResidence": {
+    "heritageResidence": {
       "title": "The Heritage Residence  ",
       "description": "A private residential project defined by timeless architecture and uncompromising execution."
+    },
+    "lawFirmOffice": {
+      "title": "Law Firm Office",
+      "description": "Executive design, clean lines, and high-standard execution. A refined, professional workspace built on"
+    },
+    "developmentFirm": {
+      "title": " investment & development firm ",
+      "description": "A premium office designed and delivered with a focus on functionality, refined aesthetics, and high-quality finishes — a workspace built for strategic decision-making."
     },
 
     "suite": {
