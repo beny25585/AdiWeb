@@ -1,46 +1,29 @@
-/* Scroll Pinning Container */
-.scroll-pinning-container {
+.scroll-container {
   position: relative;
-  width: 100%;
-  background: #000;
+  min-height: 400vh;
 }
 
-/* Each Section - uses sticky positioning */
-.scroll-pinning-section {
+.background-image {
   position: sticky;
   top: 0;
+  height: 100vh;
   width: 100%;
-  height: auto;
+  z-index: 0;
+  margin-bottom: -100vh;
+}
+
+.background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section {
+  position: relative;
   min-height: 100vh;
-  overflow: visible;
+  z-index: 0;
 }
 
-/* Ensure proper stacking - later sections appear on top */
-.scroll-pinning-section:nth-child(1) {
-  z-index: 1;
-}
-
-.scroll-pinning-section:nth-child(2) {
-  z-index: 2;
-}
-
-.scroll-pinning-section:nth-child(3) {
-  z-index: 3;
-}
-
-.scroll-pinning-section:nth-child(n) {
-  z-index: 4;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .scroll-pinning-section {
-    position: relative;
-    height: auto;
-    min-height: 100vh;
-  }
-}
-html,
-body {
-  touch-action: pan-y; /* tell browsers that vertical swipe = scroll */
+.spacer {
+  height: 100vh;
 }
