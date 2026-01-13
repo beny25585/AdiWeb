@@ -54,8 +54,6 @@ export default function ProjectClient({
   useEffect(() => {
     if (!galleryRef.current) return;
 
-    let savedScrollY = 0;
-
     const lg = lightGallery(galleryRef.current, {
       plugins: [lgZoom, lgThumbnail],
       speed: 500,
@@ -92,13 +90,6 @@ export default function ProjectClient({
     };
 
     const handleBeforeOpen = () => {
-      savedScrollY =
-        window.scrollY ||
-        window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop ||
-        0;
-
       window.scrollTo({ top: 0, behavior: "auto" });
       document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";

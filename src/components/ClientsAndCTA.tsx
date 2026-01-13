@@ -1,8 +1,7 @@
 "use client";
 
 import styles from "@/styles/ClientsAndCTA.module.css";
-import { useTranslations, useLocale } from "next-intl";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { getImageUrl } from "@/utils/getImageUrl";
 import CallToAction from "./CallToActionCard";
@@ -11,7 +10,6 @@ import CallToAction from "./CallToActionCard";
 
 export default function ClientsAndCTA() {
   const t = useTranslations("finishing");
-  const locale = useLocale();
 
   const rawClients = [
     { id: "V1_zxsgfj.png", titleKey: "clients.private" },
