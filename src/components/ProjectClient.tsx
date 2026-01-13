@@ -13,6 +13,7 @@ import "lightgallery/css/lg-thumbnail.css";
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -214,12 +215,12 @@ export default function ProjectClient({
         {images.map((src, i) => (
           <a
             key={i}
-            href={src}
+            href={getImageUrl(src)}
             data-lg-size="1600-1200"
             className={`${styles.imageWrapper} reveal-img`}
           >
             <Image
-              src={src}
+              src={getImageUrl(src)}
               alt={`${title} - Photo ${i + 1}`}
               fill
               className={styles.image}

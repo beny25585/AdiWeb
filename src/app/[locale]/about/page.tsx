@@ -3,6 +3,7 @@ import styles from "@/styles/about.module.css";
 import { getTranslations } from "next-intl/server";
 import { team } from "@/data/team";
 import type { Locale } from "@/lib/i18n";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 export default async function AboutPage({
   params,
@@ -27,7 +28,7 @@ export default async function AboutPage({
         </div>
         <div className={styles.ceoImage}>
           <Image
-            src="/Photos/adi-ceo-black&white.jpg"
+            src={getImageUrl("/Photos/adi-ceo-black&white.jpg")}
             alt={t("adiAlt")}
             width={450}
             height={450}
@@ -48,7 +49,7 @@ export default async function AboutPage({
             {member.key === "shira" ? (
               <>
                 <Image
-                  src={member.image}
+                  src={getImageUrl(member.image)}
                   alt={t(`${member.key}Alt`)}
                   width={member.key === "shira" ? 220 : 160}
                   height={member.key === "shira" ? 220 : 160}

@@ -9,6 +9,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,7 +21,7 @@ export default function Hero() {
   const items = heroImages.map((img, i) => (
     <div key={i} className={styles.slideItem}>
       <Image
-        src={img.src}
+        src={getImageUrl(img.src)}
         alt={img.alt}
         width={800}
         height={600}

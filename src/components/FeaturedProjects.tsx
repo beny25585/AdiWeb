@@ -7,6 +7,7 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import { projectsList } from "@/data/projects";
 import { useTranslations, useLocale } from "next-intl";
 import styles from "@/styles/FeaturedProjects.module.css";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 export default function FeaturedProjectsList() {
   const t = useTranslations("projects");
@@ -22,14 +23,14 @@ export default function FeaturedProjectsList() {
       <div className={styles.imageWrap}>
         <div className={styles.card}>
           <Image
-            src={p.cover}
+            src={getImageUrl(p.cover)}
             alt={t(`${p.slug}.title`)}
             fill
             className={styles.image}
           />
           <div className={styles.logoWrapper}>
             <Image
-              src="/Photos/A&S-removebg.png"
+              src={getImageUrl("/Photos/A&S-removebg.png")}
               alt="Logo"
               width={60}
               height={60}

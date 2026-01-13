@@ -180,11 +180,15 @@
     },
     "lawFirmOffice": {
       "title": "สำนักงานกฎหมาย | โครงการสำนักงานระดับพรีเมียม",
-      "description": "การออกแบบสำนักงานกฎหมายที่มีความหรูหรา ผสมผสานความหรูหราสมัยใหม่กับความเป็นเลิศ"
+      "description": "תאית :โครงการที่พักอาศัยส่วนตัว โดดเด่นด้วยงานสถาปัตยกรรมเหนือกาลเวลา และการก่อสร้างที่พิถีพิถันไร้การประนีประนอม"
     },
     "developmentFirm": {
       "title": "โครงการที่ดำเนินการสำหรับบริษัทด้านการลงทุนและการพัฒนาอสังหาริมทรัพย์",
       "description": "การออกแบบและก่อสร้างสำนักงานระดับพรีเมียม ที่ผสานฟังก์ชันการใช้งาน ความเรียบหรู และวัสดุคุณภาพสูง สภาพแวดล้อมการทำงานที่สร้างความมั่นใจและรองรับการตัดสินใจทางธุรกิจ"
+    },
+    "Calm55": {
+      "title": " Calm 55  Design & Build Renovation",
+      "description": "A full renovation of a 55 sqm condominium using a Design & Build approach, combining architectural precision with high-end execution. One team, one process — delivering a refined, cohesive result."
     },
     "suite": {
       "title": "โรงแรมรอทชิลด์ 221",

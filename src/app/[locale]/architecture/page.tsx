@@ -7,6 +7,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations, useLocale } from "next-intl";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -173,7 +174,7 @@ export default function ArchitecturePage() {
         <div className={styles.shiraVision}>
           <div ref={imageContainerRef} className={styles.imageContainer}>
             <Image
-              src="/Photos/shiraPhoto.jpg"
+              src={getImageUrl("/Photos/shiraPhoto.jpg")}
               alt="Architect Shira Uzan"
               height={500}
               width={500}
@@ -183,9 +184,7 @@ export default function ArchitecturePage() {
 
           <div ref={visionContentRef} className={styles.visionContent}>
             <div className={styles.divider}></div>
-            <p className={styles.visionText}>
-              {t("shiraBio")}
-            </p>
+            <p className={styles.visionText}>{t("shiraBio")}</p>
           </div>
         </div>
       </div>
@@ -202,7 +201,7 @@ export default function ArchitecturePage() {
 
         <div ref={imageWrapperRef} className={styles.imageWrapper}>
           <Image
-            src="/Photos/Architecture/house_wallpaper.jpg"
+            src={getImageUrl("/Photos/Architecture/house_wallpaper.jpg")}
             alt="house wallpaper"
             fill
             className={styles.photo}
@@ -226,7 +225,7 @@ export default function ArchitecturePage() {
             }}
           >
             <Image
-              src={project.image}
+              src={getImageUrl(project.image)}
               alt={tp(`${project.slug}.title`)}
               width={600}
               height={400}

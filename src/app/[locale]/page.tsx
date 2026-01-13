@@ -5,6 +5,7 @@ import IsolaionComponent from "@/components/insulationCompponent";
 import "@/styles/scroll-pinning.css";
 import SpecialtiesSection from "../../components/SpecialtiesSection";
 import Image from "next/image";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 export default function HomePage() {
   return (
@@ -12,7 +13,7 @@ export default function HomePage() {
       {/* Background */}
       <div className="background-image">
         <Image
-          src="https://res.cloudinary.com/ddncjeozb/image/upload/v1767936515/G35_eadrzq.png"
+          src={getImageUrl("G35_eadrzq.png", 2400)}
           alt="Background"
           fill
           priority
@@ -28,7 +29,7 @@ export default function HomePage() {
 
       <div className="background-image">
         <Image
-          src="https://res.cloudinary.com/ddncjeozb/image/upload/v1767867786/he6bh5.jpg"
+          src={getImageUrl("he6bh5.jpg")}
           alt="Background"
           fill
           priority

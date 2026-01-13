@@ -4,7 +4,7 @@ import styles from "@/styles/ClientsAndCTA.module.css";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
-import { cloudinaryUrl } from "@/utils/cloudinary";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 //    { id: "CD34_uwvm9j.png", titleKey: "clients.commercial" },
 
@@ -22,11 +22,6 @@ export default function ClientsAndCTA() {
     },
   ];
 
-  const clients = rawClients.map((c) => ({
-    title: t(c.titleKey),
-    image: cloudinaryUrl(c.id),
-  }));
-
   return (
     <div className={styles.clientsColumn}>
       {/* ---------- Grid ---------- */}
@@ -34,15 +29,15 @@ export default function ClientsAndCTA() {
         <h3 className={styles.clientsTitle}>{t("clientsTitle")}</h3>
 
         <div className={styles.clientsGrid}>
-          {clients.map((client, i) => (
+          {rawClients.map((client, i) => (
             <div key={i} className={styles.clientCard}>
-              <h4 className={styles.clientTitle}>{client.title}</h4>
+              <h4 className={styles.clientTitle}>{t(client.titleKey)}</h4>
 
               <Image
-                src={client.image}
-                alt={client.title}
-                width={1500}
-                height={1600}
+                src={getImageUrl(client.id)}
+                alt={t(client.titleKey)}
+                width={0}
+                height={0}
                 sizes="(max-width: 768px) 100vw,
                        (max-width: 1200px) 50vw,
                        33vw"

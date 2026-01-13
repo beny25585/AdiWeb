@@ -1,29 +1,10 @@
-// src/utils/cloudinaryUrl.ts
+const CLOUD_NAME = "ddncjeozb";
+const BASE_URL = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload`;
 
-type CloudinaryParams = {
-  width?: number;
-};
+export const cloudinaryUrl = (publicId: string, width?: number): string => {
+  if (!publicId) throw new Error("cloudinaryUrl: publicId is required");
 
-/**
- *
- * @param publicId
- * @param opts
- * @returns
- */
-export const cloudinaryUrl = (
-  publicId: string,
-  { width }: CloudinaryParams = {}
-): string => {
-  const cloudName = "ddncjeozb";
-  const base = `https://res.cloudinary.com/${cloudName}/image/upload`;
+  const path = width ? `w_${width},q_auto,f_auto/${publicId}` : publicId;
 
-  const w = width && width > 0 ? width : 1900;
-
-  const transforms = `w_${w},q_auto,f_auto`;
-
-  if (!publicId) {
-    throw new Error("cloudinaryUrl: publicId is required");
-  }
-
-  return `${base}/${transforms}/${publicId}`;
+  return `${BASE_URL}/${path}`;
 };

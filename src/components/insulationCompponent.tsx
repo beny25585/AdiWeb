@@ -3,6 +3,7 @@ import { insulationImages } from "../data/insulationData";
 import Image from "next/image";
 import styles from "@/styles/insulation.module.css";
 import { useTranslations } from "next-intl";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 export default function IsolationComponent() {
   const t = useTranslations("isolation");
@@ -27,7 +28,7 @@ export default function IsolationComponent() {
           {infiniteImages.map((img, index) => (
             <div key={index} className={styles.gridItem}>
               <Image
-                src={img.src}
+                src={getImageUrl(img.src)}
                 alt={img.alt}
                 width={300}
                 height={300}

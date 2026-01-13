@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { Locale } from "@/lib/i18n";
 import Image from "next/image";
 import Link from "next/link";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 export default async function ProjectsPage({
   params,
@@ -25,14 +26,14 @@ export default async function ProjectsPage({
             className={styles.card}
           >
             <Image
-              src="/Photos/A&S-removebg.png"
+              src={getImageUrl("/Photos/A&S-removebg.png")}
               alt="Uzan Group Logo"
               width={50}
               height={50}
               className={styles.logo}
             />
             <Image
-              src={project.cover}
+              src={getImageUrl(project.cover)}
               alt={t(`${project.slug}.title`)}
               width={600}
               height={400}

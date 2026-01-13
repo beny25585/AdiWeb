@@ -7,7 +7,8 @@ export type ProjectKey =
   | "office"
   | "electricCabin"
   | "lawFirmOffice"
-  | "developmentFirm";
+  | "developmentFirm"
+  | "Calm55";
 
 export type Project = {
   slug: ProjectKey;
@@ -17,46 +18,65 @@ export type Project = {
 };
 
 export const projectsMap: Record<ProjectKey, Project> = {
+  Calm55: {
+    slug: "Calm55",
+    title: "Calm 55 Design & Build Renovation",
+    cover: "TL1_ngtnxp.png",
+    images: [
+      "TL1_ngtnxp.png",
+      "TL2_xb7kte.png",
+      "TL3_o8kbb2.png",
+      "TL4_igvkby.png",
+      "TL5_aru32u.png",
+      "TL6_nghpbl.png",
+      "TL7_j5tmkr.png",
+      "TL7.5_fqxsyv.png",
+      "TL8_q8v1dv.png",
+      "TL9_z1czeh.png",
+      "TL10_kklx3a.png",
+      "TL11_fgzyn7.png",
+      "TL12_nu9kvm.png",
+    ],
+  },
+
   lawFirmOffice: {
     slug: "lawFirmOffice",
     title: "Law Firm Office",
-    cover:
-      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767935347/18_okcx6e.jpg",
+    cover: "14_poorvu.jpg",
     images: [
-      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767935347/18_okcx6e.jpg",
-      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767935347/15_fow0ci.jpg",
-      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767935347/17_ffcq2m.jpg",
-      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767935347/13_bheg0w.jpg",
-      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767935347/12_zdo6nl.jpg",
-      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767935347/16_ybet8v.jpg",
-      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767935347/14_poorvu.jpg",
+      "18_okcx6e.jpg",
+      "15_fow0ci.jpg",
+      "17_ffcq2m.jpg",
+      "13_bheg0w.jpg",
+      "12_zdo6nl.jpg",
+      "16_ybet8v.jpg",
+      "14_poorvu.jpg",
     ],
   },
   developmentFirm: {
     slug: "developmentFirm",
     title: "Investment & Development Firm Project",
-    cover:
-      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767936516/C25_AM_ifzwt0.png",
+    cover: "G25_tmrpkj.png",
     images: [
-      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767936515/G35_eadrzq.png",
-      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767936515/CD34_uwvm9j.png",
-      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767936515/G25_tmrpkj.png",
-      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767936515/22g_zwatvs.jpg",
-      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767936514/23G_obilj7.webp",
-      "https://res.cloudinary.com/ddncjeozb/image/upload/v1767936514/24G_roqh6o.jpg",
+      "G35_eadrzq.png",
+      "CD34_uwvm9j.png",
+      "G25_tmrpkj.png",
+      "22g_zwatvs.jpg",
+      "23G_obilj7.webp",
+      "24G_roqh6o.jpg",
     ],
   },
 
   winery: {
     slug: "winery",
     title: "Winery",
-    cover: "/Photos/Winery/1_1 - Exterior_Dawn.jpg",
+    cover: "/Photos/winery/1_1 - Exterior_Dawn.jpg",
     images: [
-      "/Photos/Winery/1_1 - Exterior_Dawn.jpg",
-      "/Photos/Winery/1_2 - Interior_tasting_room.jpg",
-      "/Photos/Winery/1_3 - Exterior_dawn_drone_shot.jpg",
-      "/Photos/Winery/1_4-Winery_entrance.jpg",
-      "/Photos/Winery/1_5-Winery_entrance.jpg",
+      "/Photos/winery/1_1 - Exterior_Dawn.jpg",
+      "/Photos/winery/1_2 - Interior_tasting_room.jpg",
+      "/Photos/winery/1_3 - Exterior_dawn_drone_shot.jpg",
+      "/Photos/winery/1_4-Winery_entrance.jpg",
+      "/Photos/winery/1_5-Winery_entrance.jpg",
     ],
   },
 
@@ -79,25 +99,26 @@ export const projectsMap: Record<ProjectKey, Project> = {
   frederOscar: {
     slug: "frederOscar",
     title: "FREDER OSCAR",
-    cover: "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 1.jpg",
+    cover: "F67_vvyxm5.png",
     images: [
-      "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 1.jpg",
-      "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 2.jpg",
-      "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 3.jpg",
-      "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 4.jpg",
-      "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 5.jpg",
-      "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 6.jpg",
-      "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 7.jpg",
-      "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 8.jpg",
-      "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 9.jpg",
-      "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 10.jpg",
+      "OUTFRONT1_m9ptwd.png",
+      "F67_vvyxm5.png",
+      "DFT23_dxexqh.png",
+      "FD45_qmr8ve.png",
+      "LIVINGROOM2.1_ykri84.png",
+      "SWIMINPOOL2_etvdou.png",
+      "LIVINGROOM2.1_ykri84.png",
+      "FD35_wtnt1q.png",
+      "SWIMINPOOL1_zflowm.png",
+      "FGY67_o9cmto.png",
+      "DR43_odo6aj.png",
     ],
   },
 
   suite: {
     slug: "suite",
     title: "Luxury Suite",
-    cover: "/Photos/Suite/suite1.jpg",
+    cover: "/Photos/Suite/courtyard2.png",
     images: [
       "/Photos/Suite/courtyard1.png",
       "/Photos/Suite/courtyard2.png",
@@ -125,7 +146,7 @@ export const projectsMap: Record<ProjectKey, Project> = {
   office: {
     slug: "office",
     title: "Office Redesign",
-    cover: "/Photos/office/office-after1.jpg",
+    cover: "/Photos/office/office-after2.jpg",
     images: [
       "/Photos/office/office-after1.jpg",
       "/Photos/office/office-after2.jpg",

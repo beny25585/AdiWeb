@@ -91,12 +91,12 @@ export default function SpecialtiesSection() {
         {
           opacity: 1,
           scale: 1,
-          duration: 0.5,
-          delay: idx * 0.1,
+          duration: 0.4,
+          delay: idx * 0.01,
           ease: "power2.out",
           scrollTrigger: {
             trigger: card,
-            start: "top bottom",
+            start: "top bottom-=100",
             end: "top center",
             toggleActions: "play none none reverse",
             refreshPriority: -999,
