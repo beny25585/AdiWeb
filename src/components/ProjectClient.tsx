@@ -67,7 +67,29 @@ export default function ProjectClient({
       closable: true,
       download: false,
       counter: true,
+      enableSwipe: true,
+      enableDrag: true,
+      swipeThreshold: 50,
     });
+    // Patch passive event listeners
+    const patchPassiveEvents = () => {
+      const lgContainer = document.querySelector(".lg-outer");
+      if (lgContainer) {
+        // Override touch events to be passive where possible
+        ["touchstart", "touchmove", "wheel"].forEach((eventType) => {
+          lgContainer.addEventListener(
+            eventType,
+            (e) => {
+              // Only preventDefault if actually needed
+              if (e.cancelable) {
+                // Let lightGallery handle this
+              }
+            },
+            { passive: true, capture: true }
+          );
+        });
+      }
+    };
 
     const handleBeforeOpen = () => {
       savedScrollY =
@@ -86,9 +108,7 @@ export default function ProjectClient({
       document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
 
-      setTimeout(() => {
-        window.scrollTo({ top: savedScrollY, behavior: "auto" });
-      }, 10);
+      setTimeout(patchPassiveEvents, 100);
     };
 
     const gallery = galleryRef.current;

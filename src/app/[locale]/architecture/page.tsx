@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/styles/Architecture.module.css";
+import styles from "./Architecture.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
@@ -8,6 +8,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslations, useLocale } from "next-intl";
 import { getImageUrl } from "@/utils/getImageUrl";
+import { projectsList } from "@/data/projects";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -151,15 +152,6 @@ export default function ArchitecturePage() {
     });
   }, []);
 
-  const shiraProjects = [
-    {
-      slug: "FREDEROSCAR",
-      image: "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 1.jpg",
-    },
-    { slug: "suite", image: "/Photos/Suite/suite1.jpg" },
-    { slug: "Winery", image: "/Photos/Winery/1_1 - Exterior_Dawn.jpg" },
-  ];
-
   return (
     <section className={styles.container}>
       <h1 ref={titleRef} className={styles.title}>
@@ -215,7 +207,7 @@ export default function ArchitecturePage() {
       </h2>
 
       <div className={styles.projectsGrid}>
-        {shiraProjects.map((project, index) => (
+        {projectsList.filter((project)=>project.arcitecture).map((project, index) => (
           <Link
             key={project.slug}
             href={`/${locale}/projects/${project.slug}`}
@@ -225,7 +217,7 @@ export default function ArchitecturePage() {
             }}
           >
             <Image
-              src={getImageUrl(project.image)}
+              src={getImageUrl(project.cover)}
               alt={tp(`${project.slug}.title`)}
               width={600}
               height={400}

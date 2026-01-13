@@ -16,6 +16,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  touch-action: pan-y pinch-zoom;
+}
+
+/* Or target just the gallery */
+.gallery {
+  touch-action: pan-y pinch-zoom;
 }
 
 html,

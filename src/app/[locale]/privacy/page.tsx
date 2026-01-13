@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import styles from "@/styles/Privacy.module.css";
+import styles from "./Privacy.module.css";
 import type { Locale } from "@/lib/i18n";
 
 export default async function PrivacyPage({

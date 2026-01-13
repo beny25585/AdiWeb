@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/styles/contact.module.css";
+import styles from "./contact.module.css";
 import { useTranslations, useLocale } from "next-intl";
 import { FiPhone, FiMail, FiGlobe, FiCheckCircle } from "react-icons/fi";
 import { useForm, ValidationError } from "@formspree/react";

@@ -14,6 +14,7 @@ export type Project = {
   slug: ProjectKey;
   title: string;
   cover: string;
+  arcitecture?: boolean;
   images: string[];
 };
 
@@ -70,6 +71,7 @@ export const projectsMap: Record<ProjectKey, Project> = {
   winery: {
     slug: "winery",
     title: "Winery",
+    arcitecture: true,
     cover: "/Photos/winery/1_1 - Exterior_Dawn.jpg",
     images: [
       "/Photos/winery/1_1 - Exterior_Dawn.jpg",
@@ -83,6 +85,7 @@ export const projectsMap: Record<ProjectKey, Project> = {
   heritageResidence: {
     slug: "heritageResidence",
     title: "The Heritage Residence",
+    arcitecture: true,
     cover: "/Photos/TheHeritageResidence/vila1.png",
     images: [
       "/Photos/TheHeritageResidence/vila1.png",
@@ -98,7 +101,8 @@ export const projectsMap: Record<ProjectKey, Project> = {
 
   frederOscar: {
     slug: "frederOscar",
-    title: "FREDER OSCAR",
+    title: "German Colony Villa",
+    arcitecture: true,
     cover: "F67_vvyxm5.png",
     images: [
       "OUTFRONT1_m9ptwd.png",
@@ -117,7 +121,8 @@ export const projectsMap: Record<ProjectKey, Project> = {
 
   suite: {
     slug: "suite",
-    title: "Luxury Suite",
+    title: "Rothscild 221 Hotel",
+    arcitecture: true,
     cover: "/Photos/Suite/courtyard2.png",
     images: [
       "/Photos/Suite/courtyard1.png",
@@ -166,7 +171,20 @@ export const projectsMap: Record<ProjectKey, Project> = {
   },
 };
 
-export const projectsList: Project[] = Object.values(projectsMap);
+export const orderedKeys: ProjectKey[] = [
+  "Calm55",
+  "lawFirmOffice",
+  "developmentFirm",
+  "winery",
+  "heritageResidence",
+  "frederOscar",
+  "suite",
+  "kitchen",
+  "office",
+  "electricCabin",
+];
+
+export const projectsList: Project[] = orderedKeys.map((k) => projectsMap[k]);
 
 export const projectImages: Record<ProjectKey, string[]> = Object.fromEntries(
   Object.entries(projectsMap).map(([slug, proj]) => [slug, proj.images])

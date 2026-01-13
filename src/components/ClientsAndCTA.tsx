@@ -5,6 +5,7 @@ import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
 import { getImageUrl } from "@/utils/getImageUrl";
+import CallToAction from "./CallToActionCard";
 
 //    { id: "CD34_uwvm9j.png", titleKey: "clients.commercial" },
 
@@ -50,12 +51,7 @@ export default function ClientsAndCTA() {
       </div>
 
       {/* ---------- CTA ---------- */}
-      <div className={styles.cta}>
-        <p className={styles.ctaText}>{t("ctaText")}</p>
-        <Link href={`/${locale}/contact`} className={styles.ctaButton}>
-          {t("ctaButton")}
-        </Link>
-      </div>
+      <CallToAction />
     </div>
   );
 }

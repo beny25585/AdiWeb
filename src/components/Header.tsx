@@ -34,6 +34,7 @@ export default function Header() {
     { href: `/${locale}/architecture`, label: t("architecture") },
     { href: `/${locale}/projects`, label: t("projects") },
     { href: `/${locale}/contact`, label: t("contact") },
+    { href: `/${locale}/insulation`, label: t("insulation") },
   ];
 
   return (
@@ -48,6 +49,7 @@ export default function Header() {
                 width={500}
                 height={500}
                 className={styles.right}
+                loading="eager"
               />
             </div>
             <Image

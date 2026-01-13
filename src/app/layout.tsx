@@ -197,6 +197,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={dir} data-scroll-behavior="smooth">
       <head>
+        <meta name="mobile-web-app-capable" content="yes"></meta>
         <link rel="icon" href="/Photos/uzanGroup.jpg" type="image/jpeg" />
         <link rel="apple-touch-icon" href="/Photos/uzanGroup.jpg" />
 

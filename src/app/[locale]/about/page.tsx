@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "@/styles/about.module.css";
+import styles from "./about.module.css";
 import { getTranslations } from "next-intl/server";
 import { team } from "@/data/team";
 import type { Locale } from "@/lib/i18n";

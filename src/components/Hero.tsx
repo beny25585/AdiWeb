@@ -10,6 +10,7 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { getImageUrl } from "@/utils/getImageUrl";
+import { FaComment } from "react-icons/fa";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,6 +50,7 @@ export default function Hero() {
                 className={styles.buttonSecondary}
               >
                 {t("contactBtn")}
+                <FaComment className={styles.commentIcon} />
               </Link>
             </div>
           </div>

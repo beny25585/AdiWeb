@@ -81,21 +81,26 @@
   background: transparent;
   color: white;
 }
-.buttonSecondary {
-  border: 2px solid rgb(249, 249, 249);
-  background: transparent;
-  color: rgb(255, 255, 255);
-}
+
 .buttonPrimary:hover {
   background: #ffffff;
   transform: translateY(-5px);
   color: black;
 }
 
-.buttonSecondary:hover {
+.buttonSecondary {
+  display: flex;
+  gap: 10px;
+  border: 2px solid rgb(249, 249, 249);
+  background: transparent;
+  color: rgb(255, 255, 255);
   background: white;
   color: #313132;
-  transform: translateY(-5px);
+}
+.commentIcon {
+  width: 25px;
+  height: 25px;
+  color: #29b6f6;
 }
 
 .imageSide {
@@ -172,27 +177,22 @@
     height: 100%;
   }
   .textBox {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(1, 1, 1, 0.3);
     backdrop-filter: blur(6px);
     padding: 40px 60px;
     border-radius: 12px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   }
   .textSide h1 {
-    color: black;
+    color: white;
   }
   .textSide p {
-    color: black;
+    color: white;
   }
   .buttonPrimary {
-    border: 2px solid rgb(5, 5, 5);
+    border: 2px solid rgb(255, 255, 255);
     background: transparent;
-    color: rgb(0, 0, 0);
-  }
-  .buttonSecondary {
-    border: 2px solid rgb(0, 0, 0);
-    background: transparent;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
   }
 
   .split {

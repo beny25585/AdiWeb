@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { projectsList } from "@/data/projects";
 
 const baseUrl = "https://uzangroups.com";
 const locales = ["he", "en", "th"];
@@ -9,21 +10,11 @@ const pages = [
   { path: "about", priority: 0.9, changeFrequency: "monthly" as const },
   { path: "projects", priority: 0.9, changeFrequency: "weekly" as const },
   { path: "architecture", priority: 0.8, changeFrequency: "monthly" as const },
-  { path: "finishing", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "contact", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "privacy", priority: 0.5, changeFrequency: "yearly" as const },
 ];
 
 // Project pages - add your actual project slugs here
-const projectSlugs = [
-  "electricCabin",
-  "kitchen",
-  "comunications",
-  "office",
-  "suite",
-  "FREDEROSCAR",
-  "Winery",
-];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = new Date().toISOString();
@@ -54,12 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   // Generate entries for individual project pages
-  projectSlugs.forEach((slug) => {
+  projectsList.forEach((project) => {
     locales.forEach((locale) => {
       const isDefaultLocale = locale === "en";
       const url = isDefaultLocale
-        ? `${baseUrl}/projects/${slug}`
-        : `${baseUrl}/${locale}/projects/${slug}`;
+        ? `${baseUrl}/projects/${project.slug}`
+        : `${baseUrl}/${locale}/projects/${project.slug}`;
 
       sitemapEntries.push({
         url,
@@ -68,9 +59,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.8,
         alternates: {
           languages: {
-            he: `${baseUrl}/he/projects/${slug}`,
-            en: `${baseUrl}/projects/${slug}`,
-            th: `${baseUrl}/th/projects/${slug}`,
+            he: `${baseUrl}/he/projects/${project.slug}`,
+            en: `${baseUrl}/projects/${project.slug}`,
+            th: `${baseUrl}/th/projects/${project.slug}`,
           },
         },
       });

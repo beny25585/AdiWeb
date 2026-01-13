@@ -4,7 +4,8 @@
     "about": "About",
     "architecture": "Architecture",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "insulation": "Insulation"
   },
   "hero": {
     "headline": "Quality, Construction, Architecture,  Perfection.",
@@ -279,6 +280,7 @@
   "isolation": {
     "title": "Professional Thermal Insulation Installation",
     "subtitle": "Energy-Efficient Solutions for Your Home & Business",
+    "carouselLabel": "Scrolling gallery of insulation projects",
     "description": "Expert installation of premium reflective insulation materials designed to reduce heat transfer, lower energy costs, and maintain comfortable indoor temperatures year-round. Our certified technicians ensure precise installation for maximum thermal performance in residential and commercial properties."
   }
 }

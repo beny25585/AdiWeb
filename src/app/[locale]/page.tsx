@@ -1,11 +1,11 @@
 import Hero from "@/components/Hero";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import CliClientsAndCTA from "@/components/ClientsAndCTA";
-import IsolaionComponent from "@/components/insulationCompponent";
 import "@/styles/scroll-pinning.css";
 import SpecialtiesSection from "../../components/SpecialtiesSection";
 import Image from "next/image";
 import { getImageUrl } from "@/utils/getImageUrl";
+import { FaArrowDown } from "react-icons/fa";
 
 export default function HomePage() {
   return (
@@ -15,14 +15,17 @@ export default function HomePage() {
         <Image
           src={getImageUrl("G35_eadrzq.png", 2400)}
           alt="Background"
-          fill
+          width={0}
+          height={0}
           priority
           sizes="100vw"
         />
       </div>
+      <FaArrowDown className="scrollHint" />
       <section className="section">
         {/* Foreground content */}
         <Hero />
+
         <div className="spacer" />
         <FeaturedProjects />
       </section>
@@ -36,13 +39,12 @@ export default function HomePage() {
           sizes="100vw"
         />
       </div>
-      <section className="section ">
-        <IsolaionComponent />
-        <div className="spacer" />
 
+      <section className="section">
         {/* Foreground content */}
         <SpecialtiesSection />
       </section>
+      <div className="spacer" />
 
       <section className="section">
         <CliClientsAndCTA />
