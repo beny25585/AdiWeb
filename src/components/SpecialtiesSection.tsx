@@ -77,7 +77,8 @@ export default function SpecialtiesSection() {
      -------------------------------------------------------------- */
   useEffect(() => {
     // Bail out on the server.
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined") return; // SSR guard
+    if (window.innerWidth <= 768) return;
 
     /**
      * Helper that creates a from‑to animation for a single card.
