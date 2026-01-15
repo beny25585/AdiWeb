@@ -12,11 +12,6 @@ import { projectsList } from "@/data/projects";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// חשוב למובייל
-ScrollTrigger.config({
-  ignoreMobileResize: true,
-});
-
 export default function ArchitecturePage() {
   const locale = useLocale();
   const t = useTranslations("architecture");
@@ -33,22 +28,25 @@ export default function ArchitecturePage() {
   const projectCardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
 
   useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+
     const ctx = gsap.context(() => {
       const fadeUp = (el: Element | null, delay = 0) => {
         if (!el) return;
+
         gsap.fromTo(
           el,
-          { opacity: 0, y: 40 },
+          { opacity: 0, y: isMobile ? 20 : 40 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: isMobile ? 0.5 : 0.8,
             delay,
             ease: "power2.out",
             scrollTrigger: {
               trigger: el,
-              start: "top 90%", // מתחיל מוקדם יותר
-              once: true, // רק פעם אחת
+              start: "top 85%",
+              once: true,
             },
           }
         );
@@ -61,15 +59,15 @@ export default function ArchitecturePage() {
       // Image + vision
       gsap.fromTo(
         imageContainerRef.current,
-        { opacity: 0, x: -50 },
+        { opacity: 0, x: isMobile ? 0 : -50 },
         {
           opacity: 1,
           x: 0,
-          duration: 1,
+          duration: 0.8,
           ease: "power2.out",
           scrollTrigger: {
             trigger: imageContainerRef.current,
-            start: "top 90%",
+            start: "top 85%",
             once: true,
           },
         }
@@ -77,57 +75,51 @@ export default function ArchitecturePage() {
 
       gsap.fromTo(
         visionContentRef.current,
-        { opacity: 0, x: 50 },
+        { opacity: 0, x: isMobile ? 0 : 50 },
         {
           opacity: 1,
           x: 0,
           duration: 0.8,
-          delay: 0.2,
           ease: "power2.out",
           scrollTrigger: {
             trigger: visionContentRef.current,
-            start: "top 100%",
+            start: "top 85%",
             once: true,
           },
         }
       );
 
-      // Services + image
+      // Services
       [serviceCard1Ref, serviceCard2Ref, imageWrapperRef].forEach(
-        (ref, index) => {
-          fadeUp(ref.current, index * 0.15);
-        }
+        (ref, index) => fadeUp(ref.current, index * 0.15)
       );
 
       // Portfolio title
       fadeUp(portfolioTitleRef.current);
 
-      // 🔥 Project cards – batch (הכי חשוב ליציבות)
+      // Project cards – batch (יציב מאוד במובייל)
       ScrollTrigger.batch(projectCardsRef.current.filter(Boolean), {
-        start: "top 100%",
+        start: "top 90%",
         once: true,
         onEnter: (batch) =>
           gsap.fromTo(
             batch,
-            { opacity: 0, y: 40 },
+            { opacity: 0, y: 30 },
             {
               opacity: 1,
               y: 0,
-              duration: 0.7,
-              ease: "power3.out",
+              duration: 0.6,
+              ease: "power2.out",
               stagger: 0.1,
             }
           ),
       });
     });
 
+    // refresh אחד מרוכז – אחרי mount
     ScrollTrigger.refresh();
-    const delayed = gsap.delayedCall(0.2, () => ScrollTrigger.refresh());
 
-    return () => {
-      delayed.kill();
-      ctx.revert();
-    };
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -146,10 +138,9 @@ export default function ArchitecturePage() {
             <Image
               src={getImageUrl("/Photos/shiraPhoto.jpg")}
               alt="Architect Shira Uzan"
-              height={500}
               width={500}
+              height={500}
               className={styles.imageShira}
-              onLoadingComplete={() => ScrollTrigger.refresh()}
             />
           </div>
 
@@ -178,7 +169,6 @@ export default function ArchitecturePage() {
             fill
             className={styles.photo}
             priority
-            onLoadingComplete={() => ScrollTrigger.refresh()}
           />
         </div>
       </div>
@@ -189,7 +179,7 @@ export default function ArchitecturePage() {
 
       <div className={styles.projectsGrid}>
         {projectsList
-          .filter((project) => project.arcitecture)
+          .filter((p) => p.arcitecture)
           .map((project, index) => (
             <Link
               key={project.slug}
@@ -204,7 +194,6 @@ export default function ArchitecturePage() {
                 alt={tp(`${project.slug}.title`)}
                 width={600}
                 height={400}
-                onLoadingComplete={() => ScrollTrigger.refresh()}
               />
               <div className={styles.projectInfo}>
                 <h3>{tp(`${project.slug}.title`)}</h3>
