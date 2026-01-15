@@ -165,10 +165,7 @@ export default function ProjectClient({
           y: 0,
           duration: 0.8,
           ease: "power3.out",
-          scrollTrigger: {
-            trigger: navigationBottomRef.current,
-            start: "top 100%",
-          },
+          delay: 0.2,
         }
       );
     });

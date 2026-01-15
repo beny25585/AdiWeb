@@ -9,7 +9,8 @@ export type ProjectKey =
   | "lawFirmOffice"
   | "developmentFirm"
   | "UrbanUmami"
-  | "Calm55";
+  | "Calm55"
+  | "baseHairStudio";
 
 export type Project = {
   slug: ProjectKey;
@@ -77,13 +78,13 @@ export const projectsMap: Record<ProjectKey, Project> = {
     slug: "winery",
     title: "Winery",
     arcitecture: true,
-    cover: "/Photos/winery/1_1 - Exterior_Dawn.jpg",
+    cover: "the_wine_valley_1_n4rlqz.png",
     images: [
-      "/Photos/winery/1_1 - Exterior_Dawn.jpg",
-      "/Photos/winery/1_2 - Interior_tasting_room.jpg",
-      "/Photos/winery/1_3 - Exterior_dawn_drone_shot.jpg",
-      "/Photos/winery/1_4-Winery_entrance.jpg",
-      "/Photos/winery/1_5-Winery_entrance.jpg",
+      "the_wine_valley_1_n4rlqz.png",
+      "WINE_VALLEY_2_vpmbmv.png",
+      "WINE_VALLEY_3_u1qkep.png",
+      "WINE_VALLEY_4_n7ax9k.png",
+      "WINE_VALLEY_5.png_1_qy69lj.png",
     ],
   },
 
@@ -147,9 +148,21 @@ export const projectsMap: Record<ProjectKey, Project> = {
       "/Photos/Suite/courtyard1.png",
       "/Photos/Suite/courtyard2.png",
       "/Photos/Suite/lobby.png",
-      "/Photos/Suite/suite1.jpg",
+      "776_q6zmwp.png",
       "/Photos/Suite/suite2.png",
       "/Photos/Suite/suite3.png",
+    ],
+  },
+  baseHairStudio: {
+    slug: "baseHairStudio",
+    title: "BASE Hair Studio",
+    cover: "B1jpg_mb0t7h.jpg",
+    images: [
+      "B1jpg_mb0t7h.jpg",
+      "B2_l781gc.jpg",
+      "B3_ehjuqs.jpg",
+      "B4_chgh1l.jpg",
+      "B5_tchjlt.jpg",
     ],
   },
 
@@ -199,9 +212,8 @@ export const orderedKeys: ProjectKey[] = [
   "UrbanUmami",
   "frederOscar",
   "suite",
+  "baseHairStudio",
   "kitchen",
-  "office",
-  "electricCabin",
 ];
 
 export const projectsList: Project[] = orderedKeys.map((k) => projectsMap[k]);
