@@ -8,6 +8,7 @@ export type ProjectKey =
   | "electricCabin"
   | "lawFirmOffice"
   | "developmentFirm"
+  | "UrbanUmami"
   | "Calm55";
 
 export type Project = {
@@ -15,6 +16,7 @@ export type Project = {
   title: string;
   cover: string;
   arcitecture?: boolean;
+  goodImages?: boolean;
   images: string[];
 };
 
@@ -23,6 +25,7 @@ export const projectsMap: Record<ProjectKey, Project> = {
     slug: "Calm55",
     title: "Calm 55 Design & Build Renovation",
     cover: "TL1_ngtnxp.png",
+    goodImages: true,
     images: [
       "TL1_ngtnxp.png",
       "TL2_xb7kte.png",
@@ -44,6 +47,7 @@ export const projectsMap: Record<ProjectKey, Project> = {
     slug: "lawFirmOffice",
     title: "Law Firm Office",
     cover: "14_poorvu.jpg",
+    goodImages: true,
     images: [
       "18_okcx6e.jpg",
       "15_fow0ci.jpg",
@@ -58,6 +62,7 @@ export const projectsMap: Record<ProjectKey, Project> = {
     slug: "developmentFirm",
     title: "Investment & Development Firm Project",
     cover: "G25_tmrpkj.png",
+    goodImages: true,
     images: [
       "G35_eadrzq.png",
       "CD34_uwvm9j.png",
@@ -104,6 +109,8 @@ export const projectsMap: Record<ProjectKey, Project> = {
     title: "German Colony Villa",
     arcitecture: true,
     cover: "F67_vvyxm5.png",
+    goodImages: true,
+
     images: [
       "OUTFRONT1_m9ptwd.png",
       "F67_vvyxm5.png",
@@ -116,6 +123,18 @@ export const projectsMap: Record<ProjectKey, Project> = {
       "SWIMINPOOL1_zflowm.png",
       "FGY67_o9cmto.png",
       "DR43_odo6aj.png",
+    ],
+  },
+  UrbanUmami: {
+    slug: "UrbanUmami",
+    title: "Urban Umami Restaurant",
+    cover: "SUSHI_1_xdywvr.png",
+    images: [
+      "SUSHI_1_xdywvr.png",
+      "SUSHI_2_d7ltvw.png",
+      "SHSHI_3_ohn30e.png",
+      "SUSHI_4_i8zv8k.png",
+      "SUSHI_5_jgoxig.png",
     ],
   },
 
@@ -177,6 +196,7 @@ export const orderedKeys: ProjectKey[] = [
   "developmentFirm",
   "winery",
   "heritageResidence",
+  "UrbanUmami",
   "frederOscar",
   "suite",
   "kitchen",
