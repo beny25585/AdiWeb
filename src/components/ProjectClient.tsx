@@ -1,15 +1,18 @@
 "use client";
-import { useEffect, useRef } from "react";
+
+import { useEffect, useRef, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Image from "next/image";
 import { projectsList } from "@/data/projects";
 import styles from "@/styles/ProjectCard.module.css";
+
 import lightGallery from "lightgallery";
 import lgZoom from "lightgallery/plugins/zoom";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
 import "lightgallery/css/lg-thumbnail.css";
+
 import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -17,28 +20,48 @@ import { getImageUrl } from "@/utils/getImageUrl";
 
 gsap.registerPlugin(ScrollTrigger);
 
+ScrollTrigger.config({
+  ignoreMobileResize: true,
+});
+
+type Props = {
+  dir: "rtl" | "ltr";
+  title: string;
+  description: string;
+  images: string[];
+};
+
 export default function ProjectClient({
   dir,
   title,
   description,
   images,
-}: {
-  dir: "rtl" | "ltr";
-  title: string;
-  description: string;
-  images: string[];
-}) {
+}: Props) {
   const router = useRouter();
   const params = useParams();
-  const locale = params.locale as string;
-  const currentSlug = params.slug as string;
+  const locale = (params.locale ?? "en") as string;
+  const currentSlug = (params.slug ?? "") as string;
+
   const galleryRef = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const navigationTopRef = useRef<HTMLDivElement>(null);
   const navigationBottomRef = useRef<HTMLDivElement>(null);
   const imageRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+
   const t = useTranslations("projectNavigation");
 
+  /* ---------- IMAGES STATE ---------- */
+  const [imageUrls, setImageUrls] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (!images?.length) {
+      setImageUrls([]);
+      return;
+    }
+    setImageUrls(images.map((src) => getImageUrl(src)));
+  }, [images]);
+
+  /* ---------- NAVIGATION ---------- */
   const currentIndex = projectsList.findIndex((p) => p.slug === currentSlug);
   const prevProject = currentIndex > 0 ? projectsList[currentIndex - 1] : null;
   const nextProject =
@@ -46,15 +69,15 @@ export default function ProjectClient({
       ? projectsList[currentIndex + 1]
       : null;
 
-  const navigateToProject = (slug: string) => {
+  const navigateToProject = (slug: string) =>
     router.push(`/${locale}/projects/${slug}`);
-  };
 
-  // LightGallery setup
+  /* ---------- LIGHTGALLERY ---------- */
   useEffect(() => {
-    if (!galleryRef.current) return;
+    if (!galleryRef.current || imageUrls.length === 0) return;
 
     const lg = lightGallery(galleryRef.current, {
+      selector: "a",
       plugins: [lgZoom, lgThumbnail],
       speed: 500,
       thumbnail: true,
@@ -69,28 +92,8 @@ export default function ProjectClient({
       enableDrag: true,
       swipeThreshold: 50,
     });
-    // Patch passive event listeners
-    const patchPassiveEvents = () => {
-      const lgContainer = document.querySelector(".lg-outer");
-      if (lgContainer) {
-        // Override touch events to be passive where possible
-        ["touchstart", "touchmove", "wheel"].forEach((eventType) => {
-          lgContainer.addEventListener(
-            eventType,
-            (e) => {
-              // Only preventDefault if actually needed
-              if (e.cancelable) {
-                // Let lightGallery handle this
-              }
-            },
-            { passive: true, capture: true }
-          );
-        });
-      }
-    };
 
     const handleBeforeOpen = () => {
-      window.scrollTo({ top: 0, behavior: "auto" });
       document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
     };
@@ -98,8 +101,7 @@ export default function ProjectClient({
     const handleAfterClose = () => {
       document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
-
-      setTimeout(patchPassiveEvents, 100);
+      ScrollTrigger.refresh();
     };
 
     const gallery = galleryRef.current;
@@ -111,89 +113,76 @@ export default function ProjectClient({
       gallery.removeEventListener("lgAfterClose", handleAfterClose);
       lg.destroy();
     };
-  }, []);
+  }, [imageUrls.length]);
 
-  // GSAP Animations
+  /* ---------- GSAP + SCROLLTRIGGER ---------- */
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Header animation
-      if (headerRef.current) {
-        gsap.fromTo(
-          headerRef.current,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power3.out",
-          }
-        );
-      }
+      // Header
+      gsap.fromTo(
+        headerRef.current,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+      );
 
-      // Top navigation animation
-      if (navigationTopRef.current) {
-        gsap.fromTo(
-          navigationTopRef.current,
-          { opacity: 0, y: 30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power3.out",
-            delay: 0.2,
-          }
-        );
-      }
+      // Top navigation
+      gsap.fromTo(
+        navigationTopRef.current,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          delay: 0.2,
+        }
+      );
 
-      // Images animation - using refs directly
-      imageRefs.current.forEach((img, index) => {
-        if (img) {
+      ScrollTrigger.batch(imageRefs.current.filter(Boolean), {
+        start: "top 100%",
+        onEnter: (batch) =>
           gsap.fromTo(
-            img,
-            {
-              opacity: 0,
-              y: dir === "rtl" ? -40 : 40,
-            },
+            batch,
+            { opacity: 0, y: dir === "rtl" ? -40 : 40 },
             {
               opacity: 1,
               y: 0,
               duration: 0.8,
               ease: "power3.out",
-              scrollTrigger: {
-                trigger: img,
-                start: "top 85%",
-                end: "bottom 20%",
-                toggleActions: "play none none reverse",
-              },
-              delay: index * 0.1,
+              stagger: 0.1,
             }
-          );
-        }
+          ),
+        onLeaveBack: (batch) =>
+          gsap.to(batch, { opacity: 0, y: 40, duration: 0.3 }),
       });
 
-      // Bottom navigation animation
-      if (navigationBottomRef.current) {
-        gsap.fromTo(
-          navigationBottomRef.current,
-          { opacity: 0, y: -30 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: navigationBottomRef.current,
-              start: "top 90%",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
-      }
+      // Bottom navigation
+      gsap.fromTo(
+        navigationBottomRef.current,
+        { opacity: 0, y: -30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: navigationBottomRef.current,
+            start: "top 100%",
+          },
+        }
+      );
     });
 
-    return () => ctx.revert();
-  }, [dir, images.length]);
+    // 🔑 debounce refresh
+    const refresh = gsap.delayedCall(0.25, () => ScrollTrigger.refresh());
 
+    return () => {
+      refresh.kill();
+      ctx.revert();
+    };
+  }, [dir, imageUrls.length]);
+
+  /* ---------- RENDER ---------- */
   return (
     <section className={styles.project} dir={dir}>
       <header className={styles.header} ref={headerRef}>
@@ -223,20 +212,24 @@ export default function ProjectClient({
       </div>
 
       <div className={styles.gallery} ref={galleryRef}>
-        {images.map((src, i) => (
+        {imageUrls.map((url, i) => (
           <a
             key={i}
-            href={getImageUrl(src)}
+            href={url}
             data-lg-size="1600-1200"
-            className={`${styles.imageWrapper} reveal-img`}
+            className={styles.imageWrapper}
+            ref={(el) => {
+              imageRefs.current[i] = el;
+            }}
           >
             <Image
-              src={getImageUrl(src)}
+              src={url}
               alt={`${title} - Photo ${i + 1}`}
               fill
               className={styles.image}
               loading={i < 3 ? "eager" : "lazy"}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              onLoadingComplete={() => ScrollTrigger.refresh()}
             />
           </a>
         ))}

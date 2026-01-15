@@ -11,7 +11,7 @@ import {
   FaBolt,
   FaHammer,
 } from "react-icons/fa";
-import { useEffect, useRef } from "react";
+import {  useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -71,62 +71,6 @@ export default function SpecialtiesSection() {
       color: "#A06D2A",
     },
   ];
-
-  /* --------------------------------------------------------------
-     G S A P  –  set up the scroll‑triggered animations.
-     -------------------------------------------------------------- */
-  useEffect(() => {
-    // Bail out on the server.
-    if (typeof window === "undefined") return; // SSR guard
-    if (window.innerWidth <= 768) return;
-
-    /**
-     * Helper that creates a from‑to animation for a single card.
-     */
-    const animateCard = (card: HTMLElement | undefined, idx: number) => {
-      if (!card) return;
-
-      gsap.fromTo(
-        card,
-        { opacity: 0, scale: 0.5 },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.4,
-          delay: idx * 0.01,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top bottom-=100",
-            end: "top center",
-            toggleActions: "play none none reverse",
-            refreshPriority: -999,
-          },
-        }
-      );
-    };
-
-    // Attach the animation to every card that rendered.
-    cardsRef.current.forEach((card, i) => {
-      if (card) animateCard(card, i);
-    });
-
-    // Keep ScrollTrigger in sync when the viewport size changes.
-    const refresh = () => ScrollTrigger.refresh();
-    window.addEventListener("resize", refresh);
-    window.addEventListener("orientationchange", refresh);
-
-    // Improve mobile touch scrolling support
-    window.addEventListener("touchmove", refresh, { passive: true });
-
-    // Cleanup on unmount.
-    return () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-      window.removeEventListener("resize", refresh);
-      window.removeEventListener("orientationchange", refresh);
-      window.removeEventListener("touchmove", refresh);
-    };
-  }, []);
 
   /* --------------------------------------------------------------
      JSX – the visual markup.

@@ -1,35 +1,71 @@
 "use client";
 
 import Link from "next/link";
-import styles from "@/styles/Hero.module.css";
-import { useTranslations, useLocale } from "next-intl";
-import { heroImages } from "@/data/heroImages";
-import AliceCarousel from "react-alice-carousel";
 import Image from "next/image";
-import { useRef } from "react";
+import { useTranslations, useLocale } from "next-intl";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { getImageUrl } from "@/utils/getImageUrl";
+import AliceCarousel from "react-alice-carousel";
 import { FaComment } from "react-icons/fa";
 
+import { heroImages } from "@/data/heroImages";
+import { getImageUrl } from "@/utils/getImageUrl";
+
+import styles from "@/styles/Hero.module.css";
+
 gsap.registerPlugin(ScrollTrigger);
+
+type HeroImg = {
+  src: string;
+  alt: string;
+};
 
 export default function Hero() {
   const t = useTranslations("hero");
   const locale = useLocale();
   const heroRef = useRef<HTMLElement>(null);
+  const [images, setImages] = useState<HeroImg[]>([]);
 
-  const items = heroImages.map((img, i) => (
-    <div key={i} className={styles.slideItem}>
+  useEffect(() => {
+    if (!Array.isArray(heroImages) || heroImages.length === 0) return;
+    const clean = heroImages.map((img) => ({
+      src: img.src,
+      alt: img.alt,
+    }));
+    setImages(clean);
+  }, []);
+
+  const carouselItems = images.map((img, idx) => (
+    <div key={idx} className={styles.slideItem}>
       <Image
         src={getImageUrl(img.src)}
         alt={img.alt}
-        width={800}
-        height={600}
+        width={2400}
+        height={1600}
+        priority={idx === 0}
         className={styles.slideImage}
+        style={{ objectFit: "cover" }}
       />
     </div>
   ));
+
+  useEffect(() => {
+    if (!heroRef.current) return;
+    const ctx = gsap.context(() => {
+      gsap.from(heroRef.current!, {
+        opacity: 0,
+        y: -50,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: "top 80%",
+        },
+      });
+    }, heroRef);
+    return () => ctx.revert();
+  }, []);
 
   return (
     <section ref={heroRef} className={styles.hero}>
@@ -58,7 +94,7 @@ export default function Hero() {
 
         <div className={styles.imageSide}>
           <AliceCarousel
-            items={items}
+            items={carouselItems}
             autoPlay
             infinite
             autoPlayInterval={5000}
@@ -67,6 +103,8 @@ export default function Hero() {
             disableButtonsControls
             mouseTracking={false}
             touchTracking={false}
+            renderPrevButton={() => null}
+            renderNextButton={() => null}
           />
         </div>
       </div>

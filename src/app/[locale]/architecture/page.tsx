@@ -12,6 +12,11 @@ import { projectsList } from "@/data/projects";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// חשוב למובייל
+ScrollTrigger.config({
+  ignoreMobileResize: true,
+});
+
 export default function ArchitecturePage() {
   const locale = useLocale();
   const t = useTranslations("architecture");
@@ -28,128 +33,101 @@ export default function ArchitecturePage() {
   const projectCardsRef = useRef<(HTMLAnchorElement | null)[]>([]);
 
   useEffect(() => {
-    // Title animation - fade-down
-    if (titleRef.current) {
-      gsap.set(titleRef.current, { opacity: 0, y: -50 });
-      gsap.to(titleRef.current, {
-        scrollTrigger: {
-          trigger: titleRef.current,
-          start: "top 90%",
-          once: true,
-        },
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power2.out",
-      });
-    }
-
-    // Intro animation - zoom-in
-    if (introRef.current) {
-      gsap.set(introRef.current, { opacity: 0, scale: 0.8 });
-      gsap.to(introRef.current, {
-        scrollTrigger: {
-          trigger: introRef.current,
-          start: "top 90%",
-          once: true,
-        },
-        opacity: 1,
-        scale: 1,
-        duration: 0.01,
-        delay: 0.2,
-        ease: "power2.out",
-      });
-    }
-
-    // Image container - fade-right
-    if (imageContainerRef.current) {
-      gsap.set(imageContainerRef.current, { opacity: 0, x: -50 });
-      gsap.to(imageContainerRef.current, {
-        scrollTrigger: {
-          trigger: imageContainerRef.current,
-          start: "top 90%",
-          once: true,
-        },
-        opacity: 1,
-        x: 0,
-        duration: 1.2,
-        ease: "power2.out",
-      });
-    }
-
-    // Vision content - fade-left
-    if (visionContentRef.current) {
-      gsap.set(visionContentRef.current, { opacity: 0, x: 50 });
-      gsap.to(visionContentRef.current, {
-        scrollTrigger: {
-          trigger: visionContentRef.current,
-          start: "top 90%",
-          once: true,
-        },
-        opacity: 1,
-        x: 0,
-        duration: 0.8,
-        delay: 0.3,
-        ease: "power2.out",
-      });
-    }
-
-    // Service cards
-    [serviceCard1Ref, serviceCard2Ref, imageWrapperRef].forEach(
-      (ref, index) => {
-        if (ref.current) {
-          gsap.set(ref.current, { opacity: 0, y: 50 });
-          gsap.to(ref.current, {
-            scrollTrigger: {
-              trigger: ref.current,
-              start: "top 90%",
-              once: true,
-            },
+    const ctx = gsap.context(() => {
+      const fadeUp = (el: Element | null, delay = 0) => {
+        if (!el) return;
+        gsap.fromTo(
+          el,
+          { opacity: 0, y: 40 },
+          {
             opacity: 1,
             y: 0,
             duration: 0.8,
-            delay: index * 0.2 + 0.1,
+            delay,
             ease: "power2.out",
-          });
-        }
-      }
-    );
+            scrollTrigger: {
+              trigger: el,
+              start: "top 90%", // מתחיל מוקדם יותר
+              once: true, // רק פעם אחת
+            },
+          }
+        );
+      };
 
-    // Portfolio title
-    if (portfolioTitleRef.current) {
-      gsap.set(portfolioTitleRef.current, { opacity: 0, y: 50 });
-      gsap.to(portfolioTitleRef.current, {
-        scrollTrigger: {
-          trigger: portfolioTitleRef.current,
-          start: "top 90%",
-          once: true,
-        },
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power2.out",
-      });
-    }
+      // Header
+      fadeUp(titleRef.current);
+      fadeUp(introRef.current, 0.1);
 
-    // Project cards - flip-left
-    projectCardsRef.current.forEach((card, index) => {
-      if (card) {
-        gsap.set(card, { opacity: 0, rotationY: -90, x: 50 });
-        gsap.to(card, {
+      // Image + vision
+      gsap.fromTo(
+        imageContainerRef.current,
+        { opacity: 0, x: -50 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power2.out",
           scrollTrigger: {
-            trigger: card,
+            trigger: imageContainerRef.current,
             start: "top 90%",
             once: true,
           },
+        }
+      );
+
+      gsap.fromTo(
+        visionContentRef.current,
+        { opacity: 0, x: 50 },
+        {
           opacity: 1,
-          rotationY: 0,
           x: 0,
           duration: 0.8,
-          delay: index * 0.2,
+          delay: 0.2,
           ease: "power2.out",
-        });
-      }
+          scrollTrigger: {
+            trigger: visionContentRef.current,
+            start: "top 100%",
+            once: true,
+          },
+        }
+      );
+
+      // Services + image
+      [serviceCard1Ref, serviceCard2Ref, imageWrapperRef].forEach(
+        (ref, index) => {
+          fadeUp(ref.current, index * 0.15);
+        }
+      );
+
+      // Portfolio title
+      fadeUp(portfolioTitleRef.current);
+
+      // 🔥 Project cards – batch (הכי חשוב ליציבות)
+      ScrollTrigger.batch(projectCardsRef.current.filter(Boolean), {
+        start: "top 100%",
+        once: true,
+        onEnter: (batch) =>
+          gsap.fromTo(
+            batch,
+            { opacity: 0, y: 40 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.7,
+              ease: "power3.out",
+              stagger: 0.1,
+            }
+          ),
+      });
     });
+
+    ScrollTrigger.refresh();
+    const delayed = gsap.delayedCall(0.2, () => ScrollTrigger.refresh());
+
+    return () => {
+      delayed.kill();
+      ctx.revert();
+    };
   }, []);
 
   return (
@@ -171,6 +149,7 @@ export default function ArchitecturePage() {
               height={500}
               width={500}
               className={styles.imageShira}
+              onLoadingComplete={() => ScrollTrigger.refresh()}
             />
           </div>
 
@@ -180,6 +159,7 @@ export default function ArchitecturePage() {
           </div>
         </div>
       </div>
+
       <div className={styles.topContainer}>
         <div ref={serviceCard1Ref} className={styles.serviceCard}>
           <h2>{t("design.title")}</h2>
@@ -193,11 +173,12 @@ export default function ArchitecturePage() {
 
         <div ref={imageWrapperRef} className={styles.imageWrapper}>
           <Image
-            src={getImageUrl("/Photos/Architecture/house_wallpaper.jpg")}
+            src={getImageUrl("the_wine_valley_1_xo7huq.png")}
             alt="house wallpaper"
             fill
             className={styles.photo}
             priority
+            onLoadingComplete={() => ScrollTrigger.refresh()}
           />
         </div>
       </div>
@@ -207,27 +188,31 @@ export default function ArchitecturePage() {
       </h2>
 
       <div className={styles.projectsGrid}>
-        {projectsList.filter((project)=>project.arcitecture).map((project, index) => (
-          <Link
-            key={project.slug}
-            href={`/${locale}/projects/${project.slug}`}
-            className={styles.projectCard}
-            ref={(el) => {
-              projectCardsRef.current[index] = el;
-            }}
-          >
-            <Image
-              src={getImageUrl(project.cover)}
-              alt={tp(`${project.slug}.title`)}
-              width={600}
-              height={400}
-            />
-            <div className={styles.projectInfo}>
-              <h3>{tp(`${project.slug}.title`)}</h3>
-            </div>
-          </Link>
-        ))}
+        {projectsList
+          .filter((project) => project.arcitecture)
+          .map((project, index) => (
+            <Link
+              key={project.slug}
+              href={`/${locale}/projects/${project.slug}`}
+              className={styles.projectCard}
+              ref={(el) => {
+                projectCardsRef.current[index] = el;
+              }}
+            >
+              <Image
+                src={getImageUrl(project.cover)}
+                alt={tp(`${project.slug}.title`)}
+                width={600}
+                height={400}
+                onLoadingComplete={() => ScrollTrigger.refresh()}
+              />
+              <div className={styles.projectInfo}>
+                <h3>{tp(`${project.slug}.title`)}</h3>
+              </div>
+            </Link>
+          ))}
       </div>
+
       <div className={styles.cta}>
         <Link href={`/${locale}/contact`} className={styles.ctaButton}>
           {t("cta")}

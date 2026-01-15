@@ -8,7 +8,7 @@ export const heroImages = [
     alt: "Rothschild 221 Hotel",
   },
   {
-    src: "/Photos/F-RENDER-OSCAR/F- RENDER OSCAR_Photo - 5.jpg",
+    src: "the_wine_valley_1_xo7huq.png",
     alt: "Luxury Design",
   },
   {
@@ -16,7 +16,7 @@ export const heroImages = [
     alt: "kichen-after1",
   },
   {
-    src: "u1eddk.webp",
+    src: "urbani_sflzfk.jpg",
     alt: "urban living",
   },
 ];

@@ -67,8 +67,6 @@
   border-radius: 12px;
 }
 
-/* CTA */
-
 /* RTL Support */
 [dir="rtl"] .clientCard:hover {
   transform: translateY(-8px) scale(1.02);
