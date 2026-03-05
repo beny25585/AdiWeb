@@ -6,8 +6,15 @@ import SpecialtiesSection from "../../components/SpecialtiesSection";
 import Image from "next/image";
 import { getImageUrl } from "@/utils/getImageUrl";
 import { FaArrowDown } from "react-icons/fa";
+import { useEffect } from "react";
+import { initFacebookPixel } from "@/lib/facebookPixel";
+
+  
 
 export default function HomePage() {
+  useEffect(() => {
+    initFacebookPixel("827790063665854"); 
+  }, []);
   return (
     <div className="scroll-container">
       {/* Background */}
