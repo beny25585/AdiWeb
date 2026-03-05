@@ -1,3 +1,5 @@
+"use client";
+
 import Hero from "@/components/Hero";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import CliClientsAndCTA from "@/components/ClientsAndCTA";
@@ -9,12 +11,11 @@ import { FaArrowDown } from "react-icons/fa";
 import { useEffect } from "react";
 import { initFacebookPixel } from "@/lib/facebookPixel";
 
-  
-
 export default function HomePage() {
   useEffect(() => {
-    initFacebookPixel("827790063665854"); 
+    initFacebookPixel("827790063665854");
   }, []);
+
   return (
     <div className="scroll-container">
       {/* Background */}

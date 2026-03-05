@@ -4,6 +4,8 @@ import styles from "./contact.module.css";
 import { useTranslations, useLocale } from "next-intl";
 import { FiPhone, FiMail, FiGlobe, FiCheckCircle } from "react-icons/fi";
 import { useForm, ValidationError } from "@formspree/react";
+import { useEffect } from "react";
+import { initFacebookPixel } from "@/lib/facebookPixel";
 
 export default function ContactPage() {
   const t = useTranslations("contact");
@@ -11,6 +13,15 @@ export default function ContactPage() {
 
   // 🔥 Formspree Hook
   const [state, handleSubmit] = useForm("xeorbbnr");
+
+  useEffect(() => {
+    if (state.succeeded) {
+      initFacebookPixel("827790063665854");
+      if (typeof window !== "undefined" && (window as any).fbq) {
+        (window as any).fbq("track", "Lead");
+      }
+    }
+  }, [state.succeeded]);
 
   const phone = t("phone");
   const email = t("email");
