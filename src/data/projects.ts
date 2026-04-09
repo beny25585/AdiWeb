@@ -10,7 +10,8 @@ export type ProjectKey =
   | "developmentFirm"
   | "UrbanUmami"
   | "Calm55"
-  | "baseHairStudio";
+  | "baseHairStudio"
+  | "horaizonFlow";
 
 export type Project = {
   slug: ProjectKey;
@@ -22,6 +23,36 @@ export type Project = {
 };
 
 export const projectsMap: Record<ProjectKey, Project> = {
+  horaizonFlow: {
+    slug: "horaizonFlow",
+    title: "Horizon Flow Residences",
+    cover: "22.5_a7jfje.png",
+    goodImages: true,
+    images: [
+      "22.5_a7jfje.png",
+      "30_robyhv.png",
+      "29_qndzv3.png",
+      "28_h6aphf.png",
+      "27_fi2rm0.png",
+      "26png_olcwzm.png",
+      "25_jj2jd7.png",
+      "24_m1rdwp.png",
+      "23_i24k3z.png",
+      "22_ptmkvq.png",
+      "21_eemk0d.png",
+      "20_zuwx1d.png",
+      "19_j2p3hb.png",
+      "18_e00txb.png",
+      "17_xapyhf.png",
+      "16_s4qzqo.png",
+      "15_l3e8qb.png",
+      "14_sameue.png",
+      "13_zv26p2.png",
+      "12_vgttb0.png",
+      "11_meox1c.png",
+    ],
+  },
+
   Calm55: {
     slug: "Calm55",
     title: "Calm 55 Design & Build Renovation",
@@ -205,6 +236,7 @@ export const projectsMap: Record<ProjectKey, Project> = {
 
 export const orderedKeys: ProjectKey[] = [
   "Calm55",
+  "horaizonFlow",
   "lawFirmOffice",
   "developmentFirm",
   "winery",

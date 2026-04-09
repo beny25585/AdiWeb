@@ -6,6 +6,7 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { projectsList } from "@/data/projects";
 import { useTranslations, useLocale } from "next-intl";
+import { useState, useEffect } from "react";
 import styles from "@/styles/FeaturedProjects.module.css";
 import { getImageUrl } from "@/utils/getImageUrl";
 
@@ -13,6 +14,11 @@ export default function FeaturedProjectsList() {
   const t = useTranslations("projects");
   const tH = useTranslations("featuredProjects");
   const locale = useLocale();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const items = projectsList.map((p) => (
     <Link
@@ -51,6 +57,10 @@ export default function FeaturedProjectsList() {
     768: { items: 2 },
     1200: { items: 3 },
   };
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <section
