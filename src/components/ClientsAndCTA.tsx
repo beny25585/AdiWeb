@@ -14,7 +14,7 @@ export default function ClientsAndCTA() {
   const rawClients = [
     { id: "V1_zxsgfj.png", titleKey: "clients.private" },
     { id: "DR43_odo6aj.png", titleKey: "clients.apartments" },
-    { id: "ORBAN1_a8wdya.png", titleKey: "clients.institutions" },
+    { id: "45_njvfua.png", titleKey: "clients.institutions" },
     {
       id: "23G_obilj7.png",
       titleKey: "clients.projects",
