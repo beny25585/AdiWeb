@@ -12,7 +12,7 @@ const BASE_URL = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload`;
 export const cloudinaryUrl = (
   publicId: string,
   width: number = 2400,
-  dpr: string = "auto"
+  dpr: string = "auto",
 ): string => {
   if (!publicId) {
     throw new Error("cloudinaryUrl: publicId is required");
@@ -34,4 +34,13 @@ export const cloudinaryUrl = (
 
   const path = `${transformation}/${publicId}`;
   return `${BASE_URL}/${path}`;
+};
+
+const VIDEO_BASE_URL = `https://res.cloudinary.com/${CLOUD_NAME}/video/upload`;
+
+export const cloudinaryVideoUrl = (publicId: string): string => {
+  if (!publicId) {
+    throw new Error("cloudinaryVideoUrl: publicId is required");
+  }
+  return `${VIDEO_BASE_URL}/q_auto,f_auto/${publicId}`;
 };

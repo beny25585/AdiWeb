@@ -17,6 +17,7 @@ import { useTranslations } from "next-intl";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { getImageUrl } from "@/utils/getImageUrl";
+import CloudinaryVideo from "./CloudinaryVideo";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,6 +30,7 @@ type Props = {
   title: string;
   description: string;
   images: string[];
+  video?: string[];
 };
 
 export default function ProjectClient({
@@ -36,6 +38,7 @@ export default function ProjectClient({
   title,
   description,
   images,
+  video,
 }: Props) {
   const router = useRouter();
   const params = useParams();
@@ -122,7 +125,7 @@ export default function ProjectClient({
       gsap.fromTo(
         headerRef.current,
         { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }
+        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
       );
 
       // Top navigation
@@ -135,7 +138,7 @@ export default function ProjectClient({
           duration: 0.8,
           ease: "power3.out",
           delay: 0.2,
-        }
+        },
       );
 
       ScrollTrigger.batch(imageRefs.current.filter(Boolean), {
@@ -150,7 +153,7 @@ export default function ProjectClient({
               duration: 0.8,
               ease: "power3.out",
               stagger: 0.1,
-            }
+            },
           ),
         onLeaveBack: (batch) =>
           gsap.to(batch, { opacity: 0, y: 40, duration: 0.3 }),
@@ -166,7 +169,7 @@ export default function ProjectClient({
           duration: 0.8,
           ease: "power3.out",
           delay: 0.2,
-        }
+        },
       );
     });
 
@@ -231,6 +234,11 @@ export default function ProjectClient({
           </a>
         ))}
       </div>
+      {video && (
+        <div className={styles.videoWrap}>
+          <CloudinaryVideo publicIds={video} mode="project" />
+        </div>
+      )}
 
       <div
         className={`${styles.navigationButtons} ${styles.bottomNav}`}

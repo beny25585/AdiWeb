@@ -19,7 +19,7 @@ cloudinaryVideoUrl(publicId: string): string
 
 ### 2. New component — `src/components/CloudinaryVideo.tsx`
 Reusable client component with props:
-- `publicId: string` — Cloudinary public ID
+- `publicIds: string | string[]` — one or more Cloudinary public IDs
 - `mode: "hero" | "project"` — determines behavior
 
 **Hero mode:**
@@ -27,12 +27,14 @@ Reusable client component with props:
 - No controls
 - `object-fit: cover`, fills parent
 - Uses `<source>` with Cloudinary URL
+- Only renders the first video (hero supports single video only)
 
 **Project mode:**
 - Native browser controls
 - Responsive width
 - `object-fit: contain`
 - Uses `<source>` with Cloudinary URL
+- Renders each video in a separate `<section>` if multiple provided
 
 ### 3. `src/components/Hero.tsx` — Replace broken `<video>`
 Replace the existing `<video src="">` with `<CloudinaryVideo publicId="0609_8_fykqn8" mode="hero" />`.
@@ -46,14 +48,14 @@ export type Project = {
   arcitecture?: boolean;
   goodImages?: boolean;
   images: string[];
-  video?: string; // new: Cloudinary public ID for project video
+  video?: string[]; // new: array of Cloudinary public IDs for project videos
 };
 ```
-Add `video: "0609_8_fykqn8"` to whichever project(s) need it.
+Add `video: ["0609_8_fykqn8"]` to whichever project(s) need it.
 
 ### 5. `src/components/ProjectClient.tsx` — Render project video
-- Receive `video` prop (optional string)
-- If `video` is present, render `<CloudinaryVideo publicId={video} mode="project" />` below the gallery or between gallery items
+- Receive `video` prop (optional `string[]`)
+- If `video` is present, render `<CloudinaryVideo publicIds={video} mode="project" />` below the gallery or between gallery items
 - Position: standalone section below the image gallery, centered
 
 ### 6. `src/app/[locale]/projects/[slug]/page.tsx` — Pass video to ProjectClient
@@ -62,16 +64,19 @@ Add `video: "0609_8_fykqn8"` to whichever project(s) need it.
 
 ## Usage
 ```tsx
-// Hero
-<CloudinaryVideo publicId="0609_8_fykqn8" mode="hero" />
+// Hero (single video)
+<CloudinaryVideo publicIds="0609_8_fykqn8" mode="hero" />
 
-// Project page
-<CloudinaryVideo publicId="0609_8_fykqn8" mode="project" />
+// Project page (single video)
+<CloudinaryVideo publicIds="0609_8_fykqn8" mode="project" />
+
+// Project page (multiple videos)
+<CloudinaryVideo publicIds={["0609_8_fykqn8", "another_video_id"]} mode="project" />
 ```
 
 ## Video URL format
 ```
-https://res.cloudinary.com/ddncjeozb/video/upload/q_auto,f_auto/v1/0609_8_fykqn8
+https://res.cloudinary.com/ddncjeozb/video/upload/q_auto,f_auto/0609_8_fykqn8
 ```
 
 ## What's NOT changing

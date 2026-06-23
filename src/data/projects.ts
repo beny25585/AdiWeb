@@ -11,7 +11,8 @@ export type ProjectKey =
   | "UrbanUmami"
   | "Calm55"
   | "baseHairStudio"
-  | "horaizonFlow";
+  | "horaizonFlow"
+  | "theAddressSignatureHome";
 
 export type Project = {
   slug: ProjectKey;
@@ -20,9 +21,48 @@ export type Project = {
   arcitecture?: boolean;
   goodImages?: boolean;
   images: string[];
+  video?: string[];
 };
 
 export const projectsMap: Record<ProjectKey, Project> = {
+
+  theAddressSignatureHome:{
+    slug:"theAddressSignatureHome",
+    title:"The Address Signature Home",
+    cover:"11_M_fijf0z",
+    goodImages:true,
+    images:[
+      "11_M_fijf0z",
+      "5_lw7wyy",
+      "66_dvhzge",
+      "08_crjwge",
+      "06_bpvade",
+      "DSC_0115_jmsfdy",
+      "DSC_0175_ahrfxb",
+      "DSC_0099_idswoc",
+      "DSC_0092_r8ir7r",
+      "DSC_0098_ibdwjr",
+      "DSC_0241_ltxogp",
+      "DSC_0227_1_xayoeg",
+      "DSC_0153_1_brfhmd",
+      "DSC_0227_1_xayoeg",
+      "DSC_0215_1_nxqji9",
+      "DSC_0186_rh159l",
+      "DSC_0053_1_apzvjd",
+      "DSC_0186_xlyygx",
+      "04_zawmxw",
+      "05_ttl2mr",
+      "09_huq4zx",
+      "07_rvvsxa",
+      "44_j48wl7",
+      "55_heegct",
+    ],
+    video:[
+       "วีดีโอสำหรับ_TikTok_gmdqc3",
+       "0609_8_fykqn8"
+    ]
+
+  },
   horaizonFlow: {
     slug: "horaizonFlow",
     title: "Horizon Flow Residences",
@@ -236,6 +276,7 @@ export const projectsMap: Record<ProjectKey, Project> = {
 
 export const orderedKeys: ProjectKey[] = [
   "Calm55",
+  "theAddressSignatureHome",
   "horaizonFlow",
   "lawFirmOffice",
   "developmentFirm",
@@ -251,5 +292,5 @@ export const orderedKeys: ProjectKey[] = [
 export const projectsList: Project[] = orderedKeys.map((k) => projectsMap[k]);
 
 export const projectImages: Record<ProjectKey, string[]> = Object.fromEntries(
-  Object.entries(projectsMap).map(([slug, proj]) => [slug, proj.images])
+  Object.entries(projectsMap).map(([slug, proj]) => [slug, proj.images]),
 ) as Record<ProjectKey, string[]>;

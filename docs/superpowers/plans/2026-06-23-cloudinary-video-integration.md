@@ -26,7 +26,7 @@ export const cloudinaryVideoUrl = (publicId: string): string => {
   if (!publicId) {
     throw new Error("cloudinaryVideoUrl: publicId is required");
   }
-  return `${VIDEO_BASE_URL}/q_auto,f_auto/v1/${publicId}`;
+  return `${VIDEO_BASE_URL}/q_auto,f_auto/${publicId}`;
 };
 ```
 
@@ -48,14 +48,15 @@ export const cloudinaryVideoUrl = (publicId: string): string => {
 import { cloudinaryVideoUrl } from "@/utils/cloudinary";
 
 type Props = {
-  publicId: string;
+  publicIds: string | string[];
   mode: "hero" | "project";
 };
 
-export default function CloudinaryVideo({ publicId, mode }: Props) {
-  const src = cloudinaryVideoUrl(publicId);
+export default function CloudinaryVideo({ publicIds, mode }: Props) {
+  const ids = Array.isArray(publicIds) ? publicIds : [publicIds];
 
   if (mode === "hero") {
+    const src = cloudinaryVideoUrl(ids[0]);
     return (
       <video
         autoPlay
@@ -70,15 +71,22 @@ export default function CloudinaryVideo({ publicId, mode }: Props) {
   }
 
   return (
-    <section style={{ width: "100%", display: "flex", justifyContent: "center", padding: "40px 20px" }}>
-      <video
-        controls
-        playsInline
-        style={{ width: "100%", maxWidth: 800, borderRadius: 8, display: "block" }}
-      >
-        <source src={src} />
-      </video>
-    </section>
+    <>
+      {ids.map((id) => (
+        <section
+          key={id}
+          style={{ width: "100%", display: "flex", justifyContent: "center", padding: "40px 20px" }}
+        >
+          <video
+            controls
+            playsInline
+            style={{ width: "100%", maxWidth: 800, borderRadius: 8, display: "block" }}
+          >
+            <source src={cloudinaryVideoUrl(id)} />
+          </video>
+        </section>
+      ))}
+    </>
   );
 }
 ```
@@ -114,7 +122,7 @@ Replace lines 62-69:
 
 With:
 ```tsx
-          <CloudinaryVideo publicId="0609_8_fykqn8" mode="hero" />
+          <CloudinaryVideo publicIds="0609_8_fykqn8" mode="hero" />
 ```
 
 ---
@@ -126,25 +134,23 @@ With:
 
 - [ ] **Step 1: Update the Project type**
 
-Add `video?: string;` to the `Project` type (after line 22, before `};`):
+Add `video?: string[];` to the `Project` type (after line 22, before `};`):
 
 ```typescript
   images: string[];
-  video?: string;
+  video?: string[];
 };
 ```
 
-- [ ] **Step 2: Add video publicId to a project**
+- [ ] **Step 2: Add video publicIds to a project**
 
-Add `video: "0609_8_fykqn8"` to whichever project needs it. Example for `Calm55`:
+Add `video: ["0609_8_fykqn8"]` to whichever project needs it. Example for `theAddressSignatureHome`:
 
 ```typescript
-  Calm55: {
-    slug: "Calm55",
-    title: "Calm 55 Design & Build Renovation",
-    cover: "TL1_ngtnxp.png",
-    goodImages: true,
-    video: "0609_8_fykqn8",
+  theAddressSignatureHome: {
+    slug: "theAddressSignatureHome",
+    title: "The Address Signature Home",
+    video: ["วีดีโอสำหรับ_TikTok_gmdqc3", "0609_8_fykqn8"],
     images: [
 ```
 
@@ -157,7 +163,7 @@ Add `video: "0609_8_fykqn8"` to whichever project needs it. Example for `Calm55`
 
 - [ ] **Step 1: Add `video` to Props type**
 
-Add `video?: string;` to the Props type:
+Add `video?: string[];` to the Props type:
 
 ```typescript
 type Props = {
@@ -165,7 +171,7 @@ type Props = {
   title: string;
   description: string;
   images: string[];
-  video?: string;
+  video?: string[];
 };
 ```
 
@@ -194,8 +200,8 @@ import CloudinaryVideo from "@/components/CloudinaryVideo";
 After the gallery `<div>` (closing `</div>` on line 233), add:
 
 ```tsx
-      {video && (
-        <CloudinaryVideo publicId={video} mode="project" />
+      {video && video.length > 0 && (
+        <CloudinaryVideo publicIds={video} mode="project" />
       )}
 ```
 

@@ -17,6 +17,17 @@
   animation: fadeInUp 1.2s ease forwards;
 }
 
+.videoWrap {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+}
+.videoWrap video {
+  max-height: 60vh;
+}
+
 .projectTitle {
   color: #000000;
   margin-bottom: 15px;
@@ -49,7 +60,9 @@
   justify-content: center;
   cursor: pointer;
   border-radius: 8px;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
 }
 
 /* IMAGES */
@@ -58,7 +71,9 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.4s ease, filter 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
 }
 
 /* Next/Image fill helper - if Image uses className={styles.image} */
