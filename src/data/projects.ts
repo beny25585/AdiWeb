@@ -25,20 +25,19 @@ export type Project = {
 };
 
 export const projectsMap: Record<ProjectKey, Project> = {
-
-  theAddressSignatureHome:{
-    slug:"theAddressSignatureHome",
-    title:"The Address Signature Home",
-    cover:"11_M_fijf0z",
-    goodImages:true,
-    images:[
+  theAddressSignatureHome: {
+    slug: "theAddressSignatureHome",
+    title: "The Address Signature Home",
+    cover: "11_M_fijf0z",
+    goodImages: true,
+    images: [
       "11_M_fijf0z",
       "5_lw7wyy",
       "66_dvhzge",
       "08_crjwge",
       "06_bpvade",
       "DSC_0115_jmsfdy",
-      "DSC_0175_ahrfxb",
+      "DSC_0107_j4we5y",
       "DSC_0099_idswoc",
       "DSC_0092_r8ir7r",
       "DSC_0098_ibdwjr",
@@ -57,11 +56,7 @@ export const projectsMap: Record<ProjectKey, Project> = {
       "44_j48wl7",
       "55_heegct",
     ],
-    video:[
-       "วีดีโอสำหรับ_TikTok_gmdqc3",
-       "0609_8_fykqn8"
-    ]
-
+    video: ["วีดีโอสำหรับ_TikTok_gmdqc3", "0609_8_fykqn8"],
   },
   horaizonFlow: {
     slug: "horaizonFlow",

@@ -149,6 +149,7 @@ export default function Footer() {
               height={160}
               className={styles.logoLeft}
               priority
+              style={{ width: "200px", height: "auto" }}
             />
             <div className={styles.rightWrapper}>
               <Image

@@ -58,6 +58,7 @@ export default function Header() {
               width={100}
               height={130}
               className={styles.left}
+              style={{ width: "auto", height: "100%" }}
             />
           </div>
         </Link>
