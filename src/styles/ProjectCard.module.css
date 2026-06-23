@@ -244,6 +244,13 @@
     margin-top: 40px;
     padding-top: 30px;
   }
+
+  .videoWrap {
+    flex-direction: column;
+  }
+  .videoWrap video {
+    max-height: 100vh;
+  }
 }
 
 @media (max-width: 550px) {
