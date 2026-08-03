@@ -2,7 +2,8 @@
 
 import styles from "./contact.module.css";
 import { useTranslations, useLocale } from "next-intl";
-import { FiPhone, FiMail, FiGlobe, FiCheckCircle } from "react-icons/fi";
+import { FiPhone, FiMail, FiCheckCircle } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 import { useForm, ValidationError } from "@formspree/react";
 import { useEffect } from "react";
 import { initFacebookPixel } from "@/lib/facebookPixel";
@@ -25,7 +26,6 @@ export default function ContactPage() {
 
   const phone = t("phone");
   const email = t("email");
-  const site = t("site");
 
   return (
     <section className={styles.container}>
@@ -34,6 +34,19 @@ export default function ContactPage() {
 
       <div className={styles.formSection}>
         <div className={styles.infoSide}>
+          <div className={styles.contactCard}>
+            <FaWhatsapp className={styles.icon} />
+            <div>
+              <h3>{t("whatsappLabel")}</h3>
+              <a
+                href={`https://wa.me/${t("WhatsApp").replace(/[\s+-]/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("WhatsApp")}
+              </a>
+            </div>
+          </div>
           <div className={styles.contactCard}>
             <FiPhone className={styles.icon} />
             <div>
@@ -47,20 +60,6 @@ export default function ContactPage() {
             <div>
               <h3>{t("emailLabel")}</h3>
               <a href={`mailto:${email}`}>{email}</a>
-            </div>
-          </div>
-
-          <div className={styles.contactCard}>
-            <FiGlobe className={styles.icon} />
-            <div>
-              <h3>{t("siteLabel")}</h3>
-              <a
-                href={`https://${site}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {site}
-              </a>
             </div>
           </div>
         </div>

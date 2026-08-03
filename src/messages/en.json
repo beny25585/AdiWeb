@@ -59,10 +59,10 @@
     "subtitle": "Have a project in mind? Let’s turn your ideas into reality with professionalism, creativity, and unmatched dedication.",
     "phoneLabel": "Phone",
     "emailLabel": "Email",
-    "siteLabel": "Website",
+    "whatsappLabel": "WhatsApp",
     "phone": "+66 65-887-8829",
     "email": "info@uzangroups.com",
-    "site": "www.uzangroups.com",
+    "WhatsApp": "+66 65-887-8829",
     "logoAlt": "Company Logo",
     "form": {
       "name": "Full Name",

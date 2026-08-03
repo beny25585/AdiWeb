@@ -112,10 +112,10 @@
     "subtitle": "มีโปรเจกต์อยู่ในใจหรือไม่? ให้เราเปลี่ยนไอเดียของคุณให้กลายเป็นความจริง ด้วยความเชี่ยวชาญและความทุ่มเทในทุกขั้นตอน.",
     "phoneLabel": "โทรศัพท์",
     "emailLabel": "อีเมล",
-    "siteLabel": "เว็บไซต์",
+    "whatsappLabel": "WhatsApp",
     "phone": "+66 65-887-8829",
     "email": "info@uzangroups.com",
-    "site": "www.uzangroups.com",
+    "WhatsApp": "+66 65-887-8829",
     "logoAlt": "โลโก้บริษัท",
     "form": {
       "name": "ชื่อ-นามสกุล",
