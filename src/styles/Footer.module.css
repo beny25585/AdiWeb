@@ -232,6 +232,15 @@
 }
 
 /* === COPYRIGHT === */
+.legalDetails {
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  padding: 24px 20px;
+  border-top: 1px solid #333;
+  color: #ddd;
+}
+
 .copy {
   text-align: center;
   font-size: 0.9rem;

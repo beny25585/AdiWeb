@@ -4,6 +4,7 @@ import styles from "@/styles/Footer.module.css";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import CompanyDetails from "@/components/CompanyDetails";
 import {
   FaFacebook,
   FaWhatsapp,
@@ -58,7 +59,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="mailto:info@asuzangroup.com"
+              href="mailto:info@uzangroups.com"
               className={styles.contactItem}
             >
               <FaEnvelope className={styles.icon} />
@@ -163,6 +164,10 @@ export default function Footer() {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className={styles.legalDetails}>
+        <CompanyDetails />
       </div>
 
       {/* === COPYRIGHT === */}

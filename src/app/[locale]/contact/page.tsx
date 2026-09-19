@@ -7,6 +7,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { useForm, ValidationError } from "@formspree/react";
 import { useEffect } from "react";
 import { initFacebookPixel } from "@/lib/facebookPixel";
+import CompanyDetails from "@/components/CompanyDetails";
 
 export default function ContactPage() {
   const t = useTranslations("contact");
@@ -31,6 +32,10 @@ export default function ContactPage() {
     <section className={styles.container}>
       <h1 className={styles.title}>{t("title")}</h1>
       <p className={styles.subtitle}>{t("subtitle")}</p>
+
+      <div className={styles.companyDetails}>
+        <CompanyDetails />
+      </div>
 
       <div className={styles.formSection}>
         <div className={styles.infoSide}>

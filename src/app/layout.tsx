@@ -1,13 +1,14 @@
 import { Metadata } from "next";
 import AccessibilityWidget from "../components/AccessibilityWidget";
+import { company } from "@/lib/company";
 
 const SUPPORTED_LOCALES = ["he", "en", "th"] as const;
 type Locale = (typeof SUPPORTED_LOCALES)[number];
 const DEFAULT_LOCALE: Locale = "en";
 
 const baseUrl = "https://uzangroups.com";
-const companyPhone = "+972-64-274-8346";
-const companyEmail = "info@uzangroups.com";
+const companyPhone = company.phone;
+const companyEmail = company.email;
 
 // Metadata per language
 const metadataByLocale: Record<
@@ -136,7 +137,9 @@ export default async function LocaleLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "GeneralContractor",
-    name: "A&S UZAN GROUP CO., LTD.",
+    name: company.name,
+    legalName: company.name,
+    identifier: company.registration,
     alternateName: "UZAN GROUP",
     description: metadataByLocale[locale].description,
     url: baseUrl,
@@ -146,16 +149,11 @@ export default async function LocaleLayout({
     email: companyEmail,
     address: {
       "@type": "PostalAddress",
-      streetAddress: "1219/2 Sukhumvit Rd, Khlong Tan Nuea",
+      streetAddress: "555/37 Soi Sukhumvit 63 (Ekkamai), Khlong Tan Nuea",
       addressLocality: "Watthana",
       addressRegion: "Bangkok",
       postalCode: "10110",
       addressCountry: "TH",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: "13.7367",
-      longitude: "100.5832",
     },
     areaServed: [
       {
