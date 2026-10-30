@@ -1,44 +1,86 @@
 .hero {
-  background-color: #fff;
+  position: relative;
   color: #fff;
   height: 87vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible;
-  background: #000;
+  overflow: hidden;
+  background-color: #000;
+  background-image: url("/Photos/Architecture/drawings_wallpaper.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: rgba(0, 0, 0, 0.58);
+  pointer-events: none;
+}
+
+.scrollHint {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0.5%;
+  z-index: 2;
+  width: min(2.5vh, 1.5rem);
+  height: min(2.5vh, 1.5rem);
+  margin-inline: auto;
+  color: #fff;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+  animation: hintBounce 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes hintBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollHint {
+    animation: none;
+  }
 }
 
 .split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
-  height: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 5%;
+  width: 88%;
+  max-width: 1440px;
+  height: 86%;
+  min-height: 0;
   align-items: center;
 }
 
 .textSide {
   position: relative;
-  padding: 10px 60px;
-  z-index: 2;
-  background-image: url("/Photos/Architecture/drawings_wallpaper.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
   height: 100%;
-  align-content: center;
-  overflow: hidden;
+  overflow-y: auto;
 }
-.textSide::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+
+.textBox {
+  flex-shrink: 0;
   width: 100%;
-  height: 100%;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.45);
+  max-width: 42rem;
+  margin-block: auto;
 }
 .textSide h1,
 .textSide p,
@@ -130,15 +172,28 @@
 
 .imageSide {
   position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+  width: auto;
+  max-width: 40%;
   height: 100%;
-  width: 100%;
+  aspect-ratio: 9 / 16;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
   overflow: hidden;
+  background-color: #000;
 }
 
 .imageSide video {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 [dir="rtl"] .slides {
@@ -168,33 +223,8 @@
 
 /* --- רספונסיבי --- */
 @media (max-width: 1200px) {
-  .hero {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .textSide::before {
-    background: none;
-    z-index: 0;
-  }
-
   .textSide {
-    background-image: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    z-index: 2;
-    height: 100%;
-  }
-  .textBox {
-    background-color: rgba(1, 1, 1, 0.3);
-    backdrop-filter: blur(6px);
-    padding: 40px 60px;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   }
   .textSide h1 {
     color: white;
@@ -209,39 +239,46 @@
   }
 
   .split {
-    display: block;
+    flex-direction: column;
+    gap: 0;
+    width: 92%;
+    height: 92%;
   }
 
   .imageSide {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-
-  .imageSide img,
-  .imageSide video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    flex: 0 0 50%;
+    align-self: center;
+    max-width: 100%;
+    height: 50%;
   }
 
   .textSide {
     position: relative;
-    z-index: 1;
+    flex: 0 0 50%;
+    width: 100%;
+    height: 50%;
     text-align: center;
-    padding: 40px 20px;
+    padding: 8px 0;
   }
 
   .buttons {
+    gap: 8px;
+    margin-top: 12px;
     justify-content: center;
+  }
+
+  .buttonPrimary,
+  .buttonSecondary {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .commentIcon {
+    width: 20px;
+    height: 20px;
   }
 }
 @media (max-width: 600px) {
-  .textBox {
-    padding: 30px 20px;
-    margin: 0 10px;
-  }
-
   .textSide h1 {
     font-size: clamp(1.4rem, 4vw, 2rem);
     margin-bottom: 10px;

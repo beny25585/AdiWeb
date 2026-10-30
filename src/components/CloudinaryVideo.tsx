@@ -1,13 +1,22 @@
 "use client";
 
+import type { ComponentPropsWithRef } from "react";
 import { cloudinaryVideoUrl } from "@/utils/cloudinary";
 
 type Props = {
   publicIds: string | string[];
   mode: "hero" | "project";
+  heroVideoProps?: Omit<
+    ComponentPropsWithRef<"video">,
+    "src" | "children" | "style"
+  >;
 };
 
-export default function CloudinaryVideo({ publicIds, mode }: Props) {
+export default function CloudinaryVideo({
+  publicIds,
+  mode,
+  heroVideoProps,
+}: Props) {
   const ids = Array.isArray(publicIds) ? publicIds : [publicIds];
 
   if (mode === "hero") {
@@ -19,7 +28,7 @@ export default function CloudinaryVideo({ publicIds, mode }: Props) {
         loop
         muted
         playsInline
-        style={{ width: "100%", height: "100%", objectFit: "fill" }}
+        {...heroVideoProps}
       >
         <source src={src} />
       </video>

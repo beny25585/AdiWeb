@@ -11,7 +11,10 @@
     "headline": "Quality, Construction, Architecture,  Perfection.",
     "sub": "Where vision meets precision — delivering corporate, architectural, and engineering solutions that stand above the rest.",
     "projectsBtn": "Explore Our Projects",
-    "contactBtn": "Let's Talk"
+    "contactBtn": "Let's Talk",
+    "videoLabel": "A&S UZAN GROUP presentation video",
+    "playVideo": "Play video",
+    "pauseVideo": "Pause video"
   },
   "footer": {
     "companyTitle": "Our Company",
@@ -28,6 +31,41 @@
   "about": {
     "title": "About the Company",
     "subtitle": "Led by Adi and Shira, A&S UZAN GROUP combines engineering precision, architectural excellence, and international experience to deliver world-class results.",
+    "company": {
+      "title": "What We Do",
+      "description": "A&S UZAN GROUP specializes in renovations, fit-outs, and project delivery for residential, commercial, and hospitality spaces. We combine planning and coordination, cost control, and site supervision with careful execution, focusing on quality materials, functionality, and attention to detail through to final delivery.",
+      "servicesTitle": "Our Services",
+      "services": {
+        "residential": "Residential Renovation",
+        "commercial": "Commercial Fit-Out",
+        "hospitality": "Hospitality Projects",
+        "carpentry": "Custom Carpentry",
+        "finishes": "Interior Finishes",
+        "management": "Project Management"
+      }
+    },
+    "process": {
+      "title": "From Planning to Delivery",
+      "steps": {
+        "planning": "Planning & Strategy",
+        "coordination": "Design Coordination",
+        "costs": "Cost Control",
+        "supervision": "Site Supervision",
+        "execution": "Quality Execution",
+        "delivery": "Final Delivery"
+      }
+    },
+    "quality": {
+      "title": "Quality & Site Control",
+      "description": "Every project is managed with a focus on workmanship, coordination, safety, and finishing quality.",
+      "principles": {
+        "precision": "Precise Execution",
+        "management": "Organized Site Management",
+        "materials": "High Material Standards",
+        "delivery": "Reliable Delivery Process",
+        "details": "Detail-Oriented Finishing"
+      }
+    },
     "adiName": "Adi",
     "adiRole": "CEO & Director",
     "shiraRole": "CEO & Chief Architect",
@@ -143,6 +181,14 @@
     "slogan": "Quality, Construction, Architecture,  Perfection.",
     "pageTitle": "Our Projects",
     "scrollDown": "Scroll Down to Discover More",
+    "danceStudio": {
+      "title": "Dance Studio Project",
+      "description": "Interior finishing for a dance studio with a main dance floor, reception desk, and seating area. The gallery presents flooring, wall finishes, and lighting, alongside documentation of the space before and during the work."
+    },
+    "jerusalemVilla": {
+      "title": "Jerusalem Villa",
+      "description": "Architectural visualizations of a villa in Jerusalem, featuring stone-clad facades, bright living spaces, an internal courtyard, and a pool. Exterior and interior views, cabinetry details, and evening lighting illustrate the connection between the home and its garden."
+    },
 
     "electricCabin": {
       "title": "Clean-Design Electrical Cabinet",
@@ -212,6 +258,10 @@
   "featuredProjects": {
     "title": "Featured Projects",
     "desc": "10 years of delivering excellence, satisfied clients — from concept to creation, blending innovation with flawless execution.",
+    "galleryLabel": "Featured projects gallery",
+    "totalProjects": "{total} projects",
+    "positionSingle": "Project {current} of {total}",
+    "positionRange": "Projects {first}–{last} of {total}",
     "cta": "View All Projects"
   },
   "privacy": {
@@ -268,6 +318,9 @@
   },
   "architecture": {
     "title": "Architecture That Tells a Story",
+    "profileTitle": "Shira Uzan",
+    "shiraAlt": "Shira Uzan, Chief Architect",
+    "imageAlt": "Architectural visualization of Jerusalem Villa's courtyard with evening lighting",
     "intro": "Shira, our chief architect, creates spaces that live and breathe. Every project is a journey — from initial vision to a creation that transforms spatial experience.",
     "shiraBio": "Shira Uzan is a licensed architect with over a decade of experience in residential and commercial design. She specializes in creating innovative spaces that blend functionality with aesthetic excellence. Her approach emphasizes sustainable design principles and client collaboration, ensuring each project reflects the unique vision and needs of those who will inhabit the space.",
     "design": {

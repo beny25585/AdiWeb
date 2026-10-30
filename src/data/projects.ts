@@ -1,4 +1,6 @@
 export type ProjectKey =
+  | "danceStudio"
+  | "jerusalemVilla"
   | "winery"
   | "heritageResidence"
   | "frederOscar"
@@ -19,12 +21,59 @@ export type Project = {
   title: string;
   cover: string;
   arcitecture?: boolean;
+  showInProjects?: boolean;
   goodImages?: boolean;
   images: string[];
   video?: string[];
 };
 
 export const projectsMap: Record<ProjectKey, Project> = {
+  danceStudio: {
+    slug: "danceStudio",
+    title: "Dance Studio Project",
+    cover: "v1793093629/89_fownfh.jpg",
+    images: [
+      "v1793093629/89_fownfh.jpg",
+      "v1793093622/91_vb8hs8.jpg",
+      "v1792661888/DSC_0195_h2segx.jpg",
+      "v1793093077/63_e1uksc.jpg",
+      "v1792659723/DSC_0142_wliahl.jpg",
+      "v1792662340/DSC_0180_fbcpql.jpg",
+      "v1793093631/99_eobd0h.jpg",
+      "v1792656240/DSC_0230_cnj5bn.jpg",
+      "v1792661104/WhatsApp_Image_2569-10-20_at_12.28.08_PM_dwy0ud.jpg",
+      "v1789363574/79_ch4cv5.jpg",
+      "v1792653974/53498_0_gwxhnt.jpg",
+      "v1792649561/WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms.jpg",
+    ],
+    video: [
+      "v1793180225/WhatsApp_Video_2569-10-28_at_3.03.58_PM_jxgkd3.mp4",
+      "v1793165322/58_converted_zprudc.mp4",
+      "v1789715343/WhatsApp_Video_2569-09-09_at_12.59.03_PM_etry39.mp4",
+    ],
+  },
+  jerusalemVilla: {
+    slug: "jerusalemVilla",
+    title: "Jerusalem Villa",
+    arcitecture: true,
+    cover: "v1782287804/1_aozab3.jpg",
+    images: [
+      "v1782287804/1_aozab3.jpg",
+      "v1782287814/8_c2ezqp.jpg",
+      "v1782287806/2_ebmy5j.jpg",
+      "v1782287805/13_rqd2sm.jpg",
+      "v1782287804/11_bofuag.jpg",
+      "v1782287805/18_krxv7y.jpg",
+      "v1782287809/22_f4zytc.jpg",
+      "v1782287805/17_dnnwnd.jpg",
+      "v1782287810/23_dl6jrh.jpg",
+      "v1782287806/20_fk9aeh.jpg",
+      "v1782287805/19_idd0wc.jpg",
+      "v1782287812/5_xcm1po.jpg",
+      "v1782287811/4_o0jojz.jpg",
+      "v1782287804/10_xhkk4d.jpg",
+    ],
+  },
   theAddressSignatureHome: {
     slug: "theAddressSignatureHome",
     title: "The Address Signature Home",
@@ -123,6 +172,12 @@ export const projectsMap: Record<ProjectKey, Project> = {
       "12_zdo6nl.jpg",
       "16_ybet8v.jpg",
       "14_poorvu.jpg",
+      "/Photos/office/office-after2.jpg",
+      "/Photos/office/office-after3.jpg",
+      "v1783497731/WhatsApp_Image_2569-07-07_at_12.04.53_PM_5_lwdiam.jpg",
+      "v1783497733/WhatsApp_Image_2569-07-07_at_12.04.53_PM_6_fx2cih.jpg",
+      "v1783497716/WhatsApp_Image_2569-07-07_at_12.04.07_PM_4_xcdhxr.jpg",
+      "v1783497712/WhatsApp_Image_2569-07-07_at_12.04.07_PM_1_rkwn56.jpg",
     ],
   },
   developmentFirm: {
@@ -209,6 +264,7 @@ export const projectsMap: Record<ProjectKey, Project> = {
     slug: "suite",
     title: "Rothscild 221 Hotel",
     arcitecture: true,
+    showInProjects: false,
     cover: "/Photos/Suite/courtyard2.png",
     images: [
       "/Photos/Suite/courtyard1.png",
@@ -270,6 +326,8 @@ export const projectsMap: Record<ProjectKey, Project> = {
 };
 
 export const orderedKeys: ProjectKey[] = [
+  "danceStudio",
+  "jerusalemVilla",
   "Calm55",
   "theAddressSignatureHome",
   "horaizonFlow",
@@ -285,6 +343,14 @@ export const orderedKeys: ProjectKey[] = [
 ];
 
 export const projectsList: Project[] = orderedKeys.map((k) => projectsMap[k]);
+
+export const portfolioProjects: Project[] = projectsList.filter(
+  (project) => project.showInProjects !== false,
+);
+
+export const architectureProjects: Project[] = projectsList.filter(
+  (project) => project.arcitecture,
+);
 
 export const projectImages: Record<ProjectKey, string[]> = Object.fromEntries(
   Object.entries(projectsMap).map(([slug, proj]) => [slug, proj.images]),

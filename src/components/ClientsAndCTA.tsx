@@ -12,11 +12,11 @@ export default function ClientsAndCTA() {
   const t = useTranslations("finishing");
 
   const rawClients = [
-    { id: "DR43_odo6aj.png", titleKey: "clients.private" },
+    { id: "v1782287806/2_ebmy5j.jpg", titleKey: "clients.private" },
     { id: "TL7_j5tmkr", titleKey: "clients.apartments" },
     { id: "45_njvfua.png", titleKey: "clients.institutions" },
     {
-      id: "23G_obilj7.png",
+      id: "v1793093629/89_fownfh.jpg",
       titleKey: "clients.projects",
     },
   ];

@@ -7,7 +7,6 @@ import "@/styles/scroll-pinning.css";
 import SpecialtiesSection from "../../components/SpecialtiesSection";
 import Image from "next/image";
 import { getImageUrl } from "@/utils/getImageUrl";
-import { FaArrowDown } from "react-icons/fa";
 import { useEffect } from "react";
 import { initFacebookPixel } from "@/lib/facebookPixel";
 
@@ -18,23 +17,19 @@ export default function HomePage() {
 
   return (
     <div className="scroll-container">
-      {/* Background */}
       <div className="background-image">
         <Image
-          src={getImageUrl("G35_eadrzq.png", 2400)}
-          alt="Background"
-          width={0}
-          height={0}
-          priority
+          src={getImageUrl("v1782287805/13_rqd2sm.jpg", 2400)}
+          alt=""
+          fill
           sizes="100vw"
         />
       </div>
-      <FaArrowDown className="scrollHint" />
       <section className="section">
         {/* Foreground content */}
         <Hero />
 
-        <div className="spacer" />
+        <div className="hero-spacer" />
         <FeaturedProjects />
       </section>
 

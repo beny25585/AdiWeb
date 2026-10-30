@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 import Image from "next/image";
-import { projectsList } from "@/data/projects";
+import { architectureProjects, portfolioProjects } from "@/data/projects";
 import styles from "@/styles/ProjectCard.module.css";
 
 import lightGallery from "lightgallery";
@@ -18,6 +18,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { getImageUrl } from "@/utils/getImageUrl";
 import CloudinaryVideo from "./CloudinaryVideo";
+import SelectedProjects from "./SelectedProjects";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,11 +66,15 @@ export default function ProjectClient({
   }, [images]);
 
   /* ---------- NAVIGATION ---------- */
-  const currentIndex = projectsList.findIndex((p) => p.slug === currentSlug);
-  const prevProject = currentIndex > 0 ? projectsList[currentIndex - 1] : null;
+  const navigationProjects = portfolioProjects.some((p) => p.slug === currentSlug)
+    ? portfolioProjects
+    : architectureProjects;
+  const currentIndex = navigationProjects.findIndex((p) => p.slug === currentSlug);
+  const prevProject =
+    currentIndex > 0 ? navigationProjects[currentIndex - 1] : null;
   const nextProject =
-    currentIndex < projectsList.length - 1
-      ? projectsList[currentIndex + 1]
+    currentIndex >= 0 && currentIndex < navigationProjects.length - 1
+      ? navigationProjects[currentIndex + 1]
       : null;
 
   const navigateToProject = (slug: string) =>
@@ -239,6 +244,8 @@ export default function ProjectClient({
           <CloudinaryVideo publicIds={video} mode="project" />
         </div>
       )}
+
+      <SelectedProjects currentSlug={currentSlug} />
 
       <div
         className={`${styles.navigationButtons} ${styles.bottomNav}`}

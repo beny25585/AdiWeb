@@ -2,98 +2,131 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
-import { projectsList } from "@/data/projects";
-import { useTranslations, useLocale } from "next-intl";
-import { useState, useEffect } from "react";
-import styles from "@/styles/FeaturedProjects.module.css";
+import { useId } from "react";
+import { useFormatter, useLocale, useTranslations } from "next-intl";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { portfolioProjects } from "@/data/projects";
+import { useProjectGallery } from "@/hooks/useProjectGallery";
 import { getImageUrl } from "@/utils/getImageUrl";
+import styles from "@/styles/FeaturedProjects.module.css";
 
 export default function FeaturedProjectsList() {
   const t = useTranslations("projects");
   const tH = useTranslations("featuredProjects");
+  const tN = useTranslations("projectNavigation");
   const locale = useLocale();
-  const [mounted, setMounted] = useState(false);
+  const format = useFormatter();
+  const headingId = useId();
+  const trackId = useId();
+  const total = portfolioProjects.length;
+  const {
+    trackRef,
+    visibleRange: range,
+    previousDisabled,
+    nextDisabled,
+    previous,
+    next,
+    clearPending,
+  } = useProjectGallery(total, locale);
+  const formatIndex = (index: number) =>
+    format.number(index, { minimumIntegerDigits: 2, useGrouping: false });
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  if (total === 0) return null;
 
-  const items = projectsList.map((p) => (
-    <Link
-      key={p.slug}
-      href={`/${locale}/projects/${p.slug}`}
-      className={styles.projectLink}
-    >
-      <div className={styles.imageWrap}>
-        <div className={styles.card}>
-          <Image
-            src={getImageUrl(p.cover)}
-            alt={t(`${p.slug}.title`)}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className={styles.image}
-          />
-          <div className={styles.logoWrapper}>
-            <Image
-              src={getImageUrl("/Photos/A&S-removebg.png")}
-              alt="Logo"
-              width={60}
-              height={60}
-              className={styles.logo}
-            />
-          </div>
-          <div className={styles.overlay}>
-            <h3>{t(`${p.slug}.title`)}</h3>
-          </div>
-        </div>
-      </div>
-    </Link>
-  ));
+  const position = range
+    ? range.first === range.last
+      ? tH("positionSingle", { current: range.first + 1, total })
+      : tH("positionRange", {
+          first: range.first + 1,
+          last: range.last + 1,
+          total,
+        })
+    : tH("totalProjects", { total });
 
-  const responsive = {
-    0: { items: 1 },
-    768: { items: 2 },
-    1200: { items: 3 },
-  };
-
-  if (!mounted) {
-    return null;
-  }
+  const visualPosition = range
+    ? (range.first === range.last
+        ? formatIndex(range.first + 1)
+        : formatIndex(range.first + 1) + "–" + formatIndex(range.last + 1)) +
+      " / " +
+      formatIndex(total)
+    : formatIndex(total);
 
   return (
-    <section
-      className={`${styles.section} ${
-        locale === "he" ? styles.rtl : styles.ltr
-      }`}
-    >
-      <div className={styles.carouselWrapper}>
-        <AliceCarousel
-          mouseTracking
-          items={items}
-          responsive={responsive}
-          infinite
-          disableDotsControls
-          autoPlayInterval={5000}
-          animationDuration={800}
-          autoPlay
-          renderPrevButton={() => (
-            <button className={`${styles.arrow} ${styles.leftArrow}`}>‹</button>
-          )}
-          renderNextButton={() => (
-            <button className={`${styles.arrow} ${styles.rightArrow}`}>
-              ›
-            </button>
-          )}
-        />
-      </div>
-      <div className={styles.right}>
-        <h2>{tH("title")}</h2>
-        <p>{tH("desc")}</p>
-        <Link href={`/${locale}/projects`} className={styles.btn}>
-          {tH("cta")}
-        </Link>
+    <section className={styles.section} aria-labelledby={headingId}>
+      <div className={styles.layout}>
+        <div className={styles.intro}>
+          <h2 id={headingId} className={styles.title}>{tH("title")}</h2>
+          <p className={styles.description}>{tH("desc")}</p>
+          <Link href={"/" + locale + "/projects"} className={styles.cta}>
+            {tH("cta")}
+            <FiArrowRight className={styles.directionalIcon} aria-hidden="true" />
+          </Link>
+        </div>
+
+        <div className={styles.gallery}>
+          <ul
+            ref={trackRef}
+            id={trackId}
+            className={styles.track}
+            aria-label={tH("galleryLabel")}
+            onPointerDown={clearPending}
+            onWheel={clearPending}
+            onKeyDown={clearPending}
+          >
+            {portfolioProjects.map((project) => (
+              <li key={project.slug} className={styles.item}>
+                <Link
+                  href={"/" + locale + "/projects/" + project.slug}
+                  className={styles.projectLink}
+                >
+                  <div className={styles.imageWrap}>
+                    <Image
+                      src={getImageUrl(project.cover, 1000)}
+                      alt=""
+                      fill
+                      sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 1050px) 44vw, (max-width: 1590px) 20vw, 320px"
+                      className={styles.image}
+                      draggable={false}
+                    />
+                  </div>
+                  <div className={styles.caption}>
+                    <h3>{t(project.slug + ".title")}</h3>
+                    <FiArrowRight className={styles.directionalIcon} aria-hidden="true" />
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className={styles.controls}>
+            <p className={styles.counter} aria-live="polite" aria-atomic="true">
+              <span className={styles.srOnly}>{position}</span>
+              <span dir="ltr" aria-hidden="true">{visualPosition}</span>
+            </p>
+            <div className={styles.navigation}>
+              <button
+                type="button"
+                className={styles.navButton}
+                aria-label={tN("previous")}
+                aria-controls={trackId}
+                disabled={previousDisabled}
+                onClick={previous}
+              >
+                <FiArrowLeft className={styles.directionalIcon} aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                className={styles.navButton}
+                aria-label={tN("next")}
+                aria-controls={trackId}
+                disabled={nextDisabled}
+                onClick={next}
+              >
+                <FiArrowRight className={styles.directionalIcon} aria-hidden="true" />
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
