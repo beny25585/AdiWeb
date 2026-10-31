@@ -1,7 +1,11 @@
 "use client";
 
 import type { ComponentPropsWithRef } from "react";
-import { cloudinaryVideoUrl } from "@/utils/cloudinary";
+import { useTranslations } from "next-intl";
+import {
+  cloudinaryVideoPosterUrl,
+  cloudinaryVideoUrl,
+} from "@/utils/cloudinary";
 
 type Props = {
   publicIds: string | string[];
@@ -35,33 +39,27 @@ export default function CloudinaryVideo({
     );
   }
 
+  return <ProjectVideos ids={ids} />;
+}
+
+function ProjectVideos({ ids }: { ids: string[] }) {
+  const t = useTranslations("projectPage");
+
   return (
     <>
-      {ids.map((id) => (
-        <section
+      {ids.map((id, index) => (
+        <video
           key={id}
-          style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            padding: "40px 20px",
-          }}
+          controls
+          playsInline
+          preload="none"
+          poster={cloudinaryVideoPosterUrl(id)}
+          aria-label={t("videoLabel", { number: index + 1 })}
+          className="tw:block tw:aspect-video tw:max-h-[70vh] tw:w-full tw:min-w-0 tw:bg-[#11110f] tw:object-contain tw:focus-visible:outline-2 tw:focus-visible:outline-offset-4 tw:focus-visible:outline-[#75603b]"
         >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            style={{
-              width: "100%",
-              maxWidth: 800,
-              borderRadius: 8,
-              display: "block",
-            }}
-          >
-            <source src={cloudinaryVideoUrl(id)} />
-          </video>
-        </section>
+          <source src={cloudinaryVideoUrl(id)} />
+          {t("videoUnsupported")}
+        </video>
       ))}
     </>
   );

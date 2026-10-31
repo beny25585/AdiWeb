@@ -1,5 +1,11 @@
+import type { ImageLoaderProps } from "next/image";
+
 const CLOUD_NAME = "ddncjeozb";
 const BASE_URL = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload`;
+
+/** Match the gallery's 4:3 frames in one pass without enlarging small originals. */
+export const cloudinaryGalleryLoader = ({ src, width }: ImageLoaderProps): string =>
+  `${BASE_URL}/c_lfill,g_auto,ar_4:3,w_${width},q_auto:good,f_auto/${src}`;
 
 /**
  * בונה URL של Cloudinary עם הגדרות שמבטיחות חדות.
@@ -37,6 +43,15 @@ export const cloudinaryUrl = (
 };
 
 const VIDEO_BASE_URL = `https://res.cloudinary.com/${CLOUD_NAME}/video/upload`;
+
+export const cloudinaryVideoPosterUrl = (publicId: string): string => {
+  if (!publicId) {
+    throw new Error("cloudinaryVideoPosterUrl: publicId is required");
+  }
+
+  const posterId = publicId.replace(/\.[^/.]+$/, "");
+  return `${VIDEO_BASE_URL}/so_0,w_1200,q_auto,f_jpg/${posterId}.jpg`;
+};
 
 export const cloudinaryVideoUrl = (publicId: string): string => {
   if (!publicId) {

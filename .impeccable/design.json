@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-31T08:36:17Z",
+  "title": "Design System: A&S UZAN GROUP — Projects index",
+  "extensions": {
+    "colorMeta": {
+      "primary-gold": { "role": "primary", "displayName": "Muted Gold" },
+      "primary-gold-light": { "role": "primary", "displayName": "Light Gold" },
+      "primary-gold-dark": { "role": "primary", "displayName": "Dark Gold" },
+      "neutral-charcoal": { "role": "neutral", "displayName": "Charcoal" },
+      "neutral-warm-white": { "role": "neutral", "displayName": "Warm White" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Compact Display", "purpose": "Projects-index opening; inherits the site's font family." },
+      "project-title": { "displayName": "Project Title", "purpose": "Visible project captions below imagery." },
+      "project-title-sm": { "displayName": "Project Title at Small", "purpose": "Collection captions from the small breakpoint." }
+    },
+    "motion": [
+      { "name": "project-image-zoom", "value": "transform 500ms cubic-bezier(0, 0, 0.2, 1); scale(1.035)", "purpose": "Image hover and keyboard-focus feedback; enabled only with no reduced-motion preference." },
+      { "name": "contact-background", "value": "background-color 200ms cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Contact-link hover feedback; transition removed for reduced motion." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Project Caption Link",
+      "kind": "custom",
+      "refersTo": "project-link",
+      "description": "Illustrative caption interaction; production tiles use existing project covers from src/data/projects.ts.",
+      "html": "<a class=\"ds-project\" href=\"#project-example\"><span>Project title</span><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M6 18 18 6M6 6h12v12\"/></svg></a>",
+      "css": ".ds-project{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;min-height:56px;padding:12px 0;border-bottom:1px solid #d4cfc5;color:#11110f;font-family:inherit;font-size:16px;font-weight:500;line-height:1.375;text-decoration:none}.ds-project svg{width:24px;height:24px;flex-shrink:0;color:#75603b}.ds-project:hover span,.ds-project:focus-visible span{text-decoration:underline;text-underline-offset:4px}.ds-project:focus-visible{outline:2px solid #75603b;outline-offset:8px}[dir=rtl] .ds-project svg{transform:scaleX(-1)}"
+    },
+    {
+      "name": "Contact Link",
+      "kind": "button",
+      "refersTo": "contact-link",
+      "description": "Illustrative contact action from the projects index; production text and URL are localized.",
+      "html": "<a class=\"ds-contact\" href=\"#contact-example\">Contact us<svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M6 18 18 6M6 6h12v12\"/></svg></a>",
+      "css": ".ds-contact{display:inline-flex;align-items:center;justify-content:center;gap:24px;min-height:48px;padding:12px 24px;background:#11110f;color:#faf8f4;font-size:14px;font-weight:500;line-height:20px;text-decoration:none;transition:background-color 200ms cubic-bezier(.4,0,.2,1)}.ds-contact svg{width:24px;height:24px;flex-shrink:0}.ds-contact:hover{background:#343128}.ds-contact:focus-visible{outline:2px solid #11110f;outline-offset:4px}[dir=rtl] .ds-contact svg{transform:scaleX(-1)}@media(prefers-reduced-motion:reduce){.ds-contact{transition:none}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "A compact photographic architecture portfolio",
+    "overview": "This source-derived specification is normative only for /[locale]/projects and its PortfolioProject presentation. Other routes retain their existing design. The user approved the photographic direction, then requested smaller headings and imagery, less whitespace and more projects together.",
+    "keyCharacteristics": [
+      "Real project photography, visible captions and restrained gold links.",
+      "A charcoal opening followed by a warm-white, three-project desktop collection.",
+      "Flat rectangular surfaces, compact spacing and inherited site typography."
+    ],
+    "rules": [
+      { "name": "The Restrained Gold Rule", "body": "Gold marks interaction and fine rules; project photography remains the dominant visual material.", "section": "colors" },
+      { "name": "The Compact Collection Rule", "body": "Preserve source order while grouping three projects per desktop row. Do not enlarge this route into a full-height opening.", "section": "layout" }
+    ],
+    "dos": [
+      "Do keep this specification scoped to the projects index.",
+      "Do preserve project order, visibility, covers and localized URLs from src/data/projects.ts; show the first project once and count only the remaining collection.",
+      "Do retain translated visible names, keyboard focus, RTL direction and reduced-motion behavior.",
+      "Do reuse existing cover assets through getImageUrl; their provenance remains in src/data/projects.ts. This redesign creates no raster assets."
+    ],
+    "donts": [
+      "Don't apply this route's palette or composition to other pages without a separate approved change.",
+      "Don't add invented project metadata, new fonts, rounded card shells or decorative shadows to this route.",
+      "Don't describe source inspection as browser, mobile, test or production-build proof."
+    ]
+  }
+}
+

@@ -1,120 +1,26 @@
 "use client";
 
-import Link from "next/link";
-import { useState } from "react";
-import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useTranslations, useLocale } from "next-intl";
-import styles from "@/styles/Header.module.css";
-import { useEffect, useRef } from "react";
+import { mainNavigation } from "@/data/navigation";
+import SiteHeader from "./SiteHeader";
 
 export default function Header() {
-  const navRef = useRef<HTMLDivElement>(null);
   const locale = useLocale();
   const t = useTranslations("header");
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    function handleClickOutside(e: MouseEvent) {
-      if (
-        menuOpen &&
-        navRef.current &&
-        !navRef.current.contains(e.target as Node) &&
-        !(e.target as HTMLElement).closest(`.${styles.hamburger}`)
-      ) {
-        setMenuOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [menuOpen]);
-
-  const nav = [
-    { href: `/${locale}`, label: t("home") },
-    { href: `/${locale}/about`, label: t("about") },
-    { href: `/${locale}/architecture`, label: t("architecture") },
-    { href: `/${locale}/projects`, label: t("projects") },
-    { href: `/${locale}/contact`, label: t("contact") },
-  ];
+  const pathname = usePathname();
+  const nav = mainNavigation.map((item) => ({
+    href: `/${locale}${item.path}`,
+    label: t(item.labelKey),
+  }));
+  const currentPath = pathname.replace(/\/+$/, "");
 
   return (
-    <header className={styles.header}>
-      <div className={styles.container}>
-        <Link href={`/${locale}`} className={styles.logo}>
-          <div className={styles.logosWrap}>
-            <div className={styles.rightWrapper}>
-              <Image
-                src="/Photos/UZAN-removebg.png"
-                alt="UZAN Logo"
-                width={500}
-                height={500}
-                className={styles.right}
-                loading="eager"
-              />
-            </div>
-            <Image
-              src="/Photos/A&S-removebg.png"
-              alt="uzanGroup Logo"
-              width={100}
-              height={130}
-              className={styles.left}
-              style={{ width: "auto", height: "100%" }}
-            />
-          </div>
-        </Link>
-
-        <button
-          className={styles.hamburger}
-          onClick={() => setMenuOpen((prev) => !prev)}
-          aria-label="Toggle navigation"
-        >
-          {menuOpen ? "✖" : "☰"}
-        </button>
-
-        <nav
-          ref={navRef}
-          className={`${styles.nav} ${menuOpen ? styles.open : ""}`}
-        >
-          {nav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setMenuOpen(false)}
-            >
-              {item.label}
-            </Link>
-          ))}
-
-          <div className={styles.langs}>
-            <Link href="/he" className={locale === "he" ? styles.active : ""}>
-              <Image
-                src="https://flagcdn.com/w40/il.png"
-                alt="עברית"
-                className={styles.flag}
-                width={140}
-                height={100}
-              />
-            </Link>
-            <Link href="/en" className={locale === "en" ? styles.active : ""}>
-              <Image
-                src="https://flagcdn.com/w40/us.png"
-                alt="English"
-                className={styles.flag}
-                width={140}
-                height={100}
-              />
-            </Link>
-            <Link href="/th" className={locale === "th" ? styles.active : ""}>
-              <Image
-                src="https://flagcdn.com/w40/th.png"
-                alt="ไทย"
-                className={styles.flag}
-                width={140}
-                height={100}
-              />
-            </Link>
-          </div>
-        </nav>
-      </div>
-    </header>
+    <SiteHeader
+      key={pathname}
+      nav={nav}
+      currentPath={currentPath}
+      overHero={currentPath === `/${locale}`}
+    />
   );
 }

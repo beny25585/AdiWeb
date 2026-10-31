@@ -20,6 +20,7 @@ export type Project = {
   slug: ProjectKey;
   title: string;
   cover: string;
+  mediaType?: "visualization";
   arcitecture?: boolean;
   showInProjects?: boolean;
   goodImages?: boolean;
@@ -55,6 +56,7 @@ export const projectsMap: Record<ProjectKey, Project> = {
   jerusalemVilla: {
     slug: "jerusalemVilla",
     title: "Jerusalem Villa",
+    mediaType: "visualization",
     arcitecture: true,
     cover: "v1782287804/1_aozab3.jpg",
     images: [

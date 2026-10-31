@@ -3,7 +3,6 @@
 import Hero from "@/components/Hero";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import CliClientsAndCTA from "@/components/ClientsAndCTA";
-import "@/styles/scroll-pinning.css";
 import SpecialtiesSection from "../../components/SpecialtiesSection";
 import Image from "next/image";
 import { getImageUrl } from "@/utils/getImageUrl";
@@ -16,42 +15,22 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="scroll-container">
-      <div className="background-image">
-        <Image
-          src={getImageUrl("v1782287805/13_rqd2sm.jpg", 2400)}
-          alt=""
-          fill
-          sizes="100vw"
-        />
-      </div>
-      <section className="section">
-        {/* Foreground content */}
-        <Hero />
+    <main className="tw:bg-[#faf8f4]">
+      <Hero />
+      <FeaturedProjects />
+      <SpecialtiesSection />
 
-        <div className="hero-spacer" />
-        <FeaturedProjects />
-      </section>
-
-      <div className="background-image">
-        <Image
-          src={getImageUrl("he6bh5.jpg")}
-          alt="Background"
-          fill
-          priority
-          sizes="100vw"
-        />
+      <div aria-hidden="true" className="tw:relative tw:h-56 tw:w-full tw:overflow-hidden tw:bg-[#ded9cf] tw:sm:h-72 tw:lg:h-80">
+          <Image
+            src={getImageUrl("he6bh5.jpg")}
+            alt=""
+            fill
+            sizes="100vw"
+            className="tw:object-cover tw:object-[center_60%]"
+          />
       </div>
 
-      <section className="section">
-        {/* Foreground content */}
-        <SpecialtiesSection />
-      </section>
-      <div className="spacer" />
-
-      <section className="section">
-        <CliClientsAndCTA />
-      </section>
-    </div>
+      <CliClientsAndCTA />
+    </main>
   );
 }

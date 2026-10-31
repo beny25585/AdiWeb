@@ -1,119 +1,80 @@
-/* src/components/SpecialtiesSection.tsx */
 "use client";
 
-import styles from "@/styles/SpecialtiesSection.module.css";
+import Image from "next/image";
+import { useId } from "react";
 import { useTranslations } from "next-intl";
-import {
-  FaTools,
-  FaPaintRoller,
-  FaDoorOpen,
-  FaCouch,
-  FaBolt,
-  FaHammer,
-} from "react-icons/fa";
-import {  useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { getImageUrl } from "@/utils/getImageUrl";
+import "@/styles/tailwind.css";
 
-gsap.registerPlugin(ScrollTrigger);
+const specialties = [
+  "gypsum",
+  "flooring",
+  "doors",
+  "carpentry",
+  "electrical",
+  "renovation",
+] as const;
+
+const FINISHING_DETAIL_IMAGE = "DSC_0241_ltxogp";
 
 export default function SpecialtiesSection() {
-  /* --------------------------------------------------------------
-     Internationalised strings – they are deterministic on server &
-     client, so they never cause a hydration mismatch.
-     -------------------------------------------------------------- */
   const t = useTranslations("finishing");
+  const tProjects = useTranslations("projects");
+  const headingId = useId();
 
-  /* --------------------------------------------------------------
-     Refs for the root element and each card.
-     -------------------------------------------------------------- */
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const cardsRef = useRef<HTMLDivElement[]>([]);
-
-  /* --------------------------------------------------------------
-     Data that drives the UI.
-     -------------------------------------------------------------- */
-  const specialties = [
-    {
-      icon: <FaTools />,
-      title: t("specialties.gypsum.title"),
-      desc: t("specialties.gypsum.desc"),
-      color: "#60400a",
-    },
-    {
-      icon: <FaPaintRoller />,
-      title: t("specialties.flooring.title"),
-      desc: t("specialties.flooring.desc"),
-      color: "#8B5A1A",
-    },
-    {
-      icon: <FaDoorOpen />,
-      title: t("specialties.doors.title"),
-      desc: t("specialties.doors.desc"),
-      color: "#A06D2A",
-    },
-    {
-      icon: <FaCouch />,
-      title: t("specialties.carpentry.title"),
-      desc: t("specialties.carpentry.desc"),
-      color: "#60400a",
-    },
-    {
-      icon: <FaBolt />,
-      title: t("specialties.electrical.title"),
-      desc: t("specialties.electrical.desc"),
-      color: "#8B5A1A",
-    },
-    {
-      icon: <FaHammer />,
-      title: t("specialties.renovation.title"),
-      desc: t("specialties.renovation.desc"),
-      color: "#A06D2A",
-    },
-  ];
-
-  /* --------------------------------------------------------------
-     JSX – the visual markup.
-     -------------------------------------------------------------- */
   return (
-    <div className={styles.specialtiesWrapper} ref={sectionRef}>
-      <div className={styles.specialtiesColumn}>
-        {/* Header */}
-        <div className={styles.headerSection}>
-          <h2 className={styles.title}>{t("title")}</h2>
-          <p className={styles.subtitle}>{t("subtitle")}</p>
-        </div>
+    <section
+      aria-labelledby={headingId}
+      className="tw:relative tw:z-0 tw:w-full tw:bg-[#faf8f4] tw:text-[#11110f] tw:selection:bg-[#e0c89f] tw:selection:text-[#11110f]"
+    >
+      <div className="tw:mx-auto tw:w-full tw:max-w-[1440px] tw:px-5 tw:py-10 tw:sm:px-8 tw:sm:py-12 tw:lg:px-12 tw:lg:py-16">
+        <div className="tw:grid tw:items-start tw:gap-10 tw:lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] tw:lg:gap-12">
+          <div className="tw:min-w-0">
+            <header className="tw:mb-7 tw:text-start tw:sm:mb-8">
+              <h2
+                id={headingId}
+                className="tw:m-0 tw:text-[clamp(1.875rem,2.6vw,2.5rem)] tw:leading-tight tw:font-medium tw:tracking-[-0.025em] tw:text-balance tw:text-[#11110f] tw:rtl:tracking-normal"
+              >
+                {t("title")}
+              </h2>
+              <p className="tw:mt-4 tw:mb-0 tw:max-w-[58ch] tw:text-base tw:leading-relaxed tw:text-pretty tw:text-[#625c51]">
+                {t("subtitle")}
+              </p>
+            </header>
 
-        {/* Card grid */}
-        <div className={styles.specialtiesGrid}>
-          {specialties.map((item, index) => (
-            <div
-              key={index}
-              ref={(el) => {
-                if (el) cardsRef.current[index] = el;
-              }}
-              className={styles.card}
-              style={
-                {
-                  "--card-color": item.color,
-                  "--card-index": index,
-                } as React.CSSProperties
-              }
-            >
-              <div className={styles.cardBackground}></div>
+            <ul role="list" className="tw:m-0 tw:grid tw:list-none tw:grid-cols-1 tw:gap-x-8 tw:p-0 tw:sm:grid-cols-2">
+              {specialties.map((specialty) => (
+                <li
+                  key={specialty}
+                  className="tw:min-w-0 tw:border-0 tw:border-t tw:border-solid tw:border-[#d4cfc5] tw:py-5 tw:text-start tw:sm:py-6"
+                >
+                  <h3 className="tw:m-0 tw:text-lg tw:leading-7 tw:font-medium tw:text-balance tw:text-[#11110f]">
+                    {t(`specialties.${specialty}.title`)}
+                  </h3>
+                  <p className="tw:mt-2 tw:mb-0 tw:max-w-[42ch] tw:text-base tw:leading-relaxed tw:text-pretty tw:text-[#625c51]">
+                    {t(`specialties.${specialty}.desc`)}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-              <div className={styles.cardContent}>
-                <div className={styles.cardHeader}>
-                  <div className={styles.iconWrapper}>{item.icon}</div>
-                  <h3 className={styles.cardTitle}>{item.title}</h3>
-                </div>
-
-                <p className={styles.cardDesc}>{item.desc}</p>
-              </div>
+          <figure className="tw:mx-auto tw:my-0 tw:w-full tw:min-w-0 tw:max-w-xs tw:sm:max-w-sm tw:lg:mx-0 tw:lg:max-w-none">
+            <div className="tw:relative tw:aspect-2/3 tw:overflow-hidden tw:bg-[#ded9cf]">
+              <Image
+                src={getImageUrl(FINISHING_DETAIL_IMAGE, 1000)}
+                alt={t("detailImageAlt")}
+                fill
+                sizes="(min-width: 1440px) 432px, (min-width: 1024px) calc((100vw - 144px) / 3), (min-width: 640px) 384px, 320px"
+                className="tw:object-cover"
+              />
             </div>
-          ))}
+            <figcaption className="tw:mt-3 tw:text-start tw:text-sm tw:leading-6 tw:text-[#625c51]">
+              {tProjects("theAddressSignatureHome.title")}
+            </figcaption>
+          </figure>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

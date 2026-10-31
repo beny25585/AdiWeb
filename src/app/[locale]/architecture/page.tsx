@@ -5,6 +5,7 @@ import ProjectCard from "@/components/ProjectCard";
 import { architectureProjects } from "@/data/projects";
 import type { Locale } from "@/lib/i18n";
 import { getImageUrl } from "@/utils/getImageUrl";
+import ProjectMediaLabel from "@/components/ProjectMediaLabel";
 import styles from "./Architecture.module.css";
 
 type Props = {
@@ -13,7 +14,10 @@ type Props = {
 
 export default async function ArchitecturePage({ params }: Props) {
   const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "architecture" });
+  const [t, tMedia] = await Promise.all([
+    getTranslations({ locale, namespace: "architecture" }),
+    getTranslations({ locale, namespace: "projects.media" }),
+  ]);
 
   return (
     <main className={styles.container}>
@@ -22,7 +26,8 @@ export default async function ArchitecturePage({ params }: Props) {
           <h1 className={styles.title}>{t("title")}</h1>
           <p className={styles.intro}>{t("intro")}</p>
         </div>
-        <div className={styles.openingImage}>
+        <figure className="tw:m-0">
+          <div className={styles.openingImage}>
           <Image
             src={getImageUrl("v1782287812/5_xcm1po.jpg")}
             alt={t("imageAlt")}
@@ -31,7 +36,11 @@ export default async function ArchitecturePage({ params }: Props) {
             sizes="(max-width: 1264px) 94vw, 1200px"
             priority
           />
-        </div>
+          </div>
+          <figcaption>
+            <ProjectMediaLabel mediaType="visualization" label={tMedia("visualization")} />
+          </figcaption>
+        </figure>
       </header>
 
       <section className={styles.portfolio} aria-labelledby="architecture-projects-title">

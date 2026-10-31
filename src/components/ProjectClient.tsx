@@ -1,275 +1,107 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useRouter, useParams } from "next/navigation";
-import Image from "next/image";
-import { architectureProjects, portfolioProjects } from "@/data/projects";
-import styles from "@/styles/ProjectCard.module.css";
-
-import lightGallery from "lightgallery";
-import lgZoom from "lightgallery/plugins/zoom";
-import lgThumbnail from "lightgallery/plugins/thumbnail";
-import "lightgallery/css/lightgallery.css";
-import "lightgallery/css/lg-zoom.css";
-import "lightgallery/css/lg-thumbnail.css";
-
-import { useTranslations } from "next-intl";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { getImageUrl } from "@/utils/getImageUrl";
+import Link from "next/link";
+import { useLocale, useTranslations } from "next-intl";
+import { FiArrowLeft } from "react-icons/fi";
+import { architectureProjects, portfolioProjects, type Project } from "@/data/projects";
 import CloudinaryVideo from "./CloudinaryVideo";
+import ProjectGallery from "./ProjectGallery";
+import ProjectNavigation from "./ProjectNavigation";
 import SelectedProjects from "./SelectedProjects";
-
-gsap.registerPlugin(ScrollTrigger);
-
-ScrollTrigger.config({
-  ignoreMobileResize: true,
-});
+import ProjectMediaLabel from "./ProjectMediaLabel";
 
 type Props = {
+  currentSlug: string;
   dir: "rtl" | "ltr";
   title: string;
   description: string;
   images: string[];
   video?: string[];
+  mediaType?: Project["mediaType"];
 };
 
 export default function ProjectClient({
+  currentSlug,
   dir,
   title,
   description,
   images,
   video,
+  mediaType,
 }: Props) {
-  const router = useRouter();
-  const params = useParams();
-  const locale = (params.locale ?? "en") as string;
-  const currentSlug = (params.slug ?? "") as string;
-
-  const galleryRef = useRef<HTMLDivElement>(null);
-  const headerRef = useRef<HTMLDivElement>(null);
-  const navigationTopRef = useRef<HTMLDivElement>(null);
-  const navigationBottomRef = useRef<HTMLDivElement>(null);
-  const imageRefs = useRef<(HTMLAnchorElement | null)[]>([]);
-
-  const t = useTranslations("projectNavigation");
-
-  /* ---------- IMAGES STATE ---------- */
-  const [imageUrls, setImageUrls] = useState<string[]>([]);
-
-  useEffect(() => {
-    if (!images?.length) {
-      setImageUrls([]);
-      return;
-    }
-    setImageUrls(images.map((src) => getImageUrl(src)));
-  }, [images]);
-
-  /* ---------- NAVIGATION ---------- */
+  const locale = useLocale();
+  const t = useTranslations("projectPage");
+  const tMedia = useTranslations("projects.media");
   const navigationProjects = portfolioProjects.some((p) => p.slug === currentSlug)
     ? portfolioProjects
     : architectureProjects;
   const currentIndex = navigationProjects.findIndex((p) => p.slug === currentSlug);
-  const prevProject =
-    currentIndex > 0 ? navigationProjects[currentIndex - 1] : null;
+  const previousProject =
+    currentIndex > 0 ? navigationProjects[currentIndex - 1] ?? null : null;
   const nextProject =
-    currentIndex >= 0 && currentIndex < navigationProjects.length - 1
-      ? navigationProjects[currentIndex + 1]
-      : null;
+    currentIndex >= 0 ? navigationProjects[currentIndex + 1] ?? null : null;
 
-  const navigateToProject = (slug: string) =>
-    router.push(`/${locale}/projects/${slug}`);
-
-  /* ---------- LIGHTGALLERY ---------- */
-  useEffect(() => {
-    if (!galleryRef.current || imageUrls.length === 0) return;
-
-    const lg = lightGallery(galleryRef.current, {
-      selector: "a",
-      plugins: [lgZoom, lgThumbnail],
-      speed: 500,
-      thumbnail: true,
-      animateThumb: true,
-      zoomFromOrigin: false,
-      allowMediaOverlap: true,
-      toggleThumb: true,
-      closable: true,
-      download: false,
-      counter: true,
-      enableSwipe: true,
-      enableDrag: true,
-      swipeThreshold: 50,
-    });
-
-    const handleBeforeOpen = () => {
-      document.documentElement.style.overflow = "hidden";
-      document.body.style.overflow = "hidden";
-    };
-
-    const handleAfterClose = () => {
-      document.documentElement.style.overflow = "";
-      document.body.style.overflow = "";
-      ScrollTrigger.refresh();
-    };
-
-    const gallery = galleryRef.current;
-    gallery.addEventListener("lgBeforeOpen", handleBeforeOpen);
-    gallery.addEventListener("lgAfterClose", handleAfterClose);
-
-    return () => {
-      gallery.removeEventListener("lgBeforeOpen", handleBeforeOpen);
-      gallery.removeEventListener("lgAfterClose", handleAfterClose);
-      lg.destroy();
-    };
-  }, [imageUrls.length]);
-
-  /* ---------- GSAP + SCROLLTRIGGER ---------- */
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Header
-      gsap.fromTo(
-        headerRef.current,
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" },
-      );
-
-      // Top navigation
-      gsap.fromTo(
-        navigationTopRef.current,
-        { opacity: 0, y: 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power3.out",
-          delay: 0.2,
-        },
-      );
-
-      ScrollTrigger.batch(imageRefs.current.filter(Boolean), {
-        start: "top 100%",
-        onEnter: (batch) =>
-          gsap.fromTo(
-            batch,
-            { opacity: 0, y: dir === "rtl" ? -40 : 40 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.8,
-              ease: "power3.out",
-              stagger: 0.1,
-            },
-          ),
-        onLeaveBack: (batch) =>
-          gsap.to(batch, { opacity: 0, y: 40, duration: 0.3 }),
-      });
-
-      // Bottom navigation
-      gsap.fromTo(
-        navigationBottomRef.current,
-        { opacity: 0, y: -30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power3.out",
-          delay: 0.2,
-        },
-      );
-    });
-
-    // 🔑 debounce refresh
-    const refresh = gsap.delayedCall(0.25, () => ScrollTrigger.refresh());
-
-    return () => {
-      refresh.kill();
-      ctx.revert();
-    };
-  }, [dir, imageUrls.length]);
-
-  /* ---------- RENDER ---------- */
   return (
-    <section className={styles.project} dir={dir}>
-      <header className={styles.header} ref={headerRef}>
-        <h1 className={styles.projectTitle}>{title}</h1>
-        <p className={styles.projectSListubtitle}>{description}</p>
-      </header>
-
-      <div className={styles.navigationButtons} ref={navigationTopRef}>
-        {prevProject && (
-          <button
-            onClick={() => navigateToProject(prevProject.slug)}
-            className={`${styles.navButton} ${styles.prevButton}`}
+    <main
+      dir={dir}
+      className="tw:bg-[#faf8f4] tw:px-5 tw:pt-6 tw:pb-10 tw:text-[#11110f] tw:selection:bg-[#c6ad80] tw:selection:text-[#11110f] tw:sm:px-8 tw:sm:pt-8 tw:sm:pb-12 tw:lg:px-12"
+    >
+      <div className="tw:mx-auto tw:max-w-[1200px]">
+        <header className="tw:mb-6 tw:sm:mb-8">
+          <Link
+            href={`/${locale}/projects`}
+            className="tw:mb-4 tw:inline-flex tw:min-h-11 tw:items-center tw:gap-2 tw:py-2 tw:text-sm tw:font-medium tw:text-[#75603b] tw:no-underline tw:underline-offset-4 tw:hover:underline tw:focus-visible:outline-2 tw:focus-visible:outline-offset-4 tw:focus-visible:outline-[#75603b]"
           >
-            <span className={styles.navArrow}>{dir === "rtl" ? "→" : "←"}</span>
-            <span>{t("previous")}</span>
-          </button>
-        )}
-        {nextProject && (
-          <button
-            onClick={() => navigateToProject(nextProject.slug)}
-            className={`${styles.navButton} ${styles.nextButton}`}
-          >
-            <span>{t("next")}</span>
-            <span className={styles.navArrow}>{dir === "rtl" ? "←" : "→"}</span>
-          </button>
-        )}
-      </div>
-
-      <div className={styles.gallery} ref={galleryRef}>
-        {imageUrls.map((url, i) => (
-          <a
-            key={i}
-            href={url}
-            data-lg-size="1600-1200"
-            className={styles.imageWrapper}
-            ref={(el) => {
-              imageRefs.current[i] = el;
-            }}
-          >
-            <Image
-              src={url}
-              alt={`${title} - Photo ${i + 1}`}
-              fill
-              className={styles.image}
-              loading={i < 3 ? "eager" : "lazy"}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              onLoad={() => ScrollTrigger.refresh()}
+            <FiArrowLeft
+              aria-hidden="true"
+              className="tw:size-4 tw:shrink-0 tw:rtl:-scale-x-100"
             />
-          </a>
-        ))}
-      </div>
-      {video && (
-        <div className={styles.videoWrap}>
-          <CloudinaryVideo publicIds={video} mode="project" />
-        </div>
-      )}
-
-      <SelectedProjects currentSlug={currentSlug} />
-
-      <div
-        className={`${styles.navigationButtons} ${styles.bottomNav}`}
-        ref={navigationBottomRef}
-      >
-        {prevProject && (
-          <button
-            onClick={() => navigateToProject(prevProject.slug)}
-            className={`${styles.navButton} ${styles.prevButton}`}
+            {t("backToProjects")}
+          </Link>
+          <h1
+            id="project-title"
+            className="tw:m-0 tw:max-w-[36ch] tw:text-[clamp(1.75rem,3vw,2.5rem)] tw:leading-tight tw:font-medium tw:tracking-[-0.025em] tw:wrap-anywhere tw:text-balance tw:text-[#11110f]"
           >
-            <span className={styles.navArrow}>{dir === "rtl" ? "→" : "←"}</span>
-            <span>{t("previous")}</span>
-          </button>
-        )}
-        {nextProject && (
-          <button
-            onClick={() => navigateToProject(nextProject.slug)}
-            className={`${styles.navButton} ${styles.nextButton}`}
+            {title}
+          </h1>
+          <ProjectMediaLabel mediaType={mediaType} label={tMedia("visualization")} />
+          <p className="tw:mt-3 tw:max-w-[75ch] tw:whitespace-pre-line tw:text-base tw:leading-relaxed tw:text-[#625c51]">
+            {description}
+          </p>
+        </header>
+
+        <ProjectGallery
+          key={`${locale}:${currentSlug}`}
+          images={images}
+          title={title}
+          labelledBy="project-title"
+        />
+
+        {video && video.length > 0 && (
+          <section
+            aria-labelledby="project-videos-title"
+            className="tw:mt-8 tw:border-t tw:border-[#d4cfc5] tw:pt-6 tw:sm:mt-10 tw:sm:pt-8"
           >
-            <span>{t("next")}</span>
-            <span className={styles.navArrow}>{dir === "rtl" ? "←" : "→"}</span>
-          </button>
+            <h2
+              id="project-videos-title"
+              className="tw:m-0 tw:mb-5 tw:text-xl tw:leading-snug tw:font-medium tw:text-[#11110f] tw:sm:text-2xl"
+            >
+              {t("videosTitle")}
+            </h2>
+            <div
+              className={`tw:grid tw:items-start tw:gap-4 ${video.length > 1 ? "tw:md:grid-cols-2" : ""}`}
+            >
+              <CloudinaryVideo publicIds={video} mode="project" />
+            </div>
+          </section>
         )}
+
+        <SelectedProjects currentSlug={currentSlug} />
+        <ProjectNavigation
+          previousProject={previousProject}
+          nextProject={nextProject}
+        />
       </div>
-    </section>
+    </main>
   );
 }

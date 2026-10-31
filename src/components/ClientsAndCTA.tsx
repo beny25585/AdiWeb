@@ -1,55 +1,82 @@
 "use client";
 
-import styles from "@/styles/ClientsAndCTA.module.css";
+import "@/styles/tailwind.css";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { getImageUrl } from "@/utils/getImageUrl";
+import { useId } from "react";
+import { cloudinaryGalleryLoader } from "@/utils/cloudinary";
 import CallToAction from "./CallToActionCard";
+import ProjectMediaLabel from "./ProjectMediaLabel";
 
-//    { id: "CD34_uwvm9j.png", titleKey: "clients.commercial" },
+const clients = [
+  { id: "v1782287806/2_ebmy5j.jpg", titleKey: "clients.private", visualization: true },
+  { id: "TL7_j5tmkr", titleKey: "clients.apartments" },
+  { id: "45_njvfua.png", titleKey: "clients.institutions" },
+  { id: "v1793093629/89_fownfh.jpg", titleKey: "clients.projects" },
+] as const;
+
+const imageSizes =
+  "(max-width: 639px) calc(100vw - 40px), " +
+  "(max-width: 767px) calc(100vw - 64px), " +
+  "(max-width: 1023px) calc(50vw - 44px), " +
+  "(max-width: 1279px) calc(50vw - 60px), " +
+  "(max-width: 1439px) calc(25vw - 42px), 318px";
 
 export default function ClientsAndCTA() {
   const t = useTranslations("finishing");
-
-  const rawClients = [
-    { id: "v1782287806/2_ebmy5j.jpg", titleKey: "clients.private" },
-    { id: "TL7_j5tmkr", titleKey: "clients.apartments" },
-    { id: "45_njvfua.png", titleKey: "clients.institutions" },
-    {
-      id: "v1793093629/89_fownfh.jpg",
-      titleKey: "clients.projects",
-    },
-  ];
+  const headingId = useId();
 
   return (
-    <div className={styles.clientsColumn}>
-      {/* ---------- Grid ---------- */}
-      <div className={styles.clientsSection}>
-        <h3 className={styles.clientsTitle}>{t("clientsTitle")}</h3>
-
-        <div className={styles.clientsGrid}>
-          {rawClients.map((client, i) => (
-            <div key={i} className={styles.clientCard}>
-              <h4 className={styles.clientTitle}>{t(client.titleKey)}</h4>
-
-              <Image
-                src={getImageUrl(client.id)}
-                alt={t(client.titleKey)}
-                width={0}
-                height={0}
-                sizes="(max-width: 768px) 100vw,
-                       (max-width: 1200px) 50vw,
-                       33vw"
-                className={styles.clientImage}
-                priority={i === 0}
-              />
-            </div>
-          ))}
+    <>
+      <section
+        aria-labelledby={headingId}
+        className="tw:w-full tw:bg-[#faf8f4] tw:text-[#11110f] tw:selection:bg-[#e0c89f] tw:selection:text-[#11110f]"
+      >
+        <div className="tw:mx-auto tw:w-full tw:max-w-[1440px] tw:px-5 tw:py-10 tw:sm:px-8 tw:sm:py-12 tw:lg:px-12 tw:lg:py-16">
+        <div className="tw:mb-7 tw:flex tw:items-center tw:gap-6 tw:sm:mb-8 tw:sm:gap-10">
+          <h2
+            id={headingId}
+            className="tw:m-0 tw:max-w-3xl tw:text-start tw:text-[clamp(1.875rem,2.6vw,2.5rem)] tw:leading-tight tw:font-medium tw:tracking-[-0.025em] tw:text-[#11110f] tw:rtl:tracking-normal"
+          >
+            {t("clientsTitle")}
+          </h2>
+          <span
+            aria-hidden="true"
+            className="tw:h-px tw:min-w-8 tw:flex-1 tw:bg-[#b49a6a]"
+          />
         </div>
-      </div>
 
-      {/* ---------- CTA ---------- */}
+        <ul role="list" className="tw:m-0 tw:grid tw:list-none tw:grid-cols-1 tw:gap-x-6 tw:gap-y-8 tw:p-0 tw:md:grid-cols-2 tw:xl:grid-cols-4">
+          {clients.map((client) => (
+            <li key={client.titleKey} className="tw:min-w-0">
+              <figure className="tw:m-0">
+                <div className="tw:relative tw:aspect-4/3 tw:overflow-hidden tw:bg-[#ded9cf]">
+                  <Image
+                    loader={cloudinaryGalleryLoader}
+                    src={client.id}
+                    alt=""
+                    fill
+                    sizes={imageSizes}
+                    className="tw:block tw:object-cover"
+                  />
+                </div>
+                <figcaption className="tw:mt-4 tw:border-0 tw:border-b tw:border-solid tw:border-[#d4cfc5] tw:pb-4 tw:text-start">
+                  <h3 className="tw:m-0 tw:text-lg tw:leading-7 tw:font-medium tw:text-[#11110f]">
+                    {t(client.titleKey)}
+                  </h3>
+                  <ProjectMediaLabel
+                    mediaType={"visualization" in client && client.visualization ? "visualization" : undefined}
+                    label={t("visualizationLabel")}
+                  />
+                </figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
+        </div>
+      </section>
+
       <CallToAction />
-    </div>
+    </>
   );
 }

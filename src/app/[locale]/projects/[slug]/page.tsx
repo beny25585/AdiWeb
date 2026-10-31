@@ -1,3 +1,7 @@
+import "@/styles/tailwind.css";
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
 import { projectImages, projectsMap } from "@/data/projects";
 import { getTranslations } from "next-intl/server";
 import ProjectClient from "@/components/ProjectClient";
@@ -19,11 +23,13 @@ export default async function ProjectPage({
 
   return (
     <ProjectClient
+      currentSlug={slug}
       dir={dir}
       title={t(`${slug}.title`)}
       description={t(`${slug}.description`)}
       images={images}
       video={video}
+      mediaType={projectsMap[slugKey]?.mediaType}
     />
   );
 }

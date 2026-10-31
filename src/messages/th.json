@@ -5,14 +5,31 @@
     "architecture": "สถาปัตยกรรม",
     "projects": "ผลงาน",
     "contact": "ติดต่อเรา",
-    "insulation": "ฉนวน"
+    "insulation": "ฉนวน",
+    "navigationLabel": "เมนูหลัก",
+    "openMenu": "เปิดเมนู",
+    "closeMenu": "ปิดเมนู",
+    "brandLabel": "A&S UZAN GROUP — หน้าแรก",
+    "languageLabel": "เลือกภาษา",
+    "languages": {
+      "he": "עברית",
+      "en": "English",
+      "th": "ไทย"
+    }
   },
   "hero": {
-    "headline": "Quality, Construction, Architecture,  Perfection.",
-    "sub": "มาตรฐานใหม่แห่งความเป็นมืออาชีพด้านการก่อสร้างและสถาปัตยกรรมระดับสากล",
+    "headline": "สถาปัตยกรรมที่แม่นยำ งานก่อสร้างที่พิถีพิถัน",
+    "headlineFirst": "สถาปัตยกรรมที่แม่นยำ",
+    "headlineSecond": "งานก่อสร้างที่พิถีพิถัน",
+    "sub": "วางแผน บริหาร และก่อสร้างโครงการที่อยู่อาศัย อาคารพาณิชย์ และที่พักเพื่อการท่องเที่ยว",
     "projectsBtn": "ดูผลงานของเรา",
-    "contactBtn": "ติดต่อทีมงาน",
+    "contactBtn": "ติดต่อเรา",
+    "imageAlt": "พื้นที่ต้อนรับในโครงการสำนักงานกฎหมาย",
+    "videoTitle": "สัมผัสการทำงานของเราอย่างใกล้ชิด",
+    "videoDescription": "จากการวางแผนสู่รายละเอียดหน้างาน — ชมการทำงานของ A&S UZAN GROUP",
     "videoLabel": "วิดีโอแนะนำ A&S UZAN GROUP",
+    "fullFilm": "ชมวิดีโอฉบับเต็ม",
+    "closeFilm": "ปิดวิดีโอ",
     "playVideo": "เล่นวิดีโอ",
     "pauseVideo": "หยุดวิดีโอชั่วคราว"
   },
@@ -28,12 +45,25 @@
     "WhatsApp": "+66 65-887-8829",
     "linksTitle": "ลิงก์ด่วน",
     "socialTitle": "ติดตามเรา",
+    "socials": {
+      "whatsapp": "WhatsApp",
+      "instagram": "Instagram",
+      "line": "LINE",
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn",
+      "tiktok": "TikTok"
+    },
     "careers": "ร่วมงานกับเรา",
     "esg": "ความยั่งยืนและความรับผิดชอบต่อสังคม",
     "rights": "© สงวนลิขสิทธิ์ทั้งหมดโดย A&S UZAN GROUP",
     "newsletterTitle": "อัปเดตข่าวสาร",
     "newsletterPlaceholder": "กรอกอีเมลของคุณ",
     "newsletterButton": "สมัครรับข่าวสาร"
+  },
+  "companyDetails": {
+    "registrationLabel": "เลขทะเบียนบริษัท",
+    "phoneLabel": "โทรศัพท์",
+    "emailLabel": "อีเมล"
   },
   "about": {
     "title": "เกี่ยวกับบริษัท",
@@ -101,10 +131,35 @@
     "previous": "โครงการก่อนหน้า",
     "next": "โครงการถัดไป"
   },
+  "projectPage": {
+    "backToProjects": "กลับไปยังโครงการทั้งหมด",
+    "galleryTitle": "แกลเลอรีโครงการ",
+    "photoCount": "{count, plural, other {# ภาพ}}",
+    "photoAlt": "{title} — ภาพที่ {number}",
+    "openPhoto": "ขยายภาพที่ {number} จาก {total}: {title}",
+    "videosTitle": "วิดีโอโครงการ",
+    "videoLabel": "วิดีโอที่ {number}",
+    "videoUnsupported": "เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ",
+    "relatedProjects": "โครงการอื่น ๆ",
+    "navigationLabel": "การนำทางระหว่างโครงการ",
+    "closeGallery": "ปิดแกลเลอรี",
+    "previousPhoto": "ภาพก่อนหน้า",
+    "nextPhoto": "ภาพถัดไป",
+    "toggleThumbnails": "แสดงหรือซ่อนภาพขนาดย่อ",
+    "zoomIn": "ขยาย",
+    "zoomOut": "ย่อ",
+    "actualSize": "ขนาดจริง",
+    "toggleMaximize": "สลับโหมดเต็มหน้าจอ",
+    "playVideo": "เล่นวิดีโอ",
+    "download": "ดาวน์โหลด",
+    "imageLoadError": "ไม่สามารถโหลดภาพได้"
+  },
 
   "finishing": {
-    "title": "ก่อสร้างและงานตกแต่งระดับพรีเมียม",
-    "subtitle": "Uzan Group เชี่ยวชาญในการส่งมอบงานตกแต่งคุณภาพสูงสำหรับโครงการทุกประเภท ตั้งแต่บ้านหรูส่วนตัวไปจนถึงสถาบันสาธารณะ สำนักงาน และโครงการพาณิชย์ขนาดใหญ่",
+    "title": "งานก่อสร้างและงานตกแต่ง",
+    "subtitle": "งานตกแต่งสำหรับบ้าน สำนักงาน และพื้นที่เชิงพาณิชย์",
+    "detailImageAlt": "งานไม้สั่งทำและกระจกพร้อมไฟส่องสว่างในโครงการ The Address Signature Home",
+    "visualizationLabel": "ภาพจำลองทางสถาปัตยกรรม",
     "specialties": {
       "gypsum": {
         "title": "งานยิปซั่มและเพดานกันเสียง",
@@ -144,6 +199,9 @@
   },
   "contact": {
     "title": "เรายินดีรับฟังจากคุณ",
+    "detailsTitle": "ข้อมูลการติดต่อ",
+    "formTitle": "บอกเราเกี่ยวกับโครงการของคุณ",
+    "formError": "ไม่สามารถส่งข้อความได้ โปรดลองอีกครั้ง หรือติดต่อเราทางโทรศัพท์หรืออีเมล",
     "formSuccess": "ขอบคุณ! ส่งข้อความเรียบร้อยแล้ว",
     "formSuccessDesc": "เราจะติดต่อกลับโดยเร็วที่สุด",
     "sending": "กำลังส่ง...",
@@ -185,6 +243,20 @@
     }
   },
   "projects": {
+    "media": {
+      "visualization": "ภาพจำลองทางสถาปัตยกรรม"
+    },
+    "index": {
+      "title": "ชมโครงการของเรา\nอย่างใกล้ชิด",
+      "introduction": "สำรวจโครงการที่อยู่อาศัย พื้นที่เชิงพาณิชย์ และงานสถาปัตยกรรมของเรา",
+      "browseProjects": "ชมโครงการทั้งหมด",
+      "collectionTitle": "โครงการของเรา",
+      "projectCount": "{count, plural, one {# โครงการ} other {# โครงการ}}",
+      "viewProject": "ดูโครงการ",
+      "contactTitle": "คุณมีโครงการแบบไหนในใจ?",
+      "contactDescription": "เล่าให้เราฟังเกี่ยวกับโครงการของคุณ",
+      "contactAction": "มาคุยกัน"
+    },
     "pageTitle": "Quality, Construction, Architecture,  Perfection.",
     "slogan": "สถาปัตยกรรมระดับโลก การก่อสร้างที่แม่นยำ",
     "scrollDown": "เลื่อนลงเพื่อดูรายละเอียดเพิ่มเติม",
@@ -260,12 +332,12 @@
   },
   "featuredProjects": {
     "title": "ผลงานเด่น",
-    "desc": "10 ปีของการส่งมอบความเป็นเลิศ ลูกค้าที่พึงพอใจ — จากแนวคิดสู่การสร้างสรรค์ ผสมผสานนวัตกรรมกับการดำเนินงานที่ไร้ที่ติ.",
+    "desc": "ที่อยู่อาศัย พื้นที่เชิงพาณิชย์ และที่พัก — ตัวอย่างผลงานของเรา",
     "galleryLabel": "แกลเลอรีผลงานเด่น",
     "totalProjects": "{total} โครงการ",
     "positionSingle": "โครงการที่ {current} จากทั้งหมด {total} โครงการ",
     "positionRange": "โครงการที่ {first}–{last} จากทั้งหมด {total} โครงการ",
-    "cta": "ดูผลงานทั้งหมด"
+    "cta": "ผลงานทั้งหมด"
   },
   "privacy": {
     "title": "นโยบายความเป็นส่วนตัว",

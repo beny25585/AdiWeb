@@ -31,12 +31,15 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.3",
+    "@tailwindcss/postcss": "4.3.3",
     "@types/aos": "^3.0.7",
     "@types/node": "^25.0.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.1",
     "eslint-config-next": "16.0.10",
+    "postcss": "8.5.32",
+    "tailwindcss": "4.3.3",
     "typescript": "^5.9.3"
   },
   "engines": {

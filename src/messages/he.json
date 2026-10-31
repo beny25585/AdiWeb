@@ -5,14 +5,31 @@
     "architecture": "אדריכלות",
     "projects": "פרויקטים",
     "contact": "צור קשר",
-    "insulation": "בידוד"
+    "insulation": "בידוד",
+    "navigationLabel": "ניווט ראשי",
+    "openMenu": "פתיחת תפריט",
+    "closeMenu": "סגירת תפריט",
+    "brandLabel": "A&S UZAN GROUP — דף הבית",
+    "languageLabel": "בחירת שפה",
+    "languages": {
+      "he": "עברית",
+      "en": "English",
+      "th": "ไทย"
+    }
   },
   "hero": {
-    "headline": "Quality, Construction, Architecture,  Perfection.",
-    "sub": "חדשנות, דיוק וסטנדרט בינלאומי בבנייה ואדריכלות",
-    "projectsBtn": "לצפייה בפרויקטים",
-    "contactBtn": "דברו איתנו",
+    "headline": "אדריכלות מדויקת. ביצוע מוקפד.",
+    "headlineFirst": "אדריכלות מדויקת.",
+    "headlineSecond": "ביצוע מוקפד.",
+    "sub": "תכנון, ניהול וביצוע פרויקטים למגורים, למסחר ולאירוח.",
+    "projectsBtn": "לפרויקטים שלנו",
+    "contactBtn": "יצירת קשר",
+    "imageAlt": "אזור הקבלה בפרויקט משרד עורכי הדין",
+    "videoTitle": "מבט אל העשייה שלנו",
+    "videoDescription": "מהתכנון לפרטים בשטח — הצצה לעבודה של A&S UZAN GROUP.",
     "videoLabel": "סרטון תדמית של A&S UZAN GROUP",
+    "fullFilm": "לסרטון המלא",
+    "closeFilm": "סגירת הסרטון",
     "playVideo": "ניגון הסרטון",
     "pauseVideo": "השהיית הסרטון"
   },
@@ -28,9 +45,22 @@
     "WhatsApp": "+66 65-887-8829",
     "linksTitle": "ניווט מהיר",
     "socialTitle": "עקבו אחרינו",
+    "socials": {
+      "whatsapp": "WhatsApp",
+      "instagram": "Instagram",
+      "line": "LINE",
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn",
+      "tiktok": "TikTok"
+    },
     "careers": "קריירה",
     "esg": "אחריות תאגידית",
     "rights": "© כל הזכויות שמורות ל-A&S UZAN GROUP"
+  },
+  "companyDetails": {
+    "registrationLabel": "מספר רישום חברה",
+    "phoneLabel": "טלפון",
+    "emailLabel": "דוא״ל"
   },
   "about": {
     "title": "אודות החברה",
@@ -97,8 +127,34 @@
     "previous": "פרויקט קודם",
     "next": "פרויקט הבא"
   },
+  "projectPage": {
+    "backToProjects": "חזרה לכל הפרויקטים",
+    "galleryTitle": "גלריית הפרויקט",
+    "photoCount": "{count, plural, one {תמונה אחת} other {# תמונות}}",
+    "photoAlt": "{title} — תמונה {number}",
+    "openPhoto": "הגדלת תמונה {number} מתוך {total}: {title}",
+    "videosTitle": "סרטוני הפרויקט",
+    "videoLabel": "סרטון {number}",
+    "videoUnsupported": "הדפדפן אינו תומך בניגון הסרטון.",
+    "relatedProjects": "פרויקטים נוספים",
+    "navigationLabel": "ניווט בין פרויקטים",
+    "closeGallery": "סגירת הגלריה",
+    "previousPhoto": "התמונה הקודמת",
+    "nextPhoto": "התמונה הבאה",
+    "toggleThumbnails": "הצגה או הסתרה של תמונות ממוזערות",
+    "zoomIn": "הגדלה",
+    "zoomOut": "הקטנה",
+    "actualSize": "גודל מקורי",
+    "toggleMaximize": "הגדלה למסך מלא",
+    "playVideo": "ניגון סרטון",
+    "download": "הורדה",
+    "imageLoadError": "לא ניתן לטעון את התמונה."
+  },
   "contact": {
     "title": "נשמח לשמוע מכם",
+    "detailsTitle": "פרטי התקשרות",
+    "formTitle": "ספרו לנו על הפרויקט",
+    "formError": "לא הצלחנו לשלוח את הפנייה. נסו שוב או צרו איתנו קשר בטלפון או בדוא״ל.",
     "formSuccess": "תודה רבה! הטופס נשלח בהצלחה",
     "formSuccessDesc": "נחזור אליך בהקדם האפשרי",
     "sending": "שולח...",
@@ -122,8 +178,10 @@
   },
 
   "finishing": {
-    "title": "בנייה וגמרים ברמה אחרת",
-    "subtitle": "חברת Uzan Group מתמחה בביצוע עבודות גמר איכותיות לפרויקטים מכל סוג – החל ממבני יוקרה פרטיים ועד למוסדות ציבוריים, משרדים, ופרויקטים מסחריים רחבי היקף.",
+    "title": "מומחיות בבנייה ובגמר",
+    "subtitle": "ביצוע עבודות גמר למגורים, למשרדים ולחללים מסחריים.",
+    "detailImageAlt": "נגרות בהתאמה אישית ומראה מוארת בפרויקט The Address Signature Home",
+    "visualizationLabel": "הדמיה אדריכלית",
     "specialties": {
       "gypsum": {
         "title": "עבודות גבס ותקרות אקוסטיות",
@@ -181,6 +239,20 @@
     }
   },
   "projects": {
+    "media": {
+      "visualization": "הדמיה אדריכלית"
+    },
+    "index": {
+      "title": "הפרויקטים שלנו.\nמקרוב.",
+      "introduction": "גלו את הפרויקטים שלנו בתחומי המגורים, המסחר והאדריכלות.",
+      "browseProjects": "לגלריית הפרויקטים",
+      "collectionTitle": "גלריית הפרויקטים",
+      "projectCount": "{count, plural, one {פרויקט אחד} other {# פרויקטים}}",
+      "viewProject": "לצפייה בפרויקט",
+      "contactTitle": "מה תרצו ליצור?",
+      "contactDescription": "ספרו לנו על הפרויקט שלכם.",
+      "contactAction": "בואו נדבר"
+    },
     "pageTitle": "Quality, Construction, Architecture,  Perfection.",
     "slogan": "אדריכלות עולמית. בנייה מדויקת.",
     "scrollDown": "גללו למטה לגילוי הפרויקטים",
@@ -257,12 +329,12 @@
 
   "featuredProjects": {
     "title": "פרויקטים נבחרים",
-    "desc": "10 שנים של ניסיון, לקוחות מרוצים – פרויקטים שמדברים בעד עצמם ומציבים רף חדש בענף הבנייה והאדריכלות.",
+    "desc": "מגורים, מסחר ואירוח — מבחר מהעבודות שלנו.",
     "galleryLabel": "גלריית פרויקטים נבחרים",
     "totalProjects": "{total} פרויקטים",
     "positionSingle": "פרויקט {current} מתוך {total}",
     "positionRange": "פרויקטים {first}–{last} מתוך {total}",
-    "cta": "לצפייה בכל הפרויקטים"
+    "cta": "לכל הפרויקטים"
   },
   "privacy": {
     "title": "מדיניות פרטיות",

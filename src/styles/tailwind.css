@@ -1,0 +1,7 @@
+/* Keep the existing site's base styles; utilities are scoped by prefix/source. */
+@import "tailwindcss/theme.css" layer(theme) prefix(tw);
+@import "tailwindcss/utilities.css" prefix(tw) source(none);
+
+@source "../components";
+@source "../hooks/useProjectLightbox.ts";
+@source "../app";

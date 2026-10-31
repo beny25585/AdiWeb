@@ -5,14 +5,31 @@
     "architecture": "Architecture",
     "projects": "Projects",
     "contact": "Contact",
-    "insulation": "Insulation"
+    "insulation": "Insulation",
+    "navigationLabel": "Main navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "brandLabel": "A&S UZAN GROUP — Home",
+    "languageLabel": "Select language",
+    "languages": {
+      "he": "עברית",
+      "en": "English",
+      "th": "ไทย"
+    }
   },
   "hero": {
-    "headline": "Quality, Construction, Architecture,  Perfection.",
-    "sub": "Where vision meets precision — delivering corporate, architectural, and engineering solutions that stand above the rest.",
-    "projectsBtn": "Explore Our Projects",
-    "contactBtn": "Let's Talk",
+    "headline": "Precise architecture. Meticulous execution.",
+    "headlineFirst": "Precise architecture.",
+    "headlineSecond": "Meticulous execution.",
+    "sub": "Planning, management and construction for residential, commercial and hospitality projects.",
+    "projectsBtn": "Explore our projects",
+    "contactBtn": "Contact us",
+    "imageAlt": "Reception area in the law firm office project",
+    "videoTitle": "A closer look at our work",
+    "videoDescription": "From planning to the details on site — a look at the work of A&S UZAN GROUP.",
     "videoLabel": "A&S UZAN GROUP presentation video",
+    "fullFilm": "Watch the full film",
+    "closeFilm": "Close film",
     "playVideo": "Play video",
     "pauseVideo": "Pause video"
   },
@@ -26,7 +43,20 @@
     "WhatsApp": "+66 65-887-8829",
     "linksTitle": "Explore",
     "socialTitle": "Follow Us",
+    "socials": {
+      "whatsapp": "WhatsApp",
+      "instagram": "Instagram",
+      "line": "LINE",
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn",
+      "tiktok": "TikTok"
+    },
     "rights": "© All rights reserved to A&S UZAN GROUP"
+  },
+  "companyDetails": {
+    "registrationLabel": "Company registration",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email"
   },
   "about": {
     "title": "About the Company",
@@ -91,6 +121,9 @@
   },
   "contact": {
     "title": "We’d Love to Hear from You",
+    "detailsTitle": "Contact details",
+    "formTitle": "Tell us about your project",
+    "formError": "We couldn't send your message. Please try again or contact us by phone or email.",
     "formSuccess": "Thank you! Your message has been sent successfully",
     "formSuccessDesc": "We'll get back to you as soon as possible",
     "sending": "Sending...",
@@ -136,10 +169,35 @@
     "previous": "Previous Project",
     "next": "Next Project"
   },
+  "projectPage": {
+    "backToProjects": "Back to all projects",
+    "galleryTitle": "Project gallery",
+    "photoCount": "{count, plural, one {# photo} other {# photos}}",
+    "photoAlt": "{title} — photo {number}",
+    "openPhoto": "Enlarge photo {number} of {total}: {title}",
+    "videosTitle": "Project videos",
+    "videoLabel": "Video {number}",
+    "videoUnsupported": "Your browser does not support video playback.",
+    "relatedProjects": "More projects",
+    "navigationLabel": "Project navigation",
+    "closeGallery": "Close gallery",
+    "previousPhoto": "Previous photo",
+    "nextPhoto": "Next photo",
+    "toggleThumbnails": "Show or hide thumbnails",
+    "zoomIn": "Zoom in",
+    "zoomOut": "Zoom out",
+    "actualSize": "Actual size",
+    "toggleMaximize": "Toggle fullscreen",
+    "playVideo": "Play video",
+    "download": "Download",
+    "imageLoadError": "The photo could not be loaded."
+  },
 
   "finishing": {
-    "title": "Construction & Finishing Excellence",
-    "subtitle": "Uzan Group specializes in delivering premium finishing work for projects of all types – from luxury private residences to public institutions, offices, and large-scale commercial developments.",
+    "title": "Construction & Finishing",
+    "subtitle": "Finishing work for homes, offices and commercial spaces.",
+    "detailImageAlt": "Custom joinery and an illuminated mirror in The Address Signature Home project",
+    "visualizationLabel": "Architectural visualization",
     "specialties": {
       "gypsum": {
         "title": "Advanced Gypsum & Acoustic Ceilings",
@@ -178,6 +236,20 @@
     "ctaButton": "Contact Us"
   },
   "projects": {
+    "media": {
+      "visualization": "Architectural visualization"
+    },
+    "index": {
+      "title": "Our work.\nUp close.",
+      "introduction": "Explore our residential, commercial and architectural projects.",
+      "browseProjects": "Explore the collection",
+      "collectionTitle": "The project collection",
+      "projectCount": "{count, plural, one {# project} other {# projects}}",
+      "viewProject": "View project",
+      "contactTitle": "What do you have in mind?",
+      "contactDescription": "Tell us about your project.",
+      "contactAction": "Let’s talk"
+    },
     "slogan": "Quality, Construction, Architecture,  Perfection.",
     "pageTitle": "Our Projects",
     "scrollDown": "Scroll Down to Discover More",
@@ -257,12 +329,12 @@
   },
   "featuredProjects": {
     "title": "Featured Projects",
-    "desc": "10 years of delivering excellence, satisfied clients — from concept to creation, blending innovation with flawless execution.",
+    "desc": "Residential, commercial and hospitality — a selection of our work.",
     "galleryLabel": "Featured projects gallery",
     "totalProjects": "{total} projects",
     "positionSingle": "Project {current} of {total}",
     "positionRange": "Projects {first}–{last} of {total}",
-    "cta": "View All Projects"
+    "cta": "All projects"
   },
   "privacy": {
     "title": "Privacy Policy",
