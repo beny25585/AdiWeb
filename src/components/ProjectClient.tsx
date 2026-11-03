@@ -17,6 +17,7 @@ type Props = {
   description: string;
   images: string[];
   video?: string[];
+  videoPresentation?: Project["videoPresentation"];
   mediaType?: Project["mediaType"];
 };
 
@@ -27,6 +28,7 @@ export default function ProjectClient({
   description,
   images,
   video,
+  videoPresentation,
   mediaType,
 }: Props) {
   const locale = useLocale();
@@ -91,7 +93,11 @@ export default function ProjectClient({
             <div
               className={`tw:grid tw:items-start tw:gap-4 ${video.length > 1 ? "tw:md:grid-cols-2" : ""}`}
             >
-              <CloudinaryVideo publicIds={video} mode="project" />
+              <CloudinaryVideo
+                publicIds={video}
+                mode="project"
+                presentation={videoPresentation}
+              />
             </div>
           </section>
         )}

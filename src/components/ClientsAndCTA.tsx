@@ -7,12 +7,13 @@ import { useId } from "react";
 import { cloudinaryGalleryLoader } from "@/utils/cloudinary";
 import CallToAction from "./CallToActionCard";
 import ProjectMediaLabel from "./ProjectMediaLabel";
+import { projectsMap } from "@/data/projects";
 
 const clients = [
   { id: "v1782287806/2_ebmy5j.jpg", titleKey: "clients.private", visualization: true },
-  { id: "TL7_j5tmkr", titleKey: "clients.apartments" },
+  { id: "TL7_j5tmkr", titleKey: "clients.apartments", quality: 90 },
   { id: "45_njvfua.png", titleKey: "clients.institutions" },
-  { id: "v1793093629/89_fownfh.jpg", titleKey: "clients.projects" },
+  { id: projectsMap.danceStudio.cover, titleKey: "clients.projects" },
 ] as const;
 
 const imageSizes =
@@ -57,6 +58,7 @@ export default function ClientsAndCTA() {
                     alt=""
                     fill
                     sizes={imageSizes}
+                    quality={"quality" in client ? client.quality : undefined}
                     className="tw:block tw:object-cover"
                   />
                 </div>

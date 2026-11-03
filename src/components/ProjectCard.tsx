@@ -5,12 +5,12 @@ import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { FiArrowUpRight } from "react-icons/fi";
 import type { Project } from "@/data/projects";
-import { getImageUrl } from "@/utils/getImageUrl";
+import { getProjectCoverImageProps } from "@/utils/getProjectCoverImageProps";
 import ProjectMediaLabel from "./ProjectMediaLabel";
 import styles from "@/styles/ProjectCard.module.css";
 
 type Props = {
-  project: Pick<Project, "slug" | "cover" | "mediaType">;
+  project: Pick<Project, "slug" | "cover" | "coverDelivery" | "mediaType">;
   imageSizes?: string;
   imageWidth?: number;
   variant?: "default" | "detail";
@@ -36,7 +36,7 @@ export default function ProjectCard({
     >
       <div className={detail ? "tw:relative tw:aspect-[3/2] tw:overflow-hidden tw:bg-[#ded9cf]" : styles.imageWrap}>
         <Image
-          src={getImageUrl(project.cover, imageWidth)}
+          {...getProjectCoverImageProps(project, imageWidth)}
           alt=""
           fill
           className={detail ? "tw:object-cover tw:transition-transform tw:duration-500 tw:ease-out tw:motion-safe:group-hover:scale-[1.035] tw:motion-safe:group-focus-visible:scale-[1.035] tw:motion-reduce:transition-none" : styles.image}

@@ -3,9 +3,12 @@ import type { ImageLoaderProps } from "next/image";
 const CLOUD_NAME = "ddncjeozb";
 const BASE_URL = `https://res.cloudinary.com/${CLOUD_NAME}/image/upload`;
 
+export const cloudinaryOriginalImageUrl = (publicId: string): string =>
+  `${BASE_URL}/${publicId}`;
+
 /** Match the gallery's 4:3 frames in one pass without enlarging small originals. */
-export const cloudinaryGalleryLoader = ({ src, width }: ImageLoaderProps): string =>
-  `${BASE_URL}/c_lfill,g_auto,ar_4:3,w_${width},q_auto:good,f_auto/${src}`;
+export const cloudinaryGalleryLoader = ({ src, width, quality }: ImageLoaderProps): string =>
+  `${BASE_URL}/c_lfill,g_auto,ar_4:3,w_${width},${quality ? `q_${quality}` : "q_auto:good"},f_auto/${src}`;
 
 /**
  * בונה URL של Cloudinary עם הגדרות שמבטיחות חדות.

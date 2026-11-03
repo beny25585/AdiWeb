@@ -7,7 +7,7 @@ import { useFormatter, useLocale, useTranslations } from "next-intl";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { portfolioProjects } from "@/data/projects";
 import { useProjectGallery } from "@/hooks/useProjectGallery";
-import { getImageUrl } from "@/utils/getImageUrl";
+import { getProjectCoverImageProps } from "@/utils/getProjectCoverImageProps";
 import ProjectMediaLabel from "./ProjectMediaLabel";
 import "@/styles/tailwind.css";
 
@@ -101,7 +101,7 @@ export default function FeaturedProjectsList() {
                 >
                   <div className="tw:relative tw:aspect-4/3 tw:w-full tw:shrink-0 tw:overflow-hidden tw:bg-[#242421]">
                     <Image
-                      src={getImageUrl(project.cover, 1000)}
+                      {...getProjectCoverImageProps(project, 1000)}
                       alt=""
                       fill
                       sizes="(min-width: 1440px) 320px, (min-width: 1280px) 24vw, (min-width: 1024px) 35vw, (min-width: 768px) 46vw, (min-width: 640px) calc(100vw - 64px), calc(100vw - 40px)"

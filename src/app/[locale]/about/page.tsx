@@ -53,10 +53,12 @@ export default async function AboutPage({
         </header>
         <div className={styles.ceoImage}>
           <Image
-            src={getImageUrl("/Photos/adi-ceo-black&white.jpg")}
+            src={getImageUrl(
+              "https://res.cloudinary.com/ddncjeozb/image/upload/v1793350126/%D7%A6%D7%99%D7%9C%D7%95%D7%9D_%D7%9E%D7%A1%D7%9A_2026-10-30_154722_mxxxzd.png",
+            )}
             alt={t("adiAlt")}
-            width={1067}
-            height={1600}
+            width={366}
+            height={654}
             sizes="(max-width: 800px) 280px, 320px"
           />
         </div>

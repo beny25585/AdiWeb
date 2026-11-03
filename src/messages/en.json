@@ -189,6 +189,7 @@
     "actualSize": "Actual size",
     "toggleMaximize": "Toggle fullscreen",
     "playVideo": "Play video",
+    "pauseVideo": "Pause video",
     "download": "Download",
     "imageLoadError": "The photo could not be loaded."
   },
@@ -299,7 +300,7 @@
     },
     "lawFirmOffice": {
       "title": "Law Firm Office",
-      "description": "Executive design, clean lines, and high-standard execution. A refined, professional workspace built on"
+      "description": "Executive design, clean lines, and high-standard execution."
     },
     "developmentFirm": {
       "title": " investment & development firm ",

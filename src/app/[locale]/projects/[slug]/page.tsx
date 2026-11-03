@@ -29,6 +29,7 @@ export default async function ProjectPage({
       description={t(`${slug}.description`)}
       images={images}
       video={video}
+      videoPresentation={projectsMap[slugKey]?.videoPresentation}
       mediaType={projectsMap[slugKey]?.mediaType}
     />
   );

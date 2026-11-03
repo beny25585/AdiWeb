@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
 import type { Locale } from "@/lib/i18n";
-import { getImageUrl } from "@/utils/getImageUrl";
+import { getProjectCoverImageProps } from "@/utils/getProjectCoverImageProps";
 import ProjectMediaLabel from "@/components/ProjectMediaLabel";
 
 type Props = {
-  project: Pick<Project, "slug" | "cover" | "mediaType">;
+  project: Pick<Project, "slug" | "cover" | "coverDelivery" | "mediaType">;
   locale: Locale;
   title: string;
   viewLabel: string;
@@ -70,7 +70,7 @@ export default function PortfolioProject({
         }`}
       >
         <Image
-          src={getImageUrl(project.cover, featured ? 1400 : 1200)}
+          {...getProjectCoverImageProps(project, featured ? 1400 : 1200)}
           alt=""
           fill
           sizes={imageSizes[variant]}

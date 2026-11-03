@@ -82,8 +82,8 @@ export default function SiteHeader({
     <>
     <header
       ref={headerRef}
-      className={`tw:fixed tw:inset-x-0 tw:top-0 tw:z-40 tw:h-20 tw:border-0 tw:border-b tw:border-solid tw:border-white/15 tw:text-white tw:transition-colors tw:duration-200 tw:motion-reduce:transition-none tw:sm:h-24 ${
-        !overHero || scrolled || menuOpen ? "tw:bg-black" : "tw:bg-transparent"
+      className={`tw:fixed tw:inset-x-0 tw:top-0 tw:z-40 tw:h-22 tw:border-0 tw:border-b tw:border-solid tw:border-white/15 tw:text-white tw:transition-colors tw:duration-200 tw:motion-reduce:transition-none tw:sm:h-28 ${
+        !overHero || scrolled || menuOpen ? "tw:bg-black" : "tw:bg-black/70"
       }`}
     >
       <div className="tw:relative tw:mx-auto tw:flex tw:h-full tw:w-full tw:max-w-[1440px] tw:items-center tw:justify-between tw:gap-4 tw:px-5 tw:sm:px-8 tw:lg:px-12">
@@ -93,7 +93,7 @@ export default function SiteHeader({
           className="tw:flex tw:min-h-12 tw:shrink-0 tw:items-center tw:gap-2 tw:no-underline tw:focus-visible:outline-2 tw:focus-visible:outline-offset-4 tw:focus-visible:outline-[#e0c89f]"
           onClick={() => setMenuOpen(false)}
         >
-          <BrandMark />
+          <BrandMark variant="header" />
         </Link>
 
         <button
@@ -111,7 +111,7 @@ export default function SiteHeader({
         <nav
           id={menuId}
           aria-label={t("navigationLabel")}
-          className={`tw:absolute tw:inset-x-0 tw:top-full tw:max-h-[calc(100dvh-5rem)] tw:flex-col tw:gap-2 tw:overflow-y-auto tw:bg-[#11110f] tw:px-5 tw:py-5 tw:sm:max-h-[calc(100dvh-6rem)] tw:sm:px-8 tw:xl:static tw:xl:flex tw:xl:max-h-none tw:xl:flex-row tw:xl:items-center tw:xl:gap-6 tw:xl:overflow-visible tw:xl:bg-transparent tw:xl:p-0 ${menuOpen ? "tw:flex" : "tw:hidden"}`}
+          className={`tw:absolute tw:inset-x-0 tw:top-full tw:max-h-[calc(100dvh-5.5rem)] tw:flex-col tw:gap-2 tw:overflow-y-auto tw:bg-[#11110f] tw:px-5 tw:py-5 tw:sm:max-h-[calc(100dvh-7rem)] tw:sm:px-8 tw:xl:static tw:xl:flex tw:xl:max-h-none tw:xl:flex-row tw:xl:items-center tw:xl:gap-6 tw:xl:overflow-visible tw:xl:bg-transparent tw:xl:p-0 ${menuOpen ? "tw:flex" : "tw:hidden"}`}
         >
           {nav.map((item) => (
             <Link
@@ -119,7 +119,7 @@ export default function SiteHeader({
               href={item.href}
               aria-current={item.href === currentPath ? "page" : undefined}
               onClick={() => setMenuOpen(false)}
-              className={`tw:inline-flex tw:min-h-12 tw:items-center tw:border-0 tw:border-b tw:border-solid tw:py-2 tw:text-base tw:leading-6 tw:font-normal tw:whitespace-nowrap tw:no-underline tw:transition-colors tw:hover:text-[#e0c89f] tw:focus-visible:outline-2 tw:focus-visible:outline-offset-4 tw:focus-visible:outline-[#e0c89f] tw:motion-reduce:transition-none ${item.href === currentPath ? "tw:border-[#c6ad80] tw:text-[#e0c89f]" : "tw:border-transparent tw:text-white"}`}
+              className={`tw:inline-flex tw:min-h-12 tw:items-center tw:border-0 tw:border-b tw:border-solid tw:py-2 tw:text-lg tw:leading-7 tw:font-medium tw:whitespace-nowrap tw:no-underline tw:transition-colors tw:hover:text-[#e0c89f] tw:focus-visible:outline-2 tw:focus-visible:outline-offset-4 tw:focus-visible:outline-[#e0c89f] tw:motion-reduce:transition-none ${item.href === currentPath ? "tw:border-[#c6ad80] tw:text-[#e0c89f]" : "tw:border-transparent tw:text-white"}`}
             >
               {item.label}
             </Link>
@@ -153,7 +153,7 @@ export default function SiteHeader({
         </nav>
       </div>
     </header>
-    {!overHero ? <div aria-hidden="true" className="tw:h-20 tw:shrink-0 tw:sm:h-24" /> : null}
+    {!overHero ? <div aria-hidden="true" className="tw:h-22 tw:shrink-0 tw:sm:h-28" /> : null}
     </>
   );
 }

@@ -1,0 +1,275 @@
+{
+  "source": "C:\\Users\\User\\Downloads\\export-2026-11-03T08_12_31.103Z.csv",
+  "localCandidates": [
+    "/Photos/kichen/kichen-after1.jpg",
+    "/Photos/kichen/kichen-after2.jpg",
+    "/Photos/kichen/kichen-after3.jpg",
+    "/Photos/kichen/kichen-before1.jpg",
+    "/Photos/kichen/kichen-before2.jpg",
+    "/Photos/kichen/kichen-before3.jpg",
+    "/Photos/office/office-after1.jpg",
+    "/Photos/office/office-after2.jpg",
+    "/Photos/office/office-after3.jpg",
+    "/Photos/office/office-before2.jpg"
+  ],
+  "assets": [
+    {
+      "csvRow": 1,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.53_PM_9_xzzsvl",
+      "status": "already-referenced"
+    },
+    {
+      "csvRow": 2,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.53_PM_8_fasnpa",
+      "status": "already-referenced"
+    },
+    {
+      "csvRow": 3,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.53_PM_7_bobmxx",
+      "status": "already-referenced"
+    },
+    {
+      "csvRow": 4,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.53_PM_6_fx2cih",
+      "url": "https://res.cloudinary.com/ddncjeozb/image/upload/v1783497733/WhatsApp_Image_2569-07-07_at_12.04.53_PM_6_fx2cih.jpg",
+      "bestLocal": "/Photos/kichen/kichen-after3.jpg",
+      "correlation": 0.99998,
+      "matchGeometry": {
+        "width": 96,
+        "height": 72,
+        "x": 0,
+        "y": 0
+      },
+      "status": "local-photo-match"
+    },
+    {
+      "csvRow": 5,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.53_PM_5_lwdiam",
+      "url": "https://res.cloudinary.com/ddncjeozb/image/upload/v1783497731/WhatsApp_Image_2569-07-07_at_12.04.53_PM_5_lwdiam.jpg",
+      "bestLocal": "/Photos/kichen/kichen-after1.jpg",
+      "correlation": 0.99997,
+      "matchGeometry": {
+        "width": 96,
+        "height": 72,
+        "x": 0,
+        "y": 0
+      },
+      "status": "local-photo-match"
+    },
+    {
+      "csvRow": 6,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.53_PM_4_tp4nap",
+      "url": "https://res.cloudinary.com/ddncjeozb/image/upload/v1783497730/WhatsApp_Image_2569-07-07_at_12.04.53_PM_4_tp4nap.jpg",
+      "bestLocal": "/Photos/kichen/kichen-after2.jpg",
+      "correlation": 1.0,
+      "matchGeometry": {
+        "width": 96,
+        "height": 128,
+        "x": 0,
+        "y": 0
+      },
+      "status": "local-photo-match"
+    },
+    {
+      "csvRow": 7,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.53_PM_3_m5poaf",
+      "url": "https://res.cloudinary.com/ddncjeozb/image/upload/v1783497728/WhatsApp_Image_2569-07-07_at_12.04.53_PM_3_m5poaf.jpg",
+      "bestLocal": "/Photos/kichen/kichen-before1.jpg",
+      "correlation": 0.99998,
+      "matchGeometry": {
+        "width": 96,
+        "height": 72,
+        "x": 0,
+        "y": 0
+      },
+      "status": "local-photo-match"
+    },
+    {
+      "csvRow": 8,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.53_PM_2_uoieok",
+      "url": "https://res.cloudinary.com/ddncjeozb/image/upload/v1783497727/WhatsApp_Image_2569-07-07_at_12.04.53_PM_2_uoieok.jpg",
+      "bestLocal": "/Photos/office/office-after3.jpg",
+      "correlation": 0.71885,
+      "matchGeometry": {
+        "width": 28,
+        "height": 50,
+        "x": 61,
+        "y": 25
+      },
+      "status": "new"
+    },
+    {
+      "csvRow": 9,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.53_PM_1_abm7sl",
+      "url": "https://res.cloudinary.com/ddncjeozb/image/upload/v1783497726/WhatsApp_Image_2569-07-07_at_12.04.53_PM_1_abm7sl.jpg",
+      "bestLocal": "/Photos/office/office-before2.jpg",
+      "correlation": 0.68676,
+      "matchGeometry": {
+        "width": 28,
+        "height": 50,
+        "x": 60,
+        "y": 68
+      },
+      "status": "new"
+    },
+    {
+      "csvRow": 10,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.07_PM_dv5gjc",
+      "url": "https://res.cloudinary.com/ddncjeozb/image/upload/v1783497724/WhatsApp_Image_2569-07-07_at_12.04.07_PM_dv5gjc.jpg",
+      "bestLocal": "/Photos/kichen/kichen-after1.jpg",
+      "correlation": 0.46614,
+      "matchGeometry": {
+        "width": 28,
+        "height": 34,
+        "x": 67,
+        "y": 20
+      },
+      "status": "new"
+    },
+    {
+      "csvRow": 11,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.07_PM_9_xu23ga",
+      "url": "https://res.cloudinary.com/ddncjeozb/image/upload/v1783497723/WhatsApp_Image_2569-07-07_at_12.04.07_PM_9_xu23ga.jpg",
+      "bestLocal": "/Photos/kichen/kichen-after2.jpg",
+      "correlation": 0.69639,
+      "matchGeometry": {
+        "width": 28,
+        "height": 37,
+        "x": 7,
+        "y": 60
+      },
+      "status": "new"
+    },
+    {
+      "csvRow": 12,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.07_PM_7_yv7ye5",
+      "url": "https://res.cloudinary.com/ddncjeozb/image/upload/v1783497720/WhatsApp_Image_2569-07-07_at_12.04.07_PM_7_yv7ye5.jpg",
+      "bestLocal": "/Photos/office/office-after3.jpg",
+      "correlation": 0.73477,
+      "matchGeometry": {
+        "width": 30,
+        "height": 40,
+        "x": 47,
+        "y": 74
+      },
+      "status": "new"
+    },
+    {
+      "csvRow": 13,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.07_PM_6_r9aj3h",
+      "url": "https://res.cloudinary.com/ddncjeozb/image/upload/v1783497719/WhatsApp_Image_2569-07-07_at_12.04.07_PM_6_r9aj3h.jpg",
+      "bestLocal": "/Photos/office/office-before2.jpg",
+      "correlation": 0.57508,
+      "matchGeometry": {
+        "width": 34,
+        "height": 45,
+        "x": 42,
+        "y": 22
+      },
+      "status": "new"
+    },
+    {
+      "csvRow": 14,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.07_PM_5_gl8g7b",
+      "url": "https://res.cloudinary.com/ddncjeozb/image/upload/v1783497718/WhatsApp_Image_2569-07-07_at_12.04.07_PM_5_gl8g7b.jpg",
+      "bestLocal": "/Photos/kichen/kichen-before3.jpg",
+      "correlation": 1.0,
+      "matchGeometry": {
+        "width": 96,
+        "height": 128,
+        "x": 0,
+        "y": 0
+      },
+      "status": "local-photo-match"
+    },
+    {
+      "csvRow": 15,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.07_PM_4_xcdhxr",
+      "url": "https://res.cloudinary.com/ddncjeozb/image/upload/v1783497716/WhatsApp_Image_2569-07-07_at_12.04.07_PM_4_xcdhxr.jpg",
+      "bestLocal": "/Photos/kichen/kichen-before2.jpg",
+      "correlation": 0.99996,
+      "matchGeometry": {
+        "width": 96,
+        "height": 54,
+        "x": 0,
+        "y": 0
+      },
+      "status": "local-photo-match"
+    },
+    {
+      "csvRow": 16,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.07_PM_3_tdiv86",
+      "url": "https://res.cloudinary.com/ddncjeozb/image/upload/v1783497714/WhatsApp_Image_2569-07-07_at_12.04.07_PM_3_tdiv86.jpg",
+      "bestLocal": "/Photos/office/office-after2.jpg",
+      "correlation": 0.60044,
+      "matchGeometry": {
+        "width": 28,
+        "height": 37,
+        "x": 7,
+        "y": 68
+      },
+      "status": "new"
+    },
+    {
+      "csvRow": 17,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.07_PM_2_mgdsb7",
+      "url": "https://res.cloudinary.com/ddncjeozb/image/upload/v1783497713/WhatsApp_Image_2569-07-07_at_12.04.07_PM_2_mgdsb7.jpg",
+      "bestLocal": "/Photos/kichen/kichen-before3.jpg",
+      "correlation": 0.54792,
+      "matchGeometry": {
+        "width": 28,
+        "height": 37,
+        "x": 41,
+        "y": 73
+      },
+      "status": "new"
+    },
+    {
+      "csvRow": 18,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.07_PM_1_rkwn56",
+      "status": "excluded-by-user"
+    },
+    {
+      "csvRow": 19,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.06_PM_wcs3u0",
+      "url": "https://res.cloudinary.com/ddncjeozb/image/upload/v1783497711/WhatsApp_Image_2569-07-07_at_12.04.06_PM_wcs3u0.jpg",
+      "bestLocal": "/Photos/office/office-before2.jpg",
+      "correlation": 0.68254,
+      "matchGeometry": {
+        "width": 28,
+        "height": 37,
+        "x": 68,
+        "y": 68
+      },
+      "status": "new"
+    },
+    {
+      "csvRow": 20,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.06_PM_26_yt8rn3",
+      "url": "https://res.cloudinary.com/ddncjeozb/image/upload/v1783497710/WhatsApp_Image_2569-07-07_at_12.04.06_PM_26_yt8rn3.jpg",
+      "bestLocal": "/Photos/office/office-before2.jpg",
+      "correlation": 0.72879,
+      "matchGeometry": {
+        "width": 28,
+        "height": 50,
+        "x": 4,
+        "y": 43
+      },
+      "status": "new"
+    },
+    {
+      "csvRow": 21,
+      "publicId": "WhatsApp_Image_2569-07-07_at_12.04.06_PM_25_ndcvjm",
+      "url": "https://res.cloudinary.com/ddncjeozb/image/upload/v1783497710/WhatsApp_Image_2569-07-07_at_12.04.06_PM_25_ndcvjm.jpg",
+      "bestLocal": "/Photos/kichen/kichen-after2.jpg",
+      "correlation": 0.73386,
+      "matchGeometry": {
+        "width": 30,
+        "height": 40,
+        "x": 63,
+        "y": 57
+      },
+      "status": "new"
+    }
+  ]
+}

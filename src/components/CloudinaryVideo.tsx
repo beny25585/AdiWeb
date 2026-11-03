@@ -6,10 +6,12 @@ import {
   cloudinaryVideoPosterUrl,
   cloudinaryVideoUrl,
 } from "@/utils/cloudinary";
+import ProjectPortraitVideo from "./ProjectPortraitVideo";
 
 type Props = {
   publicIds: string | string[];
   mode: "hero" | "project";
+  presentation?: "portrait-loop";
   heroVideoProps?: Omit<
     ComponentPropsWithRef<"video">,
     "src" | "children" | "style"
@@ -19,6 +21,7 @@ type Props = {
 export default function CloudinaryVideo({
   publicIds,
   mode,
+  presentation,
   heroVideoProps,
 }: Props) {
   const ids = Array.isArray(publicIds) ? publicIds : [publicIds];
@@ -37,6 +40,12 @@ export default function CloudinaryVideo({
         <source src={src} />
       </video>
     );
+  }
+
+  if (presentation === "portrait-loop") {
+    return ids.map((id, index) => (
+      <ProjectPortraitVideo key={id} publicId={id} number={index + 1} />
+    ));
   }
 
   return <ProjectVideos ids={ids} />;

@@ -1,0 +1,2240 @@
+{
+  "method": "Compare each new CSV asset against only the 27 existing gallery images; never compare new CSV assets against one another",
+  "assets": [
+    {
+      "csvRow": 2,
+      "publicId": "WhatsApp_Image_2569-10-28_at_2.43.49_PM_xw9scu",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 3,
+      "publicId": "WhatsApp_Image_2569-10-28_at_2.41.56_PM_jrrphi",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 4,
+      "publicId": "WhatsApp_Image_2569-10-28_at_2.22.23_PM_tovfb9",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 42,
+        "existingPublicId": "64_a9krmp",
+        "correlation": 0.265943,
+        "rgbRms": 50.3676,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 5,
+      "publicId": "124_wtwuki",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 106,
+        "existingPublicId": "53498_0_gwxhnt",
+        "correlation": 0.304302,
+        "rgbRms": 84.367,
+        "aspectDelta": 0.250549,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 6,
+      "publicId": "126_i6ufoq",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 82,
+        "existingPublicId": "WhatsApp_Image_2569-10-20_at_12.28.08_PM_dwy0ud",
+        "correlation": 0.303458,
+        "rgbRms": 67.5428,
+        "aspectDelta": 0.334311,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 7,
+      "publicId": "123_lvhm6w",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.233466,
+        "rgbRms": 59.8438,
+        "aspectDelta": 0.250549,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 8,
+      "publicId": "121_bhica6",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 82,
+        "existingPublicId": "WhatsApp_Image_2569-10-20_at_12.28.08_PM_dwy0ud",
+        "correlation": 0.980301,
+        "rgbRms": 16.5584,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 9,
+      "publicId": "119_byej2h",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 81,
+        "existingPublicId": "WhatsApp_Image_2569-10-20_at_12.28.09_PM_xi6fdk",
+        "correlation": 0.48848,
+        "rgbRms": 57.9804,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 10,
+      "publicId": "116_azcptv",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.401056,
+        "rgbRms": 57.1982,
+        "aspectDelta": 0.250549,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 11,
+      "publicId": "92_li9xdf",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 42,
+        "existingPublicId": "64_a9krmp",
+        "correlation": 0.395113,
+        "rgbRms": 42.7259,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 12,
+      "publicId": "101_xcgawh",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 82,
+        "existingPublicId": "WhatsApp_Image_2569-10-20_at_12.28.08_PM_dwy0ud",
+        "correlation": 0.312587,
+        "rgbRms": 57.4537,
+        "aspectDelta": 0.184896,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 13,
+      "publicId": "99_eobd0h",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 14,
+      "publicId": "98_qfdhfm",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 81,
+        "existingPublicId": "WhatsApp_Image_2569-10-20_at_12.28.09_PM_xi6fdk",
+        "correlation": 0.373556,
+        "rgbRms": 65.0268,
+        "aspectDelta": 0.184896,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 15,
+      "publicId": "89_fownfh",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 16,
+      "publicId": "97_y8wec3",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 81,
+        "existingPublicId": "WhatsApp_Image_2569-10-20_at_12.28.09_PM_xi6fdk",
+        "correlation": 0.468724,
+        "rgbRms": 67.5242,
+        "aspectDelta": 0.184896,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 17,
+      "publicId": "96_v2nh0f",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 18,
+      "publicId": "94_c9kb6g",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 22,
+        "existingPublicId": "90_ihnkxr",
+        "correlation": 0.378071,
+        "rgbRms": 42.8573,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 19,
+      "publicId": "95_riadnb",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 85,
+        "existingPublicId": "DSC_0142_wliahl",
+        "correlation": 0.380048,
+        "rgbRms": 43.3664,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 20,
+      "publicId": "93_sq2rla",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 42,
+        "existingPublicId": "64_a9krmp",
+        "correlation": 0.459987,
+        "rgbRms": 37.8917,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 21,
+      "publicId": "91_vb8hs8",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 22,
+      "publicId": "90_ihnkxr",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 23,
+      "publicId": "88_wr64xe",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 24,
+      "publicId": "UZAN_GROUP_1_vj293s",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 68,
+        "existingPublicId": "DSC_0180_fbcpql",
+        "correlation": 0.05329,
+        "rgbRms": 78.9335,
+        "aspectDelta": 0.156044,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 25,
+      "publicId": "72_kpfgqw",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 23,
+        "existingPublicId": "88_wr64xe",
+        "correlation": 0.424233,
+        "rgbRms": 42.7613,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 26,
+      "publicId": "86_nmrhmd",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 124,
+        "existingPublicId": "1_m2kbqr",
+        "correlation": 0.45891,
+        "rgbRms": 70.0542,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 27,
+      "publicId": "85_petype",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 81,
+        "existingPublicId": "WhatsApp_Image_2569-10-20_at_12.28.09_PM_xi6fdk",
+        "correlation": 0.348773,
+        "rgbRms": 62.551,
+        "aspectDelta": 0.184896,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 28,
+      "publicId": "84_vdmnjw",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.425287,
+        "rgbRms": 67.518,
+        "aspectDelta": 0.111979,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 29,
+      "publicId": "83_rfu73z",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.342667,
+        "rgbRms": 80.8398,
+        "aspectDelta": 0.111979,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 30,
+      "publicId": "82_ke7f5x",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.377123,
+        "rgbRms": 72.4031,
+        "aspectDelta": 0.111979,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 31,
+      "publicId": "81_ijlkqp",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 23,
+        "existingPublicId": "88_wr64xe",
+        "correlation": 0.20985,
+        "rgbRms": 46.481,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 32,
+      "publicId": "80_zy7rii",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 42,
+        "existingPublicId": "64_a9krmp",
+        "correlation": 0.27249,
+        "rgbRms": 42.7508,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 33,
+      "publicId": "79_oywkpd",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 34,
+      "publicId": "78_fj5mjg",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 106,
+        "existingPublicId": "53498_0_gwxhnt",
+        "correlation": 0.437736,
+        "rgbRms": 58.0598,
+        "aspectDelta": 0.111979,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 35,
+      "publicId": "77_lusktj",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 81,
+        "existingPublicId": "WhatsApp_Image_2569-10-20_at_12.28.09_PM_xi6fdk",
+        "correlation": 0.33116,
+        "rgbRms": 62.5585,
+        "aspectDelta": 0.184896,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 36,
+      "publicId": "76_mwqgud",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 42,
+        "existingPublicId": "64_a9krmp",
+        "correlation": 0.399242,
+        "rgbRms": 39.7057,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 37,
+      "publicId": "74_lgxvxj",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 42,
+        "existingPublicId": "64_a9krmp",
+        "correlation": 0.289009,
+        "rgbRms": 42.8008,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 38,
+      "publicId": "71_ogr9ra",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 81,
+        "existingPublicId": "WhatsApp_Image_2569-10-20_at_12.28.09_PM_xi6fdk",
+        "correlation": 0.497454,
+        "rgbRms": 41.9036,
+        "aspectDelta": 0.184896,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 39,
+      "publicId": "65_vr798a",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 124,
+        "existingPublicId": "1_m2kbqr",
+        "correlation": 0.330451,
+        "rgbRms": 72.0764,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 40,
+      "publicId": "69_brx5im",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 23,
+        "existingPublicId": "88_wr64xe",
+        "correlation": 0.130874,
+        "rgbRms": 80.4789,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 41,
+      "publicId": "70_otcnq4",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 15,
+        "existingPublicId": "89_fownfh",
+        "correlation": 0.387665,
+        "rgbRms": 51.7497,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 42,
+      "publicId": "64_a9krmp",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 43,
+      "publicId": "68_tysioi",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.450629,
+        "rgbRms": 75.2612,
+        "aspectDelta": 0.111979,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 44,
+      "publicId": "63_e1uksc",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 45,
+      "publicId": "62_hun3nk",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 46,
+      "publicId": "61_xmn4km",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 102,
+        "existingPublicId": "DSC_0225_difwtn",
+        "correlation": 0.235811,
+        "rgbRms": 52.3338,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 47,
+      "publicId": "50_a4rmhn",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 102,
+        "existingPublicId": "DSC_0225_difwtn",
+        "correlation": 0.509595,
+        "rgbRms": 85.7912,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 48,
+      "publicId": "60_usmf5m",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 22,
+        "existingPublicId": "90_ihnkxr",
+        "correlation": 0.390617,
+        "rgbRms": 51.3793,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 49,
+      "publicId": "59_sldlgm",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 82,
+        "existingPublicId": "WhatsApp_Image_2569-10-20_at_12.28.08_PM_dwy0ud",
+        "correlation": 0.299515,
+        "rgbRms": 62.6726,
+        "aspectDelta": 0.184896,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 50,
+      "publicId": "58_wtdkmn",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 96,
+        "existingPublicId": "DSC_0230_cnj5bn",
+        "correlation": 0.36689,
+        "rgbRms": 52.2665,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 51,
+      "publicId": "56_wp3jsj",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 33,
+        "existingPublicId": "79_oywkpd",
+        "correlation": 0.309564,
+        "rgbRms": 50.377,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 52,
+      "publicId": "57_jcoafg",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 124,
+        "existingPublicId": "1_m2kbqr",
+        "correlation": 0.298728,
+        "rgbRms": 78.8144,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 53,
+      "publicId": "53_r02vkl",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 102,
+        "existingPublicId": "DSC_0225_difwtn",
+        "correlation": 0.473835,
+        "rgbRms": 70.9326,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 54,
+      "publicId": "55_vha0y2",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.540211,
+        "rgbRms": 52.3225,
+        "aspectDelta": 0.111979,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 55,
+      "publicId": "54_akniq7",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.559126,
+        "rgbRms": 47.0385,
+        "aspectDelta": 0.994152,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 56,
+      "publicId": "52_งานพื้นหลังรีเซฟชั่น_ld6dqq",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 2,
+        "existingPublicId": "WhatsApp_Image_2569-10-28_at_2.43.49_PM_xw9scu",
+        "correlation": 0.412564,
+        "rgbRms": 51.7596,
+        "aspectDelta": 0.625,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 57,
+      "publicId": "51_uwpaun",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 102,
+        "existingPublicId": "DSC_0225_difwtn",
+        "correlation": 0.513378,
+        "rgbRms": 76.8489,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 58,
+      "publicId": "WhatsApp_Image_2026-10-26_at_18.40.25_j5wgh5",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 101,
+        "existingPublicId": "6_em1ngp",
+        "correlation": 0.35896,
+        "rgbRms": 84.2469,
+        "aspectDelta": 0.1261,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 59,
+      "publicId": "WhatsApp_Image_2026-10-26_at_18.27.18_3_lwo4kr",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 23,
+        "existingPublicId": "88_wr64xe",
+        "correlation": 0.213998,
+        "rgbRms": 59.747,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 60,
+      "publicId": "WhatsApp_Image_2026-10-26_at_18.23.33_wnbuhw",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 17,
+        "existingPublicId": "96_v2nh0f",
+        "correlation": 0.317727,
+        "rgbRms": 68.6618,
+        "aspectDelta": 0.624176,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 61,
+      "publicId": "WhatsApp_Image_2026-10-26_at_18.27.18_eacsrx",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 62,
+      "publicId": "Screenshot_2569-10-23_at_1.28.37_PM_ekzqor",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.644179,
+        "rgbRms": 42.7091,
+        "aspectDelta": 0.199531,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 63,
+      "publicId": "8_ujc7gq",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 23,
+        "existingPublicId": "88_wr64xe",
+        "correlation": 0.207437,
+        "rgbRms": 50.7022,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 64,
+      "publicId": "7_ytulb7",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 81,
+        "existingPublicId": "WhatsApp_Image_2569-10-20_at_12.28.09_PM_xi6fdk",
+        "correlation": 1.0,
+        "rgbRms": 0.0,
+        "aspectDelta": 0.0,
+        "byteIdentical": true,
+        "strongSameImage": true
+      },
+      "confirmedDuplicateOfExisting": true
+    },
+    {
+      "csvRow": 65,
+      "publicId": "11_za43te",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 96,
+        "existingPublicId": "DSC_0230_cnj5bn",
+        "correlation": 0.416047,
+        "rgbRms": 55.4592,
+        "aspectDelta": 0.624176,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 66,
+      "publicId": "10_ilnbeo",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 82,
+        "existingPublicId": "WhatsApp_Image_2569-10-20_at_12.28.08_PM_dwy0ud",
+        "correlation": 0.187696,
+        "rgbRms": 60.6984,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 67,
+      "publicId": "13_znggpy",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 80,
+        "existingPublicId": "WhatsApp_Image_2569-10-20_at_11.09.54_AM_skbqcv",
+        "correlation": 0.999935,
+        "rgbRms": 0.627,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": true
+      },
+      "confirmedDuplicateOfExisting": true
+    },
+    {
+      "csvRow": 68,
+      "publicId": "DSC_0180_fbcpql",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 69,
+      "publicId": "DSC_0178_ysm7x4",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 17,
+        "existingPublicId": "96_v2nh0f",
+        "correlation": 0.495322,
+        "rgbRms": 55.7871,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 70,
+      "publicId": "DSC_0195_h2segx",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 71,
+      "publicId": "DSC_0219_fgfs88",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 42,
+        "existingPublicId": "64_a9krmp",
+        "correlation": 0.459345,
+        "rgbRms": 37.8947,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 72,
+      "publicId": "DSC_0217_pg2ba2",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 22,
+        "existingPublicId": "90_ihnkxr",
+        "correlation": 0.339859,
+        "rgbRms": 47.4579,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 73,
+      "publicId": "DSC_0202_coir12",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.377188,
+        "rgbRms": 72.3354,
+        "aspectDelta": 0.111979,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 74,
+      "publicId": "DSC_0198_r5wzxd",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 42,
+        "existingPublicId": "64_a9krmp",
+        "correlation": 0.384919,
+        "rgbRms": 40.2709,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 75,
+      "publicId": "DSC_0201_aesyec",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 23,
+        "existingPublicId": "88_wr64xe",
+        "correlation": 0.209293,
+        "rgbRms": 46.4889,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 76,
+      "publicId": "DSC_0189_cybfub",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 42,
+        "existingPublicId": "64_a9krmp",
+        "correlation": 0.398989,
+        "rgbRms": 39.7065,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 77,
+      "publicId": "DSC_0187_x9gkrj",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 42,
+        "existingPublicId": "64_a9krmp",
+        "correlation": 0.289398,
+        "rgbRms": 42.7985,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 78,
+      "publicId": "DSC_0184_jq7y6g",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 22,
+        "existingPublicId": "90_ihnkxr",
+        "correlation": 0.410135,
+        "rgbRms": 46.7405,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 79,
+      "publicId": "DSC_0217_rxlksv",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 22,
+        "existingPublicId": "90_ihnkxr",
+        "correlation": 0.339859,
+        "rgbRms": 47.4579,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 80,
+      "publicId": "WhatsApp_Image_2569-10-20_at_11.09.54_AM_skbqcv",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 81,
+      "publicId": "WhatsApp_Image_2569-10-20_at_12.28.09_PM_xi6fdk",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 82,
+      "publicId": "WhatsApp_Image_2569-10-20_at_12.28.08_PM_dwy0ud",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 83,
+      "publicId": "WhatsApp_Image_2569-10-15_at_4.48.34_PM_zc6m9w",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 17,
+        "existingPublicId": "96_v2nh0f",
+        "correlation": 0.535962,
+        "rgbRms": 52.3019,
+        "aspectDelta": 0.624176,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 84,
+      "publicId": "WhatsApp_Image_2569-10-05_at_1.25.13_AM_f0lxgs",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 102,
+        "existingPublicId": "DSC_0225_difwtn",
+        "correlation": 0.46443,
+        "rgbRms": 66.3734,
+        "aspectDelta": 0.624176,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 85,
+      "publicId": "DSC_0142_wliahl",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 86,
+      "publicId": "48136_0_upartv",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 124,
+        "existingPublicId": "1_m2kbqr",
+        "correlation": 0.334289,
+        "rgbRms": 71.2684,
+        "aspectDelta": 0.1261,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 87,
+      "publicId": "23_t2uxb8",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 123,
+        "existingPublicId": "10_uy1dsu",
+        "correlation": 0.268035,
+        "rgbRms": 76.5052,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 88,
+      "publicId": "20_rtgba5",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.306568,
+        "rgbRms": 62.7999,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 89,
+      "publicId": "19_hvc5xi",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.254627,
+        "rgbRms": 65.9137,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 90,
+      "publicId": "18_z9xkgr",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 162,
+        "existingPublicId": "79_ch4cv5",
+        "correlation": 0.304613,
+        "rgbRms": 52.4738,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 91,
+      "publicId": "DSC_0099_fod9a7",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.54005,
+        "rgbRms": 52.2974,
+        "aspectDelta": 0.111979,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 92,
+      "publicId": "DSC_0084_yez6pn",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 102,
+        "existingPublicId": "DSC_0225_difwtn",
+        "correlation": 0.473834,
+        "rgbRms": 70.9842,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 93,
+      "publicId": "DSC_0050_dpiv70",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 102,
+        "existingPublicId": "DSC_0225_difwtn",
+        "correlation": 0.513248,
+        "rgbRms": 76.8647,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 94,
+      "publicId": "DSC_0049_rdyndx",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 102,
+        "existingPublicId": "DSC_0225_difwtn",
+        "correlation": 0.509779,
+        "rgbRms": 85.7655,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 95,
+      "publicId": "DSC_0282_vgbtpj",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 2,
+        "existingPublicId": "WhatsApp_Image_2569-10-28_at_2.43.49_PM_xw9scu",
+        "correlation": 0.203404,
+        "rgbRms": 50.9191,
+        "aspectDelta": 0.625,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 96,
+      "publicId": "DSC_0230_cnj5bn",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 97,
+      "publicId": "DSC_0229_y5p56a",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 23,
+        "existingPublicId": "88_wr64xe",
+        "correlation": 0.389765,
+        "rgbRms": 43.6021,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 98,
+      "publicId": "DSC_0226_nprjba",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 81,
+        "existingPublicId": "WhatsApp_Image_2569-10-20_at_12.28.09_PM_xi6fdk",
+        "correlation": 0.468166,
+        "rgbRms": 67.4155,
+        "aspectDelta": 0.184896,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 99,
+      "publicId": "DSC_0282_d3zyli",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 2,
+        "existingPublicId": "WhatsApp_Image_2569-10-28_at_2.43.49_PM_xw9scu",
+        "correlation": 0.203404,
+        "rgbRms": 50.9191,
+        "aspectDelta": 0.625,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 100,
+      "publicId": "DSC_0277_pyb6wd",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 42,
+        "existingPublicId": "64_a9krmp",
+        "correlation": 0.329329,
+        "rgbRms": 41.961,
+        "aspectDelta": 0.554688,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 101,
+      "publicId": "6_em1ngp",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 102,
+      "publicId": "DSC_0225_difwtn",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 103,
+      "publicId": "DSC_0049_srffcq",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 102,
+        "existingPublicId": "DSC_0225_difwtn",
+        "correlation": 0.509779,
+        "rgbRms": 85.7655,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 104,
+      "publicId": "DSC_0095_tx69gj",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.558942,
+        "rgbRms": 47.0323,
+        "aspectDelta": 0.994152,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 105,
+      "publicId": "53508_0_rtxgqr",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 2,
+        "existingPublicId": "WhatsApp_Image_2569-10-28_at_2.43.49_PM_xw9scu",
+        "correlation": 0.274599,
+        "rgbRms": 49.5682,
+        "aspectDelta": 0.577713,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 106,
+      "publicId": "53498_0_gwxhnt",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 107,
+      "publicId": "48881_0_e8plh8",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 23,
+        "existingPublicId": "88_wr64xe",
+        "correlation": 0.322579,
+        "rgbRms": 57.065,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 108,
+      "publicId": "48647_0_j4urjh",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 106,
+        "existingPublicId": "53498_0_gwxhnt",
+        "correlation": 0.239514,
+        "rgbRms": 67.3892,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 109,
+      "publicId": "48615_0_qxj9he",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 3,
+        "existingPublicId": "WhatsApp_Image_2569-10-28_at_2.41.56_PM_jrrphi",
+        "correlation": 0.356729,
+        "rgbRms": 87.1145,
+        "aspectDelta": 0.577713,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 110,
+      "publicId": "48612_jhuoc4",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 81,
+        "existingPublicId": "WhatsApp_Image_2569-10-20_at_12.28.09_PM_xi6fdk",
+        "correlation": 0.278593,
+        "rgbRms": 66.5471,
+        "aspectDelta": 0.334311,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 111,
+      "publicId": "48425_0_wcxb1k",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.416231,
+        "rgbRms": 80.6212,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 112,
+      "publicId": "48239_0_ix2alw",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 3,
+        "existingPublicId": "WhatsApp_Image_2569-10-28_at_2.41.56_PM_jrrphi",
+        "correlation": 0.290536,
+        "rgbRms": 69.6739,
+        "aspectDelta": 0.577713,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 113,
+      "publicId": "48136_0_zcnhpb",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 124,
+        "existingPublicId": "1_m2kbqr",
+        "correlation": 0.334131,
+        "rgbRms": 71.2633,
+        "aspectDelta": 0.1261,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 114,
+      "publicId": "48133_0_j8wghy",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 123,
+        "existingPublicId": "10_uy1dsu",
+        "correlation": 0.348128,
+        "rgbRms": 64.3543,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 115,
+      "publicId": "79_qr5gud",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 162,
+        "existingPublicId": "79_ch4cv5",
+        "correlation": 0.999981,
+        "rgbRms": 0.4749,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": true
+      },
+      "confirmedDuplicateOfExisting": true
+    },
+    {
+      "csvRow": 116,
+      "publicId": "78_jjgh0v",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 70,
+        "existingPublicId": "DSC_0195_h2segx",
+        "correlation": 0.256617,
+        "rgbRms": 67.545,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 117,
+      "publicId": "67_kuxxyw",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.300224,
+        "rgbRms": 63.0888,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 118,
+      "publicId": "20_yzaweo",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.306602,
+        "rgbRms": 62.792,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 119,
+      "publicId": "19_abnnqe",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.254904,
+        "rgbRms": 65.8978,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 120,
+      "publicId": "18_hubbbd",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 162,
+        "existingPublicId": "79_ch4cv5",
+        "correlation": 0.304606,
+        "rgbRms": 52.4629,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 121,
+      "publicId": "14_ajub9b",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 33,
+        "existingPublicId": "79_oywkpd",
+        "correlation": 0.294064,
+        "rgbRms": 57.5534,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 122,
+      "publicId": "13_bak2yk",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 70,
+        "existingPublicId": "DSC_0195_h2segx",
+        "correlation": 0.327219,
+        "rgbRms": 60.2365,
+        "aspectDelta": 0.109375,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 123,
+      "publicId": "10_uy1dsu",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 124,
+      "publicId": "1_m2kbqr",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 125,
+      "publicId": "53508_0_uwkbpt",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 2,
+        "existingPublicId": "WhatsApp_Image_2569-10-28_at_2.43.49_PM_xw9scu",
+        "correlation": 0.274534,
+        "rgbRms": 49.56,
+        "aspectDelta": 0.577713,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 126,
+      "publicId": "WhatsApp_Image_2569-10-05_at_1.13.33_AM_zqziqq",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 82,
+        "existingPublicId": "WhatsApp_Image_2569-10-20_at_12.28.08_PM_dwy0ud",
+        "correlation": 0.187696,
+        "rgbRms": 60.6984,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 127,
+      "publicId": "WhatsApp_Image_2569-09-23_at_1.59.36_PM_1_nd4gwd",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 42,
+        "existingPublicId": "64_a9krmp",
+        "correlation": 0.390211,
+        "rgbRms": 54.6608,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 128,
+      "publicId": "WhatsApp_Image_2569-09-23_at_1.59.37_PM_3_hefeql",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 2,
+        "existingPublicId": "WhatsApp_Image_2569-10-28_at_2.43.49_PM_xw9scu",
+        "correlation": 0.384857,
+        "rgbRms": 50.3202,
+        "aspectDelta": 0.577713,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 129,
+      "publicId": "WhatsApp_Image_2569-09-23_at_1.59.39_PM_svp1bp",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 2,
+        "existingPublicId": "WhatsApp_Image_2569-10-28_at_2.43.49_PM_xw9scu",
+        "correlation": 0.334727,
+        "rgbRms": 53.8873,
+        "aspectDelta": 0.577713,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 130,
+      "publicId": "WhatsApp_Image_2569-09-23_at_1.59.37_PM_1_rbl4lt",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 17,
+        "existingPublicId": "96_v2nh0f",
+        "correlation": 0.337211,
+        "rgbRms": 55.251,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 131,
+      "publicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 132,
+      "publicId": "WhatsApp_Image_2569-09-23_at_1.59.35_PM_1_gmyn70",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 42,
+        "existingPublicId": "64_a9krmp",
+        "correlation": 0.294987,
+        "rgbRms": 60.0208,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 133,
+      "publicId": "WhatsApp_Image_2569-09-23_at_1.59.35_PM_pgpdgf",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.753,
+        "rgbRms": 35.7359,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 134,
+      "publicId": "53508_0_zhngld",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 2,
+        "existingPublicId": "WhatsApp_Image_2569-10-28_at_2.43.49_PM_xw9scu",
+        "correlation": 0.274534,
+        "rgbRms": 49.56,
+        "aspectDelta": 0.577713,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 135,
+      "publicId": "51996_t4xngx",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 2,
+        "existingPublicId": "WhatsApp_Image_2569-10-28_at_2.43.49_PM_xw9scu",
+        "correlation": 0.298264,
+        "rgbRms": 47.9754,
+        "aspectDelta": 0.577713,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 136,
+      "publicId": "49503_0_fr6czk",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 101,
+        "existingPublicId": "6_em1ngp",
+        "correlation": 0.251846,
+        "rgbRms": 63.0725,
+        "aspectDelta": 0.1261,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 137,
+      "publicId": "49500_0_sn5tss",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 2,
+        "existingPublicId": "WhatsApp_Image_2569-10-28_at_2.43.49_PM_xw9scu",
+        "correlation": 0.246719,
+        "rgbRms": 60.9243,
+        "aspectDelta": 0.577713,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 138,
+      "publicId": "49498_0_hehpbg",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 101,
+        "existingPublicId": "6_em1ngp",
+        "correlation": 0.384385,
+        "rgbRms": 53.9707,
+        "aspectDelta": 0.1261,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 139,
+      "publicId": "49473_vfwpko",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 33,
+        "existingPublicId": "79_oywkpd",
+        "correlation": 0.292944,
+        "rgbRms": 57.5393,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 140,
+      "publicId": "S__40255502_0_xd8y11",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.598678,
+        "rgbRms": 54.4719,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 141,
+      "publicId": "20_nzwkfr",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.306568,
+        "rgbRms": 62.7999,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 142,
+      "publicId": "19_nsmz9n",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.254627,
+        "rgbRms": 65.9137,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 143,
+      "publicId": "S__40288278_0_i3epim",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.598678,
+        "rgbRms": 54.4719,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 144,
+      "publicId": "49245_0_xxvb7h",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 101,
+        "existingPublicId": "6_em1ngp",
+        "correlation": 0.255848,
+        "rgbRms": 57.5457,
+        "aspectDelta": 0.1261,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 145,
+      "publicId": "48908_0_o9xlrn",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 22,
+        "existingPublicId": "90_ihnkxr",
+        "correlation": 0.322228,
+        "rgbRms": 68.6228,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 146,
+      "publicId": "48900_0_paomx9",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 2,
+        "existingPublicId": "WhatsApp_Image_2569-10-28_at_2.43.49_PM_xw9scu",
+        "correlation": 0.295711,
+        "rgbRms": 59.4482,
+        "aspectDelta": 0.577713,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 147,
+      "publicId": "WhatsApp_Image_2569-08-04_at_2.12.08_PM_a9s4n1",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.410878,
+        "rgbRms": 63.8358,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 148,
+      "publicId": "S__40255514_0_st7mk0",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 101,
+        "existingPublicId": "6_em1ngp",
+        "correlation": 0.387535,
+        "rgbRms": 59.6598,
+        "aspectDelta": 0.1261,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 149,
+      "publicId": "S__40222727_0_cvl7on",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 33,
+        "existingPublicId": "79_oywkpd",
+        "correlation": 0.270773,
+        "rgbRms": 57.7178,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 150,
+      "publicId": "48647_0_a6caw4",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 106,
+        "existingPublicId": "53498_0_gwxhnt",
+        "correlation": 0.239383,
+        "rgbRms": 67.4345,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 151,
+      "publicId": "48432_0_omlclg",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 70,
+        "existingPublicId": "DSC_0195_h2segx",
+        "correlation": 0.224275,
+        "rgbRms": 59.2539,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 152,
+      "publicId": "48136_0_k8awr7",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 124,
+        "existingPublicId": "1_m2kbqr",
+        "correlation": 0.334289,
+        "rgbRms": 71.2684,
+        "aspectDelta": 0.1261,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 153,
+      "publicId": "48135_0_vwrnki",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.37235,
+        "rgbRms": 62.1608,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 154,
+      "publicId": "48133_0_kybn1r",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 123,
+        "existingPublicId": "10_uy1dsu",
+        "correlation": 0.348056,
+        "rgbRms": 64.3534,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 155,
+      "publicId": "78_m7kh0c",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 70,
+        "existingPublicId": "DSC_0195_h2segx",
+        "correlation": 0.256599,
+        "rgbRms": 67.5375,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 156,
+      "publicId": "18_uv5j0e",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 162,
+        "existingPublicId": "79_ch4cv5",
+        "correlation": 0.304613,
+        "rgbRms": 52.4738,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 157,
+      "publicId": "48239_0_yxnawa",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 3,
+        "existingPublicId": "WhatsApp_Image_2569-10-28_at_2.41.56_PM_jrrphi",
+        "correlation": 0.290739,
+        "rgbRms": 69.7043,
+        "aspectDelta": 0.577713,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 158,
+      "publicId": "48135_0_yux9xq",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.37235,
+        "rgbRms": 62.1608,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 159,
+      "publicId": "48133_0_kk7u9j",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 123,
+        "existingPublicId": "10_uy1dsu",
+        "correlation": 0.348056,
+        "rgbRms": 64.3534,
+        "aspectDelta": 0.498534,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 160,
+      "publicId": "49241_0_zd8krv",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 3,
+        "existingPublicId": "WhatsApp_Image_2569-10-28_at_2.41.56_PM_jrrphi",
+        "correlation": 0.356835,
+        "rgbRms": 67.4366,
+        "aspectDelta": 0.577713,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 161,
+      "publicId": "48135_0_k3fne2",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.37235,
+        "rgbRms": 62.1608,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 162,
+      "publicId": "79_ch4cv5",
+      "alreadyInDance": true
+    },
+    {
+      "csvRow": 163,
+      "publicId": "20_dv2tjn",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 131,
+        "existingPublicId": "WhatsApp_Image_2569-09-23_at_1.59.05_PM_v599ms",
+        "correlation": 0.306568,
+        "rgbRms": 62.7999,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 164,
+      "publicId": "6_ufb4sh",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 101,
+        "existingPublicId": "6_em1ngp",
+        "correlation": 1.0,
+        "rgbRms": 0.0,
+        "aspectDelta": 0.0,
+        "byteIdentical": true,
+        "strongSameImage": true
+      },
+      "confirmedDuplicateOfExisting": true
+    },
+    {
+      "csvRow": 165,
+      "publicId": "4_bjalwq",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 2,
+        "existingPublicId": "WhatsApp_Image_2569-10-28_at_2.43.49_PM_xw9scu",
+        "correlation": 0.238555,
+        "rgbRms": 60.8288,
+        "aspectDelta": 0.625,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 166,
+      "publicId": "3_vwjzz0",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 61,
+        "existingPublicId": "WhatsApp_Image_2026-10-26_at_18.27.18_eacsrx",
+        "correlation": 0.242045,
+        "rgbRms": 68.3455,
+        "aspectDelta": 0.5,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 167,
+      "publicId": "2_oxtm3a",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 101,
+        "existingPublicId": "6_em1ngp",
+        "correlation": 0.249058,
+        "rgbRms": 57.5932,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": false
+      },
+      "confirmedDuplicateOfExisting": false
+    },
+    {
+      "csvRow": 168,
+      "publicId": "1_sxmqvo",
+      "alreadyInDance": false,
+      "bestMatch": {
+        "existingCsvRow": 124,
+        "existingPublicId": "1_m2kbqr",
+        "correlation": 0.999992,
+        "rgbRms": 0.4663,
+        "aspectDelta": 0.0,
+        "byteIdentical": false,
+        "strongSameImage": true
+      },
+      "confirmedDuplicateOfExisting": true
+    }
+  ]
+}
